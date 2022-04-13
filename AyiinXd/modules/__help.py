@@ -22,7 +22,7 @@
 from AyiinXd import CMD_HELP, tgbot
 from AyiinXd.utils import ayiin_cmd, edit_or_reply, edit_delete
 
-AyiinUBOT = await tgbot.get_me()
+AyiinUBOT = tgbot.get_me()
 BOT_USERNAME = AyiinUBOT.username
 
 @ayiin_cmd(pattern="help ?(.*)")
