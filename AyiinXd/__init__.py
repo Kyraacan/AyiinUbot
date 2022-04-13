@@ -650,7 +650,7 @@ with bot:
                     text=f"**✧ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✧**\n\n✧ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✧ **ᴊᴜᴍʟᴀʜ** `{len(dugmeler)}` ᴍᴏᴅᴜʟᴇs",
                     buttons=buttons,
                 )
-        elif query.startswith("pmpermit"):
+            elif query.startswith("pmpermit"):
                 TELEBT = USER_BOT_NO_WARN
                 result = builder.article(
                     "PmPermit",
