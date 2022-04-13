@@ -651,7 +651,7 @@ with bot:
             query = event.text
             if event.query.user_id == uid and query.startswith(
                     "@AyiinXdSupport"):
-                buttons = paginate_help(0, dugmeler, "help")
+                buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
                     file=logoyins,
                     link_preview=False,
