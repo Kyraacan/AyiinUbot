@@ -25,6 +25,7 @@ from AyiinXd.utils import ayiin_cmd, edit_or_reply, edit_delete
 AyiinUBOT = tgbot.get_me()
 BOT_USERNAME = AyiinUBOT.username
 
+
 @ayiin_cmd(pattern="help ?(.*)")
 async def cmd_list(event):
     args = event.pattern_match.group(1).lower()
