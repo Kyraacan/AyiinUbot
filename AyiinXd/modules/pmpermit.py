@@ -10,18 +10,14 @@
 from sqlalchemy.exc import IntegrityError
 from telethon import events
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
+from telethon.tl.functions.messages import ReportSpamRequest
 from telethon.tl.types import User
 
 from AyiinXd import BOTLOG_CHATID
 from AyiinXd import CMD_HANDLER as cmd
-from AyiinXd import CMD_HELP, PM_AUTO_BAN, PM_LIMIT, bot
+from AyiinXd import CMD_HELP, COUNT_PM, LASTMSG, LOGS, PM_AUTO_BAN, PM_LIMIT, bot
 from AyiinXd.events import ayiin_cmd
 from AyiinXd.utils import edit_delete, edit_or_reply
-
-user = bot.get_me()
-myid = user.id
-PM_WARNS = {}
-PREV_REPLY_MESSAGE = {}
 
 DEF_UNAPPROVED_MSG = (
     f"╔═════════════════════╗\n"
@@ -37,87 +33,86 @@ DEF_UNAPPROVED_MSG = (
 
 
 @bot.on(events.NewMessage(incoming=True))
-async def on_new_private_message(event):
-    if event.sender_id == myid:
-        return
-
-    if BOTLOG_CHATID is None:
-        return
-
-    if not event.is_private:
-        return
-
-    message_text = event.message.message
-    chat_id = event.sender_id
-
-    message_text.lower()
-    if DEF_UNAPPROVED_MSG == message_text:
-        # userbot's should not reply to other userbot's
-        # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
-        return
-    sender = await bot.get_entity(chat_id)
-
-    if chat_id == user.id:
-
-        # don't log Saved Messages
-
-        return
-
-    if sender.bot:
-
-        # don't log bots
-
-        return
-
-    if sender.verified:
-
-        # don't log verified accounts
-
-        return
-
-    if not pmpermit_sql.is_approved(chat_id):
-        # pm permit
-        await do_pm_permit_action(chat_id, event)
-
-
-async def do_pm_permit_action(chat_id, event):
+async def permitpm(event):
+    """ Prohibits people from PMing you without approval. \
+        Will block retarded nibbas automatically. """
     if not PM_AUTO_BAN:
         return
-    if chat_id not in PM_WARNS:
-        PM_WARNS.update({chat_id: 0})
-    if PM_WARNS[chat_id] == PM_LIMIT:
-        r = await event.reply(DEF_UNAPPROVED_MSG)
-        await asyncio.sleep(3)
-        await event.client(functions.contacts.BlockRequest(chat_id))
-        if chat_id in PREV_REPLY_MESSAGE:
-            await PREV_REPLY_MESSAGE[chat_id].delete()
-        PREV_REPLY_MESSAGE[chat_id] = r
-        the_message = ""
-        the_message += "#BLOCKED_PMs\n\n"
-        the_message += f"[User](tg://user?id={chat_id}): {chat_id}\n"
-        the_message += f"Message Count: {PM_WARNS[chat_id]}\n"
-        # the_message += f"Media: {message_media}"
+    self_user = await event.client.get_me()
+    sender = await event.get_sender()
+    if (
+        event.is_private
+        and event.chat_id != 777000
+        and event.chat_id != self_user.id
+        and not sender.bot
+        and not sender.contact
+    ):
         try:
-            await event.client.send_message(
-                entity=BOTLOG_CHATID,
-                message=the_message,
-                # reply_to=,
-                # parse_mode="html",
-                link_preview=False,
-                # file=message_media,
-                silent=True,
-            )
+            from AyiinXd.modules.sql_helper.globals import gvarstatus
+            from AyiinXd.modules.sql_helper.pm_permit_sql import is_approved
+        except AttributeError:
             return
-        except BaseException:
-            return
-    # inline pmpermit menu
-    mybot = BOT_USERNAME
-    tele = await bot.inline_query(mybot, "pmpermit")
-    r = await tele[0].click(event.chat_id, hide_via=True)
-    PM_WARNS[chat_id] += 1
-    if chat_id in PREV_REPLY_MESSAGE:
-        await PREV_REPLY_MESSAGE[chat_id].delete()
-    PREV_REPLY_MESSAGE[chat_id] = r
+        apprv = is_approved(event.chat_id)
+        notifsoff = gvarstatus("NOTIF_OFF")
+
+        # Use user custom unapproved message
+        getmsg = gvarstatus("unapproved_msg")
+        UNAPPROVED_MSG = getmsg if getmsg is not None else DEF_UNAPPROVED_MSG
+        # This part basically is a sanity check
+        # If the message that sent before is Unapproved Message
+        # then stop sending it again to prevent FloodHit
+        if not apprv and event.text != UNAPPROVED_MSG:
+            if event.chat_id in LASTMSG:
+                prevmsg = LASTMSG[event.chat_id]
+                # If the message doesn't same as previous one
+                # Send the Unapproved Message again
+                if event.text != prevmsg:
+                    async for message in event.client.iter_messages(
+                        event.chat_id, from_user="me", search=UNAPPROVED_MSG
+                    ):
+                        await message.delete()
+                    await event.reply(f"{UNAPPROVED_MSG}")
+            else:
+                await event.reply(f"{UNAPPROVED_MSG}")
+            LASTMSG.update({event.chat_id: event.text})
+            if notifsoff:
+                await event.client.send_read_acknowledge(event.chat_id)
+            if event.chat_id not in COUNT_PM:
+                COUNT_PM.update({event.chat_id: 1})
+            else:
+                COUNT_PM[event.chat_id] = COUNT_PM[event.chat_id] + 1
+
+            if COUNT_PM[event.chat_id] > PM_LIMIT:
+                await event.respond(
+                    "**𝙎𝙤𝙧𝙧𝙮 𝙏𝙤𝙙 𝙇𝙪 𝘿𝙞𝙗𝙡𝙤𝙠𝙞𝙧 𝙆𝙖𝙧𝙣𝙖 𝙈𝙚𝙡𝙖𝙠𝙪𝙠𝙖𝙣 𝙎𝙥𝙖𝙢 𝘾𝙝𝙖𝙩**"
+                )
+
+                try:
+                    del COUNT_PM[event.chat_id]
+                    del LASTMSG[event.chat_id]
+                except KeyError:
+                    if BOTLOG_CHATID:
+                        await event.client.send_message(
+                            BOTLOG_CHATID,
+                            "**Terjadi Error Saat Menghitung Private Message, Mohon Restart Bot!**",
+                        )
+                    return LOGS.info("Gagal menghitung PM yang diterima")
+
+                await event.client(BlockRequest(event.chat_id))
+                await event.client(ReportSpamRequest(peer=event.chat_id))
+
+                if BOTLOG_CHATID:
+                    name = await event.client.get_entity(event.chat_id)
+                    name0 = str(name.first_name)
+                    await event.client.send_message(
+                        BOTLOG_CHATID,
+                        "["
+                        + name0
+                        + "](tg://user?id="
+                        + str(event.chat_id)
+                        + ")"
+                        + " **𝙐𝙙𝙖𝙝 𝙂𝙪𝙖 𝘽𝙡𝙤𝙠𝙞𝙧 𝙉𝙞 𝘿𝙖𝙠𝙟𝙖𝙡 𝙆𝙖𝙧𝙣𝙖 𝙈𝙚𝙡𝙖𝙠𝙪𝙠𝙖𝙣 𝙎𝙥𝙖𝙢 𝙆𝙚 𝘽𝙤𝙨𝙨 𝙂𝙪𝙖**",
+                    )
 
 
 @bot.on(events.NewMessage(outgoing=True))
@@ -126,11 +121,13 @@ async def auto_accept(event):
     if not PM_AUTO_BAN:
         return
     self_user = await event.client.get_me()
+    sender = await event.get_sender()
     if (
         event.is_private
         and event.chat_id != 777000
         and event.chat_id != self_user.id
-        and not (await event.get_sender()).bot
+        and not sender.bot
+        and not sender.contact
     ):
         try:
             from AyiinXd.modules.sql_helper.globals import gvarstatus
@@ -140,11 +137,7 @@ async def auto_accept(event):
 
         # Use user custom unapproved message
         get_message = gvarstatus("unapproved_msg")
-        if get_message is not None:
-            UNAPPROVED_MSG = get_message
-        else:
-            UNAPPROVED_MSG = DEF_UNAPPROVED_MSG
-
+        UNAPPROVED_MSG = get_message if get_message is not None else DEF_UNAPPROVED_MSG
         chat = await event.get_chat()
         if isinstance(chat, User):
             if is_approved(event.chat_id) or chat.bot:
@@ -164,8 +157,8 @@ async def auto_accept(event):
                 if is_approved(event.chat_id) and BOTLOG_CHATID:
                     await event.client.send_message(
                         BOTLOG_CHATID,
-                        "#AUTO-APPROVED\n"
-                        + "Pengguna 👤: "
+                        "**#AUTO_APPROVED**\n"
+                        + "👤 **User:** "
                         + f"[{chat.first_name}](tg://user?id={chat.id})",
                     )
 
