@@ -19,11 +19,11 @@
 #    <t.me/TheFlicksUserbot>
 
 
-from AyiinXd import CMD_HELP, tgbot
+from AyiinXd import BOT_USERNAME, CMD_HELP, bot
 from AyiinXd.utils import ayiin_cmd, edit_or_reply, edit_delete
 
-AyiinUBOT = tgbot.get_me()
-BOT_USERNAME = AyiinUBOT.username
+user = bot.get_me()
+DEFAULTUSER = user.first_name
 
 
 @ayiin_cmd(pattern="help ?(.*)")
