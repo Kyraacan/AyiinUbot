@@ -38,8 +38,6 @@ text = (f"""
 
 DEF_UNAPPROVED_MSG = (
     text,
-    file=False,
-    link_preview=False,
     buttons=[
         Button.inline("Terima", data="terima"),
         Button.inline("Tolak", data="tolak"),
