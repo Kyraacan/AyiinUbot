@@ -17,7 +17,6 @@ from AyiinXd.utils import ayiin_cmd, edit_or_reply, edit_delete
 import AyiinXd.modules.sql_helper.pm_permit_sql as pmpermit_sql
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import (
-    BOTLOG,
     BOTLOG_CHATID,
     BOT_USERNAME,
     CMD_HELP,
@@ -369,7 +368,7 @@ async def add_pmsg(cust_msg):
 
         await cust_msg.edit("`Pesan Berhasil Disimpan Ke Room Chat`")
 
-        if BOTLOG:
+        if BOTLOG_CHATID:
             await cust_msg.client.send_message(
                 BOTLOG_CHATID, f"**{status} PM Yang Tersimpan Dalam Room Chat Anda:** \n\n{msg}"
             )
