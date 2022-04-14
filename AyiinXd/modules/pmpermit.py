@@ -13,7 +13,7 @@ from sqlalchemy.exc import IntegrityError
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.types import User
 from telethon import events
-from AyiinXd.utils import edit_delete, edit_or_reply
+from AyiinXd.utils import ayiin_cmd, edit_delete, edit_or_reply
 import AyiinXd.modules.sql_helper.pm_permit_sql as pmpermit_sql
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import (
