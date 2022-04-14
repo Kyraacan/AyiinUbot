@@ -417,7 +417,7 @@ async def permitpm(event):
     if event.is_private:
         if not is_approved(event.chat_id):
             await bot.send_message(
-                chats, f"**Menerima Pesan!, Pengguna Terdeteksi Adalah Developer saya!**"
+                chat_id, f"**Menerima Pesan!, Pengguna Terdeteksi Adalah Developer saya!**"
             )
             approve(event.chat_id)
 
