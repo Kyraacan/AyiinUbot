@@ -189,7 +189,7 @@ async def notifon(non_event):
     )
 
 
-@ayiin_cmd(pattern="(?:setuju|ok)\s?(.)?")
+@ayiin_cmd(pattern="(?:setuju|ok)\\s?(.)?")
 async def approvepm(apprvpm):
     """For .ok command, give someone the permissions to PM you."""
     try:
@@ -252,7 +252,7 @@ async def approvepm(apprvpm):
     )
 
 
-@ayiin_cmd(pattern="(?:tolak|nopm)\s?(.)?")
+@ayiin_cmd(pattern="(?:tolak|nopm)\\s?(.)?")
 async def disapprovepm(disapprvpm):
     try:
         from AyiinXd.modules.sql_helper.pm_permit_sql import dissprove
@@ -342,7 +342,7 @@ async def unblockpm(unblock):
         await unblock.edit("**Lu Bebas Dari Blokir Tod Karna Boss Gua Lagi Baik.**")
 
 
-@ayiin_cmd(pattern="(set|get|reset) pmpermit(?: |$)(\w*)")
+@ayiin_cmd(pattern="(set|get|reset) pmpermit(?: |$)(\\w*)")
 async def add_pmsg(cust_msg):
     """Set your own Unapproved message"""
     if not PM_AUTO_BAN:
