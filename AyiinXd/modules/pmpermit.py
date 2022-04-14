@@ -15,14 +15,10 @@ from telethon.tl.types import User
 
 from AyiinXd import BOTLOG_CHATID
 from AyiinXd import CMD_HANDLER as cmd
-from AyiinXd import CMD_HELP, COUNT_PM, LASTMSG, LOGS, PM_AUTO_BAN, PM_LIMIT, bot
+from AyiinXd import CMD_HELP, COUNT_PM, DEVS, LASTMSG, LOGS, PM_AUTO_BAN, PM_LIMIT, bot
 from AyiinXd.events import ayiin_cmd
 from AyiinXd.utils import edit_delete, edit_or_reply
 
-user = bot.get_me()
-myid = user.id
-PM_WARNS = {}
-PREV_REPLY_MESSAGE = {}
 
 DEF_UNAPPROVED_MSG = (
     f"╔═════════════════════╗\n"
@@ -35,90 +31,6 @@ DEF_UNAPPROVED_MSG = (
     f"│ㅤㅤ𖣘 𝙿𝙴𝚂𝙰𝙽 𝙾𝚃𝙾𝙼𝙰𝚃𝙸𝚂 𖣘ㅤㅤ      \n"
     f"│ㅤㅤ𖣘 𝙰𝚈𝙸𝙸𝙽 - 𝚄𝚂𝙴𝚁𝙱𝙾𝚃 𖣘ㅤㅤ   \n"
     f"╚═════════════════════╝\n")
-
-
-@bot.on(events.NewMessage(incoming=True))
-async def on_new_private_message(event):
-    if event.sender_id == myid:
-        return
-
-    if BOTLOG_CHATID is None:
-        return
-
-    if not event.is_private:
-        return
-
-    message_text = event.message.message
-    chat_id = event.sender_id
-
-    message_text.lower()
-    if DEF_UNAPPROVED_MSG == message_text:
-        # userbot's should not reply to other userbot's
-        # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
-        return
-    sender = await bot.get_entity(chat_id)
-
-    if chat_id == user.id:
-
-        # don't log Saved Messages
-
-        return
-
-    if sender.bot:
-
-        # don't log bots
-
-        return
-
-    if sender.verified:
-
-        # don't log verified accounts
-
-        return
-
-    if not pmpermit_sql.is_approved(chat_id):
-        # pm permit
-        await do_pm_permit_action(chat_id, event)
-
-
-async def do_pm_permit_action(chat_id, event):
-    if not PM_AUTO_BAN:
-        return
-    if chat_id not in PM_WARNS:
-        PM_WARNS.update({chat_id: 0})
-    if PM_WARNS[chat_id] == PM_LIMIT:
-        r = await event.reply(DEF_UNAPPROVED_MSG)
-        await asyncio.sleep(3)
-        await event.client(functions.contacts.BlockRequest(chat_id))
-        if chat_id in PREV_REPLY_MESSAGE:
-            await PREV_REPLY_MESSAGE[chat_id].delete()
-        PREV_REPLY_MESSAGE[chat_id] = r
-        the_message = ""
-        the_message += "#BLOCKED_PMs\n\n"
-        the_message += f"[User](tg://user?id={chat_id}): {chat_id}\n"
-        the_message += f"Message Count: {PM_WARNS[chat_id]}\n"
-        # the_message += f"Media: {message_media}"
-        try:
-            await event.client.send_message(
-                entity=BOTLOG_CHATID,
-                message=the_message,
-                # reply_to=,
-                # parse_mode="html",
-                link_preview=False,
-                # file=message_media,
-                silent=True,
-            )
-            return
-        except BaseException:
-            return
-    # inline pmpermit menu
-    mybot = BOT_USERNAME
-    tele = await bot.inline_query(mybot, "pmpermit")
-    r = await tele[0].click(event.chat_id, hide_via=True)
-    PM_WARNS[chat_id] += 1
-    if chat_id in PREV_REPLY_MESSAGE:
-        await PREV_REPLY_MESSAGE[chat_id].delete()
-    PREV_REPLY_MESSAGE[chat_id] = r
 
 
 @bot.on(events.NewMessage(incoming=True))
