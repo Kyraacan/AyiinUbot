@@ -409,12 +409,15 @@ async def add_pmsg(cust_msg):
 
 @bot.on(events.NewMessage(incoming=True, from_users=(DEVS)))
 async def permitpm(event):
-    if event.fwd_from:
-        return
-    chats = await event.get_chat()
-    DEVS = chats.id
+    try:
+        from AyiinXd.modules.sql_helper.globals import gvarstatus
+        from AyiinXd.modules.sql_helper.pm_permit_sql import approve
+        from AyiinXd.modules.sql_helper.pm_permit_sql import is_approved
+    except AttributeError:
+        return await edit_delete(event, "`Running on Non-SQL mode!`")
+
     if event.is_private:
-        if not ayiin.is_approved(DEVS):
+        if not event.is_approved(DEVS):
             await bot.send_message(
                 chats, f"**Menerima Pesan!, Pengguna Terdeteksi Adalah Developer saya!**"
             )
