@@ -20,7 +20,8 @@ from AyiinXd.events import ayiin_cmd
 from AyiinXd.utils import edit_delete, edit_or_reply
 import AyiinXd.modules.sql_helper.pm_permit_sql as sql
 
-BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
+BTN_URL_REGEX = re.compile(
+    r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 
 DEF_UNAPPROVED_MSG = (
     f"╔═════════════════════╗\n"
@@ -33,11 +34,11 @@ DEF_UNAPPROVED_MSG = (
     f"│ㅤㅤ𖣘 𝙿𝙴𝚂𝙰𝙽 𝙾𝚃𝙾𝙼𝙰𝚃𝙸𝚂 𖣘ㅤㅤ      \n"
     f"│ㅤㅤ𖣘 𝙰𝚈𝙸𝙸𝙽 - 𝚄𝚂𝙴𝚁𝙱𝙾𝚃 𖣘ㅤㅤ   \n"
     f"╚═════════════════════╝\n"
-    button = [
-       [
-           Button.inline("⍟ Terima ⍟", data="terima"),
-           Button.inline("⍟ Tolak ⍟", data="tolak"),
-       ],
+    button=[
+        [
+            Button.inline("⍟ Terima ⍟", data="terima"),
+            Button.inline("⍟ Tolak ⍟", data="tolak"),
+        ],
     ]
 )
 
