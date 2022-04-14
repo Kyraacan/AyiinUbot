@@ -14,7 +14,7 @@ async def help(event):
     args = event.pattern_match.group(1).lower()
     if args:
         if args in CMD_HELP:
-            await edit_or_reply(event, f"{CMD_HELP[args]}\n\n© {ch}")
+            ayiin = await edit_or_reply(event, f"{CMD_HELP[args]}\n\n© {ch}")
         else:
             await edit_delete(event, f"**Modules {args} Gak Ada Tod**, **Ketik Yang Bener Anj.**")
     else:
@@ -26,3 +26,6 @@ async def help(event):
                 event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
             )
             await event.delete()
+        except Exception as e:
+            await ayiin.edit(f"**INFO :** `{e}`"
+            )
