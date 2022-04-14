@@ -5,10 +5,8 @@
 #
 """ Userbot help command """
 
-from AyiinXd import CMD_HANDLER as cmd
-from AyiinXd import CMD_HELP, ICON_HELP, ch
+from AyiinXd import CMD_HELP, ch
 from AyiinXd.utils import edit_delete, edit_or_reply, ayiin_cmd
-from time import sleep
 
 
 @ayiin_cmd(pattern="help(?: |$)(.*)")
