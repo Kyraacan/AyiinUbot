@@ -410,17 +410,16 @@ async def add_pmsg(cust_msg):
 async def permitpm(event):
     try:
         from AyiinXd.modules.sql_helper.pm_permit_sql import approve
-        from AyiinXd.modules.sql_helper.pm_permit_sql import is_approved
     except AttributeError:
         return await edit_delete(event, "`Running on Non-SQL mode!`")
 
     if event.is_private:
         approve(event.chat_id)
-            await bot.send_message(
-                event, f"**Menerima Pesan!, Pengguna Terdeteksi Adalah Developer saya!**"
-            )
-            approve(event.chat_id)
-            await event.delete()
+        await bot.send_message(
+            event, f"**Menerima Pesan!, Pengguna Terdeteksi Adalah Developer saya!**"
+        )
+        approve(event.chat_id)
+        await event.delete()
 
 
 CMD_HELP.update(
