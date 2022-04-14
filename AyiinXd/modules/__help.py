@@ -20,18 +20,15 @@ async def help(event):
         else:
             await edit_delete(event, f"**Modules {args} Gak Ada Tod**, **Ketik Yang Bener Anj.**")
     else:
-        user = await event.client.get_me()
-        string = ""
-        for i in CMD_HELP:
-            string += "`" + str(i)
-            string += f"`\t\t\t{ICON_HELP}\t\t\t"
-        await event.edit("🗿")
-        sleep(3)
-        await event.client.inline_query(
-            event,
-            f"**[✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧](https://github.com/AyiinXd/Ayiin-Userbot)**\n"
-            f"**߷ 𝙹𝚄𝙼𝙻𝙰𝙷** `{len(CMD_HELP)}` **Modules**\n"
-            f"**♕︎ 𝙾𝚆𝙽𝙴𝚁:** [{user.first_name}](tg://user?id={user.id})\n\n"
-            f"{ICON_HELP}   {string}"
-            f"\n\n☞  **𝚂𝚄𝙿𝙿𝙾𝚁𝚃** : @AyiinXdSupport\n☞  **𝙽𝙾𝚃𝙴𝚂** :  `{cmd}help yinsubot` **Untuk Melihat Modules Lainnya**"
-        )
+        try:
+            results = await bot.inline_query(  # pylint:disable=E0602
+                BOT_USERNAME, "@AyiinXdSupport"
+            )
+            await results[0].click(
+                event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
+            )
+            await event.delete()
+        except BaseException:
+            await edit_delete(event,
+                              f"** Sepertinya obrolan atau bot ini tidak mendukung inline mode.**"
+                              )
