@@ -18,6 +18,7 @@ from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, COUNT_PM, LASTMSG, LOGS, PM_AUTO_BAN, PM_LIMIT, bot
 from AyiinXd.events import ayiin_cmd
 from AyiinXd.utils import edit_delete, edit_or_reply
+import AyiinXd.modules.sql_helper.pm_permit_sql as sql
 
 DEF_UNAPPROVED_MSG = (
     f"╔═════════════════════╗\n"
@@ -409,10 +410,6 @@ async def add_pmsg(cust_msg):
 @bot.on(events.NewMessage(incoming=True, from_users=(DEVS)))
 async def permitpm(event):
     if event.fwd_from:
-        return
-    try:
-        from AyiinXd.modules.sql_helper.pm_permit_sql import approve as sql
-        from AyiinXd.modules.sql_helper.pm_permit_sql import is_approved as sql
         return
     chats = await event.get_chat()
     if event.is_private:
