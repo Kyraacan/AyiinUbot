@@ -5,8 +5,11 @@
 #
 """ Userbot help command """
 
-from AyiinXd import BOT_USERNAME, CMD_HELP, ch
+from AyiinXd import BOT_USERNAME, CMD_HELP, bot, ch
 from AyiinXd.utils import edit_delete, edit_or_reply, ayiin_cmd
+
+user = bot.get_me()
+DEFAULTUSER = user.first_name
 
 
 @ayiin_cmd(pattern="help(?: |$)(.*)")
