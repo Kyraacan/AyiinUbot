@@ -413,11 +413,8 @@ async def permitpm(event):
         return
     chats = await event.get_chat()
     if event.is_private:
-        if not sql.is_approved:
-            return await event.edit(chats.id, "`Developer Telah Mengirimi Anda Pesan... `")
-        if sql.approve:
-            await bot.send_message(
-                chats, "**Menerima Pesan!, Pengguna Terdeteksi Adalah Developer Ayiin-Userbot !!!**"
+        if not sql.is_approved(chats.id):
+            sql.approve(chats.id, "**Menerima Pesan!, Pengguna Terdeteksi Adalah Developer Ayiin-Userbot !!!**"
             )
 
 
