@@ -530,10 +530,12 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = [p for p in loaded_modules if not p.startswith("_")]
     helpable_modules = sorted(helpable_modules)
     modules = [
-        custom.Button.inline(f"{INLINE_EMOJI} {x} {INLINE_EMOJI}", data=f"ub_modul_{x}")
+        custom.Button.inline(
+            "{} {} {}".format(f"{EMOJI_HELP}", x, f"{EMOJI_HELP}"),
+            data="ub_modul_{}".format(x),
+        )
         for x in helpable_modules
     ]
-
     pairs = list(
         zip(
             modules[::number_of_cols],
@@ -549,18 +551,32 @@ def paginate_help(page_number, loaded_modules, prefix):
             modulo_page * number_of_rows: number_of_rows * (modulo_page + 1)
         ] + [
             (
-                custom.Button.inline("««", data=f"{prefix}_prev({modulo_page})"),
-                custom.Button.inline("ᴛᴜᴛᴜᴘ", b"close"),
-                custom.Button.inline("»»", data=f"{prefix}_next({modulo_page})"),
+                custom.Button.inline(
+                    "⪻", data="{}_prev({})".format(prefix, modulo_page)
+                ),
+                custom.Button.inline(
+                    "ʙᴀᴄᴋ", data="{}_close({})".format(prefix, modulo_page)
+                ),
+                custom.Button.inline(
+                    "⪼", data="{}_next({})".format(prefix, modulo_page)
+                ),
             )
         ]
-
     return pairs
+
+
+def ibuild_keyboard(buttons):
+    keyb = []
+    for btn in buttons:
+        if btn[2] and keyb:
+            keyb[-1].append(Button.url(btn[0], btn[1]))
+        else:
+            keyb.append([Button.url(btn[0], btn[1])])
+    return keyb
 
 
 with bot:
     try:
-        from AyiinXd.modules.button import BTN_URL_REGEX, build_keyboard
         from AyiinXd.modules.sql_helper.bot_blacklists import check_is_black_list
         from AyiinXd.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
         from AyiinXd.utils import reply_id
@@ -569,9 +585,30 @@ with bot:
         user = bot.get_me()
         uid = user.id
         owner = user.first_name
+        asst = tgbot.get_me()
+        botusername = asst.username
         logo = ALIVE_LOGO
         logoyins = INLINE_PIC
+        cmd = CMD_HANDLER
         tgbotusername = BOT_USERNAME
+        BTN_URL_REGEX = re.compile(
+            r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
+        )
+
+        main_help_button = [
+            [
+                Button.inline("⍟ ᴍᴏᴅᴜʟᴇs ⍟", data="reopen"),
+                Button.inline("⍟ ᴠᴄ ᴍᴇɴᴜ ⍟", data="inline_yins"),
+            ],
+            [
+                Button.url("⍟ sᴇᴛᴛɪɴɢs ⍟", f"t.me/{botusername}"),
+            ],
+            [Button.inline("⍟ ʙᴀᴄᴋ ⍟", data="close")],
+        ]
+
+        USER_BOT_NO_WARN = (
+            f"**PMSecurity of** [{user.first_name}](tg://user?id={user.id})!"
+            "\n\nMohon tunggu saya untuk merespon atau Anda akan diblokir dan dilaporkan sebagai spam!!")
 
         @tgbot.on(events.NewMessage(incoming=True,
                   func=lambda e: e.is_private))
@@ -644,19 +681,49 @@ with bot:
                                 f"**ERROR:** Saat menyimpan detail pesan di database\n`{e}`",
                             )
 
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"reopen")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                buttons = paginate_help(0, dugmeler, "helpme")
+                text = f"**✨ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n✣ **ᴏᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴊᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**"
+                await event.edit(
+                    text,
+                    file=logoyins,
+                    buttons=buttons,
+                    link_preview=False,
+                )
+            else:
+                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
         @tgbot.on(events.InlineQuery)
         async def inline_handler(event):
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith(
-                    "@AyiinXdSupport"):
+            if event.query.user_id == uid and query.startswith("@AyiinXdSupport"):
                 buttons = paginate_help(0, dugmeler, "helpme")
-                result = builder.photo(
+                result = await event.builder.photo(
                     file=logoyins,
                     link_preview=False,
-                    text=f"**✧ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✧**\n\n✧ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✧ **ᴊᴜᴍʟᴀʜ** `{len(dugmeler)}` ᴍᴏᴅᴜʟᴇs",
-                    buttons=buttons,
+                    text=f"**✨ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n✣ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴊᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**",
+                    buttons=main_help_button,
+                )
+            elif query.startswith("pmpermit"):
+                TELEBT = USER_BOT_NO_WARN
+                result = builder.article(
+                    "PmPermit",
+                    text=TELEBT,
+                    buttons=[
+                        [
+                            Button.inline("ᴛᴇʀɪᴍᴀ ᴘᴍ", data="setuju"),
+                            Button.inline("ᴛᴏʟᴀᴋ ᴘᴍ", data="block"),
+                        ],
+                    ],
                 )
             elif query.startswith("repo"):
                 result = builder.article(
@@ -668,7 +735,7 @@ with bot:
                         0,
                         "image/jpeg",
                         []),
-                    text="**✧ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ✧**\n➖➖➖➖➖➖➖➖➖➖\n✧ **ᴏᴡɴᴇʀ ʀᴇᴘᴏ :** [ᴀʏɪɪɴ](https://t.me/AyiinXd)\n✧ **sᴜᴘᴘᴏʀᴛ :** @AyiinSupport\n✧ **ʀᴇᴘᴏsɪᴛᴏʀʏ :** [ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ](https://github.com/AyiinXd/Ayiin-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    text="**Ayiin-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **ᴏᴡɴᴇʀ ʀᴇᴘᴏ :** [AyiinXd](https://t.me/AyiinXd)\n✣ **sᴜᴘᴘᴏʀᴛ :** @AyiinXdSupport\n✣ **ʀᴇᴘᴏsɪᴛᴏʀʏ :** [Ayiin-Userbot](https://github.com/AyiinXd/Ayiin-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url(
@@ -706,7 +773,7 @@ with bot:
                 else:
                     note_data += markdown_note[prev:]
                 message_text = note_data.strip()
-                tl_ib_buttons = build_keyboard(buttons)
+                tl_ib_buttons = ibuild_keyboard(buttons)
                 result = builder.article(
                     title="Inline creator",
                     text=message_text,
@@ -715,15 +782,15 @@ with bot:
                 )
             else:
                 result = builder.article(
-                    title="✧ Ayiin-Userbot ✧",
+                    title="✨ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ✨",
                     description="Ayiin - Userbot | Telethon",
-                    url="https://t.me/AyiinXdSupport",
+                    url="https://t.me/AyiinSupport",
                     thumb=InputWebDocument(
                         INLINE_PIC,
                         0,
                         "image/jpeg",
                         []),
-                    text=f"**✧ ᴀʏɪɪɴ - ᴜsᴇʀʙᴏᴛ ✧**\n➖➖➖➖➖➖➖➖➖➖\n✧ **ᴜsᴇʀᴍᴏᴅᴇ :** [{user.first_name}](tg://user?id={user.id})\n✧ **ᴀssɪsᴛᴀɴᴛ :** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**sᴜᴘᴘᴏʀᴛ :** @AyiinSupport\n➖➖➖➖➖➖➖➖➖➖",
+                    text=f"**Ayiin-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴀssɪsᴛᴀɴᴛ:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**ᴜᴘᴅᴀᴛᴇs:** @AyiinSupport\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url(
@@ -740,23 +807,6 @@ with bot:
                 [result], switch_pm="👥 USERBOT PORTAL", switch_pm_param="start"
             )
 
-        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(rb"reopen")))
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                current_page_number = int(looters)
-                buttons = paginate_help(
-                    current_page_number, dugmeler, "helpme")
-                text = f"**✧ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✧**\n\n✧ **ᴏᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✧ **ᴊᴜᴍʟᴀʜ** `{len(dugmeler)}` ᴍᴏᴅᴜʟᴇs"
-                await event.edit(
-                    text,
-                    file=logoyins,
-                    buttons=buttons,
-                    link_preview=False,
-                )
-            else:
-                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
         @tgbot.on(
             events.callbackquery.CallbackQuery(
                 data=re.compile(rb"helpme_next\((.+?)\)")
@@ -771,21 +821,147 @@ with bot:
                 await event.edit(buttons=buttons)
             else:
                 reply_pop_up_alert = (
-                    f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME}"
+                    f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
                 )
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"helpme_close\((.+?)\)")
+            )
+        )
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid or event.query.user_id in DEVS and SUDO_USERS:
-                openlagi = custom.Button.inline(
-                    "• ʀᴇ-ᴏᴘᴇɴ ᴍᴇɴᴜ •", data="reopen")
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:  # @Kyy-Userbot
+                # https://t.me/TelethonChat/115200
                 await event.edit(
-                    "✨ **ʜᴇʟᴘ ᴍᴏᴅᴇ ʙᴜᴛᴛᴏɴ ᴅɪᴛᴜᴛᴜᴘ** ✨", buttons=openlagi
-                )
+                    file=logoyins,
+                    link_preview=True,
+                    buttons=main_help_button)
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"gcback")
+            )
+        )
+        async def gback_handler(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:  # @Ayiin-Userbot
+                # https://t.me/TelethonChat/115200
+                text = (
+                    f"**✨ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n✣ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴊᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**")
+                await event.edit(
+                    text,
+                    file=logoyins,
+                    link_preview=True,
+                    buttons=main_help_button)
+
+        @tgbot.on(events.CallbackQuery(data=b"inline_yins"))
+        async def about(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                await event.edit(f"""
+Voice chat group menu untuk [{user.first_name}](tg://user?id={user.id})
+""",
+                                 buttons=[
+                                     [
+                                         Button.inline("⍟ ᴠᴄ ᴘʟᴜɢɪɴ ⍟",
+                                                       data="vcplugin"),
+                                         Button.inline("⍟ ᴠᴄ ᴛᴏᴏʟs ⍟",
+                                                       data="vctools")],
+                                     [custom.Button.inline(
+                                         "ʙᴀᴄᴋ", data="gcback")],
+                                 ]
+                                 )
             else:
-                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"vcplugin")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                text = (
+                    f"""
+✘ **Commands available in vcplugin** ✘
+
+  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}play` <Judul Lagu/Link YT>
+  ↳ : Untuk Memutar Lagu di voice chat group dengan akun kamu
+
+  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}vplay` <Judul Video/Link YT>
+  ↳ : Untuk Memutar Video di voice chat group dengan akun kamu
+
+  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}end`
+  ↳ : Untuk Memberhentikan video/lagu yang sedang putar di voice chat group
+
+  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}skip`
+  ↳ : Untuk Melewati video/lagu yang sedang di putar
+
+  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}pause`
+  ↳ : Untuk memberhentikan video/lagu yang sedang diputar
+
+  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}resume`
+  ↳ : Untuk melanjutkan pemutaran video/lagu yang sedang diputar
+
+  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}volume` 1-200
+  ↳ : Untuk mengubah volume (Membutuhkan Hak admin)
+
+  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}playlist`
+  ↳ : Untuk menampilkan daftar putar Lagu/Video
+""")
+                await event.edit(
+                    text,
+                    file=logoyins,
+                    link_preview=True,
+                    buttons=[Button.inline("ʙᴀᴄᴋ", data="inline_yins")])
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"vctools")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                text = (
+                    f"""
+✘ **Commands available in vctools** ✘
+
+  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}startvc`
+  ↳ : Untuk Memulai voice chat group
+
+  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}stopvc`
+  ↳ : Untuk Memberhentikan voice chat group
+
+  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}vctitle` <title vcg>
+  ↳ : Untuk Mengubah title/judul voice chat group
+
+  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}vcinvite`
+  ↳ : Mengundang Member group ke voice chat group
+
+  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}joinvc`
+  ↳ : Melakukan Fake voice chat group
+
+  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}leavevc`
+  ↳ : Memberhentikan Fake voice chat group
+""")
+                await event.edit(
+                    text,
+                    file=logoyins,
+                    link_preview=True,
+                    buttons=[Button.inline("ʙᴀᴄᴋ", data="inline_yins")])
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(events.CallbackQuery(data=b"close"))
+        async def close(event):
+            buttons = [
+                (custom.Button.inline("ᴍᴀɪɴ ᴍᴇɴᴜ", data="gcback"),),
+            ]
+            await event.edit("**ᴍᴇɴᴜ ᴅɪᴛᴜᴛᴜᴘ!**", file=logoayiin, buttons=buttons)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(
@@ -809,13 +985,13 @@ with bot:
                 modul_name = event.data_match.group(1).decode("UTF-8")
 
                 cmdhel = str(CMD_HELP[modul_name])
-                if len(cmdhel) > 150:
+                if len(cmdhel) > 950:
                     help_string = (
                         str(CMD_HELP[modul_name])
                         .replace("`", "")
-                        .replace("**", "")[:150]
+                        .replace("**", "")[:950]
                         + "..."
-                        + "\n\nBaca Teks Berikutnya Ketik +help "
+                        + "\n\nBaca Teks Berikutnya Ketik .help "
                         + modul_name
                         + " "
                     )
@@ -826,12 +1002,41 @@ with bot:
                 reply_pop_up_alert = (
                     help_string
                     if help_string is not None
-                    else f"{modul_name} Tidak ada dokumen yang telah ditulis untuk modul."
+                    else "{} Tidak ada dokumen yang telah ditulis untuk modul.".format(
+                        modul_name
+                    )
+                )
+                await event.edit(
+                    reply_pop_up_alert, buttons=[
+                        Button.inline("ʙᴀᴄᴋ", data="reopen")]
                 )
 
             else:
                 reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
-            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"setuju")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                await event.answer(
+                    f"Untuk menyetujui PM, gunakan {cmd}ok", cache_time=0, alert=True)
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"block")))
+        async def on_pm_click(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                await event.edit(
+                    f"Sepertinya {owner} sedang tidak mood untuk mengobrol\nGoodbye.\nPesan Anda telah diabaikan.\njika tidak mau di blokir maka jangan spam!!"
+                )
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     except BaseException:
         LOGS.info(
