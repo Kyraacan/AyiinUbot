@@ -18,7 +18,6 @@ from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, COUNT_PM, DEVS, LASTMSG, LOGS, PM_AUTO_BAN, PM_LIMIT, bot
 from AyiinXd.events import ayiin_cmd
 from AyiinXd.utils import edit_delete, edit_or_reply
-import AyiinXd.modules.sql_helper.pm_permit_sql as ayiin
 
 DEF_UNAPPROVED_MSG = (
     f"╔═════════════════════╗\n"
@@ -410,9 +409,7 @@ async def add_pmsg(cust_msg):
 @bot.on(events.NewMessage(incoming=True, from_users=(DEVS)))
 async def permitpm(event):
     try:
-        from AyiinXd.modules.sql_helper.globals import gvarstatus
         from AyiinXd.modules.sql_helper.pm_permit_sql import approve
-        from AyiinXd.modules.sql_helper.pm_permit_sql import is_approved
     except AttributeError:
         return await edit_delete(event, "`Running on Non-SQL mode!`")
 
