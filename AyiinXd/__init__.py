@@ -863,7 +863,7 @@ with bot:
         async def about(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 await event.edit(f"""
-[•Menu•] - Voice chat group untuk [{user.first_name}](tg://user?id={user.id})
+•Menu• - Voice chat group untuk [{user.first_name}](tg://user?id={user.id})
 """,
                                  buttons=[
                                      [
@@ -965,7 +965,7 @@ with bot:
         async def about(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 await event.edit(f"""
-[•Menu•] - Konten Channel untuk [{user.first_name}](tg://user?id={user.id})
+•Menu• - Konten Channel untuk [{user.first_name}](tg://user?id={user.id})
 """,
                                  buttons=[
                                      [
@@ -1043,16 +1043,17 @@ with bot:
         async def about(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 await event.edit(f"""
-[•Menu•] - Editor untuk [{user.first_name}](tg://user?id={user.id})
+•Menu• - Editor untuk [{user.first_name}](tg://user?id={user.id})
 """,
                                  buttons=[
                                      [
-                                         Button.inline("⍟ ғᴏᴛᴏ ᴄᴏᴜᴘʟᴇ ⍟",
-                                                       data="yinscouple"),
-                                         Button.inline("⍟ ʀᴇᴍᴏᴠᴇ ʙɢ ⍟",
-                                                       data="removebg"),
                                          Button.inline("⍟ ᴇᴅɪᴛᴏʀ ғᴏᴛᴏ ⍟",
-                                                       data="yinsimg")],
+                                                       data="yinsimg"),
+                                         Button.inline("⍟ ғᴏᴛᴏ ᴄᴏᴜᴘʟᴇ ⍟",
+                                                       data="yinscouple")],
+                                     [
+                                         Button.inline("⍟ ʀᴇᴍᴏᴠᴇ ʙɢ ⍟",
+                                                       data="removebg")],
                                      [custom.Button.inline(
                                          "ʙᴀᴄᴋ", data="gcback")],
                                  ]
@@ -1097,7 +1098,7 @@ with bot:
 
   »  **Perintah :** `{cmd}rbg` <Tautan ke Gambar> atau balas gambar apa pun.
   »  **Kegunaan : **Menghapus latar belakang gambar, menggunakan API TOKEN remove.bg.
-  »  **Peringatan : tidak berfungsi pada stiker.
+  »  **Peringatan :** tidak berfungsi pada stiker.
 """)
                 await event.edit(
                     text,
