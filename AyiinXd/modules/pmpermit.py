@@ -163,7 +163,7 @@ async def auto_accept(event):
                     )
 
 
-@ayiin_cmd(pattern=r"notifoff$")
+@bot.on(ayiin_cmd(outgoin=True, pattern=r"notifoff$"))
 async def notifoff(noff_event):
     """For .notifoff command, stop getting notifications from unapproved PMs."""
     try:
