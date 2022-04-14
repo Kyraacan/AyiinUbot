@@ -413,7 +413,7 @@ async def permitpm(event):
         return
     chats = await event.get_chat()
     if event.is_private:
-        if not sql.is_approved(chats.id):
+        if not sql.approve(chats.id):
             sql.approve(
                 chats.id, f"`Developer Telah Mengirimi Anda Pesan... `")
             await borg.send_message(
