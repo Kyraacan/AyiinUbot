@@ -597,11 +597,15 @@ with bot:
 
         main_help_button = [
             [
+                Button.inline("⍟ ᴋᴏɴᴛᴇɴ ᴍᴇɴᴜ ⍟", data="konten_yins"),
+                Button.inline("⍟ ᴇᴅɪᴛᴏʀ ᴍᴇɴᴜ ⍟", data="editor_yins"),
+            ],
+            [
                 Button.inline("⍟ ᴍᴏᴅᴜʟᴇs ⍟", data="reopen"),
-                Button.inline("⍟ ᴠᴄ ᴍᴇɴᴜ ⍟", data="inline_yins"),
             ],
             [
                 Button.url("⍟ sᴇᴛᴛɪɴɢs ⍟", f"t.me/{botusername}"),
+                Button.inline("⍟ ᴠᴄ ᴍᴇɴᴜ ⍟", data="inline_yins"),
             ],
             [Button.inline("⍟ ʙᴀᴄᴋ ⍟", data="close")],
         ]
@@ -859,7 +863,7 @@ with bot:
         async def about(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 await event.edit(f"""
-Voice chat group menu untuk [{user.first_name}](tg://user?id={user.id})
+[•Menu•] - Voice chat group untuk [{user.first_name}](tg://user?id={user.id})
 """,
                                  buttons=[
                                      [
@@ -886,29 +890,29 @@ Voice chat group menu untuk [{user.first_name}](tg://user?id={user.id})
                     f"""
 ✘ **Commands available in vcplugin** ✘
 
-  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}play` <Judul Lagu/Link YT>
-  ↳ : Untuk Memutar Lagu di voice chat group dengan akun kamu
+  »  **Perintah :** `{cmd}play` <Judul Lagu/Link YT>
+  »  **Kegunaan : **Untuk Memutar Lagu di voice chat group dengan akun kamu.
 
-  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}vplay` <Judul Video/Link YT>
-  ↳ : Untuk Memutar Video di voice chat group dengan akun kamu
+  »  **Perintah :** `{cmd}vplay` <Judul Video/Link YT>
+  »  **Kegunaan : **Untuk Memutar Video di voice chat group dengan akun kamu.
 
-  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}end`
-  ↳ : Untuk Memberhentikan video/lagu yang sedang putar di voice chat group
+  »  **Perintah :** `{cmd}end`
+  »  **Kegunaan : **Untuk Memberhentikan video/lagu yang sedang putar di voice chat group.
 
-  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}skip`
-  ↳ : Untuk Melewati video/lagu yang sedang di putar
+  »  **Perintah :** `{cmd}skip`
+  »  **Kegunaan : **Untuk Melewati video/lagu yang sedang di putar.
 
-  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}pause`
-  ↳ : Untuk memberhentikan video/lagu yang sedang diputar
+  »  **Perintah :** `{cmd}pause`
+  »  **Kegunaan : **Untuk memberhentikan video/lagu yang sedang diputar.
 
-  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}resume`
-  ↳ : Untuk melanjutkan pemutaran video/lagu yang sedang diputar
+  »  **Perintah :** `{cmd}resume`
+  »  **Kegunaan : **Untuk melanjutkan pemutaran video/lagu yang sedang diputar.
 
-  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}volume` 1-200
-  ↳ : Untuk mengubah volume (Membutuhkan Hak admin)
+  »  **Perintah :** `{cmd}volume` 1-200
+  »  **Kegunaan : **Untuk mengubah volume (Membutuhkan Hak admin).
 
-  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}playlist`
-  ↳ : Untuk menampilkan daftar putar Lagu/Video
+  »  **Perintah :** `{cmd}playlist`
+  »  **Kegunaan : **Untuk menampilkan daftar putar Lagu/Video.
 """)
                 await event.edit(
                     text,
@@ -930,29 +934,229 @@ Voice chat group menu untuk [{user.first_name}](tg://user?id={user.id})
                     f"""
 ✘ **Commands available in vctools** ✘
 
-  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}startvc`
-  ↳ : Untuk Memulai voice chat group
+  »  **Perintah :** `{cmd}startvc`
+  »  **Kegunaan : **Untuk Memulai voice chat group.
 
-  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}stopvc`
-  ↳ : Untuk Memberhentikan voice chat group
+  »  **Perintah :** `{cmd}stopvc`
+  »  **Kegunaan : **Untuk Memberhentikan voice chat group.
 
-  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}vctitle` <title vcg>
-  ↳ : Untuk Mengubah title/judul voice chat group
+  »  **Perintah :** `{cmd}joinvc` atau `{cmd}joinvc` <chatid/username gc>
+  »  **Kegunaan : **Untuk Bergabung ke voice chat group.
 
-  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}vcinvite`
-  ↳ : Mengundang Member group ke voice chat group
+  »  **Perintah :** `{cmd}leavevc` atau `{cmd}leavevc` <chatid/username gc>
+  »  **Kegunaan : **Untuk Turun dari voice chat group.
 
-  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}joinvc`
-  ↳ : Melakukan Fake voice chat group
+  »  **Perintah :** `{cmd}vctitle` <title vcg>
+  »  **Kegunaan : **Untuk Mengubah title/judul voice chat group.
 
-  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `{cmd}leavevc`
-  ↳ : Memberhentikan Fake voice chat group
+  »  **Perintah :** `{cmd}vcinvite`
+  »  **Kegunaan : **Mengundang Member group ke voice chat group.
 """)
                 await event.edit(
                     text,
                     file=logoyins,
                     link_preview=True,
                     buttons=[Button.inline("ʙᴀᴄᴋ", data="inline_yins")])
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(events.CallbackQuery(data=b"konten_yins"))
+        async def about(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                await event.edit(f"""
+[•Menu•] - Konten Channel untuk [{user.first_name}](tg://user?id={user.id})
+""",
+                                 buttons=[
+                                     [
+                                         Button.inline("⍟ ʙᴛᴘᴍ ⍟",
+                                                       data="btpmayiin"),
+                                         Button.inline("⍟ ʏɪɴs ʙᴏᴋᴇᴘ ⍟",
+                                                       data="yinsbokep")],
+                                     [custom.Button.inline(
+                                         "ʙᴀᴄᴋ", data="gcback")],
+                                 ]
+                                 )
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"btpmayiin")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                text = (
+                    f"""
+✘ **Commands available in btpm** ✘
+
+  »  **Perintah : **`{cmd}btpm` <username ch>
+  »  **Kegunaan :** __Untuk Mendapatkan List Btpm Kosong.__
+
+  »  **Perintah : **`{cmd}savebt` <nama_list>
+  »  **Kegunaan :** __Untuk Menyimpan List Btpm, Gunakan Nama Yang Berbeda.__
+
+  »  **Perintah : **$<nama_list>
+  »  **Kegunaan :** __Untuk Mendapatkan List Btpm Yang Tersimpan.__
+
+  »  **Perintah : **`{cmd}delbt` <nama_list>
+  »  **Kegunaan :** __Menghapus List Btpm Yang Tersimpan.__
+
+  »  **Perintah : **`{cmd}listbt` <nama_list>
+  »  **Kegunaan :** __Untuk Menlihat Semua List Btpm Yang Tersimpan.__
+""")
+                await event.edit(
+                    text,
+                    file=logoyins,
+                    link_preview=True,
+                    buttons=[Button.inline("ʙᴀᴄᴋ", data="konten_yins")])
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"yinsbokep")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                text = (
+                    f"""
+✘ **Commands available in yins bokep** ✘
+
+  »  **Perintah :** `{cmd}bokp`
+  »  **Kegunaan : **Untuk Mengirim bokp secara random.
+""")
+                await event.edit(
+                    text,
+                    file=logoyins,
+                    link_preview=True,
+                    buttons=[Button.inline("ʙᴀᴄᴋ", data="konten_yins")])
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(events.CallbackQuery(data=b"editor_yins"))
+        async def about(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                await event.edit(f"""
+[•Menu•] - Editor untuk [{user.first_name}](tg://user?id={user.id})
+""",
+                                 buttons=[
+                                     [
+                                         Button.inline("⍟ ғᴏᴛᴏ ᴄᴏᴜᴘʟᴇ ⍟",
+                                                       data="yinscouple"),
+                                         Button.inline("⍟ ʀᴇᴍᴏᴠᴇ ʙɢ ⍟",
+                                                       data="removebg"),
+                                         Button.inline("⍟ ᴇᴅɪᴛᴏʀ ғᴏᴛᴏ ⍟",
+                                                       data="yinsimg")],
+                                     [custom.Button.inline(
+                                         "ʙᴀᴄᴋ", data="gcback")],
+                                 ]
+                                 )
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"yinscouple")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                text = (
+                    f"""
+✘ **Commands available in Foto Couple** ✘
+
+  »  **Perintah : **`{cmd}couple`
+  »  **Kegunaan :** __Untuk Mendapatkan Foto Couple Secara Random.__
+""")
+                await event.edit(
+                    text,
+                    file=logoyins,
+                    link_preview=True,
+                    buttons=[Button.inline("ʙᴀᴄᴋ", data="editor_yins")])
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"removebg")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                text = (
+                    f"""
+✘ **Commands available in Remove Bg** ✘
+
+  »  **Perintah :** `{cmd}rbg` <Tautan ke Gambar> atau balas gambar apa pun.
+  »  **Kegunaan : **Menghapus latar belakang gambar, menggunakan API TOKEN remove.bg.
+  »  **Peringatan : tidak berfungsi pada stiker.
+""")
+                await event.edit(
+                    text,
+                    file=logoyins,
+                    link_preview=True,
+                    buttons=[Button.inline("ʙᴀᴄᴋ", data="editor_yins")])
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"yinsimg")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                text = (
+                    f"""
+✘ **Commands available in Editor Foto** ✘
+
+  »  **Perintah :** `{cmd}sketch` <reply ke Foto/Sticker>
+  »  **Kegunaan :** Coba Dulu Tod.
+
+  »  **Perintah :** `{cmd}grey` <reply ke Foto/Sticker>
+  »  **Kegunaan :** Coba Dulu Tod.
+
+  »  **Perintah :** `{cmd}blur` <reply ke Foto/Sticker>
+  »  **Kegunaan :** Coba Dulu Tod.
+
+  »  **Perintah :** `{cmd}negative` <reply ke Foto/Sticker>
+  »  **Kegunaan :** Coba Dulu Tod.
+
+  »  **Perintah :** `{cmd}miror` <reply ke Foto/Sticker>
+  »  **Kegunaan :** Coba Dulu Tod.
+
+  »  **Perintah :** `{cmd}flp` <reply ke Foto/Sticker>
+  »  **Kegunaan :** Coba Dulu Tod.
+
+  »  **Perintah :** `{cmd}quad` <reply ke Foto/Sticker>
+  »  **Kegunaan :** Coba Dulu Tod.
+
+  »  **Perintah :** `{cmd}toon` <reply ke Foto/Sticker>
+  »  **Kegunaan :** Coba Dulu Tod.
+
+  »  **Perintah :** `{cmd}danger` <reply ke Foto/Sticker>
+  »  **Kegunaan :** Coba Dulu Tod.
+
+  »  **Perintah :** `{cmd}border` <reply ke Foto/Sticker>
+  »  **Kegunaan :** Coba Dulu Tod.
+
+  »  **Perintah :** `{cmd}pixelator` <reply ke Foto/Sticker>
+  »  **Kegunaan :** Coba Dulu Tod.
+""")
+                await event.edit(
+                    text,
+                    file=logoyins,
+                    link_preview=True,
+                    buttons=[Button.inline("ʙᴀᴄᴋ", data="editor_yins")])
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
