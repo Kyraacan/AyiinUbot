@@ -610,10 +610,6 @@ with bot:
             [Button.inline("⍟ ʙᴀᴄᴋ ⍟", data="close")],
         ]
 
-        USER_BOT_NO_WARN = (
-            f"**PMSecurity of** [{user.first_name}](tg://user?id={user.id})!"
-            "\n\nMohon tunggu saya untuk merespon atau Anda akan diblokir dan dilaporkan sebagai spam!!")
-
         @tgbot.on(events.NewMessage(incoming=True,
                   func=lambda e: e.is_private))
         async def bot_pms(event):
@@ -717,18 +713,6 @@ with bot:
                     link_preview=False,
                     text=f"**✨ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n✣ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴊᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**",
                     buttons=main_help_button,
-                )
-            elif query.startswith("pmpermit"):
-                TELEBT = USER_BOT_NO_WARN
-                result = builder.article(
-                    "PmPermit",
-                    text=TELEBT,
-                    buttons=[
-                        [
-                            Button.inline("ᴛᴇʀɪᴍᴀ ᴘᴍ", data="setuju"),
-                            Button.inline("ᴛᴏʟᴀᴋ ᴘᴍ", data="block"),
-                        ],
-                    ],
                 )
             elif query.startswith("repo"):
                 result = builder.article(
