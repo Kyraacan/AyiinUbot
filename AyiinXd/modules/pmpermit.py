@@ -14,7 +14,7 @@ from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.types import User
 from telethon import events
 
-from AyiinXd.utils import edit_or_reply, edit_delete, kyy_cmd
+from AyiinXd.utils import edit_delete, edit_or_reply
 import AyiinXd.modules.sql_helper.pm_permit_sql as pmpermit_sql
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import (
