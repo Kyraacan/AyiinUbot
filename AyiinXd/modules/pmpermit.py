@@ -413,6 +413,7 @@ async def permitpm(event):
     try:
         from AyiinXd.modules.sql_helper.pm_permit_sql import approve as sql
         from AyiinXd.modules.sql_helper.pm_permit_sql import is_approved as sql
+
     chats = await event.get_chat()
     if event.is_private:
         if not sql.is_approved(chats.id):
