@@ -1,49 +1,37 @@
-#    TeleBot - UserBot
-#    Copyright (C) 2020 TeleBot
+# Copyright (C) 2019 The Raphielscape Company LLC.
+#
+# Licensed under the Raphielscape Public License, Version 1.d (the "License");
+# you may not use this file except in compliance with the License.
+#
+""" Userbot help command """
 
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-#    Recode by Fariz <Github.com/farizjs>
-#    From Flicks-Userbot
-#    <t.me/TheFlicksUserbot>
+from AyiinXd import CMD_HANDLER as cmd
+from AyiinXd import CMD_HELP, ICON_HELP, ch
+from AyiinXd.utils import edit_delete, edit_or_reply, ayiin_cmd
+from time import sleep
 
 
-from AyiinXd import BOT_USERNAME, CMD_HELP, bot
-from AyiinXd.utils import ayiin_cmd, edit_or_reply, edit_delete
-
-user = bot.get_me()
-DEFAULTUSER = user.first_name
-
-
-@ayiin_cmd(pattern="help ?(.*)")
-async def cmd_list(event):
+@ayiin_cmd(pattern="help(?: |$)(.*)")
+async def help(event):
     args = event.pattern_match.group(1).lower()
     if args:
         if args in CMD_HELP:
-            await edit_or_reply(event, f"**✘ Commands available in {args} ✘** \n\n" + str(CMD_HELP[args]) + "\n\n**☞ @AyiinSupport**")
+            await edit_or_reply(event, f"{CMD_HELP[args]}\n\n© {ch}")
         else:
             await edit_delete(event, f"**Modules {args} Gak Ada Tod**, **Ketik Yang Bener Anj.**")
     else:
-        try:
-            results = await bot.inline_query(  # pylint:disable=E0602
-                BOT_USERNAME, "@AyiinXdSupport"
-            )
-            await results[0].click(
-                event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
-            )
-            await event.delete()
-        except BaseException:
-            await edit_delete(event,
-                              f"** Sepertinya obrolan atau bot ini tidak mendukung inline mode.**"
-                              )
+        user = await event.client.get_me()
+        string = ""
+        for i in CMD_HELP:
+            string += "`" + str(i)
+            string += f"`\t\t\t{ICON_HELP}\t\t\t"
+        await event.edit("🗿")
+        sleep(3)
+        await bot.inline_query(
+            event,
+            f"**[✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧](https://github.com/AyiinXd/Ayiin-Userbot)**\n"
+            f"**߷ 𝙹𝚄𝙼𝙻𝙰𝙷** `{len(CMD_HELP)}` **Modules**\n"
+            f"**♕︎ 𝙾𝚆𝙽𝙴𝚁:** [{user.first_name}](tg://user?id={user.id})\n\n"
+            f"{ICON_HELP}   {string}"
+            f"\n\n☞  **𝚂𝚄𝙿𝙿𝙾𝚁𝚃** : @AyiinXdSupport\n☞  **𝙽𝙾𝚃𝙴𝚂** :  `{cmd}help yinsubot` **Untuk Melihat Modules Lainnya**"
+        )
