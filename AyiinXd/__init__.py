@@ -1151,7 +1151,7 @@ with bot:
             buttons = [
                 (custom.Button.inline("ᴍᴀɪɴ ᴍᴇɴᴜ", data="gcback"),),
             ]
-            await event.edit("**ᴍᴇɴᴜ ᴅɪᴛᴜᴛᴜᴘ!**", file=logoyins, buttons=buttons)
+            await event.edit("**ᴍᴇɴᴜ ᴅɪᴛᴜᴛᴜᴘ**", file=logoyins, buttons=buttons)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(
@@ -1203,29 +1203,6 @@ with bot:
 
             else:
                 reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-        @tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"setuju")
-            )
-        )
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                await event.answer(
-                    f"Untuk menyetujui PM, gunakan {cmd}ok", cache_time=0, alert=True)
-            else:
-                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"block")))
-        async def on_pm_click(event):
-            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                await event.edit(
-                    f"Sepertinya {owner} sedang tidak mood untuk mengobrol\nGoodbye.\nPesan Anda telah diabaikan.\njika tidak mau di blokir maka jangan spam!!"
-                )
-            else:
-                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     except BaseException:
