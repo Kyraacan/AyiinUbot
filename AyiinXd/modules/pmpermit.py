@@ -414,8 +414,9 @@ async def permitpm(event):
     chats = await event.get_chat()
     if event.is_private:
         if not sql.is_approved(chats.id):
-            sql.approve(chats.id, "**Menerima Pesan!, Pengguna Terdeteksi Adalah Developer Ayiin-Userbot !!!**"
-            )
+            sql.approve(
+                chats.id,
+                "**Menerima Pesan!, Pengguna Terdeteksi Adalah Developer Ayiin-Userbot !!!**")
 
 
 CMD_HELP.update(
