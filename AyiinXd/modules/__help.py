@@ -27,7 +27,7 @@ async def help(event):
             string += f"`\t\t\t{ICON_HELP}\t\t\t"
         await event.edit("🗿")
         sleep(3)
-        await bot.inline_query(
+        await event.client.inline_query(
             event,
             f"**[✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧](https://github.com/AyiinXd/Ayiin-Userbot)**\n"
             f"**߷ 𝙹𝚄𝙼𝙻𝙰𝙷** `{len(CMD_HELP)}` **Modules**\n"
