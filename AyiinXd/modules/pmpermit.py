@@ -15,34 +15,21 @@ from telethon.tl.types import User
 
 from AyiinXd import BOTLOG_CHATID
 from AyiinXd import CMD_HANDLER as cmd
-from AyiinXd import CMD_HELP, COUNT_PM, DEVS, LASTMSG, LOGS, PM_AUTO_BAN, PM_LIMIT, bot, ibuild_keyboard, tgbot
+from AyiinXd import CMD_HELP, COUNT_PM, LASTMSG, LOGS, PM_AUTO_BAN, PM_LIMIT, bot
 from AyiinXd.events import ayiin_cmd
 from AyiinXd.utils import edit_delete, edit_or_reply
-import AyiinXd.modules.sql_helper.pm_permit_sql as sql
-
-BTN_URL_REGEX = re.compile(
-    r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
-
-text = (f"""
-    ╔═════════════════════╗
-    │ ㅤ 𖣘𝚂𝙴𝙻𝙰𝙼𝙰𝚃 𝙳𝙰𝚃𝙰𝙽𝙶 𝚃𝙾𝙳𖣘ㅤ  ㅤ
-    ╚═════════════════════╝
-    ⍟ 𝙹𝙰𝙽𝙶𝙰𝙽 𝚂𝙿𝙰𝙼 𝙲𝙷𝙰𝚃 𝙼𝙰𝙹𝙸𝙺𝙰𝙽 𝙶𝚄𝙰 𝙺𝙴𝙽𝚃𝙾𝙳
-    ⍟ 𝙶𝚄𝙰 𝙰𝙺𝙰𝙽 𝙾𝚃𝙾𝙼𝙰𝚃𝙸𝚂 𝙱𝙻𝙾𝙺𝙸𝚁 𝙺𝙰𝙻𝙾 𝙻𝚄 𝚂𝙿𝙰𝙼
-    ⍟ 𝙹𝙰𝙳𝙸 𝚃𝚄𝙽𝙶𝙶𝚄 𝚂𝙰𝙼𝙿𝙰𝙸 𝙼𝙰𝙹𝙸𝙺𝙰𝙽 𝙶𝚄𝙰 𝙽𝙴𝚁𝙸𝙼𝙰 𝙿𝙴𝚂𝙰𝙽 𝙻𝚄
-    ╔═════════════════════╗
-    │ㅤㅤ𖣘 𝙿𝙴𝚂𝙰𝙽 𝙾𝚃𝙾𝙼𝙰𝚃𝙸𝚂 𖣘ㅤㅤ
-    │ㅤㅤ𖣘 𝙰𝚈𝙸𝙸𝙽 - 𝚄𝚂𝙴𝚁𝙱𝙾𝚃 𖣘ㅤㅤ
-    ╚═════════════════════╝
-""")
 
 DEF_UNAPPROVED_MSG = (
-    text,
-    buttons=[
-        Button.inline("Terima", data="terima"),
-        Button.inline("Tolak", data="tolak"),
-    ]
-)
+    f"╔═════════════════════╗\n"
+    f"│ ㅤ 𖣘𝚂𝙴𝙻𝙰𝙼𝙰𝚃 𝙳𝙰𝚃𝙰𝙽𝙶 𝚃𝙾𝙳𖣘ㅤ  ㅤ   \n"
+    f"╚═════════════════════╝\n"
+    f"⍟ 𝙹𝙰𝙽𝙶𝙰𝙽 𝚂𝙿𝙰𝙼 𝙲𝙷𝙰𝚃 𝙼𝙰𝙹𝙸𝙺𝙰𝙽 𝙶𝚄𝙰 𝙺𝙴𝙽𝚃𝙾𝙳\n"
+    f"⍟ 𝙶𝚄𝙰 𝙰𝙺𝙰𝙽 𝙾𝚃𝙾𝙼𝙰𝚃𝙸𝚂 𝙱𝙻𝙾𝙺𝙸𝚁 𝙺𝙰𝙻𝙾 𝙻𝚄 𝚂𝙿𝙰𝙼\n"
+    f"⍟ 𝙹𝙰𝙳𝙸 𝚃𝚄𝙽𝙶𝙶𝚄 𝚂𝙰𝙼𝙿𝙰𝙸 𝙼𝙰𝙹𝙸𝙺𝙰𝙽 𝙶𝚄𝙰 𝙽𝙴𝚁𝙸𝙼𝙰 𝙿𝙴𝚂𝙰𝙽 𝙻𝚄\n"
+    f"╔═════════════════════╗\n"
+    f"│ㅤㅤ𖣘 𝙿𝙴𝚂𝙰𝙽 𝙾𝚃𝙾𝙼𝙰𝚃𝙸𝚂 𖣘ㅤㅤ      \n"
+    f"│ㅤㅤ𖣘 𝙰𝚈𝙸𝙸𝙽 - 𝚄𝚂𝙴𝚁𝙱𝙾𝚃 𖣘ㅤㅤ   \n"
+    f"╚═════════════════════╝\n")
 
 
 @bot.on(events.NewMessage(incoming=True))
@@ -202,7 +189,7 @@ async def notifon(non_event):
     )
 
 
-@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(rb"terima")))
+@bot.on(ayiin_cmd(outgoing=True, pattern=r"(?:setuju|ok)\s?(.)?"))
 async def approvepm(apprvpm):
     """For .ok command, give someone the permissions to PM you."""
     try:
@@ -265,7 +252,7 @@ async def approvepm(apprvpm):
     )
 
 
-@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(rb"tolak")))
+@bot.on(ayiin_cmd(outgoing=True, pattern=r"(?:tolak|nopm)\s?(.)?"))
 async def disapprovepm(disapprvpm):
     try:
         from AyiinXd.modules.sql_helper.pm_permit_sql import dissprove
@@ -426,10 +413,11 @@ async def permitpm(event):
     chats = await event.get_chat()
     if event.is_private:
         if not sql.is_approved(chats.id):
-            event.approve(chats.id)
-            await borg.send_message(
+            approve(chats.id):
+            await bot.send_message(
                 chats, f"**Menerima Pesan!, Pengguna Terdeteksi Adalah Developer saya!**"
             )
+
 
 CMD_HELP.update(
     {
