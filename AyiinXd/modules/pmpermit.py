@@ -414,7 +414,7 @@ async def permitpm(event):
         return await edit_delete(event, "`Running on Non-SQL mode!`")
 
     if event.is_private:
-        if not event.is_approved(DEVS):
+        if not is_approved(DEVS):
             await bot.send_message(
                 chats, f"**Menerima Pesan!, Pengguna Terdeteksi Adalah Developer saya!**"
             )
