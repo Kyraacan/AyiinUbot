@@ -18,6 +18,7 @@ from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, COUNT_PM, DEVS, LASTMSG, LOGS, PM_AUTO_BAN, PM_LIMIT, bot
 from AyiinXd.events import ayiin_cmd
 from AyiinXd.utils import edit_delete, edit_or_reply
+import userbot.modules.sql_helper.pm_permit_sql as ayiin
 
 DEF_UNAPPROVED_MSG = (
     f"╔═════════════════════╗\n"
@@ -413,7 +414,7 @@ async def permitpm(event):
     chats = await event.get_chat()
     DEVS = chats.id
     if event.is_private:
-        if not sql.is_approved(chats.id):
+        if not ayiin.is_approved(DEVS):
             await bot.send_message(
                 chats, f"**Menerima Pesan!, Pengguna Terdeteksi Adalah Developer saya!**"
             )
