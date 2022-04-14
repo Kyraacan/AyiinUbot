@@ -163,7 +163,7 @@ async def auto_accept(event):
                     )
 
 
-@bot.on(ayiin_cmd(outgoing=True, pattern=r"notifoff$"))
+@ayiin_cmd(pattern=r"notifoff$")
 async def notifoff(noff_event):
     """For .notifoff command, stop getting notifications from unapproved PMs."""
     try:
@@ -176,7 +176,7 @@ async def notifoff(noff_event):
     )
 
 
-@bot.on(ayiin_cmd(outgoing=True, pattern=r"notifon$"))
+@ayiin_cmd(pattern=r"notifon$")
 async def notifon(non_event):
     """For .notifoff command, get notifications from unapproved PMs."""
     try:
@@ -189,7 +189,7 @@ async def notifon(non_event):
     )
 
 
-@ayiin_cmd(outgoing=True, pattern=r"(?:setuju|ok)\s?(.)?")
+@ayiin_cmd(pattern="(?:setuju|ok)\s?(.)?")
 async def approvepm(apprvpm):
     """For .ok command, give someone the permissions to PM you."""
     try:
@@ -252,7 +252,7 @@ async def approvepm(apprvpm):
     )
 
 
-@ayiin_cmd(outgoing=True, pattern=r"(?:tolak|nopm)\s?(.)?")
+@ayiin_cmd(pattern="(?:tolak|nopm)\s?(.)?")
 async def disapprovepm(disapprvpm):
     try:
         from AyiinXd.modules.sql_helper.pm_permit_sql import dissprove
@@ -306,7 +306,7 @@ async def disapprovepm(disapprvpm):
     )
 
 
-@ayiin_cmd(outgoing=True, pattern=r"block$")
+@ayiin_cmd(pattern="block$")
 async def blockpm(block):
     """For .block command, block people from PMing you!"""
     if block.reply_to_msg_id:
@@ -332,7 +332,7 @@ async def blockpm(block):
         pass
 
 
-@ayiin_cmd(pattern=r"unblock$")
+@ayiin_cmd(pattern="unblock$")
 async def unblockpm(unblock):
     """For .unblock command, let people PMing you again!"""
     if unblock.reply_to_msg_id:
@@ -342,7 +342,7 @@ async def unblockpm(unblock):
         await unblock.edit("**Lu Bebas Dari Blokir Tod Karna Boss Gua Lagi Baik.**")
 
 
-@ayiin_cmd(pattern=r"(set|get|reset) pmpermit(?: |$)(\w*)")
+@ayiin_cmd(pattern="(set|get|reset) pmpermit(?: |$)(\w*)")
 async def add_pmsg(cust_msg):
     """Set your own Unapproved message"""
     if not PM_AUTO_BAN:
