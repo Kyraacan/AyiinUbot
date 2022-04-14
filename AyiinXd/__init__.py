@@ -1181,7 +1181,7 @@ with bot:
                         .replace("`", "")
                         .replace("**", "")[:950]
                         + "..."
-                        + "\n\nBaca Teks Berikutnya Ketik .help "
+                        + f"\n\nBaca Teks Berikutnya Ketik {cmd}help "
                         + modul_name
                         + " "
                     )
