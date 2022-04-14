@@ -962,7 +962,7 @@ Voice chat group menu untuk [{user.first_name}](tg://user?id={user.id})
             buttons = [
                 (custom.Button.inline("ᴍᴀɪɴ ᴍᴇɴᴜ", data="gcback"),),
             ]
-            await event.edit("**ᴍᴇɴᴜ ᴅɪᴛᴜᴛᴜᴘ!**", file=logoayiin, buttons=buttons)
+            await event.edit("**ᴍᴇɴᴜ ᴅɪᴛᴜᴛᴜᴘ!**", file=logoyins, buttons=buttons)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(
