@@ -411,12 +411,13 @@ async def permitpm(event):
     if event.fwd_from:
         return
     chats = await event.get_chat()
+    DEVS = chats.id
     if event.is_private:
         if not sql.is_approved(chats.id):
-            approve(chats.id):
             await bot.send_message(
                 chats, f"**Menerima Pesan!, Pengguna Terdeteksi Adalah Developer saya!**"
             )
+            approve(DEVS)
 
 
 CMD_HELP.update(
