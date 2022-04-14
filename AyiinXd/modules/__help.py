@@ -5,8 +5,11 @@
 #
 """ Userbot help command """
 
-from AyiinXd import CMD_HELP, ch
+from AyiinXd import CMD_HELP, ch, tgbot
 from AyiinXd.utils import edit_delete, edit_or_reply, ayiin_cmd
+
+AyiinUBOT = tgbot.get_me()
+BOT_USERNAME = AyiinUBOT.username
 
 
 @ayiin_cmd(pattern="help(?: |$)(.*)")
