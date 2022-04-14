@@ -15,10 +15,12 @@ from telethon.tl.types import User
 
 from AyiinXd import BOTLOG_CHATID
 from AyiinXd import CMD_HANDLER as cmd
-from AyiinXd import CMD_HELP, COUNT_PM, DEVS, LASTMSG, LOGS, PM_AUTO_BAN, PM_LIMIT, bot
+from AyiinXd import CMD_HELP, COUNT_PM, DEVS, LASTMSG, LOGS, PM_AUTO_BAN, PM_LIMIT, bot, ibuild_keyboard, tgbot
 from AyiinXd.events import ayiin_cmd
 from AyiinXd.utils import edit_delete, edit_or_reply
 import AyiinXd.modules.sql_helper.pm_permit_sql as sql
+
+BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 
 DEF_UNAPPROVED_MSG = (
     f"╔═════════════════════╗\n"
@@ -30,7 +32,14 @@ DEF_UNAPPROVED_MSG = (
     f"╔═════════════════════╗\n"
     f"│ㅤㅤ𖣘 𝙿𝙴𝚂𝙰𝙽 𝙾𝚃𝙾𝙼𝙰𝚃𝙸𝚂 𖣘ㅤㅤ      \n"
     f"│ㅤㅤ𖣘 𝙰𝚈𝙸𝙸𝙽 - 𝚄𝚂𝙴𝚁𝙱𝙾𝚃 𖣘ㅤㅤ   \n"
-    f"╚═════════════════════╝\n")
+    f"╚═════════════════════╝\n"
+    button = [
+       [
+           Button.inline("⍟ Terima ⍟", data="terima"),
+           Button.inline("⍟ Tolak ⍟", data="tolak"),
+       ],
+    ]
+)
 
 
 @bot.on(events.NewMessage(incoming=True))
@@ -190,7 +199,7 @@ async def notifon(non_event):
     )
 
 
-@bot.on(ayiin_cmd(outgoing=True, pattern=r"(?:setuju|ok)\s?(.)?"))
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(rb"terima")))
 async def approvepm(apprvpm):
     """For .ok command, give someone the permissions to PM you."""
     try:
@@ -253,7 +262,7 @@ async def approvepm(apprvpm):
     )
 
 
-@bot.on(ayiin_cmd(outgoing=True, pattern=r"(?:tolak|nopm)\s?(.)?"))
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(rb"tolak")))
 async def disapprovepm(disapprvpm):
     try:
         from AyiinXd.modules.sql_helper.pm_permit_sql import dissprove
