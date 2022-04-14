@@ -28,4 +28,4 @@ async def help(event):
             await event.delete()
         except Exception as e:
             await ayiin.edit(f"**INFO :** `{e}`"
-            )
+                             )
