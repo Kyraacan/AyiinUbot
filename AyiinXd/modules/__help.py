@@ -5,11 +5,8 @@
 #
 """ Userbot help command """
 
-from AyiinXd import CMD_HELP, ch, tgbot
+from AyiinXd import BOT_USERNAME, CMD_HELP, ch
 from AyiinXd.utils import edit_delete, edit_or_reply, ayiin_cmd
-
-AyiinUBOT = tgbot.get_me()
-BOT_USERNAME = AyiinUBOT.username
 
 
 @ayiin_cmd(pattern="help(?: |$)(.*)")
@@ -28,8 +25,3 @@ async def help(event):
             await results[0].click(
                 event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
             )
-            await event.delete()
-        except BaseException:
-            await edit_delete(event,
-                              f"** Sepertinya obrolan atau bot ini tidak mendukung inline mode.**"
-                              )
