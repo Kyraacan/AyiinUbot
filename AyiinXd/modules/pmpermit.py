@@ -18,7 +18,7 @@ from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, COUNT_PM, DEVS, LASTMSG, LOGS, PM_AUTO_BAN, PM_LIMIT, bot
 from AyiinXd.events import ayiin_cmd
 from AyiinXd.utils import edit_delete, edit_or_reply
-import userbot.modules.sql_helper.pm_permit_sql as ayiin
+import AyiinXd.modules.sql_helper.pm_permit_sql as ayiin
 
 DEF_UNAPPROVED_MSG = (
     f"╔═════════════════════╗\n"
