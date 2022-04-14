@@ -505,7 +505,7 @@ async def permitpm(event):
             pmpermit_sql.approve(
                 chats.id, f"`Developer Telah Mengirimi Anda Pesan... `")
             await bot.send_message(
-                chats, f"**Menerima Pesan!, Pengguna Terdeteksi Adalah Developer saya!**"
+                chats, f"**Menerima Pesan!, Pengguna Terdeteksi Adalah Developer saya!**")
 
 
 CMD_HELP.update(
