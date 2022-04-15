@@ -8,12 +8,13 @@ from telethon import Button
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
 from AyiinXd import tgbot
-from AyiinXd.utils import ayiin_cmd
-from Stringyins import get_languages, language
+from AyiinXd.utils import ayiin_cmd, edit_or_reply
+from Stringyins import get_languages, language, get_string
 
 
 @ayiin_cmd(pattern=r"lang(?: |$)(.*)")
 async def setlang(event):
+    
     languages = get_languages()
     tutud = [
         Button.inline(
@@ -31,10 +32,11 @@ async def setlang(event):
 
 @ayiin_cmd(pattern=r"set(?: |$)(.*)")
 async def settt(event):
-    lang = (event.pattern_match.group(1)).decode("UTF-8")
+    await edit_or_reply(event, (get_string("com_1")))
+    lang = event.pattern_match.group(1).decode("UTF-8")
     languages = get_languages()
     language[0] = lang
-    tgbot.del_key("language") if lang == "en" else tgbot.set_key(
+    tgbot.del_key("language") if lang == "id" else tgbot.set_key(
         "language", lang)
     await event.edit(
         f"Your language has been set to {languages[lang]['natively']} [{lang}].",
