@@ -3,13 +3,8 @@
 #
 #
 
-import sys
-import traceback
-from io import BytesIO, StringIO
-from os import remove
-from pprint import pprint
+from io import BytesIO
 
-from telethon.utils import get_display_name
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
