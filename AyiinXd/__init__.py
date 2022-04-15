@@ -1063,17 +1063,17 @@ with bot:
                    buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")])
                    )
             else:
-                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+                reply_pop_up_alert=f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time = 0, alert = True)
 
-        @tgbot.on(
+        @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"removebg")
             )
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                text = (
+                text=(
                     f"""
 ✘ **Commands available in Remove Bg** ✘
 
@@ -1083,14 +1083,14 @@ with bot:
 """)
                 await event.edit(
                     text,
-                    file=logoyins,
-                    link_preview=True,
-                    buttons=[Button.inline("ʙᴀᴄᴋ", data="editor_yins")])
+                    file = logoyins,
+                    link_preview = True,
+                    buttons = [Button.inline("ʙᴀᴄᴋ", data="editor_yins")])
             else:
-                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+                reply_pop_up_alert=f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time = 0, alert = True)
 
-        @tgbot.on(
+        @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"yinsimg")
             )
