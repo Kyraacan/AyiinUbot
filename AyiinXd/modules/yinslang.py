@@ -42,7 +42,8 @@ async def settt(event):
     lang = event.pattern_match.group(1).strip()
     languages = get_languages()
     language[0] = lang
-    client.del_key("language") if lang == "id" else client.set_key("language", lang)
+       set_key(languages, lang)
+    tgbot.del_key("language") if lang == "id" else tgbot.set_key("language", lang)
     await event.edit(
         f"Your language has been set to {languages[lang]['natively']} [{lang}].",
         buttons=[Button.inline("Back", data="lang")],
