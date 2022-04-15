@@ -16,8 +16,6 @@ try:
 except ImportError:
     black = None
 
-from . import *
-
 
 @ayiin_cmd(pattern="bash(?: |$)(.*)")
 async def _(event):
@@ -27,7 +25,7 @@ async def _(event):
         return await edit_delete(event, "`Beri perintah yang bener bego...`")
     xx = await edit_or_reply(event, "`Processing tod...`")
     reply_to_id = event.reply_to_msg_id or event.id
-    stdout, stderr = await bash(cmd)
+    stdout, stderr = await aexec(cmd)
     OUT = f"**☞ BASH\n\n• COMMAND:**\n`{cmd}` \n\n"
     if stderr:
         OUT += f"**• ERROR:** \n`{stderr}`\n\n"
