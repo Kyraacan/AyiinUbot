@@ -10,7 +10,7 @@ from io import BytesIO
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd.utils import ayiin_cmd, edit_delete, edit_or_reply
+from AyiinXd.utils import ayiin_cmd
 from Stringyins import get_string
 
 # Used for Formatting Eval Code, if installed
