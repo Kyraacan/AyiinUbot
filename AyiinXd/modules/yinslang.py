@@ -9,7 +9,13 @@ from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
 from AyiinXd import tgbot
 from AyiinXd.utils import ayiin_cmd, edit_or_reply
-from Stringyins import get_languages, language, get_string, set_key
+from Stringyins import get_languages, language, get_string
+
+async def set_key(event, name, value):
+    try:
+        tgbot.set_key(name, value)
+    except BaseException:
+        return await event.edit("`Something Went Wrong`")
 
 
 @ayiin_cmd(pattern=r"lang(?: |$)(.*)")
