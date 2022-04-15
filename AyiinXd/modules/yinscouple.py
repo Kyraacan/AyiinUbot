@@ -12,7 +12,7 @@ from secrets import choice
 from telethon.tl.types import InputMessagesFilterPhotos
 
 from AyiinXd import CMD_HANDLER as cmd
-from AyiinXd import CMD_HELP, owner
+from AyiinXd import CMD_HELP
 from AyiinXd.utils import ayiin_cmd, edit_or_reply
 
 
@@ -35,7 +35,7 @@ async def couple(bucin):
         await bucin.client.send_file(
             bucin.chat_id,
             file=choice(bucinan),
-            caption=f" Ambil Ni Pp Bucin Lu [{owner}](tg://user?id={cang.id})",
+            caption=f" Ambil Ni Pp Bucin Lu [{cang.first_name}](tg://user?id={cang.id})",
         )
         await bucin.delete()
     except Exception:
