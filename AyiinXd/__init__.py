@@ -1053,16 +1053,18 @@ with bot:
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            lang = event.data_match.group(1).decode("UTF-8")
-            languages = get_languages()
-            language[0] = lang
-            tgbot._del("language") if lang == "id" else tgbot._set(
-                "language", lang)
-            await event.edit(
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                lang = int(
+                    event.data_match.group(1).decode("UTF-8"))
+                languages = get_languages()
+                language[0] = lang
+                tgbot._del("language") if lang == "id" else tgbot._set(
+                    "language", lang)
+                await event.edit(
                 f"Your language has been set to {languages[lang]['natively']} [{lang}].",
                 buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")]
             )
-            if not tgbot:
+            else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
