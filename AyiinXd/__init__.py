@@ -1062,7 +1062,7 @@ with bot:
                 f"Your language has been set to {languages[lang]['natively']} [{lang}].",
                 buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")]
             )
-            else:
+            if not tgbot:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
