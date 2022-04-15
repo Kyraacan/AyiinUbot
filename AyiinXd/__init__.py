@@ -1056,10 +1056,10 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 languages = get_languages()
                 language[0] = languages
-                tgbot._del("language") if languages == "id" else tgbot._set(
+                tgbot._del("language") if languages == "id" else tgbot.set(
                     "language", languages)
                 await event.edit(
-                    f"Your language has been set to {languages[lang]['natively']} [{lang}].",
+                    f"Your language has been set to {languages[languages]['natively']} [{languages}].",
                     buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")]
                 )
             else:
@@ -1075,10 +1075,10 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 languages = get_languages()
                 language[0] = languages
-                tgbot._del("language") if languages == "en" else tgbot._set(
+                tgbot._del("language") if languages == "en" else tgbot.set(
                     "language", languages)
                 await event.edit(
-                    f"Your language has been set to {languages[lang]['natively']} [{lang}].",
+                    f"Your language has been set to {languages[languages]['natively']} [{languages}].",
                     buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")]
                 )
             else:
