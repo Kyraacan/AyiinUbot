@@ -12,7 +12,7 @@ from telethon.utils import get_display_name
 
 from AyiinXd import BOTLOG_CHATID
 from AyiinXd import CMD_HANDLER as cmd
-from AyiinXd import CMD_HELP, bot, tgbot, user
+from AyiinXd import CMD_HELP, bot, tgbot
 from AyiinXd.modules.sql_helper.bot_blacklists import (
     add_user_to_bl,
     check_is_black_list,
@@ -37,6 +37,7 @@ from AyiinXd.utils.logger import logging
 
 LOGS = logging.getLogger(__name__)
 
+user = tgbot.get_me()
 OWNER_ID = user.id
 OWNER = user.first_name
 FINISHED_PROGRESS_STR = "●"
