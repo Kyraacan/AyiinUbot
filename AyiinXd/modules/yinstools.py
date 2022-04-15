@@ -5,10 +5,10 @@
 
 from io import BytesIO
 
-
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
 from AyiinXd.utils import ayiin_cmd, edit_delete, edit_or_reply
+from Stringyins import get_string
 
 # Used for Formatting Eval Code, if installed
 try:
@@ -22,8 +22,8 @@ async def _(event):
     try:
         cmd = event.text.split(" ", maxsplit=1)[1]
     except IndexError:
-        return await edit_delete(event, "`Beri perintah yang bener bego...`")
-    xx = await edit_or_reply(event, "`Processing tod...`")
+        return await edit_delete(get_string("devs_1"))
+    xx = await edit_or_reply(get_string("com_1"))
     reply_to_id = event.reply_to_msg_id or event.id
     stdout, stderr = await aexec(cmd)
     OUT = f"**☞ BASH\n\n• COMMAND:**\n`{cmd}` \n\n"
