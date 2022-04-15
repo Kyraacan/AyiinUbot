@@ -16,6 +16,7 @@ try:
 except ImportError:
     black = None
 
+from . import *
 
 @ayiin_cmd(pattern="bash(?: |$)(.*)")
 async def _(event):
