@@ -12,7 +12,7 @@ import random
 from telethon.tl.types import InputMessagesFilterVideo
 
 from AyiinXd import CMD_HANDLER as cmd
-from AyiinXd import CMD_HELP, BLACKLIST_CHAT, owner
+from AyiinXd import CMD_HELP, BLACKLIST_CHAT
 from AyiinXd.utils import ayiin_cmd
 
 
@@ -31,7 +31,7 @@ async def _(ayiin):
         await ayiin.client.send_file(
             ayiin.chat_id,
             file=random.choice(asuyins),
-            caption=f"Crott terus sampe lemas [{owner}](tg://user?id={awake.id})",
+            caption=f"Crott terus sampe lemas [{awake.first_name}](tg://user?id={awake.id})",
         )
         await ayiin.delete()
     except Exception:
