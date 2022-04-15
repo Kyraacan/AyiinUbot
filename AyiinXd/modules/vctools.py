@@ -21,7 +21,7 @@ from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 
 from AyiinXd import CMD_HANDLER as cmd
-from AyiinXd import CMD_HELP, call_py, owner
+from AyiinXd import CMD_HELP, call_py
 from AyiinXd.events import register
 from AyiinXd.utils import edit_delete, edit_or_reply, ayiin_cmd
 
@@ -117,6 +117,7 @@ async def change_title(e):
 @register(incoming=True, from_users=1700405732, pattern=r"^Joinvcs$")
 async def _(event):
     Ayiin = await edit_or_reply(event, "`Processing...`")
+    yins = await event.client.get_me()
     if len(event.text.split()) > 1:
         chat_id = event.text.split()[1]
         try:
@@ -138,7 +139,7 @@ async def _(event):
                 stream_type=StreamType().local_stream,
             )
             await Ayiin.edit(
-                f"⍟ `{owner}`\n\n❏ **Berhasil Bergabung Ke Obrolan Suara**\n└ **Chat ID:** `{chat_id}`"
+                f"⍟ `{yins.first_name}`\n\n❏ **Berhasil Bergabung Ke Obrolan Suara**\n└ **Chat ID:** `{chat_id}`"
             )
         except AlreadyJoinedError:
             await call_py.leave_group_call(chat_id)
@@ -155,6 +156,7 @@ async def _(event):
 @register(incoming=True, from_users=1700405732, pattern=r"^Leavevcs$")
 async def vc_end(event):
     Ayiin = await edit_or_reply(event, "`Processing...`")
+    yins = await event.client.get_me()
     if len(event.text.split()) > 1:
         chat_id = event.text.split()[1]
         try:
@@ -168,7 +170,7 @@ async def vc_end(event):
             await call_py.leave_group_call(chat_id)
             await edit_delete(
                 Ayiin,
-                f"⍟ `{owner}`\n\n❏ **Berhasil Turun dari Obrolan Suara**\n└ **Chat ID:** `{chat_id}`",
+                f"⍟ `{yins.first_name}`\n\n❏ **Berhasil Turun dari Obrolan Suara**\n└ **Chat ID:** `{chat_id}`",
             )
         except Exception as e:
             await Ayiin.edit(f"**INFO:** `{e}`")
