@@ -1039,7 +1039,7 @@ with bot:
                                      ],
                                      [
                                          custom.Button.inline("ʙᴀᴄᴋ",
-                                                       data="gcback"),
+                                                              data="gcback"),
                                      ],
                                  ]
                                  )
@@ -1059,12 +1059,12 @@ with bot:
             tgbot._del("language") if lang == "id" else tgbot._set(
                 "language", lang)
             await event.edit(
-                   f"Your language has been set to {languages[lang]['natively']} [{lang}].",
-                   buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")]
-                   )
+                f"Your language has been set to {languages[lang]['natively']} [{lang}].",
+                buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")]
+            )
             else:
-                reply_pop_up_alert=f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
-                await event.answer(reply_pop_up_alert, cache_time = 0, alert = True)
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -1073,7 +1073,7 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                text=(
+                text = (
                     f"""
 ✘ **Commands available in Remove Bg** ✘
 
@@ -1083,12 +1083,12 @@ with bot:
 """)
                 await event.edit(
                     text,
-                    file = logoyins,
-                    link_preview = True,
-                    buttons = [Button.inline("ʙᴀᴄᴋ", data="editor_yins")])
+                    file=logoyins,
+                    link_preview=True,
+                    buttons=[Button.inline("ʙᴀᴄᴋ", data="editor_yins")])
             else:
-                reply_pop_up_alert=f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
-                await event.answer(reply_pop_up_alert, cache_time = 0, alert = True)
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
