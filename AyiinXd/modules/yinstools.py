@@ -3,7 +3,6 @@
 #
 #
 
-import asyncio
 
 from pprint import pprint
 from io import BytesIO
