@@ -1,13 +1,10 @@
 import os
-import re
 
 from os import listdir, path
 from typing import Any, Dict, List, Union
 
 from google_trans_new import google_translator
-from AyiinXd import bot
 from AyiinXd.utils.logger import logging
-from requests import get
 from yaml import safe_load
 
 LOGS = logging.getLogger(__name__)
