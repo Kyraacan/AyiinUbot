@@ -8,7 +8,7 @@ from yaml import safe_load
 
 LOGS = logging.getLogger(__name__)
 
-language = [bot.get_key("language") or "en"]
+language = [bot.get("language") or "en"]
 languages = {}
 
 Trs = google_translator()
