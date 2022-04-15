@@ -1028,7 +1028,7 @@ with bot:
         async def about(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 await event.edit(f"""
-•Menu• - Editor untuk [{user.first_name}](tg://user?id={user.id})
+•Menu• - Bahasa untuk [{user.first_name}](tg://user?id={user.id})
 """,
                                  buttons=[
                                      [
@@ -1055,7 +1055,7 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 lang = int(
-                    event.data_match.group(1).decode("UTF-8"))
+                    event.data_match.group(1))
                 languages = get_languages()
                 language[0] = lang
                 tgbot._del("language") if lang == "id" else tgbot._set(
@@ -1076,10 +1076,10 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 lang = int(
-                    event.data_match.group(1).decode("UTF-8"))
+                    event.data_match.group(1))
                 languages = get_languages()
                 language[0] = lang
-                tgbot._del("language") if lang == "id" else tgbot._set(
+                tgbot._del("language") if lang == "en" else tgbot._set(
                     "language", lang)
                 await event.edit(
                     f"Your language has been set to {languages[lang]['natively']} [{lang}].",
