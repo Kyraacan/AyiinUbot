@@ -8,7 +8,7 @@ from yaml import safe_load
 
 LOGS = logging.getLogger(__name__)
 
-language = [bot.get("language") or "en"]
+language = [bot.get("language") or "id"]
 languages = {}
 
 Trs = google_translator()
@@ -33,10 +33,10 @@ def get_string(key: str) -> Any:
         return languages[lang][key]
     except KeyError:
         try:
-            en_ = languages["en"][key]
-            tr = Trs.translate(en_, lang_tgt=lang).replace("\\ N", "\n")
-            if en_.count("{}") != tr.count("{}"):
-                tr = en_
+            id_ = languages["if"][key]
+            tr = Trs.translate(id_, lang_tgt=lang).replace("\\ N", "\n")
+            if id_.count("{}") != tr.count("{}"):
+                tr = id_
             if languages.get(lang):
                 languages[lang][key] = tr
             else:
@@ -46,7 +46,7 @@ def get_string(key: str) -> Any:
             return f"Warning: could not load any string with the key `{key}`"
         except Exception as er:
             LOGS.exception(er)
-            return languages["en"].get(
+            return languages["id"].get(
                 key) or f"Failed to load language string '{key}'"
 
 
