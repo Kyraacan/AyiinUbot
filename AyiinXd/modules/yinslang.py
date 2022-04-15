@@ -9,7 +9,7 @@ from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
 from AyiinXd import tgbot
 from AyiinXd.utils import ayiin_cmd, edit_or_reply
-from Stringyins import get_languages, language, get_string
+from Stringyins import get_languages, language, get_string, set_key
 
 
 @ayiin_cmd(pattern=r"lang(?: |$)(.*)")
