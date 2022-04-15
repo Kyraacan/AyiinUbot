@@ -61,10 +61,3 @@ def get_languages() -> Dict[str, Union[str, List[str]]]:
         }
         for code in languages
     }
-
-
-async def set_key(event, name, value):
-    try:
-        tgbot.set_key(name, value)
-    except BaseException:
-        return await event.edit("`Something Went Wrong`")
