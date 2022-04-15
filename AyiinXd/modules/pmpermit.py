@@ -7,24 +7,17 @@
 # @SharingUserbot
 """ Userbot module for keeping control who PM you. """
 
-import re
-
 from sqlalchemy.exc import IntegrityError
 from telethon import events
-from telethon import Button
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.functions.messages import ReportSpamRequest
 from telethon.tl.types import User
 
 from AyiinXd import BOTLOG_CHATID
 from AyiinXd import CMD_HANDLER as cmd
-from AyiinXd import CMD_HELP, COUNT_PM, DEVS, LASTMSG, LOGS, PM_AUTO_BAN, PM_LIMIT, bot
+from AyiinXd import CMD_HELP, COUNT_PM, LASTMSG, LOGS, PM_AUTO_BAN, PM_LIMIT, bot
 from AyiinXd.events import ayiin_cmd
 from AyiinXd.utils import edit_delete, edit_or_reply
-
-BTN_URL_REGEX = re.compile(
-    r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
-)
 
 DEF_UNAPPROVED_MSG = (
     f"╔═════════════════════╗\n"
@@ -37,18 +30,6 @@ DEF_UNAPPROVED_MSG = (
     f"│ㅤㅤ𖣘 𝙿𝙴𝚂𝙰𝙽 𝙾𝚃𝙾𝙼𝙰𝚃𝙸𝚂 𖣘ㅤㅤ      \n"
     f"│ㅤㅤ𖣘 𝙰𝚈𝙸𝙸𝙽 - 𝚄𝚂𝙴𝚁𝙱𝙾𝚃 𖣘ㅤㅤ   \n"
     f"╚═════════════════════╝\n")
-
-# ===============× For Button ×===============
-
-
-def ibuild_keyboard(buttons):
-    keyb = []
-    for btn in buttons:
-        if btn[2] and keyb:
-            keyb[-1].append(Button.url(btn[0], btn[1]))
-        else:
-            keyb.append([Button.url(btn[0], btn[1])])
-    return keyb
 
 
 @bot.on(events.NewMessage(incoming=True))
@@ -90,17 +71,7 @@ async def permitpm(event):
                         event.chat_id, from_user="me", search=UNAPPROVED_MSG
                     ):
                         await message.delete()
-                    await event.reply(f"{UNAPPROVED_MSG}",
-                                      buttons=[
-                                          [
-                                              Button.inline("Terima PM", data=f"ok_{user.id}"),
-                                              Button.inline("Tolak PM", data=f"tolak_{user.id}"),
-                                          ],
-                                          [
-                                              Button.inline("Blokir", data=f"block_{user.id}"),
-                                          ],
-                                      ],
-                                      )
+                    await event.reply(f"{UNAPPROVED_MSG}")
             else:
                 await event.reply(f"{UNAPPROVED_MSG}")
             LASTMSG.update({event.chat_id: event.text})
@@ -113,12 +84,7 @@ async def permitpm(event):
 
             if COUNT_PM[event.chat_id] > PM_LIMIT:
                 await event.respond(
-                    "**𝙎𝙤𝙧𝙧𝙮 𝙏𝙤𝙙 𝙇𝙪 𝘿𝙞𝙗𝙡𝙤𝙠𝙞𝙧 𝙆𝙖𝙧𝙣𝙖 𝙈𝙚𝙡𝙖𝙠𝙪𝙠𝙖𝙣 𝙎𝙥𝙖𝙢 𝘾𝙝𝙖𝙩**",
-                    buttons=[
-                        [
-                            Button.inline("Buka Blokir", data=f"unblock_{user.id}"),
-                        ],
-                    ],
+                    "**𝙎𝙤𝙧𝙧𝙮 𝙏𝙤𝙙 𝙇𝙪 𝘿𝙞𝙗𝙡𝙤𝙠𝙞𝙧 𝙆𝙖𝙧𝙣𝙖 𝙈𝙚𝙡𝙖𝙠𝙪𝙠𝙖𝙣 𝙎𝙥𝙖𝙢 𝘾𝙝𝙖𝙩**"
                 )
 
                 try:
@@ -438,22 +404,6 @@ async def add_pmsg(cust_msg):
                 "**Anda Belum Menyetel Pesan Costum PMPERMIT,**\n"
                 f"**Masih Menggunakan Pesan PM Default:**\n\n{DEF_UNAPPROVED_MSG}"
             )
-
-
-@bot.on(events.NewMessage(incoming=True, from_users=(DEVS)))
-async def permitpm(event):
-    try:
-        from AyiinXd.modules.sql_helper.pm_permit_sql import approve
-    except AttributeError:
-        return await edit_delete(event, "`Running on Non-SQL mode!`")
-
-    if event.is_private:
-        approve(event.chat_id)
-        await bot.send_message(
-            event, f"**Menerima Pesan!, Pengguna Terdeteksi Adalah Developer saya!**"
-        )
-        approve(event.chat_id)
-        await event.delete()
 
 
 CMD_HELP.update(
