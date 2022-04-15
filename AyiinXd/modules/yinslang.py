@@ -29,9 +29,9 @@ async def setlang(event):
     await event.edit("List Of Available Languages.", buttons=buttons)
 
 
-@ayiin_cmd(pattern=r"set (?: |$)(.*)")
+@ayiin_cmd(pattern=r"set(?: |$)(.*)")
 async def settt(event):
-    lang = pattern_match.group(1).decode("UTF-8")
+    lang = (event.pattern_match.group(1)).decode("UTF-8")
     languages = get_languages()
     language[0] = lang
     tgbot.del_key("language") if lang == "en" else tgbot.set_key(
