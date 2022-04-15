@@ -580,6 +580,7 @@ with bot:
         from AyiinXd.modules.sql_helper.bot_blacklists import check_is_black_list
         from AyiinXd.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
         from AyiinXd.utils import reply_id
+        from Stringyins import get_languages, get_string, language
 
         dugmeler = CMD_HELP
         user = bot.get_me()
@@ -597,8 +598,8 @@ with bot:
 
         main_help_button = [
             [
+                Button.inline("⍟ lang ᴍᴇɴᴜ ⍟", data="langs_yins"),
                 Button.inline("⍟ ᴋᴏɴᴛᴇɴ ᴍᴇɴᴜ ⍟", data="konten_yins"),
-                Button.inline("⍟ ᴇᴅɪᴛᴏʀ ᴍᴇɴᴜ ⍟", data="editor_yins"),
             ],
             [
                 Button.inline("⍟ ᴍᴏᴅᴜʟᴇs ⍟", data="reopen"),
@@ -1023,7 +1024,7 @@ with bot:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(events.CallbackQuery(data=b"editor_yins"))
+        @tgbot.on(events.CallbackQuery(data=b"langs_yins"))
         async def about(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 await event.edit(f"""
@@ -1031,15 +1032,15 @@ with bot:
 """,
                                  buttons=[
                                      [
-                                         Button.inline("⍟ ᴇᴅɪᴛᴏʀ ғᴏᴛᴏ ⍟",
-                                                       data="yinsimg"),
-                                         Button.inline("⍟ ғᴏᴛᴏ ᴄᴏᴜᴘʟᴇ ⍟",
-                                                       data="yinscouple")],
+                                         Button.inline("⍟ indonesia ⍟",
+                                                       data="indo"),
+                                         Button.inline("⍟ inggris ⍟",
+                                                       data="inggris"),
+                                     ],
                                      [
-                                         Button.inline("⍟ ʀᴇᴍᴏᴠᴇ ʙɢ ⍟",
-                                                       data="removebg")],
-                                     [custom.Button.inline(
-                                         "ʙᴀᴄᴋ", data="gcback")],
+                                         custom.Button.inline("ʙᴀᴄᴋ",
+                                                       data="gcback"),
+                                     ],
                                  ]
                                  )
             else:
@@ -1048,23 +1049,19 @@ with bot:
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"yinscouple")
+                data=re.compile(rb"indo")
             )
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                text = (
-                    f"""
-✘ **Commands available in Foto Couple** ✘
-
-  »  **Perintah : **`{cmd}couple`
-  »  **Kegunaan :** __Untuk Mendapatkan Foto Couple Secara Random.__
-""")
-                await event.edit(
-                    text,
-                    file=logoyins,
-                    link_preview=True,
-                    buttons=[Button.inline("ʙᴀᴄᴋ", data="editor_yins")])
+            lang = event.data_match.group(1).decode("UTF-8")
+            languages = get_languages()
+            language[0] = lang
+            tgbot.del("language") if lang == "id" else tgbot.set("language", lang)
+            await event.edit(
+                   f"Your language has been set to {languages[lang]['natively']} [{lang}].",
+                   buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")])
+                   )
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
