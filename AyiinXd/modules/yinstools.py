@@ -3,6 +3,7 @@
 #
 #
 
+import asyncio
 
 from pprint import pprint
 from io import BytesIO
@@ -11,7 +12,6 @@ from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
 from AyiinXd.utils import ayiin_cmd, edit_delete, edit_or_reply
 from Stringyins import get_string
-from.evaluators import aexec
 
 # Used for Formatting Eval Code, if installed
 try:
@@ -30,7 +30,7 @@ async def _(event):
         return await edit_delete(get_string("devs_1"))
     xx = await edit_or_reply(get_string("com_1"))
     reply_to_id = event.reply_to_msg_id or event.id
-    stdout, stderr = await aexec(cmd)
+    stdout, stderr = await asyncio.create_subprocess_shell(cmd)
     OUT = f"**☞ BASH\n\n• COMMAND:**\n`{cmd}` \n\n"
     if stderr:
         OUT += f"**• ERROR:** \n`{stderr}`\n\n"
