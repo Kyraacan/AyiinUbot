@@ -598,7 +598,7 @@ with bot:
 
         main_help_button = [
             [
-                Button.inline("⍟ lang ᴍᴇɴᴜ ⍟", data="langs_yins"),
+                Button.inline("⍟ ʟᴀɴɢᴜᴀɴɢᴇ ᴍᴇɴᴜ ⍟", data="langs_yins"),
                 Button.inline("⍟ ᴋᴏɴᴛᴇɴ ᴍᴇɴᴜ ⍟", data="konten_yins"),
             ],
             [
@@ -1068,26 +1068,23 @@ with bot:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"removebg")
+                data=re.compile(rb"inggris")
             )
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                text = (
-                    f"""
-✘ **Commands available in Remove Bg** ✘
-
-  »  **Perintah :** `{cmd}rbg` <Tautan ke Gambar> atau balas gambar apa pun.
-  »  **Kegunaan : **Menghapus latar belakang gambar, menggunakan API TOKEN remove.bg.
-  »  **Peringatan :** tidak berfungsi pada stiker.
-""")
+                lang = int(
+                    event.data_match.group(1).decode("UTF-8"))
+                languages = get_languages()
+                language[0] = lang
+                tgbot._del("language") if lang == "id" else tgbot._set(
+                    "language", lang)
                 await event.edit(
-                    text,
-                    file=logoyins,
-                    link_preview=True,
-                    buttons=[Button.inline("ʙᴀᴄᴋ", data="editor_yins")])
+                    f"Your language has been set to {languages[lang]['natively']} [{lang}].",
+                    buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")]
+                )
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
