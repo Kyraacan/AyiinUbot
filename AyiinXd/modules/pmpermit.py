@@ -7,6 +7,8 @@
 # @SharingUserbot
 """ Userbot module for keeping control who PM you. """
 
+import re
+
 from sqlalchemy.exc import IntegrityError
 from telethon import events
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
