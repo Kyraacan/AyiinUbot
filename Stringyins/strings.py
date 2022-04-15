@@ -5,6 +5,7 @@ from typing import Any, Dict, List, Union
 
 from google_trans_new import google_translator
 from AyiinXd.utils.logger import logging
+from AyiinXd import tgbot
 from yaml import safe_load
 
 LOGS = logging.getLogger(__name__)
@@ -34,7 +35,7 @@ def get_string(key: str) -> Any:
         return languages[lang][key]
     except KeyError:
         try:
-            id_ = languages["if"][key]
+            id_ = languages["id"][key]
             tr = Trs.translate(id_, lang_tgt=lang).replace("\\ N", "\n")
             if id_.count("{}") != tr.count("{}"):
                 tr = id_
@@ -60,3 +61,10 @@ def get_languages() -> Dict[str, Union[str, List[str]]]:
         }
         for code in languages
     }
+
+
+async def set_key(event, name, value):
+    try:
+        tgbot.set_key(name, value)
+    except BaseException:
+        return await event.edit("`Something Went Wrong`")
