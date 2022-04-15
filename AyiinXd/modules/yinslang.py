@@ -13,7 +13,7 @@ from Stringyins import get_languages, language, get_string
 
 async def set_key(event, name, value):
     try:
-        tgbot.set_key(name, value)
+        set_key(name, value)
     except BaseException:
         return await event.edit("`Something Went Wrong`")
 
