@@ -1056,7 +1056,8 @@ with bot:
             lang = event.data_match.group(1).decode("UTF-8")
             languages = get_languages()
             language[0] = lang
-            tgbot._del("language") if lang == "id" else tgbot._set("language", lang)
+            tgbot._del("language") if lang == "id" else tgbot._set(
+                "language", lang)
             await event.edit(
                    f"Your language has been set to {languages[lang]['natively']} [{lang}].",
                    buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")])
