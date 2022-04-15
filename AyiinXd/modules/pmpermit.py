@@ -51,17 +51,6 @@ def ibuild_keyboard(buttons):
     return keyb
 
 
-main_permit_button = [
-    [
-        Button.inline("Terima", data=f"ok_{user.id}"),
-        Button.inline("Tolak", data=f"tolak_{user.id}"),
-    ],
-    [
-        Button.url("Blokir", data=f"block_{user.id}"),
-    ],
-]
-
-
 @bot.on(events.NewMessage(incoming=True))
 async def permitpm(event):
     """ Prohibits people from PMing you without approval. \
