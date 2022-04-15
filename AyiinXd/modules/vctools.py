@@ -139,7 +139,7 @@ async def _(event):
                 stream_type=StreamType().local_stream,
             )
             await Ayiin.edit(
-                f"⍟ `{yins.first_name}`\n\n❏ **Berhasil Bergabung Ke Obrolan Suara**\n└ **Chat ID:** `{chat_id}`"
+                f"⍟ [{yins.first_name}](tg://user?id={awake.id})\n\n❏ **Berhasil Bergabung Ke Obrolan Suara**\n└ **Chat ID:** `{chat_id}`"
             )
         except AlreadyJoinedError:
             await call_py.leave_group_call(chat_id)
@@ -170,7 +170,7 @@ async def vc_end(event):
             await call_py.leave_group_call(chat_id)
             await edit_delete(
                 Ayiin,
-                f"⍟ `{yins.first_name}`\n\n❏ **Berhasil Turun dari Obrolan Suara**\n└ **Chat ID:** `{chat_id}`",
+                f"⍟ [{yins.first_name}](tg://user?id={yins.id})\n\n❏ **Berhasil Turun dari Obrolan Suara**\n└ **Chat ID:** `{chat_id}`",
             )
         except Exception as e:
             await Ayiin.edit(f"**INFO:** `{e}`")
