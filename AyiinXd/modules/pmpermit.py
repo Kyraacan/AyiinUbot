@@ -19,6 +19,10 @@ from AyiinXd import CMD_HELP, COUNT_PM, DEVS, LASTMSG, LOGS, PM_AUTO_BAN, PM_LIM
 from AyiinXd.events import ayiin_cmd
 from AyiinXd.utils import edit_delete, edit_or_reply
 
+BTN_URL_REGEX = re.compile(
+            r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
+        )
+
 DEF_UNAPPROVED_MSG = (
     f"╔═════════════════════╗\n"
     f"│ ㅤ 𖣘𝚂𝙴𝙻𝙰𝙼𝙰𝚃 𝙳𝙰𝚃𝙰𝙽𝙶 𝚃𝙾𝙳𖣘ㅤ  ㅤ   \n"
@@ -30,6 +34,27 @@ DEF_UNAPPROVED_MSG = (
     f"│ㅤㅤ𖣘 𝙿𝙴𝚂𝙰𝙽 𝙾𝚃𝙾𝙼𝙰𝚃𝙸𝚂 𖣘ㅤㅤ      \n"
     f"│ㅤㅤ𖣘 𝙰𝚈𝙸𝙸𝙽 - 𝚄𝚂𝙴𝚁𝙱𝙾𝚃 𖣘ㅤㅤ   \n"
     f"╚═════════════════════╝\n")
+
+# ===============× For Button ×===============
+
+def ibuild_keyboard(buttons):
+    keyb = []
+    for btn in buttons:
+        if btn[2] and keyb:
+            keyb[-1].append(Button.url(btn[0], btn[1]))
+        else:
+            keyb.append([Button.url(btn[0], btn[1])])
+    return keyb
+
+main_permit_button = [
+            [
+                Button.inline("Terima", data=f"ok_{user.id}"),
+                Button.inline("Tolak", data=f"tolak_{user.id}"),
+            ],
+            [
+                Button.url("Blokir", data=f"block_{user.id}"),
+            ],
+        ]
 
 
 @bot.on(events.NewMessage(incoming=True))
@@ -71,7 +96,17 @@ async def permitpm(event):
                         event.chat_id, from_user="me", search=UNAPPROVED_MSG
                     ):
                         await message.delete()
-                    await event.reply(f"{UNAPPROVED_MSG}")
+                    await event.reply(f"{UNAPPROVED_MSG}",
+                    buttons=[
+                     [
+                        Button.inline("Terima PM", data=f"ok_{user.id}"),
+                        Button.inline("Tolak PM", data=f"tolak_{user.id}"),
+                     ],
+                     [
+                        Button.inline("Blokir", data=f"block_{user.id}"),
+                     ],
+                    ],
+                )
             else:
                 await event.reply(f"{UNAPPROVED_MSG}")
             LASTMSG.update({event.chat_id: event.text})
@@ -84,7 +119,12 @@ async def permitpm(event):
 
             if COUNT_PM[event.chat_id] > PM_LIMIT:
                 await event.respond(
-                    "**𝙎𝙤𝙧𝙧𝙮 𝙏𝙤𝙙 𝙇𝙪 𝘿𝙞𝙗𝙡𝙤𝙠𝙞𝙧 𝙆𝙖𝙧𝙣𝙖 𝙈𝙚𝙡𝙖𝙠𝙪𝙠𝙖𝙣 𝙎𝙥𝙖𝙢 𝘾𝙝𝙖𝙩**"
+                    "**𝙎𝙤𝙧𝙧𝙮 𝙏𝙤𝙙 𝙇𝙪 𝘿𝙞𝙗𝙡𝙤𝙠𝙞𝙧 𝙆𝙖𝙧𝙣𝙖 𝙈𝙚𝙡𝙖𝙠𝙪𝙠𝙖𝙣 𝙎𝙥𝙖𝙢 𝘾𝙝𝙖𝙩**",
+                    buttons=[
+                     [
+                        Button.inline("Buka Blokir", data=f"unblock_{user.id}"),
+                     ],
+                    ],
                 )
 
                 try:
