@@ -34,7 +34,7 @@ def get_string(key: str) -> Any:
     except KeyError:
         try:
             en_ = languages["en"][key]
-            tr = Trs.translate(en_, lang_tgt=lang).replace("\ N", "\n")
+            tr = Trs.translate(en_, lang_tgt=lang).replace("\\ N", "\n")
             if en_.count("{}") != tr.count("{}"):
                 tr = en_
             if languages.get(lang):
@@ -46,7 +46,8 @@ def get_string(key: str) -> Any:
             return f"Warning: could not load any string with the key `{key}`"
         except Exception as er:
             LOGS.exception(er)
-            return languages["en"].get(key) or f"Failed to load language string '{key}'"
+            return languages["en"].get(
+                key) or f"Failed to load language string '{key}'"
 
 
 def get_languages() -> Dict[str, Union[str, List[str]]]:
