@@ -18,6 +18,7 @@ except ImportError:
 
 from . import *
 
+
 @ayiin_cmd(pattern="bash(?: |$)(.*)")
 async def _(event):
     try:
