@@ -14,7 +14,7 @@ from Stringyins import get_languages, language, get_string
 
 @ayiin_cmd(pattern=r"lang(?: |$)(.*)")
 async def setlang(event):
-    
+
     languages = get_languages()
     tutud = [
         Button.inline(
