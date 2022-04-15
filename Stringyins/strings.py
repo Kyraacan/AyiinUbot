@@ -5,7 +5,6 @@ from typing import Any, Dict, List, Union
 
 from google_trans_new import google_translator
 from AyiinXd.utils.logger import logging
-from AyiinXd import tgbot
 from yaml import safe_load
 
 LOGS = logging.getLogger(__name__)
