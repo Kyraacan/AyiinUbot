@@ -579,8 +579,9 @@ with bot:
     try:
         from AyiinXd.modules.sql_helper.bot_blacklists import check_is_black_list
         from AyiinXd.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
+        from AyiinXd.modules.yinslang import set_key
         from AyiinXd.utils import reply_id
-        from Stringyins import get_languages, get_string, language, set_key
+        from Stringyins import get_languages, get_string, language
 
         dugmeler = CMD_HELP
         user = bot.get_me()
