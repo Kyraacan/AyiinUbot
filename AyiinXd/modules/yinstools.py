@@ -11,8 +11,7 @@ from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
 from AyiinXd.utils import ayiin_cmd, edit_delete, edit_or_reply
 from Stringyins import get_string
-
-from.evaluator import aexec
+from.evaluators import aexec
 
 # Used for Formatting Eval Code, if installed
 try:
