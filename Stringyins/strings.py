@@ -9,7 +9,7 @@ from yaml import safe_load
 
 LOGS = logging.getLogger(__name__)
 
-language = os.environ.get("language", or "id")
+language = [os.environ.get("language") or "id"]
 languages = {}
 
 Trs = google_translator()
