@@ -13,6 +13,24 @@ com_4: "`Media Tidak Didukung..`"
 com_5: "`Mengunduh...`"
 com_6: "`Mengunggah...`"
 
+# for error
+error_1: ""**KESALAHAN : **`{}`"
+
+# admintools
+prom_1: "`Mempromosikan...`"
+prom_2: "`Berhasil Dipromosikan!`"
+deot_1: "`Menurunkan...`"
+deot_2: "`Berhasil Diturunkan!`"
+band_1: "`Pemrosesan Banned...`"
+band_2: "\\**#𝘽𝙖𝙣𝙣𝙚𝙙_𝙐𝙨𝙚𝙧**//\n\n**𝙁𝙞𝙧𝙨𝙩 𝙉𝙖𝙢𝙚 :** [{}](tg://user?id={})\n**𝙐𝙨𝙚𝙧 𝙄𝘿 :** `{}`\n**𝘼𝙘𝙩𝙞𝙤𝙣 :** `𝘽𝙖𝙣𝙣𝙚𝙙 𝙐𝙨𝙚𝙧`\n**𝙍𝙚𝙖𝙨𝙤𝙣 :** `{}`\n**𝘽𝙖𝙣𝙣𝙚𝙙 𝘽𝙮 :** `{}`\n**𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 : ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧**"
+band_3: "\\**#𝘽𝙖𝙣𝙣𝙚𝙙_𝙐𝙨𝙚𝙧**//\n\n**𝙁𝙞𝙧𝙨𝙩 𝙉𝙖𝙢𝙚 :** [{}](tg://user?id={})\n**𝙐𝙨𝙚𝙧 𝙄𝘿 :** `{}`\n**𝘼𝙘𝙩𝙞𝙤𝙣 :** `𝘽𝙖𝙣𝙣𝙚𝙙 𝙐𝙨𝙚𝙧`\n**𝘽𝙖𝙣𝙣𝙚𝙙 𝘽𝙮 :** `{}`\n**𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 : ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧**"
+band_4: "`Unban Berhasil Dilakukan!`"
+band_5: "`Sepertinya Terjadi ERROR!`"
+
+# setgpic
+sgp_1: "**Foto Profil Grup Berhasil dihapus.**"
+
+
 # chatactions
 can_1: "**#GBanned_User** Bergabung.\n\n**User** : {}\n**Karena**: {}\n\n`Pengguna dibanned.`"
 can_2: "∆ **#UsernameUpdate**\n\n@{} mengubah username menjadi @{}"
