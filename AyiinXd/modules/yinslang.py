@@ -3,6 +3,8 @@
 #
 #
 
+import os
+
 from telethon import Button
 
 from AyiinXd import CMD_HANDLER as cmd
