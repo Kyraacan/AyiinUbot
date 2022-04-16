@@ -51,7 +51,7 @@ async def settt(event):
 
 
     if lang == "en":
-        os.environ.has_key("language", lang)
+        os.environ.setdefault("language", lang)
         await event.edit(
             f"Your language has been set to {languages[lang]['natively']} [{lang}].",
             buttons=[Button.inline("Back", data="lang")],
