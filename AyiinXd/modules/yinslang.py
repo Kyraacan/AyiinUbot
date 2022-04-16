@@ -38,8 +38,8 @@ async def settt(event):
     lang = event.pattern_match.group(1).strip()
     languages = get_languages()
     language[0] = lang
-    os.environ._has_key(event, languages, lang)
-    os.environ._setdefault("language")
+    if not os.environ.get("lang"):
+        os.environ.setdefault("language","1")
 
     if lang == "id":
         os.environ._has_key("language", lang)
