@@ -361,7 +361,7 @@ async def gspider(gspdr):
     if gmute(user.id) is False:
         await gspdr.eor(get_string("gmut_4"))
     elif reason:
-        await ayiin.edit(get_string("gmut_5").format(user.first_name, user.id, user.id, reason, 
+        await ayiin.edit(get_string("gmut_5").format(user.first_name, user.id, user.id, reason, self_user.first_name)
         )
     else:
         await ayiin.edit(get_string("gmut_6").format(user.first_name, user.id, user.id, self_user.first_name)
