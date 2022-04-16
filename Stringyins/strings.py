@@ -4,6 +4,7 @@ from typing import Any, Dict, List, Union
 
 from AyiinXd import LOGS
 from AyiinXd.utils.logger import logging
+
 from google_trans_new import google_translator
 from yaml import safe_load
 
@@ -31,7 +32,7 @@ for file in listdir(strings_folder):
 def get_string(key: str) -> Any:
     lang = language[0]
     try:
-        return languages[lang][key]
+        return languages[code][lang][key]
     except KeyError:
         try:
             id_ = languages["id"][key]
