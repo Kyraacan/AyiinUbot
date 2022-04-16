@@ -1058,7 +1058,7 @@ with bot:
                 languages = get_languages()
                 language[0] = languages
                 set_key(event, languages, language)
-                tgbot.del_key("language") if languages == "id" else tgbot.set_key("language", languages)
+                tgbot.del_key("language") if languages == "id" else tgbot.get_key("language", languages)
                 await event.edit(
                     f"Your language has been set to {languages[languages]['natively']} [{languages}].",
                     buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")]
@@ -1077,7 +1077,7 @@ with bot:
                 languages = get_languages()
                 language[0] = languages
                 set_key(event, languages, language)
-                tgbot.del_key("language") if languages == "en" else tgbot.set_key("language", languages)
+                tgbot.del_key("language") if languages == "en" else tgbot.get_key("language", languages)
                 await event.edit(
                     f"Your language has been set to {languages[languages]['natively']} [{languages}].",
                     buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")]
