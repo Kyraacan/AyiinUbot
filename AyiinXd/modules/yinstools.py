@@ -11,6 +11,8 @@ from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
 from AyiinXd.utils import ayiin_cmd, bash, edit_delete, edit_or_reply
 
+from Stringyins import get_string
+
 # Used for Formatting Eval Code, if installed
 try:
     import black
@@ -19,7 +21,6 @@ except ImportError:
 
 p, pp = print, pprint
 
-from . import *
 
 @ayiin_cmd(pattern="bash(?: |$)(.*)")
 async def _(event):
