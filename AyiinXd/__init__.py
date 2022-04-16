@@ -1063,7 +1063,7 @@ with bot:
             if lang == "id":
                 os.environ.setdefault("language", languages)
                 await event.edit(
-                    f"•Berhasil• Bahasa Telah Diubah Menjadi {languages[lang]['natively']} [{lang}].",
+                    f"•Berhasil• Bahasa Telah Diubah Menjadi {languages[languages]['natively']} [{languages}].",
                     file=logoyins,
                     link_preview=True,
                     buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")]
@@ -1087,7 +1087,7 @@ with bot:
             if lang == "en":
                 os.environ.setdefault("language", languages)
                 await event.edit(
-                    f"•Berhasil• Bahasa Telah Diubah Menjadi {languages[lang]['natively']} [{lang}].",
+                    f"•Berhasil• Bahasa Telah Diubah Menjadi {languages[languages]['natively']} [{languages}].",
                     file=logoyins,
                     link_preview=True,
                     buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")]
