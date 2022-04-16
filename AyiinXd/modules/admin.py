@@ -190,7 +190,7 @@ async def ban(bon):
     user, reason = await get_user_from_event(bon)
     if not user:
         return
-    ayiin = await bon.eor(get_string("`Processing Banned...`"))
+    ayiin = await bon.eor(get_string("band_1"))
     try:
         await bon.client(EditBannedRequest(bon.chat_id, user.id, BANNED_RIGHTS))
     except BadRequestError:
