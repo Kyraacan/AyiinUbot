@@ -16,7 +16,7 @@ from Stringyins import get_languages, language, get_string
 
 @ayiin_cmd(pattern=r"lang(?: |$)(.*)")
 async def setlang(event):
-    await edit_or_reply(event, (get_string("com_1"))
+    await edit_or_reply(event, (get_string("com_1")))
     languages = get_languages()
     tutud = [
         Button.inline(
@@ -34,7 +34,7 @@ async def setlang(event):
 
 @ayiin_cmd(pattern=r"set( id| en|$)(.*)")
 async def settt(event):
-    await edit_or_reply(event, (get_string("com_1"))
+    await edit_or_reply(event, (get_string("com_1")))
     lang = event.pattern_match.group(1).strip()
     languages = get_languages()
     language[0] = lang
