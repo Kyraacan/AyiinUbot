@@ -48,7 +48,7 @@ async def settt(event):
         return
 
 
-if lang == "en":
+    if lang == "en":
         os.environ._has_key("language", lang)
         await event.edit(
             f"Your language has been set to {languages[lang]['natively']} [{lang}].",
