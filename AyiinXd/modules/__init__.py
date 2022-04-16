@@ -11,8 +11,6 @@ import sys
 
 from AyiinXd import LOAD, LOGS, NO_LOAD
 
-from Stringyins import get_string
-
 
 def __list_all_modules():
     import glob
