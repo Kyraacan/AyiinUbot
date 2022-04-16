@@ -36,6 +36,7 @@ from telethon.tl.types import (
 from AyiinXd import BOTLOG_CHATID
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, DEVS, WHITELIST
+from AyiinXd.ayiinxd import eor, eod
 from AyiinXd.events import register
 from AyiinXd.utils import (
     _format,
@@ -47,6 +48,8 @@ from AyiinXd.utils import (
     media_type,
 )
 from AyiinXd.utils.logger import logging
+
+from Stringyins import get_string
 
 # =================== CONSTANT ===================
 PP_TOO_SMOL = "**Gambar Terlalu Kecil**"
@@ -115,13 +118,13 @@ async def set_group_photo(event):
             except ImageProcessFailedError:
                 return await edit_delete(event, PP_ERROR)
             except Exception as e:
-                return await edit_delete(event, f"**ERROR : **`{str(e)}`")
+                return await event.eor(get_string("error_1").format(e))
     else:
         try:
             await event.client(EditPhotoRequest(event.chat_id, InputChatPhotoEmpty()))
         except Exception as e:
-            return await edit_delete(event, f"**ERROR : **`{e}`")
-        await edit_delete(event, "**Foto Profil Grup Berhasil dihapus.**", 30)
+            return await event.eor(get_string("error_1").format(e))
+        await event.eor(get_string("sgp_1", time=30))
 
 
 @ayiin_cmd(pattern="promote(?:\\s|$)([\\s\\S]*)")
@@ -141,12 +144,12 @@ async def promote(event):
         rank = "admin"
     if not user:
         return
-    eventyins = await edit_or_reply(event, "`Promoting...`")
+    eventyins = await event.eor(get_string("prom_1"))
     try:
         await event.client(EditAdminRequest(event.chat_id, user.id, new_rights, rank))
     except BadRequestError:
         return await eventyins.edit(NO_PERM)
-    await edit_delete(eventyins, "`Promoted Successfully!`", 30)
+    await event.eor(get_string("prom_2"), time=30)
 
 
 @ayiin_cmd(pattern="demote(?:\\s|$)([\\s\\S]*)")
@@ -156,7 +159,7 @@ async def demote(event):
     user, _ = await get_user_from_event(event)
     if not user:
         return
-    eventyins = await edit_or_reply(event, "`Demoting...`")
+    eventyins = await event.eor(get_string("`deot_1"))
     newrights = ChatAdminRights(
         add_admins=None,
         invite_users=None,
@@ -171,7 +174,7 @@ async def demote(event):
         await event.client(EditAdminRequest(event.chat_id, user.id, newrights, rank))
     except BadRequestError:
         return await eventyins.edit(NO_PERM)
-    await edit_delete(eventyins, "`Demoted Successfully!`", 30)
+    await event.eor(get_string("deot_2"), time=30)
 
 
 @ayiin_cmd(pattern="ban(?:\\s|$)([\\s\\S]*)")
@@ -187,31 +190,15 @@ async def ban(bon):
     user, reason = await get_user_from_event(bon)
     if not user:
         return
-    ayiin = await edit_or_reply(bon, "`Processing Banned...`")
+    ayiin = await bon.eor(get_string("`Processing Banned...`"))
     try:
         await bon.client(EditBannedRequest(bon.chat_id, user.id, BANNED_RIGHTS))
     except BadRequestError:
         return await edit_or_reply(bon, NO_PERM)
     if reason:
-        await ayiin.edit(
-            bon,
-            r"\\**#𝘽𝙖𝙣𝙣𝙚𝙙_𝙐𝙨𝙚𝙧**//"
-            f"\n\n**𝙁𝙞𝙧𝙨𝙩 𝙉𝙖𝙢𝙚 :** [{user.first_name}](tg://user?id={user.id})\n"
-            f"**𝙐𝙨𝙚𝙧 𝙄𝘿 :** `{str(user.id)}`\n"
-            f"**𝘼𝙘𝙩𝙞𝙤𝙣 :** `𝘽𝙖𝙣𝙣𝙚𝙙 𝙐𝙨𝙚𝙧`\n"
-            f"**𝙍𝙚𝙖𝙨𝙤𝙣 :** `{reason}`\n"
-            f"**𝘽𝙖𝙣𝙣𝙚𝙙 𝘽𝙮 :** `{me.first_name}`\n"
-            f"**𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 : ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧**"
-        )
+        await ayiin.edit(get_string("band_2").format(user.first_name, user.id, str(user.id), reason, me.first_name))
     else:
-        await ayiin.edit(
-            bon,
-            f"\\\\**#𝘽𝙖𝙣𝙣𝙚𝙙_𝙐𝙨𝙚𝙧**//"
-            f"\n\n**𝙁𝙞𝙧𝙨𝙩 𝙉𝙖𝙢𝙚 :** [{user.first_name}](tg://user?id={user.id})\n"
-            f"**𝙐𝙨𝙚𝙧 𝙄𝘿 :** `{user.id}`\n"
-            f"**𝘼𝙘𝙩𝙞𝙤𝙣 :** `𝘽𝙖𝙣𝙣𝙚𝙙 𝙐𝙨𝙚𝙧`\n"
-            f"**𝘽𝙖𝙣𝙣𝙚𝙙 𝘽𝙮 :** `{me.first_name}`\n"
-            f"**𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 : ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧**"
+        await ayiin.edit(get_string("band_2").format(user.first_name, user.id, str(user.id), reason, me.first_name)
         )
 
 
@@ -223,16 +210,16 @@ async def nothanos(unbon):
     creator = chat.creator
     if not admin and not creator:
         return await edit_delete(unbon, NO_ADMIN)
-    ayiin = await edit_or_reply(unbon, "`Processing...`")
+    ayiin = await unbon.eor(get_string("com_1"))
     user = await get_user_from_event(unbon)
     user = user[0]
     if not user:
         return
     try:
         await unbon.client(EditBannedRequest(unbon.chat_id, user.id, UNBAN_RIGHTS))
-        await edit_delete(ayiin, "`Unban Berhasil Dilakukan!`")
+        await unbon.eor(get_string("band_4"), time=10)
     except UserIdInvalidError:
-        await edit_delete(ayiin, "`Sepertinya Terjadi ERROR!`")
+        await unbon.eor(get_string("band_5"), time=10)
 
 
 @ayiin_cmd(pattern="mute(?: |$)(.*)")
