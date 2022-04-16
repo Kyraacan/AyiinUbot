@@ -13,8 +13,6 @@ from AyiinXd import tgbot
 from AyiinXd.utils import ayiin_cmd, edit_or_reply
 from Stringyins import get_languages, language, get_string
 
-from . import *
-
 
 @ayiin_cmd(pattern=r"lang(?: |$)(.*)")
 async def setlang(event):
