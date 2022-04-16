@@ -140,8 +140,8 @@ async def promote(event):
     try:
         await event.client(EditAdminRequest(event.chat_id, user.id, new_rights, rank))
     except BadRequestError:
-        return await eventyins.edit(NO_PERM)
-    await event.eor(get_string("prom_2"), time=30)
+        return await eod(event, get_string("no_perm"))
+    await eor(event, get_string("prom_2"), time=30)
 
 
 @ayiin_cmd(pattern="demote(?:\\s|$)([\\s\\S]*)")
@@ -372,9 +372,9 @@ async def gspider(gspdr):
 async def rm_deletedacc(show):
     con = show.pattern_match.group(1).lower()
     del_u = 0
-    del_status = get_string("zomb_1")
+    del_status = "**Grup Bersih, Tidak Menemukan Akun Terhapus.**"
     if con != "clean":
-        await show.eor(get_string("zomb_2"))
+        await eor(show, get_string("zomb_2"))
         async for user in show.client.iter_participants(show.chat_id):
             if user.deleted:
                 del_u += 1
@@ -421,7 +421,7 @@ async def rm_deletedacc(show):
 async def get_admin(show):
     info = await show.client.get_entity(show.chat_id)
     title = info.title or "Grup Ini"
-    mentions = get_string("admn_1").format(tittle)
+    mentions = get_string("admn_1").format(title)
     try:
         async for user in show.client.iter_participants(
             show.chat_id, filter=ChannelParticipantsAdmins
@@ -441,16 +441,16 @@ async def get_admin(show):
 async def pin(event):
     to_pin = event.reply_to_msg_id
     if not to_pin:
-        return await event.eor(get_string("pinn_1"), time=30)
+        return await eor(event, get_string("pinn_1"), time=30)
     options = event.pattern_match.group(1)
     is_silent = bool(options)
     try:
         await event.client.pin_message(event.chat_id, to_pin, notify=is_silent)
     except BadRequestError:
-        return await event.eor(get_string("no_perm"), time=5)
+        return await eod(event, get_string("no_perm"), time=5)
     except Exception as e:
-        return await event.eor(get_string("error_1").format(e), time=5)
-    await event.eor(get_string("pinn_2"))
+        return await eod(event, get_string("error_1").format(e), time=5)
+    await eor(event, get_string("pinn_2"))
 
 
 @ayiin_cmd(pattern="unpin( all|$)")
@@ -467,7 +467,7 @@ async def pin(event):
         elif options == "all":
             await event.client.unpin_message(event.chat_id)
         else:
-            return await event.eor(get_string("upin_2").format(cmd), time=20,
+            return await eor(event, get_string("upin_2").format(cmd), time=20,
             )
     except BadRequestError:
         return await event.eor(get_string("no_perm"), time=10)
