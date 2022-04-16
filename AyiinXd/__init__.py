@@ -1060,7 +1060,7 @@ with bot:
             if not os.environ.get("languages"):
                 os.environ.setdefault("language","1")
 
-            if lang == "id":
+            if languages == "id":
                 os.environ.setdefault("language", languages)
                 await event.edit(
                     f"•Berhasil• Bahasa Telah Diubah Menjadi {languages[languages]['natively']} [{languages}].",
@@ -1084,7 +1084,7 @@ with bot:
             if not os.environ.get("languages"):
                 os.environ.setdefault("language","1")
 
-            if lang == "en":
+            if languages == "en":
                 os.environ.setdefault("language", languages)
                 await event.edit(
                     f"•Berhasil• Bahasa Telah Diubah Menjadi {languages[languages]['natively']} [{languages}].",
