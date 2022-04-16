@@ -1055,15 +1055,23 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                text = (
+                    f"""
+•Berhasil• Bahasa Telah Diubah Menjadi
+
+{languages[languages]['natively']} [{languages}]
+""")
                 languages = get_languages()
-                language[0] = lang
+                language[0] = languages
             if not os.environ.get("languages"):
                 os.environ.setdefault("language","1")
 
             if lang == "id":
                 os.environ.setdefault("language", languages)
                 await event.edit(
-                    f"Your language has been set to {languages[languages]['natively']} [{languages}].",
+                    text,
+                    file=logoyins,
+                    link_preview=True,
                     buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")]
                 )
             else:
@@ -1077,15 +1085,23 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                text = (
+                    f"""
+•Berhasil• Bahasa Telah Diubah Menjadi
+
+{languages[languages]['natively']} [{languages}]
+""")
                 languages = get_languages()
-                language[0] = lang
+                language[0] = languages
             if not os.environ.get("languages"):
                 os.environ.setdefault("language","1")
 
             if lang == "en":
                 os.environ.setdefault("language", languages)
                 await event.edit(
-                    f"Your language has been set to {languages[languages]['natively']} [{languages}].",
+                    text,
+                    file=logoyins,
+                    link_preview=True,
                     buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")]
                 )
             else:
