@@ -11,18 +11,6 @@ from AyiinXd import tgbot
 from AyiinXd.utils import ayiin_cmd, edit_or_reply
 from Stringyins import get_languages, language, get_string
 
-async def setlang(event, name, value):
-    try:
-        set_key(name, value)
-    except BaseException:
-        return await event.edit("`Something Went Wrong`")
-
-async def dellang(event, name, value):
-    try:
-        del_key(value)
-    except BaseException:
-        return await event.edit("`Something Went Wrong`")
-
 
 @ayiin_cmd(pattern=r"lang(?: |$)(.*)")
 async def setlang(event):
@@ -48,10 +36,10 @@ async def settt(event):
     lang = event.pattern_match.group(1).strip()
     languages = get_languages()
     language[0] = lang
-    set_key(event, languages, lang)
-    tgbot.del_key("language")
+    os.environ._has_key(event, languages, lang)
+    os.environ._setdefault("language")
     if lang == "id"
-    tgbot.set_key("language", lang)
+    os.environ._has_key("language", lang)
     await event.edit(
         f"Your language has been set to {languages[lang]['natively']} [{lang}].",
         buttons=[Button.inline("Back", data="lang")],
