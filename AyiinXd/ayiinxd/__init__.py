@@ -13,3 +13,4 @@ from .linker import (
     asupan_sagapung,
     exolink
 )
+from .toolsyins import eor, eod, _try_delete
