@@ -10,7 +10,6 @@ from io import BytesIO
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
 from AyiinXd.utils import ayiin_cmd, bash, edit_delete, edit_or_reply
-from Stringyins import get_string
 
 # Used for Formatting Eval Code, if installed
 try:
@@ -20,6 +19,7 @@ except ImportError:
 
 p, pp = print, pprint
 
+from . import *
 
 @ayiin_cmd(pattern="bash(?: |$)(.*)")
 async def _(event):
@@ -27,7 +27,7 @@ async def _(event):
         cmd = event.text.split(" ", maxsplit=1)[1]
     except IndexError:
         return await edit_delete(event, (get_string("devs_1")))
-    xx = await edit_or_reply(event, (get_string("com_1")))
+    xx = await event.edit((get_string("com_1")))
     reply_to_id = event.reply_to_msg_id or event.id
     stdout, stderr = await bash(cmd)
     OUT = f"**☞ BASH\n\n• COMMAND:**\n`{cmd}` \n\n"
