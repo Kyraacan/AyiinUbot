@@ -32,7 +32,7 @@ for file in listdir(strings_folder):
 def get_string(key: str) -> Any:
     lang = language[0]
     try:
-        return languages[code][lang][key]
+        return languages[lang][key]
     except KeyError:
         try:
             id_ = languages["id"][key]
