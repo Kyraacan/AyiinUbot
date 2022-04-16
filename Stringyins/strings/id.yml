@@ -1,9 +1,9 @@
 name: Indonesia
-natively: Indonesia
+asli: Indonesia
 
 authors:
-  - itsmenandos
-  - mrismanaziz
+  - AyiinXd
+  - GrayXz
 
 # constans
 pto_sml: "**Gambar Terlalu Kecil**"
@@ -77,17 +77,7 @@ undl_3: "\n☞ __{}__ **Dikirim oleh** {}"
 undl_4: "\n☞ __{}__ **Dikirim oleh** {}"
 undl_5: "{}\n**Dikirim oleh** {}"
 undl_6: "{}\n**Dikirim oleh** {}"
-
-
-# setgpic
 sgp_1: "**Foto Profil Grup Berhasil dihapus.**"
-
-
-# chatactions
-can_1: "**#GBanned_User** Bergabung.\n\n**User** : {}\n**Karena**: {}\n\n`Pengguna dibanned.`"
-can_2: "∆ **#UsernameUpdate**\n\n@{} mengubah username menjadi @{}"
-can_3: "∆ **#UsernameUpdate**\n\n{} menghapus username. (@{})"
-can_4: "∆ **#UsernameUpdate**\n\n{}'s username baru --> @{}"
 
 # help
 help_1: "`{}` bukan plugin yang valid!"
@@ -102,47 +92,6 @@ help_9: "Settings ⚙️"
 help_10: "••ᴛᴜᴛᴜᴘ••"
 help_11: "Nama Plugin - {}\n\n✘ Perintah Tersedia -\n\n"
 
-# userlogs
-userlogs_1: "Id Obrolan yang Anda Masukan Di Tag Logger Salah, Harap Perbaiki"
-userlogs_2: "Tambahkan saya ke Grup Tag Log Anda untuk Menyimpan Tag"
-userlogs_3: "Tinggalkan Obrolan"
-userlogs_4: "Bot Asst Anda Tidak Dapat Mengirim Pesan di Grup Tag Log.\nTambahkan untuk Mendapatkan Tag Log Anda.."
-userlogs_5: "Keluar `{}`"
-
-# admintools
-adm_1: "`Saya tidak tahu siapa dia!`"
-adm_2: "`Hmm.. Sepertinya saya tidak punya hak di sini!`"
-adm_3: "`Sediakan Waktu juga..`"
-pro_1: "`Balas pengguna untuk mempromosikannya!`"
-pro_2: "{} **sekarang menjadi admin di** {} **dengan judul** {}"
-de_1: "`Balas ke pengguna untuk menurunkannya!`"
-de_2: "{} `bukan lagi admin di {}`"
-ban_1: "`Balas ke pengguna atau berikan nama pengguna untuk mencekalnya!`"
-ban_2: " `LoL, saya tidak bisa Mencekal Developer saya 😂`"
-ban_3: "`Saya tidak berhak membanned pengguna.`"
-ban_4: "{} **Telah dibanned oleh** {} **di** `{}`"
-ban_5: "\n**Alasan**: `{}`"
-tban_1: "`Membalas pesan seseorang atau memberikan id-nya...`"
-tban_2: "**Berhasil dibanned** `{}` **dalam** `{}` **untuk** `{}`"
-unban_1: "`Balas ke pengguna atau berikan nama pengguna untuk membatalkan banned!`"
-unban_2: "`Saya tidak berhak membatalkan pemblokiran pengguna.`"
-unban_3: "{} **Telah diunbanned oleh** {} **di** `{}`"
-kick_1: "`Saya tidak berhak menendang pengguna.`"
-kick_2: " `Lol, saya tidak bisa Mengkick Developer saya`😂"
-kick_3: "`Saya tidak bisa menendangnya...`"
-kick_4: "{} **dikick oleh** {} **di** `{}`"
-pin_1: "`Balas pesan untuk menyematkannya!`"
-pinned_1: "Pesan yang Disematkan Tidak Ditemukan!"
-unpin_1: "Balas pesan, atau, gunakan `{}unpin all`"
-listpin_1: "Tidak ada pesan yang disematkan di grup ini!"
-purge_1: "`Balas pesan yang akan dibersihkan.`"
-purgeall_1: "`Balas pesan seseorang untuk dihapus.`"
-purgeall_2: "Berhasil Membersihkan Semua Pesan dari {}"
-
-# akinator
-aki_1: "Game telah Dihentikan...."
-aki_2: "Memulai permainan"
-aki_3: "Waktu habis !"
 
 # antiflood
 antiflood_1: "`Pengaturan Antiflood Dinonaktifkan`"
@@ -166,25 +115,6 @@ audiotools_7: "Audio yang Dipangkas Dari `{}` Ke `{}`"
 audiotools_8: "Balas ke File Video..`"
 audiotools_9: "`Tidak Ada Audio Ditemukan...`"
 audiotools_10: "`Audio yang Diekstrak dari Video...`"
-
-# asstcmd
-asstcmd_1: "`Gunakan Perintah ini dengan Balasan dan kata untuk menggunakan perintah.`"
-asstcmd_2: "`Beri saya perintah yang ingin Anda hapus.`"
-asstcmd_3: "Perintah: `/{}` Berhasil Dihapus."
-asstcmd_4: "Perintah: `/{}` Berhasil Disimpan."
-asstcmd_5: "Tidak ada perintah yang ditemukan"
-asstcmd_6: "**DAFTAR CMD ASSISTANT**\n\n"
-
-# autocorrect
-act_1: "Fitur AUTOCORRECT Berhasil Diaktifkan"
-act_2: "Fitur AUTOCORRECT Berhasil Dinonaktifkan"
-
-# autopic
-autopic_1: "`Berikan keyword untuk dicari...`"
-autopic_2: "Tidak ada Hasil yang ditemukan untuk `{}`"
-autopic_3: "Mendapatkan Koleksi `{}` yang terkait dengan keyword Anda !\nMemulai Autopic !"
-autopic_4: "AUTOPIC tidak digunakan !!"
-autopic_5: "AUTOPIC Berhenti!"
 
 # inline
 inline_1: "[Aʏɪɪɴ Sᴜᴘᴘᴏʀᴛ](t.me/ultroidsupport)\n\n**Hᴇʟᴘ Mᴇɴᴜ Oғ {}.\n\nPʟᴜɢɪɴs ~ {}**"
@@ -249,18 +179,8 @@ bd_8: "`Menghapus...`"
 bd_9: "Channel sudah dihapus dari database."
 
 # calculator
-calc_1: "• Ultroid Inline Calculator •"
+calc_1: "• Ayiin Inline Calculator •"
 calc_2: "Buka Kalkulator Lagi"
-
-# channel hacks
-cha_1: "Channel yang diberikan tidak valid"
-cha_2: "Sumber Channel berhasil ditambahkan"
-cha_3: "Sumber Channel sudah ditambahkan"
-cha_4: "Database sumber Channel dihapus."
-cha_5: "Sumber Channel dihapus dari database"
-cha_6: "Sumber Channel sudah dihapus dari database."
-cha_7: "Channel tujuan di database:"
-cha_8: "Sumber Channel dalam database:"
 
 # carbon
 carbon_1: "Carbonised oleh [{}](tg://user?id={})"
@@ -300,26 +220,6 @@ cvt_8: "`Bukan File yang Dapat Dibaca.`"
 eod_1: "🎊 *Acara Hari Ini**\n\n"
 eod_2: "• **Acara untuk {}/2021-2022**\n\n"
 
-# core
-core_1: "`Modul ditemukan`"
-core_2: "{}.py gunakan `.paste` untuk menempel di neko dan raw.."
-core_3: "`Cari lagi..?`"
-core_4: "Modul {} ditemukan"
-core_5: "{}.py gunakan `.paste` untuk menempel di neko dan raw.."
-core_6: "Tidak dapat Menemukan Modul {}.py"
-core_7: "Tidak Ada Modul Seperti Itu"
-core_8: "Ga ada modul yang namanya {}.py"
-core_9: "`Beri tau nama plugin yang ingin Anda unload`"
-core_10: "**Uɴʟᴏᴀᴅᴇᴅ** `{}` **Bᴇʀʜᴀsɪʟ.**"
-core_11: "**Aɴᴅᴀ Tɪᴅᴀᴋ Bɪsᴀ Uɴʟᴏᴀᴅ Oғғɪᴄɪᴀʟ Pʟᴜɢɪɴs**"
-core_12: "**Tɪᴅᴀᴋ Aᴅᴀ Pʟᴜɢɪɴ Yᴀɴɢ Bᴇʀɴᴀᴍᴀ** `{}`"
-core_13: "`Beri tau nama plugin yang ingin Anda uninstall`"
-core_14: "**Uɴɪɴsᴛᴀʟʟᴇᴅ** `{}` **Bᴇʀʜᴀsɪʟ.**"
-core_15: "**Aɴᴅᴀ Tɪᴅᴀᴋ Bɪsᴀ Uɴɪɴsᴛᴀʟʟ Oғғɪᴄɪᴀʟ Pʟᴜɢɪɴs**"
-core_16: "`Beri tau nama plugin yang ingin Anda load`"
-core_17: "**Bᴇʀʜᴀsɪʟ Dɪ Lᴏᴀᴅ** `{}`"
-core_18: "**Tidak dapat diload** `{}` **karena kesalahan berikut.**\n`{}`"
-
 # devtools
 devs_1: "`Tidak ada cmd yang diberikan`"
 devs_2: "`Berikan beberapa python cmd`"
@@ -339,31 +239,6 @@ echo_1: "**Echo Diaktifkan Untuk Pengguna:**\n\n"
 # fake action
 fka_1: "Memulai Fake Action Untuk {} detik."
 
-# fedutils
-sf_1: "Memulai Mass-FedBan..."
-sf_2: "`Tidak ada pengguna yang dipilih!`"
-sf_3: "Lu gabisa banned Developer gua!! dasar Noob"
-sf_4: "`Sepertinya Rose tidak merespons atau plugin bermasalah`"
-sf_5: "Anda hanya dapat menggunakan perintah fed satu kali setiap 5 menit"
-sf_6: "Coba lagi dalam 5 menit."
-sf_7: "Tidak dapat mengumpulkan FedAdminList. Sedang Mencoba lagi ({}/3)..."
-sf_8: "Kesalahan"
-sf_9: "Tidak dapat mengumpulkan FedAdminList."
-sf_10: "FBaning dalam {} feds."
-sf_11: "ID Grup FBan yang ditentukan salah."
-sf_12: "{} Pengecualian."
-sf_13: "Kesalahan dalam menghapus file FedAdmin.\n{}"
-sf_14: "SuperFBan Selesai.\nTotal Feds - {}.\nPengecualian - {}.\n Pengaruh {} feds.\n#TB"
-sf_15: "Memulai Mass-UnFedBan..."
-sf_16: "SuperUnFBan Selesai.\nTotal Feds - {}.\nPengecualian - {}.\n Pengaruh {} feds.\n#TB"
-sf_17: "`Beri saya id seseorang, atau balas pesan seseorang untuk memeriksa fedstatnya.`"
-sf_18: "Daftar feds {} telah dibanned.\n\nDikumpulkan menggunakan Ultroid."
-sf_19: "**Kesalahan**\n `Unblock` @MissRose_Bot `dan coba lagi!"
-sf_20: "`Mengekstrak informasi...`"
-sf_21: "\n\nFedInfo diekstrak oleh Ultroid"
-sf_22: "Tidak ada pengguna yang ditunjuk."
-sf_23: "**Error**\n**Buka Blokir** @MissRose_Bot **dan coba lagi!**"
-
 # filter
 flr_1: "`Masukan keyword perintah ini untuk ditetapkan sebagai filter dan balas...`"
 flr_2: "Daftar Filter Yang Aktif Disini adalah\n\n"
@@ -374,16 +249,6 @@ flr_6: "Tidak Ada Filter Apapun Disini"
 
 # fontgen
 fgn_1: "**Font yang tersedia**\n\n"
-
-# force subscribe
-fsub_1: "Berikan Channel tempat Anda ingin Pengguna Bergabung!"
-fsub_2: "Berikan Username atau ID Channel yang Benar"
-fsub_3: "ForceSub tidak Aktif dalam Obrolan ini !"
-fsub_4: "Bergabung dengan Channel"
-fsub_5: "Bunyikan Saya"
-fsub_6: "Silakan Gabung Channel!\nKemudian Klik Tombol Ini!"
-fsub_7: "Pesan Ini Bukan untuk Anda"
-fsub_8: "Terima Kasih Telah Bergabung!"
 
 # extra
 ex_1: "`Balas pesan...`"
@@ -398,9 +263,6 @@ gdrive_5: "`Berhasil!\nAnda siap untuk menggunakan Google Drive dengan Ultroid U
 gdrive_6: "`Pergi ke `{}` dan kirim ``/auth.`"
 gdrive_7: "**File Berhasil Diupload kedalam G-Drive :**\n\n[{}]({})"
 
-# get addons
-gas_1: "Harap berikan link raw!"
-
 # greetings
 grt_1: "`Berhasil Menyimpan Catatan selamat datang`"
 grt_2: "Silakan gunakan ini dalam grup dan bukan PM!"
@@ -412,22 +274,6 @@ grt_7: "`Balas pesan yang ingin Anda atur sebagai selamat tinggal`"
 
 # mediainfo
 mdi_1: "Info Lebih Jelas"
-
-# nightmode
-nightm_1: "Berikan Waktu dalam format yang benar"
-nightm_2: "Waktu berhasil disetel"
-nightm_3: "Berhasil Menambahkan Obrolan Saat Ini Ke Mode Malam"
-nightm_4: "Berhasil Menghapus Obrolan Saat Ini dari Mode Malam"
-nightm_5: "Ada yang Salah"
-
-# pmpermit
-pmperm_1: "Harap tunggu saya merespons atau Anda akan diblokir dan dilaporkan sebagai spam!!"
-pmperm_2: "Anda telah melakukan spamming pada pesan Boss saya."
-pmperm_3: "Balas pesan seseorang atau coba perintah ini secara pribadi."
-
-# schedule_msg
-schdl_1: "`Berhasil Membuat Pesan terjadwal `"
-schdl_2: "`Format Salah`"
 
 # searches
 srch_1: "`Kamu Mencari apa? Berikan saya username!!`"
@@ -454,9 +300,6 @@ spcltool_9: "Tidak Menemukan Apa-apa"
 sudo_1: "`Balas pesan atau tambahkan id/username.`"
 sudo_2: "Anda tidak dapat menambahkan diri sendiri sebagai Pengguna Sudo..."
 sudo_3: "`Tidak ada Pengguna SUDO yang ditetapkan...`"
-
-# unsplash
-unspl_1: "Tidak ada hasil yang ditemukan!"
 
 # updater
 upd_1: "`Memeriksa pembaruan, harap tunggu....`"
@@ -486,10 +329,6 @@ wrd_6: "Antonim"
 wrd_7: "Tidak ada sinonim yang ditemukan!!\n\n`{}`"
 wrd_8: "Tidak ada Antonim yang ditemukan!!\n\n`{}`"
 
-# profanitY
-prof_1: "`Menambahkan Obrolan Ini untuk Penyaringan Kata-kata Tidak Senonoh!`"
-prof_2: "`Menghapus Obrolan Ini dari Pemfilteran Kata-Kata Tidak Senonoh!`"
-
 # notes
 notes_1: "`Gunakan Perintah ini dengan Balasan dan kata untuk menggunakan catatan.`"
 notes_2: "Berhasil Menyimpan Catatan `#{}`"
@@ -511,12 +350,6 @@ sts_10: "`Balas ke media apa pun...`"
 sts_11: "Colong Sticker dulu yee kan..."
 sts_12: "**Kanged!**\n**Emoji :** {}\n**Sticker Pack** [disini](t.me/addstickers/{})"
 sts_13: "`Beralih ke Sticker Pack {} karena ruang yang tidak mencukupi`"
-
-# whichsong
-whs_1: "<• Balas ke File Audio •>"
-whs_2: "`Mencoba mengidentifikasi lagu....`"
-whs_3: "Gagal Mengidentifikasi lagu :("
-whs_4: "**Lagu Ditemukan!**\nNama: __{}__"
 
 # webupload
 wbl_1:  "`Berikan Nama File..`"
@@ -545,55 +378,3 @@ zip_2: "Pertama tambahkan All Files Via `{}addzip` lalu doZip untuk zip semua fi
 zip_3: "`Hanya Balas ke file zip saja`"
 
 # ---------------------------------------------------#
-
-# assisant
-ast_1: "Pilih API yang ingin Anda setel."
-ast_2: "**remove.bg API**\nMasukkan API key Anda dari remove.bg.\n\nGunakan /cancel untuk membatalkan."
-ast_3: "Haloo {}. Silakan telusuri opsi"
-
-# inlinestuff
-instu_1: "Pencarian aplikasi. Masukkan nama aplikasi!"
-instu_2: "History Pencarian terkini"
-instu_3: "Masukkan Keyword untuk dicari"
-instu_4: "Berhasil"
-
-# callbackstuffs
-clst_1: "`Build dyno userbot sedang berlangsung, silahkan tunggu sampai selesai.`"
-clst_2: "`Berhasil Diperbarui!\nMulai ulang, harap tunggu...`"
-clst_3: "■ Mengambil Changelogs..."
-clst_4: "Maaf Telah Terjadi ERROR..."
-clst_5: "Selesai!"
-
-# pmbot
-pmbot_1: "**Anda harus bergabung dengan obrolan di bawah ini untuk mengobrol dengan tuan saya!\n\n**"
-pmbot_2: "Tolong balas seseorang untuk dibanned."
-pmbot_3: "Pengguna sudah dibanned!"
-pmbot_4: "`Selamat tinggal! Kamu di blokir.`\n**Pesan yang Anda kirim tidak akan diteruskan.**"
-pmbot_5: "Tolong balas seseorang untuk Unban dia."
-pmbot_6: "Pengguna ini tidak pernah dibanned!"
-pmbot_7: "`Selamat! Anda telah dibatalkan pemblokirannya.`"
-
-# -------------------------- VcBot ------------------------------- #
-
-vcbot_1: "`Meninggalkan obrolan suara.`"
-vcbot_2: "**ERROR:**\n{}"
-vcbot_3: "• Mengubah Volume menjadi `{}%` •"
-vcbot_4: "`Harap tentukan volume dari 1 hingga 200!`"
-vcbot_5: "`Bergabung kembali dengan obrolan suara ini.`"
-vcbot_6: "Anda belum terhubung ke obrolan suara!"
-vcbot_7: "`Harap Tunggu... Ini akan memakan waktu.`"
-vcbot_8: "Berikan daftar putar youtube"
-vcbot_9: "Apakah Anda Bercanda?\nApa yang Harus Dimainkan?"
-vcbot_10: "Obrolan Dihapus dari Grup Vc AUTH!"
-vcbot_11: "`Mendapatkan Daftar Pengguna Bot Obrolan Suara...`"
-vcbot_12: "`Pemutaran tanpa suara dalam obrolan ini.`"
-vcbot_13: "`Melanjutkan Pemutaran dalam obrolan ini.`"
-vcbot_14: "`Pemutaran dijeda dalam obrolan ini.`"
-vcbot_15: "Silakan tentukan nama lagu atau balas file video!"
-vcbot_16: "Obrolan Tidak ada dalam daftar Vc Auth..."
-vcbot_17: "`Balas pesan pengguna atau tambahkan id/username...`"
-vcbot_18: "• Daftar Otentikasi Vc Kosong.."
-vcbot_19: "Sudah Mengotentikasi Obrolan Ini!"
-vcbot_20: "`Mengunduh dan mengonversi...`"
-vcbot_21: "• Tidak ada dalam antrian!"
-vcbot_22: "`Grup ini telah dihapus dari antrian!`"
