@@ -3,8 +3,8 @@ import os
 from os import listdir, path
 from typing import Any, Dict, List, Union
 
-from google_trans_new import google_translator
 from AyiinXd.utils.logger import logging
+from google_trans_new import google_translator
 from yaml import safe_load
 
 LOGS = logging.getLogger(__name__)
