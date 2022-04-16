@@ -1,8 +1,8 @@
 import os
-
 from os import listdir, path
 from typing import Any, Dict, List, Union
 
+from AyiinXd import LOGS
 from AyiinXd.utils.logger import logging
 from google_trans_new import google_translator
 from yaml import safe_load
@@ -35,7 +35,7 @@ def get_string(key: str) -> Any:
     except KeyError:
         try:
             id_ = languages["id"][key]
-            tr = Trs.translate(id_, lang_tgt=lang).replace("\\ N", "\n")
+            tr = Trs.translate(id_, lang_tgt=lang).replace("\ N", "\n")
             if id_.count("{}") != tr.count("{}"):
                 tr = id_
             if languages.get(lang):
@@ -47,8 +47,7 @@ def get_string(key: str) -> Any:
             return f"Warning: could not load any string with the key `{key}`"
         except Exception as er:
             LOGS.exception(er)
-            return languages["id"].get(
-                key) or f"Failed to load language string '{key}'"
+            return languages["id"].get(key) or f"Failed to load language string '{key}'"
 
 
 def get_languages() -> Dict[str, Union[str, List[str]]]:
