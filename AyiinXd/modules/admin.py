@@ -380,7 +380,7 @@ async def rm_deletedacc(show):
                 del_u += 1
                 await sleep(1)
         if del_u > 0:
-            del_status = (get_string("zomb_3").format(del_u, cmd))
+            del_status = get_string("zomb_3").format(del_u, cmd)
         return await show.edit(del_status)
     chat = await show.get_chat()
     admin = chat.admin_rights
@@ -406,8 +406,7 @@ async def rm_deletedacc(show):
     if del_u > 0:
         del_status = get_string("zomb_7").format(del_u)
     if del_a > 0:
-        del_status = (get_string("zomb_8").format(del_u, del_a)
-        )
+        del_status = get_string("zomb_8").format(del_u, del_a)
     await show.edit(del_status)
     await sleep(2)
     await show.delete()
