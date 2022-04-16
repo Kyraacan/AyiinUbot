@@ -579,7 +579,7 @@ with bot:
     try:
         from AyiinXd.modules.sql_helper.bot_blacklists import check_is_black_list
         from AyiinXd.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
-        from AyiinXd.modules.yinslang import set_key
+        from AyiinXd.modules.botcontrol import setit
         from AyiinXd.utils import reply_id
         from Stringyins import get_languages, get_string, language
 
@@ -1057,8 +1057,8 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 languages = get_languages()
                 language[0] = languages
-                set_key(event, languages, language)
-                tgbot.del_key("language") if languages == "id" else tgbot.get_key("language", languages)
+                setit(event, languages, language)
+                tgbot.del_key("language") if languages == "id" else tgbot.setit("language", languages)
                 await event.edit(
                     f"Your language has been set to {languages[languages]['natively']} [{languages}].",
                     buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")]
@@ -1076,8 +1076,8 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 languages = get_languages()
                 language[0] = languages
-                set_key(event, languages, language)
-                tgbot.del_key("language") if languages == "en" else tgbot.get_key("language", languages)
+                setit(event, languages, language)
+                tgbot.del_key("language") if languages == "en" else tgbot.setit("language", languages)
                 await event.edit(
                     f"Your language has been set to {languages[languages]['natively']} [{languages}].",
                     buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")]
