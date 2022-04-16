@@ -1056,11 +1056,12 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 languages = get_languages()
-                language[0] = languages
-                set_key(event, languages, language)
-                tgbot.del_key("language")
-            if languages == "en":
-                tgbot.set_key("language", languages)
+                language[0] = lang
+            if not os.environ.get("languages"):
+                os.environ.setdefault("language","1")
+
+            if lang == "id":
+                os.environ.setdefault("language", languages)
                 await event.edit(
                     f"Your language has been set to {languages[languages]['natively']} [{languages}].",
                     buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")]
@@ -1077,11 +1078,12 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 languages = get_languages()
-                language[0] = languages
-                set_key(event, languages, language)
-                tgbot.del_key("language")
-            if languages == "en":
-                tgbot.set_key("language", languages)
+                language[0] = lang
+            if not os.environ.get("languages"):
+                os.environ.setdefault("language","1")
+
+            if lang == "en":
+                os.environ.setdefault("language", languages)
                 await event.edit(
                     f"Your language has been set to {languages[languages]['natively']} [{languages}].",
                     buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")]
