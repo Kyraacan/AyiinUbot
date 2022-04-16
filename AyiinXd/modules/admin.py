@@ -331,7 +331,7 @@ async def ungmoot(un_gmute):
     if ungmute(user.id) is False:
         await ayiin.edit(get_string("ungm_2"))
     else:
-        await un_gmute.eor(get_string("ungm_3"). time=10)
+        await un_gmute.eor(get_string("ungm_3"), time=10)
 
 
 @ayiin_cmd(pattern="gmute(?: |$)(.*)")
