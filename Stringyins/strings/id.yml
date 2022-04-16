@@ -15,6 +15,8 @@ com_6: "`Mengunggah...`"
 
 # for error
 error_1: "**KESALAHAN : **`{}`"
+error_2: "**Terjadi KESALAHAN!**"
+no_admn: "**Gagal Dikarenakan Bukan Admin :)**"
 
 # admintools
 prom_1: "`Mempromosikan...`"
@@ -26,6 +28,24 @@ band_2: "\\**#𝘽𝙖𝙣𝙣𝙚𝙙_𝙐𝙨𝙚𝙧**//\n\n**𝙁𝙞𝙧�
 band_3: "\\**#𝘽𝙖𝙣𝙣𝙚𝙙_𝙐𝙨𝙚𝙧**//\n\n**𝙁𝙞𝙧𝙨𝙩 𝙉𝙖𝙢𝙚 :** [{}](tg://user?id={})\n**𝙐𝙨𝙚𝙧 𝙄𝘿 :** `{}`\n**𝘼𝙘𝙩𝙞𝙤𝙣 :** `𝘽𝙖𝙣𝙣𝙚𝙙 𝙐𝙨𝙚𝙧`\n**𝘽𝙖𝙣𝙣𝙚𝙙 𝘽𝙮 :** `{}`\n**𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 : ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧**"
 band_4: "`Unban Berhasil Dilakukan!`"
 band_5: "`Sepertinya Terjadi ERROR!`"
+mute_1: "**Berjalan Pada Mode Non-SQL**"
+mute_2: "**Tidak Bisa Membisukan Diri Sendiri..（>﹏<）**"
+mute_3: "**Gagal Mute, Karna dia adalah Pembuat Saya 🤪**"
+mute_4: "**Gagal Mute, Karna dia adalah admin suhu udara 🤪**"
+mute_5: "\\**#𝙈𝙪𝙩𝙚𝙙_𝙐𝙨𝙚𝙧**//\n\n**𝙁𝙞𝙧𝙨𝙩 𝙉𝙖𝙢𝙚 :** [{}](tg://user?id={})\n**𝙐𝙨𝙚𝙧 𝙄𝘿 :** `{}`\n**𝘼𝙘𝙩𝙞𝙤𝙣 :** `𝙈𝙪𝙩𝙚𝙙 𝙐𝙨𝙚𝙧`\n**𝙈𝙪𝙩𝙚𝙙 𝘽𝙮 :** `{}`\n**𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 : ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧**"
+mute_6: "\\**#𝙈𝙪𝙩𝙚𝙙_𝙐𝙨𝙚𝙧**//\n\n**𝙁𝙞𝙧𝙨𝙩 𝙉𝙖𝙢𝙚 :** [{}](tg://user?id={})\n**𝙐𝙨𝙚𝙧 𝙄𝘿 :** `{}`\n**𝙍𝙚𝙖𝙨𝙤𝙣 :** `{}`\n**𝙈𝙪𝙩𝙚𝙙 𝘽𝙮 :** `{}`\n**𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 : ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧**"
+mute_7: "\\**#𝙈𝙪𝙩𝙚𝙙_𝙐𝙨𝙚𝙧**//\n\n**𝙁𝙞𝙧𝙨𝙩 𝙉𝙖𝙢𝙚 :** [{}](tg://user?id={})\n**𝙐𝙨𝙚𝙧 𝙄𝘿 :** `{}`\n**𝘼𝙘𝙩𝙞𝙤𝙣 :** `𝙈𝙪𝙩𝙚𝙙 𝙐𝙨𝙚𝙧`\n**𝙈𝙪𝙩𝙚𝙙 𝘽𝙮 :** `{}`\n**𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 : ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧**"
+unmt_1: "**KESALAHAN! Pengguna Sudah Tidak Dibisukan.**"
+unmt_2: "**Berhasil Melakukan Unmute!**"
+gmut_1: "**Gagal Global Mute, Karna dia adalah Pembuat Saya 🤪**"
+gmut_2: "**Gagal Global Mute, Karna dia adalah admin suhu udara 🤪**"
+gmut_3: "**Berhasil Membisukan Pengguna!**"
+gmut_4: "**KESALAHAN! Pengguna Sudah Dibisukan.**"
+gmut_5: "\\**#𝙂𝙈𝙪𝙩𝙚𝙙_𝙐𝙨𝙚𝙧**//\n\n**𝙁𝙞𝙧𝙨𝙩 𝙉𝙖𝙢𝙚 :** [{}](tg://user?id={})\n**𝙐𝙨𝙚𝙧 𝙄𝘿 :** `{}`\n**𝙍𝙚𝙖𝙨𝙤𝙣 :** `{}`\n**𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 : ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧**"
+gmut_6: "\\**#𝙂𝙢𝙪𝙩𝙚𝙙_𝙐𝙨𝙚𝙧**//\n\n**𝙁𝙞𝙧𝙨𝙩 𝙉𝙖𝙢𝙚 :** [{}](tg://user?id={})\n**𝙐𝙨𝙚𝙧 𝙄𝘿:** `{}`\n**𝘼𝙘𝙩𝙞𝙤𝙣 :** `𝙂𝙡𝙤𝙗𝙖𝙡 𝙈𝙪𝙩𝙚𝙙`\n**𝙂𝙢𝙪𝙩𝙚𝙙 𝘽𝙮 :** `{}`\n**𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 : ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧**"
+ungm_1: "**Membuka Global Mute Pengguna...**"
+ungm_2: "**KESALAHAN!** Pengguna Sudah Tidak Di Global Mute..."
+ungm_3: "**BERHASIL! Pengguna Sudah Tidak Dibisukan**"
 
 # setgpic
 sgp_1: "**Foto Profil Grup Berhasil dihapus.**"
