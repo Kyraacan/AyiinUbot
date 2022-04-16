@@ -9,6 +9,7 @@ from io import BytesIO
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
+from AyiinXd.ayiinxd import eor, eod
 from AyiinXd.utils import ayiin_cmd, bash, edit_delete, edit_or_reply
 
 from Stringyins import get_string
@@ -27,8 +28,8 @@ async def _(event):
     try:
         cmd = event.text.split(" ", maxsplit=1)[1]
     except IndexError:
-        return await event.delete(get_string("devs_1"))
-    await event.edit(get_string("com_1"))
+        return await event.eor(get_string("devs_1"), time=10)
+    xx = await event.oer(get_string("com_1"))
     reply_to_id = event.reply_to_msg_id or event.id
     stdout, stderr = await bash(cmd)
     OUT = f"**☞ BASH\n\n• COMMAND:**\n`{cmd}` \n\n"
@@ -54,9 +55,9 @@ async def _(event):
                 reply_to=reply_to_id,
             )
 
-            await event.delete()
+            await xx.delete()
     else:
-        await event.edit(OUT)
+        await xx.edit(OUT)
 
 
 CMD_HELP.update(
