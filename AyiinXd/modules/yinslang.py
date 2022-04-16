@@ -30,7 +30,7 @@ async def setlang(event):
     await event.edit("List Of Available Languages.", buttons=buttons)
 
 
-@ayiin_cmd(pattern=r"set(?: |$)(.*)")
+@ayiin_cmd(pattern=r"set( id| en|$)(.*)")
 async def settt(event):
     await edit_or_reply(event, (get_string("com_1")))
     lang = event.pattern_match.group(1).strip()
@@ -38,12 +38,24 @@ async def settt(event):
     language[0] = lang
     os.environ._has_key(event, languages, lang)
     os.environ._setdefault("language")
-    if lang == "id"
-    os.environ._has_key("language", lang)
-    await event.edit(
-        f"Your language has been set to {languages[lang]['natively']} [{lang}].",
-        buttons=[Button.inline("Back", data="lang")],
-    )
+
+    if lang == "id":
+        os.environ._has_key("language", lang)
+        await event.edit(
+            f"Your language has been set to {languages[lang]['natively']} [{lang}].",
+            buttons=[Button.inline("Back", data="lang")],
+        )
+        return
+
+
+if lang == "en":
+        os.environ._has_key("language", lang)
+        await event.edit(
+            f"Your language has been set to {languages[lang]['natively']} [{lang}].",
+            buttons=[Button.inline("Back", data="lang")],
+        )
+        return
+
 
 
 CMD_HELP.update(
