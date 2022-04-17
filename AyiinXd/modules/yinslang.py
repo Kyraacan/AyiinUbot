@@ -21,7 +21,7 @@ async def setlang(event):
     languages = get_languages()
     tutud = [
         Button.inline(
-            f"{languages[yins]['natively']} [{yins.lower()}]",
+            f"{languages[yins]['asli']} [{yins.lower()}]",
             data=f"set_{yins}",
         )
         for yins in languages
@@ -45,8 +45,7 @@ async def settt(event):
     if lang == "id":
         os.environ.setdefault("language", lang)
         await event.edit(
-            f"Your language has been set to {languages[lang]['natively']} [{lang}].",
-            buttons=[Button.inline("Back", data="lang")],
+            f"Your language has been set to {languages[lang]['asli']} [{lang}].",
         )
         return
 
@@ -54,8 +53,7 @@ async def settt(event):
     if lang == "en":
         os.environ.setdefault("language", lang)
         await event.edit(
-            f"Your language has been set to {languages[lang]['natively']} [{lang}].",
-            buttons=[Button.inline("Back", data="lang")],
+            f"Your language has been set to {languages[lang]['asli']} [{lang}].",
         )
         return
 
