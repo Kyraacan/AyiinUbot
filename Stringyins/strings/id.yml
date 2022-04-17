@@ -8,11 +8,16 @@ authors:
 # constans
 pto_sml: "**Gambar Terlalu Kecil**"
 no_admn: "**Gagal Dikarenakan Bukan Admin :)**"
+hk_admn: "**Saya memerlukan hak admin untuk melakukan tindakan ini!**"
 pp_eror: "**Gagal Memproses Gambar**"
 no_perm: "**Tidak Mempunyai Izin!**"
 ch_ppch: "**Berhasil Mengubah Profil Grup**"
 inv_med: "**Media Tidak Valid**"
 not_sql: "**Berjalan Pada Mode Non-SQL**"
+failed1: "**Nomer ID Yang Anda Masukkan Tidak Valid**"
+failed2: "**Tidak Dapat Menemukan Foto Pengguna Ini**"
+failed3: "**Mohon Balas Ke Media...**"
+failed4: "`Balas Ke Gambar/Sticker/Video`"
 
 # commons
 com_1: "`Memproses...`"
@@ -25,6 +30,10 @@ com_6: "`Mengunggah...`"
 # for error
 error_1: "**KESALAHAN : **`{}`"
 error_2: "**Terjadi KESALAHAN!**"
+error_3: "**Berkas tidak ditemukan** `{}`"
+
+#for yins
+ayiin_1: "**[ᴋᴏɴᴛᴏʟ]** - Perintah Itu Dilarang Di Gc Ini Goblok..."
 
 # admintools
 prom_1: "`Mempromosikan...`"
@@ -79,7 +88,90 @@ undl_5: "{}\n**Dikirim oleh** {}"
 undl_6: "{}\n**Dikirim oleh** {}"
 sgp_1: "**Foto Profil Grup Berhasil dihapus.**"
 
-# help
+# adzan
+adzan1: "**Tidak Dapat Menemukan Kota** `{}`"
+
+# afk
+afk_1: "❏ **{} Kembali Online Untuk Parming**\n└ **Dari AFK** `{}` **Yang Lalu**"
+afk_2: "❏ **{} Pengangguran sok Sibuk Balik Lagi!**\n└ **Dari AFK** `{}` **Yang Lalu**"
+afk_3: "❏ **{} Kembali Online**\n└ **Dari AFK** `{}` **Yang Lalu**"
+afk_4: "❏ **{} Sedang AFK**\n├ **Dari** `{}` **Yang Lalu**\n└ **Karena:** `{}`"
+afk_5: "❏ **{} Sedang AFK**\n└ **Dari** `{}` **Yang Lalu**"
+afk_6: "❏ **{} Telah AFK**\n└ **Karena:** `{}`"
+afk_7: "**✘ {} Telah AFK ✘**"
+
+# antiflood
+antiflood_1: "**#Anti Banjir Otomatis**\n\n[User](tg://user?id={}) Membanjiri obrolan.`{}`"
+antiflood_2: "**#Anti Banjir Otomatis**\n\n[User](tg://user?id={}) Membanjiri obrolan.\n**Aksi:** Saya membisukan dia 🔇"
+antiflood_3: "`Sayangnya kamu tidak memiliki hak admin.`"
+antiflood_4: "`Berhasil Memperbarui Setelan Anti Banjir ke {} dalam grup ini.`"
+antiflood_5: "`Batas Flood limit untuk grup ini adalah {}.`"
+
+# appmisc
+appmis_1: "**Pencarian tidak ditemukan. Mohon masukkan** `Nama app yang valid`"
+appmis_2: "**Diunduh di** `{}` **detik. Diunggah dalam** `{}` **detik**"
+appmis_3: "**Teks Apa Yang Harus Saya Weebify Kan?**"
+appmis_4: "**Teks Apa Yang Harus Saya Bold Kan?**"
+appmis_5: "**Teks Apa Yang Harus Saya Medibold Kan?**"
+appmis_6: "**Teks Apa Yang Harus Saya Double Struck Kan?**"
+appmis_7: "**Teks Apa Yang Harus Saya Cursive Bold Kan?**"
+appmis_8: "**Teks Apa Yang Harus Saya Medival Kan?**"
+appmis_9: "**Teks Apa Yang Harus Saya Cursive Kan?**"
+
+# ascii tools
+ascii_1: "`Mohon Masukkan Warna Bukan Angka`"
+ascii_2: "`Mohon Masukkan Background Dari Ascii`"
+ascii_3: "`Berhasil Setel Background Dari Ascii Ke` **{}**"
+
+# blacklist tools
+blk_1: "**{}** `Tidak Ada Di Blacklist`"
+blk_2: "Berhasil: `{}` Memasukan Daftar Kata Terlarang di sini."
+blk_3: "`Berikan kata untuk dihapus dari Kata Terlarang..`"
+blk_4: "Berhasil Menghapus `{}` dari Kata Terlarang."
+blk_5: "Daftar Kata Terlarang Yang Ditemukan Dalam Obrolan Ini Adalah :\n\n"
+blk_6: "Tidak Ada Daftar Kata Terlarang Yang Ditemukan Di Sini"
+
+# broadcast tools
+bd_1: "**apa yang harus saya kirim ke kategori ini?**"
+bd_2: "**Tidak ada kategori dengan nama** `{}` **Silahkan Cek** `{}bclistall`"
+bd_3: "**mengirim pesan ini ke semua grup dalam kategori**"
+bd_4: "**Pesan dikirim ke** `{}` **obrolan keluar** `{}` **obrolan dalam kategori** `{}`"
+bd_5: "**Sebuah pesan dikirim ke** `{}` **obrolan keluar** `{}` **obrolan dalam kategori** `{}`"
+bd_6: "Di kategori mana saya harus menambahkan obrolan ini?"
+bd_7: "Obrolan ini sudah ada dalam kategori ini {}"
+bd_8: "Obrolan ini Sekarang ditambahkan ke kategori {}"
+bd_9: "Obrolan {} ditambahkan ke kategori {}"
+bd_10: "**Ke kategori mana saya harus mengirim pesan ini?**"
+bd_11: "Pengguna {} ditambahkan ke kategori {}"
+bd_12: "Dari kategori mana saya harus menghapus obrolan ini"
+bd_13: "Obrolan ini tidak ada dalam kategori {}"
+bd_14: "Obrolan ini Sekarang dihapus dari kategori {}"
+bd_15: "Obrolan {} dihapus dari kategori {}"
+bd_16: "pengguna {} dihapus dari kategori {}"
+bd_17: "Obrolan kategori mana yang harus saya daftarkan?\nCek `{}bclistall`"
+bd_18: "Tidak ada kategori dengan nama {}. Cek `{}bclistall`"
+bd_19: "Fetching info of the category {}"
+bd_20: "**kategori `{}` memiliki `{}` obrolan dan ini tercantum di bawah ini :**\n\n"
+bd_21: " 👉 __ID ini {} dalam basis data mungkin Anda meninggalkan obrolan/saluran atau mungkin id tidak valid.\nHapus id ini dari database dengan menggunakan perintah ini__ `{}frmfrom {} {}` \n\n"
+bd_22: "Anda belum membuat setidaknya satu kategori, periksa info untuk bantuan lebih lanjut"
+bd_23: "**Berikut adalah daftar kategori Anda :**\n\n"
+bd_24: " 👉 `{}` __contains {} chats__\n"
+bd_25: "Gunakan sintaks yang tepat seperti yang ditunjukkan {}frmfrom category_name groupid"
+bd_26: "Obrolan ini {} tidak termasuk dalam kategori {}"
+bd_27: "Obrolan ini {} telah dihapus dari kategori {}"
+bd_28: "Apakah anda yakin ada kategori? {}"
+bd_29: "Berhasil menghapus kategori {}"
+
+# btpm tools
+btpm_1: "#BTPM\nKEYWORD: {}\n\n**Pesan berikut disimpan sebagai data untuk btpm, JANGAN dihapus!!!**"
+btpm_2: "**Menyimpan list btpm dengan media memerlukan BOTLOG_CHATID untuk disetel.**"
+btpm_3: "**Daftar Btpm {} Disimpan. Gunakan** `${}` **di mana saja untuk menggunakannya**"
+btpm_4: "**Tidak ada daftar btpm yang tersedia saat ini.**"
+btpm_5: "Daftar Btpm yang tersedia :\n\n"
+btpm_6: "**Berhasil menghapus daftar btpm:** `{}`"
+btpm_7: "**Tidak dapat menemukan daftar btpm:** `{}`"
+
+# help tools
 help_1: "`{}` bukan plugin yang valid!"
 help_2: "Bot tidak menanggapi inline kueri.\nLebih baik untuk menggunakan `{}restart`"
 help_3: "`Tolong aktifkan inline mode bot Anda dari` @Botfather."
@@ -91,18 +183,6 @@ help_8: "⚙️ Owner Tools"
 help_9: "Settings ⚙️"
 help_10: "••ᴛᴜᴛᴜᴘ••"
 help_11: "Nama Plugin - {}\n\n✘ Perintah Tersedia -\n\n"
-
-
-# antiflood
-antiflood_1: "`Pengaturan Antiflood Dinonaktifkan`"
-antiflood_2: "`Tidak ada flood limit dalam obrolan ini.`"
-antiflood_3: "`Anda telah dibisukan.`"
-antiflood_4: "`Berhasil Memperbarui Setelan Antiflood ke {} dalam grup ini.`"
-antiflood_5: "`Batas Flood limit untuk grup ini adalah {}.`"
-
-# ascii
-ascii_1: "`Mohon Balas ke gambar.`"
-ascii_2: "`Mengconvert ke html...`"
 
 # audiotools
 audiotools_1: "Balas Audio atau video.."
@@ -138,14 +218,6 @@ wspr_3: "Tambahkan beberapa id atau username juga"
 wspr_4: "Pengguna {} Tidak Ditemukan\nMohon Cari Lagi"
 wspr_5: "Anda tidak dapat melakukan ini"
 
-# afk
-afk_1: "**Tidak Lagi AFK**\n**Karena ~** `{}`"
-afk_2: "**#AFK**\n**Menyetel AFK ke mode** `False`\n**AFK untuk** `{}`"
-afk_3: "**Gua lagi AFK.**\n**Terakhir dilihat** `{}` **yang lalu.**\n**Karena:** `{}`"
-afk_4: "**Gua lagi AFK.**\n**Terakhir dilihat** `{}` **yang lalu.**"
-afk_5: "`AFK dulu.`\n\n**Karena:** `{}`"
-afk_6: "Bye Gua AFK dulu."
-
 # bot
 bot_1: "Hey, I am alive."
 bot_2: "Stats"
@@ -159,15 +231,7 @@ usage: "**⚙️ Informasi Dyno ⚙️**:\n\n➠ **Penggunaan Dyno** `{}`:\n  �
 usage_simple: "**Total Ruang Disk:** `{}`\n**Terpakai:** `{}`\n**Kosong:** `{}`\n\n**📊 Penggunaan Data 📊**\n**Upload**: `{}`\n**Down**: `{}`\n\n**CPU**: `{}%`\n**RAM**: `{}%`\n**DISK**: `{}%`"
 shutdown: "GoodBye {}.\n`Sedang Mematikan bot...`"
 
-# blacklist
-blk_1: "`Berikan kata blacklist untuk ditambahkan..`"
-blk_2: "Berhasil: `{}` Memasukan Daftar Kata Terlarang di sini."
-blk_3: "`Berikan kata untuk dihapus dari Kata Terlarang..`"
-blk_4: "Berhasil Menghapus `{}` dari Kata Terlarang."
-blk_5: "Daftar Kata Terlarang Yang Ditemukan Dalam Obrolan Ini Adalah :\n\n"
-blk_6: "Tidak Ada Daftar Kata Terlarang Yang Ditemukan Di Sini"
-
-# broadcast
+# broadcast tools
 bd_1: "`Menambahkan ke database...`"
 bd_2: "`Mencoba menambahkan semua channel admin ke database...`"
 bd_3: "**Berhasil.**\nChats sudah ada dalam Database: {}\nBaru ditambahkan: {}"
@@ -177,6 +241,7 @@ bd_6: "`Channel sudah ada dalam database!`"
 bd_7: "Dihapus dari database"
 bd_8: "`Menghapus...`"
 bd_9: "Channel sudah dihapus dari database."
+bd_10:  "**Ke kategori mana saya harus mengirim pesan ini?**"
 
 # calculator
 calc_1: "• Ayiin Inline Calculator •"

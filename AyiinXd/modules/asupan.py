@@ -10,12 +10,14 @@ from telethon.tl.types import InputMessagesFilterVideo, InputMessagesFilterVoice
 from AyiinXd import BLACKLIST_CHAT
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
+from AyiinXd.ayiinxd import eor
 from AyiinXd.utils import ayiin_cmd, edit_or_reply
+from Stringyins import get_string
 
 
 @ayiin_cmd(pattern="asupan$")
 async def _(event):
-    xx = await edit_or_reply(event, "`Tunggu Sebentar...`")
+    xx = await eor(event, get_string("com_1"))
     try:
         asupannya = [
             asupan
@@ -34,10 +36,10 @@ async def _(event):
 @ayiin_cmd(pattern="desahcewe$")
 async def _(event):
     if event.chat_id in BLACKLIST_CHAT:
-        return await edit_or_reply(
-            event, "**Perintah ini Dilarang digunakan di Group ini**"
+        return await eor(
+            event, get_string("ayiin_1")
         )
-    xx = await edit_or_reply(event, "`Tunggu Sebentar...`")
+    xx = await eor(event, get_string("com_1"))
     try:
         desahcewe = [
             desah
@@ -56,10 +58,10 @@ async def _(event):
 @ayiin_cmd(pattern="desahcowo$")
 async def _(event):
     if event.chat_id in BLACKLIST_CHAT:
-        return await edit_or_reply(
-            event, "**Perintah ini Dilarang digunakan di Group ini**"
+        return await eor(
+            event, get_string("ayiin_1")
         )
-    xx = await edit_or_reply(event, "`Tunggu Sebentar...`")
+    xx = await eor(event, get_string("com_1"))
     try:
         desahcowo = [
             desah
