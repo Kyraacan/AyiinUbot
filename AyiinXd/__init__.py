@@ -555,7 +555,7 @@ def paginate_help(page_number, loaded_modules, prefix):
                     "⪻", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    "ʙᴀᴄᴋ", data="{}_close({})".format(prefix, modulo_page)
+                    "» ʙᴀᴄᴋ «", data="{}_close({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
                     "⪼", data="{}_next({})".format(prefix, modulo_page)
@@ -599,17 +599,17 @@ with bot:
 
         main_help_button = [
             [
-                Button.inline(get_string("help_8"), data="langs_yins"),
-                Button.inline(get_string("help_5"), data="konten_yins"),
+                Button.inline(get_string("help_3"), data="konten_yins"),
+                Button.inline(get_string("help_4"), data="inline_yins"),
             ],
             [
-                Button.inline(get_string("help_4"), data="reopen"),
+                Button.inline(get_string("help_2"), data="reopen"),
             ],
             [
+                Button.inline(get_string("help_6"), data="langs_yins"),
                 Button.url(get_string("help_9"), f"t.me/{botusername}"),
-                Button.inline(get_string("help_6"), data="inline_yins"),
             ],
-            [Button.inline("⍟ ʙᴀᴄᴋ ⍟", data="close")],
+            [Button.inline(get_string("help_8"), data="close")],
         ]
 
         @tgbot.on(events.NewMessage(incoming=True,
