@@ -827,7 +827,7 @@ async def cursive2(cursivebolded):
             cursivebolded, get_string("appmis_7")
         )
         return
-    xx = await eor(cursivebolded, "com_1"))
+    xx = await eor(cursivebolded, get_string("com_1"))
     string = "".join(args).lower()
     for normiecharacter in string:
         if normiecharacter in normiefont:
