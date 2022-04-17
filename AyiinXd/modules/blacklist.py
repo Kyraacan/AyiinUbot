@@ -12,7 +12,7 @@ import re
 import AyiinXd.modules.sql_helper.blacklist_sql as sql
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd.ayiinxd eod, eor
+from AyiinXd.ayiinxd import eod, eor
 from AyiinXd.utils import edit_or_reply, ayiin_cmd, ayiin_handler
 from Stringyins import get_string
 
