@@ -54,9 +54,9 @@ def get_string(key: str) -> Any:
 def get_languages() -> Dict[str, Union[str, List[str]]]:
     return {
         code: {
-            "name": languages[code]["name"],
-            "natively": languages[code]["natively"],
-            "authors": languages[code]["authors"],
+            "nama": languages[code]["nama"],
+            "asli": languages[code]["asli"],
+            "penulis": languages[code]["penulis"],
         }
         for code in languages
     }
