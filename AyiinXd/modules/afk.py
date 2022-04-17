@@ -168,7 +168,7 @@ async def _(event):
                     )
                 else:
                     await event.client.send_message(
-                        event.chat_id, get_string("afk_7").format(owner)
+                        event.chat_id, get_string("afk_7").format(owner),
                         file=pic,
                     )
             except BaseException:
