@@ -198,7 +198,7 @@ async def catbroadcast_list(event):
     if event.fwd_from:
         return
     if sql.num_broadcastlist_chats() == 0:
-        return await event.edit(get_string("bd_22")),
+        return await event.edit(get_string("bd_22"),
             parse_mode=parse_pre,
         )
     chats = sql.get_broadcastlist_chats()
@@ -240,7 +240,7 @@ async def catbroadcast_remove(event):
             parse_mode=parse_pre,
         )
     sql.rm_from_broadcastlist(keyword, groupid)
-    await event.edit(get_string("bd_27").format(groupid, keyword)),
+    await event.edit(get_string("bd_27").format(groupid, keyword),
         parse_mode=parse_pre,
     )
     chat = await event.get_chat()
