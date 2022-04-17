@@ -27,6 +27,7 @@ from AyiinXd import (
     SUDO_HANDLER,
     StartTime,
     tgbot,
+    user,
 )
 from AyiinXd.modules.sql_helper.bot_blacklists import check_is_black_list
 from AyiinXd.modules.sql_helper.bot_starters import (
@@ -39,7 +40,7 @@ from AyiinXd.utils import _format, asst_cmd, callback, reply_id
 
 from .ping import get_readable_time
 
-user = tgbot.get_me()
+
 OWNER = user.first_name
 OWNER_ID = user.id
 telegraph = Telegraph()
