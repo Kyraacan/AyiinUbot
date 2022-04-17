@@ -607,7 +607,7 @@ with bot:
             ],
             [
                 Button.inline(get_string("help_6"), data="langs_yins"),
-                Button.url(get_string("help_9"), f"t.me/{botusername}"),
+                Button.url(get_string("help_7"), f"t.me/{botusername}"),
             ],
             [Button.inline(get_string("help_8"), data="close")],
         ]
