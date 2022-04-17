@@ -599,15 +599,15 @@ with bot:
 
         main_help_button = [
             [
-                Button.inline("⍟ ʟᴀɴɢᴜᴀɴɢᴇ ᴍᴇɴᴜ ⍟", data="langs_yins"),
-                Button.inline("⍟ ᴋᴏɴᴛᴇɴ ᴍᴇɴᴜ ⍟", data="konten_yins"),
+                Button.inline(get_string("help_8"), data="langs_yins"),
+                Button.inline(get_string("help_5"), data="konten_yins"),
             ],
             [
-                Button.inline("⍟ ᴍᴏᴅᴜʟᴇs ⍟", data="reopen"),
+                Button.inline(get_string("help_4"), data="reopen"),
             ],
             [
-                Button.url("⍟ sᴇᴛᴛɪɴɢs ⍟", f"t.me/{botusername}"),
-                Button.inline("⍟ ᴠᴄ ᴍᴇɴᴜ ⍟", data="inline_yins"),
+                Button.url(get_string("help_9"), f"t.me/{botusername}"),
+                Button.inline(get_string"help_6"), data="inline_yins"),
             ],
             [Button.inline("⍟ ʙᴀᴄᴋ ⍟", data="close")],
         ]
