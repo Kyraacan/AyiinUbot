@@ -281,10 +281,6 @@ cvt_6: "Menambahkan [Ini]({}) Sebagai Gambar Kecil Khusus Anda"
 cvt_7: "`Membalas ke file yang dapat dibaca`"
 cvt_8: "`Bukan File yang Dapat Dibaca.`"
 
-# eventsofday
-eod_1: "🎊 *Acara Hari Ini**\n\n"
-eod_2: "• **Acara untuk {}/2021-2022**\n\n"
-
 # devtools
 devs_1: "`Tidak ada cmd yang diberikan`"
 devs_2: "`Berikan beberapa python cmd`"
@@ -314,9 +310,6 @@ flr_6: "Tidak Ada Filter Apapun Disini"
 
 # fontgen
 fgn_1: "**Font yang tersedia**\n\n"
-
-# extra
-ex_1: "`Balas pesan...`"
 
 # gdrive
 gdrive_1: "`Anda telah memberi otorisasi dengan Google Drive`"
@@ -368,13 +361,24 @@ sudo_3: "`Tidak ada Pengguna SUDO yang ditetapkan...`"
 
 # updater
 upd_1: "`Memeriksa pembaruan, harap tunggu....`"
-upd_2: "`Oops.. Updater tidak dapat melanjutkan karena beberapa masalah.`\n\n**LOGTRACE:**\n"
-upd_3: "**UPDATE baru tersedia untuk [[{}]]({}/tree/{}):\n\nPERUBAHAN:**\n\n{}"
-upd_4: "`Perubahan log terlalu besar, lihat file untuk melihatnya.`"
-upd_5: "Klik tombol di bawah ini untuk memperbarui."
-upd_6: "\n**BOT Anda sudah paling-terbaru dengan [[{}]]({}/tree/{})**\n"
-upd_7: "`Pembaruan Lembut Tapi Cepat...`"
-
+upd_2: "`Oops.. Pembaruan tidak dapat dilanjutkan karena beberapa masalah.`\n\n**LOGTRACE:**\n"
+upd_3: "**✧ Tersedia Pembaruan Untuk [{}] \n\n✧ Pembaruan:**\n\n{}\n"
+upd_4: "**Changelog terlalu besar, dikirim sebagai file.**"
+upd_5: "{}\n**Kredensial Heroku tidak valid untuk deploy Ayiin-Userbot dyno.**"
+upd_6: "**[HEROKU]: Harap Tambahkan Variabel** `HEROKU_APP_NAME` **untuk deploy perubahan terbaru dari Userbot.**"
+upd_7: "{}\n**Terjadi Kesalahan Di Log:**\n`{}`"
+upd_8: "**Pembaruan Gagal!** `Dibatalkan karena ada beberapa kesalahan.`"
+upd_9: "**✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧** `Berhasil Di Deploy! Userbot bisa di gunakan kembali.`"
+upd_10: "{}\n**Kegagalan awal!** `{}`"
+upd_11: "**Sayangnya, Directory {} Tampaknya Bukan Dari Repo. Tapi Kita Bisa Memperbarui Paksa Userbot Menggunakan** `{}update deploy`"
+upd_12: "**✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧** `Berhasil Diupdate! Userbot bisa di Gunakan Lagi.`"
+upd_13: "**[HEROKU]: Harap Tambahkan Variabel** `HEROKU_API_KEY`"
+upd_14: "**✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧ Sudah Versi Terbaru**"
+upd_15: "`[HEROKU]: Update Deploy ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧ Sedang Dalam Proses...`"
+upd_16: "**Perfoming a quick update, please wait...**"
+upd_17: "**Sinkronisasi Paksa Ke Kode Userbot Terbaru, Harap Tunggu...**"
+upd_18: "**Ketik** `{}update deploy` **Untuk Mengupdate ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧**"
+upd_19: "**Quick update telah dinonaktifkan untuk pembaruan ini. Gunakan** `{}update deploy` **sebagai gantinya.**"
 
 # upload download
 udl_1: "`Balas ke file/media yang ingin Anda download...`"
