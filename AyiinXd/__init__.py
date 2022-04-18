@@ -577,9 +577,10 @@ def ibuild_keyboard(buttons):
 
 with bot:
     try:
+        import os
+
         from AyiinXd.modules.sql_helper.bot_blacklists import check_is_black_list
         from AyiinXd.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
-        from AyiinXd.modules.yinslang import setlang
         from AyiinXd.utils import reply_id
         from Stringyins import get_languages, get_string, language
 
@@ -1056,14 +1057,14 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 languages = get_languages()
-                language[0] = languages
-            if not os.environ.get("languages"):
+                language[0] = id
+            if not os.environ.get("id"):
                 os.environ.setdefault("language","1")
 
             if languages == "id":
-                os.environ.setdefault("language", languages)
+                os.environ.setdefault("language", id)
                 await event.edit(
-                    f"•Berhasil• Bahasa Telah Diubah Menjadi {languages[languages]['natively']} [{languages}].",
+                    f"•Berhasil• Bahasa Telah Diubah Menjadi {languages[id]['asli']} [{id}].",
                     file=logoyins,
                     link_preview=True,
                     buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")]
@@ -1077,14 +1078,14 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 languages = get_languages()
-                language[0] = languages
-            if not os.environ.get("languages"):
+                language[0] = en
+            if not os.environ.get("en"):
                 os.environ.setdefault("language","1")
 
             if languages == "en":
-                os.environ.setdefault("language", languages)
+                os.environ.setdefault("language", en)
                 await event.edit(
-                    f"•Berhasil• Bahasa Telah Diubah Menjadi {languages[languages]['natively']} [{languages}].",
+                    f"•Berhasil• Bahasa Telah Diubah Menjadi {languages[en]['asli']} [{en}].",
                     file=logoyins,
                     link_preview=True,
                     buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")]
