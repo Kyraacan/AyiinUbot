@@ -40,6 +40,8 @@ error_4: "**Terjadi Kesalah Yang Tidak Terduga.**"
 
 #for yins
 ayiin_1: "**[ᴋᴏɴᴛᴏʟ]** - Perintah Itu Dilarang Di Gc Ini Goblok..."
+ayiin_2: "**[ᴋᴏɴᴛᴏʟ]** - Tidak dapat menyamar sebagai Developer Ayiin-Userbot Ngentod 😡"
+ayiin_3: "**Maaf Telah MengClone Ayiin 🥺**"
 
 # admintools
 prom_1: "`Mempromosikan...`"
@@ -203,6 +205,60 @@ amem_1: "**Proses Menambahkan** `0` **Member**"
 amem_2: "**Sudah Mencapai 30 anggota, Tunggu Selama** `{}` **menit**"
 amem_3: "**Proses Menambahkan** `{}` **Member**"
 
+# clone tools
+clon_1: "**Kembali ke identitas asli...**"
+clon_2: "**Anda Harus Mengclone Dajjal Dulu Sebelum Kembali!**"
+clon_3: "**Berhasil Mengembalikan Akun Anda Dari Dajjal**"
+clon_4: "**Nama pengguna/ID tidak valid.**"
+clon_5: "**Ketik** `{}help clone` **bila butuh bantuan.**"
+clon_6: "**Tidak dapat menyamar sebagai admin anonim 🥺**"
+clon_7: "**Gua Adalah Dajjal dan Dajjal Adalah Gua. Asekk Dajjal 🥴**"
+clon_8: "**Mencuri Identitas Dajjal...**"
+
+# converter
+cvt_1: "`Mengkonversi ke suara...`"
+cvt_2: "`Mengkonversi ke foto...`"
+cvt_3: "`Menerapkan efek...`"
+cvt_4: "`Balas ke img atau file dengan thumbnail.`"
+cvt_5: "File yang dibalas tidak memiliki thumbnail.`"
+cvt_6: "**Efek yang Anda tentukan tidak ditemukan!**\n**Efek yang dapat Anda gunakan:** `bengek/robot/jedug/fast/echo`"
+cvt_7: "**Harap balas ke file Audio.**"
+cvt_8: "**Harap balas ke stiker.**"
+cvt_9: "**Perintah tidak diketahui! ketik** `{}help convert` **bila butuh bantuan**"
+cvt_10: "**Harap balas ke Video!**"
+cvt_11: "**Tidak dapat mengconvert ke audio! 🥺**"
+cvt_12: "`Mengonversi ke Catatan Suara...`"
+cvt_13: "**Mohon Balas Ke Audio atau video**"
+
+# core tools
+core_1: "`Memasang Modul...`"
+core_2: "**Kesalahan!** Plugin ini sudah terpasang di userbot."
+core_3: "**Plugin** `{}` **Berhasil di pasang**"
+core_4: "➠ **Nama Plugin:** `{}`"
+core_5: "**Berhasil Menghapus Modul** `{}`"
+core_6: "**KESALAHAN: Modul Tidak ditemukan**"
+
+# covid tools
+covid_1: "**Info Virus Corona di {}:**\n\n{}"
+covid_2: "Belum ada informasi tentang negara ini!"
+
+# create tools
+create_1: "Grup/Saluran {} Berhasil Dibuat. Tekan [{}]({}) Untuk Melihatnya"
+create_2: "**Selamat Datang Di Saluran Ini!**"
+
+# custom tools
+cstm_1: "**Balas pesan dengan** `{}custom <trigger>` **untuk menambahkan ke custom cmd**"
+cstm_2: "📝 **#CUSTOM_CMD**\n • **KEYWORD:** `#{}`\n • 🔖 Pesan ini disimpan sebagai catatan data untuk custom, Tolong JANGAN Dihapus!!"
+cstm_3: "**Perintah tidak diketahui! ketik** `{}help custom` **bila butuh bantuan.**"
+cstm_4: "**custom {}. Gunakan** `#{}` **di mana saja untuk menggunakannya**"
+cstm_5: "**Gagal Menambahkan Custom CMD**"
+decu_1: "**Berikan nama custom untuk dihapus**"
+decu_2: "**Berhasil menghapus custom:** `#{}`"
+decu_3: "Tidak ada custom yang disimpan dengan pemicu ini."
+licu_1: "**List Custom yang tersedia:**\n"
+licu_2: "**Tidak ada custom cmd yang disimpan.**"
+licu_3: 
+
 # help tools
 help_1: "`{}` bukan plugin yang valid!"
 help_2: "•• Plugin ••"
@@ -295,16 +351,6 @@ clan_1: "Menambahkan Pengaturan Tindakan Bersih Untuk Obrolan ini"
 clan_2: "Pengaturan Tindakan Bersih yang Dihapus Untuk Obrolan ini"
 clan_3: "`ID Tidak Valid`"
 clan_4: "`Tidak Ada Obrolan Yang Ditambah`"
-
-# converter
-cvt_1: "`Balas ke media/Dokumen apa pun.`"
-cvt_2: "Berikan Nama dan Ekstensi File"
-cvt_3: "`Balas ke media..`"
-cvt_4: "`Balas ke img atau file dengan thumbnail.`"
-cvt_5: "File yang dibalas tidak memiliki thumbnail.`"
-cvt_6: "Menambahkan [Ini]({}) Sebagai Gambar Kecil Khusus Anda"
-cvt_7: "`Membalas ke file yang dapat dibaca`"
-cvt_8: "`Bukan File yang Dapat Dibaca.`"
 
 # devtools
 devs_1: "`Tidak ada cmd yang diberikan`"
