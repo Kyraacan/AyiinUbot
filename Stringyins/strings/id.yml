@@ -18,6 +18,10 @@ failed1: "**Nomer ID Yang Anda Masukkan Tidak Valid**"
 failed2: "**Tidak Dapat Menemukan Foto Pengguna Ini**"
 failed3: "**Mohon Balas Ke Media...**"
 failed4: "`Balas Ke Gambar/Sticker/Video`"
+failed5: "`Saluran/grup tidak valid`"
+failed6: "`Ini adalah saluran / grup pribadi atau saya dilarang dari sana`"
+failed7: "`Saluran atau supergrup tidak ada`"
+
 
 # commons
 com_1: "`Memproses...`"
@@ -26,11 +30,13 @@ com_3: "`Yang anda Masukan Tidak Valid`"
 com_4: "`Media Tidak Didukung..`"
 com_5: "`Mengunduh...`"
 com_6: "`Mengunggah...`"
+com_7: "`Menganalisa...`"
 
 # for error
 error_1: "**KESALAHAN : **`{}`"
 error_2: "**Terjadi KESALAHAN!**"
 error_3: "**Berkas tidak ditemukan** `{}`"
+error_4: "**Terjadi Kesalah Yang Tidak Terduga.**"
 
 #for yins
 ayiin_1: "**[ᴋᴏɴᴛᴏʟ]** - Perintah Itu Dilarang Di Gc Ini Goblok..."
@@ -171,6 +177,32 @@ btpm_5: "Daftar Btpm yang tersedia :\n\n"
 btpm_6: "**Berhasil menghapus daftar btpm:** `{}`"
 btpm_7: "**Tidak dapat menemukan daftar btpm:** `{}`"
 
+# carbon
+carbon_1: "Dikarbonisasi oleh {}"
+carbon_2: "`Balas Pesan atau file yang dapat dibaca..`"
+carbon_3: "`Berikan Warna Kustom untuk Membuat Carbon...`"
+
+# chat
+chat_1: "**Username:** {} \n**User ID:** `{}`"
+link_2: "[{}](tg://user?id={})"
+bots_2: "Bot Dalam {} Group: \n"
+bots_1: "\n 👑 [{}](tg://user?id={}) `{}`"
+bots_3: "\n ⚜️ [{}](tg://user?id={}) `{}`"
+invt_2: "`{}invite` pengguna ke grup chat, bukan ke Pesan Pribadi"
+invt_3: "`Berhasil Diundang`"
+inal_1: "**Anda tidak dapat Mengundang Anggota dari sana.**"
+inal_2: "**Maaf Telah Mencuri Member dari Sini.**"
+inal_3: "**Berikan Link Grup Chat untuk menculik membernya**"
+inal_4: "**Tidak bisa Menambahkan Member di sini Harap ketik di Grup Chat**"
+inal_5: "**Mengundang Member Dari Group {}**"
+inal_6: "**Terminal Status**\n\n`Sedang Mengumpulkan Pengguna...`"
+inal_7: "**Terminal Selesai** \n\n• **Berhasil Menambahkan** `{}` **orang** \n• **Gagal Menambahkan** `{}` **orang**"
+inal_8: "**Terminal Berjalan**\n\n• **Menambahkan** `{}` **orang** \n• **Gagal Menambahkan** `{}` **orang**\n\n**× Kesalahan Terakhir:** `{}`"
+gmem_1: "**Berhasil Mengumpulkan Member**"
+amem_1: "**Proses Menambahkan** `0` **Member**"
+amem_2: "**Sudah Mencapai 30 anggota, Tunggu Selama** `{}` **menit**"
+amem_3: "**Proses Menambahkan** `{}` **Member**"
+
 # help tools
 help_1: "`{}` bukan plugin yang valid!"
 help_2: "•• Plugin ••"
@@ -244,11 +276,6 @@ bd_10:  "**Ke kategori mana saya harus mengirim pesan ini?**"
 # calculator
 calc_1: "• Ayiin Inline Calculator •"
 calc_2: "Buka Kalkulator Lagi"
-
-# carbon
-carbon_1: "Carbonised oleh [{}](tg://user?id={})"
-carbon_2: "`Balas Pesan atau file yang dapat dibaca..`"
-carbon_3: "`Berikan Warna Kustom untuk Membuat Carbon...`"
 
 # chat_bot
 chab_1: "Balas ke pesan pengguna atau beri saya id/username untuk menambahkan ChatBot AI!"
