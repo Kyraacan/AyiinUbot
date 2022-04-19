@@ -410,7 +410,7 @@ async def _(event):
                         )
                     )
                 except Exception as e:
-                    return await edit_or_reply(event, str(e))
+                    return await eor(event, get_string("error_1").format(str(e)))
 
         await eod(event, get_string("invt_3"))
 
