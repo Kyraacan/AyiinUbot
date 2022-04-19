@@ -1056,6 +1056,8 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                id = event.data_match.group(1).decode("UTF-8")
+
                 languages = get_languages()
                 language[0] = id
             if not os.environ.get("id"):
@@ -1077,6 +1079,8 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                en = event.data_match.group(1).decode("UTF-8")
+
                 languages = get_languages()
                 language[0] = en
             if not os.environ.get("en"):
