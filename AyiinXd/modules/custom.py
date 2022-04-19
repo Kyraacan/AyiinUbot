@@ -13,8 +13,9 @@ import io
 from AyiinXd import BOTLOG_CHATID
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
+from AyiinXd.ayiinxd import eod, eor
 from AyiinXd.modules.sql_helper import snips_sql as sql
-from AyiinXd.utils import edit_delete, edit_or_reply, ayiin_cmd, reply_id
+from AyiinXd.utils import ayiin_cmd, reply_id
 
 
 @ayiin_cmd(pattern=r"\#(\S+)")
@@ -60,13 +61,11 @@ async def add_snip(event):
     trigger = trigger.lower()
     if cht:
         if stri:
-            return await edit_delete(
-                event,
-                f"**Balas pesan dengan** `{cmd}custom <trigger>` **untuk menambahkan ke custom cmd**",
+            return await eod(
+                event, get_string("cstm_1").format(cmd)
             )
         await event.client.send_message(
-            BOTLOG_CHATID,
-            f"📝 **#CUSTOM_CMD**\n • **KEYWORD:** `#{trigger}`\n • 🔖 Pesan ini disimpan sebagai catatan data untuk custom, Tolong JANGAN Dihapus!!",
+            BOTLOG_CHATID, get_string("cstm_2").fromat(trigger)
         )
         cht_o = await event.client.forward_messages(
             entity=BOTLOG_CHATID, messages=cht, from_peer=event.chat_id, silent=True
@@ -74,51 +73,48 @@ async def add_snip(event):
         cht_id = cht_o.id
     if not cht:
         if not stri:
-            return await edit_delete(
-                event,
-                f"**Perintah tidak diketahui! ketik** `{cmd}help custom` **bila butuh bantuan.**",
+            return await eod(
+                event, get_string("cstm_3").format(cmd)
             )
         await event.client.send_message(
-            BOTLOG_CHATID,
-            f"📝 **#CUSTOM_CMD**\n • **KEYWORD:** `#{trigger}`\n • 🔖 Pesan ini disimpan sebagai catatan data untuk custom, Tolong JANGAN Dihapus!!",
+            BOTLOG_CHATID, get_string("cstm_2").fromat(trigger)
         )
         cht_o = await event.client.send_message(BOTLOG_CHATID, stri)
         cht_id = cht_o.id
         stri = None
-    success = "**custom {}. Gunakan** `#{}` **di mana saja untuk menggunakannya**"
     if sql.add_note(trigger, stri, cht_id) is False:
         sql.rm_note(trigger)
         if sql.add_note(trigger, stri, cht_id) is False:
-            return await edit_or_reply(event, "**Gagal Menambahkan Custom CMD**")
-        return await edit_or_reply(event, success.format("Berhasil di Update", trigger))
-    return await edit_or_reply(event, success.format("Berhasil disimpan", trigger))
+            return await eod(event, get_string("cstm_5"))
+        return await eor(event, get_string("cstm_4").format("Berhasil di Update", trigger))
+    return await eor(event, get_string("cstm_4").format("Berhasil disimpan", trigger))
 
 
 @ayiin_cmd(pattern="delcustom(?:\\s|$)([\\s\\S]*)")
 async def _(event):
     input_str = (event.pattern_match.group(1)).lower()
     if not input_str:
-        return await edit_delete(event, "**Berikan nama custom untuk dihapus**")
+        return await eod(event, get_string("decu_1"))
     if input_str.startswith("#"):
         input_str = input_str.replace("#", "")
     try:
         sql.rm_note(input_str)
-        await edit_or_reply(
-            event, "**Berhasil menghapus custom:** `#{}`".format(input_str)
+        await eor(
+            event, get_string("decu_2").format(input_str)
         )
     except BaseException:
-        await edit_or_reply(event, "Tidak ada snip yang disimpan dengan pemicu ini.")
+        await eor(event, get_string("decu_3"))
 
 
 @ayiin_cmd(pattern="customs$")
 async def lsnote(event):
     all_snips = sql.get_notes()
-    OUT_STR = "**List Custom yang tersedia:**\n"
+    OUT_STR = get_string("licu_1")
     if len(all_snips) > 0:
         for a_snip in all_snips:
             OUT_STR += f"✧ `#{a_snip.keyword}` \n"
     else:
-        OUT_STR = "**Tidak ada custom cmd yang disimpan.**"
+        OUT_STR = get_string("licu_2")
     if len(OUT_STR) > 4000:
         with io.BytesIO(str.encode(OUT_STR)) as out_file:
             out_file.name = "snips.text"
@@ -127,7 +123,7 @@ async def lsnote(event):
                 out_file,
                 force_document=True,
                 allow_cache=False,
-                caption="**List Custom yang tersedia**",
+                caption=get_string("licu_1"),
                 reply_to=event,
             )
             await event.delete()
