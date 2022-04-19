@@ -128,7 +128,7 @@ async def lsnote(event):
             )
             await event.delete()
     else:
-        await edit_or_reply(event, OUT_STR)
+        await eor(event, OUT_STR)
 
 
 CMD_HELP.update(
