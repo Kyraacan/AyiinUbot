@@ -32,7 +32,7 @@ async def direct_link_generator(event):
                 event,
                 get_string("dili_1")
             )
-    xxnx = await eor(event, get_string"com_1"))
+    xxnx = await eor(event, get_string("com_1"))
     reply = ""
     links = re.findall(r"\bhttps?://.*\.\S+", message)
     if not links:
