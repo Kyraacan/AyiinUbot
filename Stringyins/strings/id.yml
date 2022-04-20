@@ -257,7 +257,29 @@ decu_2: "**Berhasil menghapus custom:** `#{}`"
 decu_3: "Tidak ada custom yang disimpan dengan pemicu ini."
 licu_1: "**List Custom yang tersedia:**\n"
 licu_2: "**Tidak ada custom cmd yang disimpan.**"
-licu_3: 
+
+# deepfry tools
+deep_1: "`Saya tidak bisa menggoreng itu!`"
+deep_2: "`Balas gambar atau stiker untuk menggorengnya!`"
+deep_3: "`Media penggorengan…`"
+
+# dgrup tools
+dgrp_1: "`Balas Ke Pesan Pengguna atau ketik {}dgrup ID/Username Grup Yang Ingin Anda Deteksi`"
+dgrp_2: "`Buka Blok @tgscanrobot Bego Dan Coba Lagi`"
+dgrp_3: "`Mohon Berikan ID/Username untuk menemukan Riwayat`"
+
+# direct link tools
+dili_1: "**Gunakan:** `{}direct <url>` **Bila butuh bantuan ketik** `{}help direct`"
+dili_2: "**Tidak ada Link URL yang ditemukan!**"
+
+# devtools
+devs_1: "**Silahkan Ketik** `{}help exec` **sebagai contoh.**"
+devs_2: "**Itu operasi yang berbahaya! Tidak diperbolehkan!**"
+devs_3: "**Berikan Code untuk di eksekusi.**"
+devs_4: "**Apa yang harus saya jalankan ?**"
+devs_5: "**⪼ Memerintah : **\n`{}` \n\n**⪼  Hasil : **\n`{}` \n"
+devs_6: "`Berhasil`"
+devs_7: "`Berikan perintah atau gunakan {}help term sebagai contoh.`"
 
 # help tools
 help_1: "`{}` bukan plugin yang valid!"
@@ -352,10 +374,6 @@ clan_2: "Pengaturan Tindakan Bersih yang Dihapus Untuk Obrolan ini"
 clan_3: "`ID Tidak Valid`"
 clan_4: "`Tidak Ada Obrolan Yang Ditambah`"
 
-# devtools
-devs_1: "`Tidak ada cmd yang diberikan`"
-devs_2: "`Berikan beberapa python cmd`"
-devs_3: "`Berikan Beberapa Kode C++..`"
 
 # dm
 dm_1: "`Berikan username atau id Obrolan ke mana harus mengirim.`"
