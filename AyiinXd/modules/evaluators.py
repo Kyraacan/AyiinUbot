@@ -25,7 +25,7 @@ p, pp = print, pprint
 async def _(event):
     expression = event.pattern_match.group(1)
     if not expression:
-        return await event.eor(get_string"devs_3"))
+        return await event.eor(get_string("devs_3"))
     if expression in ("AyiinXd.session", "config.env"):
         return await event.eor(get_string("devs_2"))
     cmd = "".join(event.message.message.split(maxsplit=1)[1:])
