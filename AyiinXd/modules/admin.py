@@ -36,12 +36,11 @@ from telethon.tl.types import (
 from AyiinXd import BOTLOG_CHATID
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, DEVS, WHITELIST
-from AyiinXd.ayiin import eor, eod
 from AyiinXd.events import register
 from AyiinXd.ayiin import (
     _format,
-    edit_delete,
-    edit_or_reply,
+    eod,
+    eor,
     get_user_from_event,
     ayiin_cmd,
     ayiin_handler,
@@ -491,7 +490,7 @@ async def kick(usr):
         await usr.client.kick_participant(usr.chat_id, user.id)
         await sleep(0.5)
     except Exception as e:
-        return await edit_delete(usr, f"{NO_PERM}\n{e}")
+        return await eod(usr, f"{NO_PERM}\n{e}")
     if reason:
         await xxnx.edit(get_string("kick_2").format(user.first_name, user.id, reason)
         )
@@ -526,9 +525,9 @@ async def _iundlt(event):
                 deleted_msg += get_string("undl_3").format(msg.old.message, _format.mentionuser(ruser.first_name ,ruser.id))
             else:
                 deleted_msg += get_string("undl_4").format(_media_type, _format.mentionuser(ruser.first_name ,ruser.id))
-        await edit_or_reply(catevent, deleted_msg)
+        await eor(catevent, deleted_msg)
     else:
-        main_msg = await edit_or_reply(catevent, deleted_msg)
+        main_msg = await eor(catevent, deleted_msg)
         for msg in adminlog:
             ruser = (
                 await event.client(GetFullUserRequest(msg.old.from_id.user_id))

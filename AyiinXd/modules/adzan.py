@@ -7,9 +7,8 @@ import requests
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import eor, eod
 from AyiinXd.modules.sql_helper.globals import gvarstatus
-from AyiinXd.ayiin import edit_delete, edit_or_reply, ayiin_cmd
+from AyiinXd.ayiin import ayiin_cmd, eor
 from Stringyins import get_string
 
 
@@ -35,7 +34,7 @@ async def get_adzan(adzan):
             \n<b>Maghrib : </b><code>{result['items'][0]['maghrib']}</code>\
             \n<b>Isya : </b><code>{result['items'][0]['isha']}</code>\
     "
-    await edit_or_reply(adzan, catresult, "html")
+    await eor(adzan, catresult, "html")
 
 
 CMD_HELP.update(

@@ -12,8 +12,7 @@ import re
 import AyiinXd.modules.sql_helper.blacklist_sql as sql
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import eod, eor
-from AyiinXd.ayiin import edit_or_reply, ayiin_cmd, ayiin_handler
+from AyiinXd.ayiin import ayiin_cmd, ayiin_handler, eod, eor
 from Stringyins import get_string
 
 
@@ -71,7 +70,7 @@ async def on_view_blacklist(listbl):
             )
             await listbl.delete()
     else:
-        await edit_or_reply(listbl, OUT_STR)
+        await eor(listbl, OUT_STR)
 
 
 @ayiin_cmd(pattern="rmbl(?: |$)(.*)")
