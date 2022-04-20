@@ -18,7 +18,7 @@ from AyiinXd import BOTLOG_CHATID
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, HEROKU_API_KEY, HEROKU_APP_NAME
 from AyiinXd.modules.sql_helper.globals import addgvar, delgvar, gvarstatus
-from AyiinXd.utils import edit_or_reply, edit_delete, ayiin_cmd
+from AyiinXd.ayiin import edit_or_reply, edit_delete, ayiin_cmd
 from time import sleep
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)

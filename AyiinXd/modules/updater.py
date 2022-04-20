@@ -12,7 +12,7 @@ from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, HEROKU_API_KEY, HEROKU_APP_NAME
 from AyiinXd.events import register
-from AyiinXd.utils import edit_delete, edit_or_reply, ayiin_cmd
+from AyiinXd.ayiin import edit_delete, edit_or_reply, ayiin_cmd
 
 
 async def gen_chlog(repo, diff):

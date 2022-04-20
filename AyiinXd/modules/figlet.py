@@ -12,7 +12,7 @@ import pyfiglet
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd.utils import deEmojify, edit_delete, ayiin_cmd
+from AyiinXd.ayiin import deEmojify, edit_delete, ayiin_cmd
 
 
 @ayiin_cmd(pattern="figlet (\\w+) (.+)")

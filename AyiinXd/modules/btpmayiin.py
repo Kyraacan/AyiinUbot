@@ -16,9 +16,9 @@ from datetime import datetime as dt
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, BOTLOG_CHATID
-from AyiinXd.ayiinxd import eor
+from AyiinXd.ayiin import eor
 from AyiinXd.events import register
-from AyiinXd.utils import ayiin_cmd, edit_delete, edit_or_reply
+from AyiinXd.ayiin import ayiin_cmd, edit_delete, edit_or_reply
 from Stringyins import get_string
 
 
@@ -74,7 +74,7 @@ async def listbtpm(list):
 async def on_btpm(event):
     """ Fbtpm logic. """
     try:
-        from AyiinXd.ayiinxd.btpm_ayiin import get_btpm
+        from AyiinXd.ayiin.btpm_ayiin import get_btpm
     except AttributeError:
         return
     name = event.text[1:]
@@ -101,7 +101,7 @@ async def on_btpm(event):
 async def on_btpm_save(event):
     """ For .savebt command, saves btpm for future use. """
     try:
-        from AyiinXd.ayiinxd.btpm_ayiin import add_btpm
+        from AyiinXd.ayiin.btpm_ayiin import add_btpm
     except AtrributeError:
         await event.edit(get_string("not_sql"))
         return
@@ -137,7 +137,7 @@ async def on_btpm_save(event):
 async def on_btpm_list(event):
     """ For .listbt command, list btpm saved by you. """
     try:
-        from AyiinXd.ayiinxd.btpm_ayiin import get_fbtpm
+        from AyiinXd.ayiin.btpm_ayiin import get_fbtpm
     except AttributeError:
         await event.edit(get_string("not_sql"))
         return
@@ -158,7 +158,7 @@ async def on_btpm_list(event):
 async def on_btpm_delete(event):
     """ For .delbt command, deletes a list btpm. """
     try:
-        from AyiinXd.ayiinxd.btpm_ayiin import remove_btpm
+        from AyiinXd.ayiin.btpm_ayiin import remove_btpm
     except AttributeError:
         await event.edit(get_string("not_sql"))
         return

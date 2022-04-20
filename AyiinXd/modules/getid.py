@@ -2,8 +2,8 @@ from telethon.utils import pack_bot_file_id
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, LOGS
-from AyiinXd.utils import edit_delete, edit_or_reply, ayiin_cmd
-from AyiinXd.utils.logger import logging
+from AyiinXd.ayiin import edit_delete, edit_or_reply, ayiin_cmd
+from AyiinXd.ayiin.logger import logging
 
 LOGS = logging.getLogger(__name__)
 

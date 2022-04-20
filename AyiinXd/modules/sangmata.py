@@ -10,7 +10,7 @@ from telethon.tl.functions.contacts import UnblockRequest
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd.utils import (
+from AyiinXd.ayiin import (
     _format,
     edit_delete,
     edit_or_reply,

@@ -21,16 +21,16 @@ from AyiinXd import CMD_HELP
 from AyiinXd import PLAY_PIC as fotoplay
 from AyiinXd import QUEUE_PIC as ngantri
 from AyiinXd import call_py
-from AyiinXd.utils import bash, edit_delete, edit_or_reply, ayiin_cmd
-from AyiinXd.utils.chattitle import CHAT_TITLE
-from AyiinXd.utils.queues.queues import (
+from AyiinXd.ayiin import bash, edit_delete, edit_or_reply, ayiin_cmd
+from AyiinXd.ayiin.chattitle import CHAT_TITLE
+from AyiinXd.ayiin.queues.queues import (
     QUEUE,
     add_to_queue,
     clear_queue,
     get_queue,
     pop_an_item,
 )
-from AyiinXd.utils.thumbnail import gen_thumb
+from AyiinXd.ayiin.thumbnail import gen_thumb
 
 
 def vcmention(user):

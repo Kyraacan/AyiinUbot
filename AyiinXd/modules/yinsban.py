@@ -8,7 +8,7 @@ from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChannelParticipantsKicked
 from AyiinXd import CMD_HELP
 from AyiinXd import CMD_HANDLER as cmd
-from AyiinXd.utils import edit_or_reply, ayiin_cmd
+from AyiinXd.ayiin import edit_or_reply, ayiin_cmd
 
 
 @ayiin_cmd(pattern="banall(?: |$)(.*)")

@@ -16,8 +16,8 @@ from PIL import Image
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd.ayiinxd import eod, eor
-from AyiinXd.utils import ayiin_cmd, runcmd
+from AyiinXd.ayiin import eod, eor
+from AyiinXd.ayiin import ayiin_cmd, runcmd
 from Stringyins import get_string
 
 

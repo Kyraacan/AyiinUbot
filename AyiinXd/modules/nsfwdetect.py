@@ -8,7 +8,7 @@ import os
 import requests
 
 from AyiinXd import CMD_HELP, DEEP_AI
-from AyiinXd.utils import edit_delete, edit_or_reply, ayiin_cmd
+from AyiinXd.ayiin import edit_delete, edit_or_reply, ayiin_cmd
 
 
 @ayiin_cmd(pattern="detect$")

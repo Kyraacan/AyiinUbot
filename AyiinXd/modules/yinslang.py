@@ -10,8 +10,8 @@ from telethon import Button
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
 from AyiinXd import tgbot
-from AyiinXd.ayiinxd import eor, eod
-from AyiinXd.utils import ayiin_cmd
+from AyiinXd.ayiin import eor, eod
+from AyiinXd.ayiin import ayiin_cmd
 from Stringyins import get_languages, language, get_string
 
 

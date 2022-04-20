@@ -16,7 +16,7 @@ from PIL import Image
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd.utils import bash, ayiin_cmd
+from AyiinXd.ayiin import bash, ayiin_cmd
 
 
 @ayiin_cmd(pattern="tiny(?: |$)(.*)")

@@ -7,8 +7,8 @@ from pathlib import Path
 
 from AyiinXd import CMD_HELP
 from AyiinXd import CMD_HANDLER as cmd
-from AyiinXd.ayiinxd import eor
-from AyiinXd.utils import ayiin_cmd, load_module, remove_plugin, reply_id
+from AyiinXd.ayiin import eor
+from AyiinXd.ayiin import ayiin_cmd, load_module, remove_plugin, reply_id
 from Stringyins import get_string
 
 

@@ -16,7 +16,7 @@ from telethon.tl.types import Channel, Chat, User
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd.utils import edit_delete, edit_or_reply, ayiin_cmd
+from AyiinXd.ayiin import edit_delete, edit_or_reply, ayiin_cmd
 
 
 # Functions

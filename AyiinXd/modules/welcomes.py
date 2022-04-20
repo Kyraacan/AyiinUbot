@@ -12,7 +12,7 @@ from pytz import timezone
 from AyiinXd import BLACKLIST_CHAT, BOTLOG_CHATID, CLEAN_WELCOME
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, LOGS
-from AyiinXd.utils import ayiin_cmd, chataction
+from AyiinXd.ayiin import ayiin_cmd, chataction
 
 
 @chataction()

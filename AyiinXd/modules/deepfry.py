@@ -38,8 +38,8 @@ from PIL import Image, ImageEnhance, ImageOps
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd.ayiinxd import ayiin_cmd, eod, eor
-from AyiinXd.utils import check_media
+from AyiinXd.ayiin import ayiin_cmd, eod, eor
+from AyiinXd.ayiin import check_media
 from Stringyins import get_string
 
 

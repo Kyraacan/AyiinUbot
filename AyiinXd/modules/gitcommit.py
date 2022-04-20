@@ -14,7 +14,7 @@ from github import Github
 # from uniborg.util import admin_cmd, humanbytes, progress, time_formatter
 # from AyiinXd.events import humanbytes, progress, time_formatter
 from AyiinXd import CMD_HELP, GIT_REPO_NAME, GITHUB_ACCESS_TOKEN, bot
-from AyiinXd.utils import ayiin_cmd
+from AyiinXd.ayiin import ayiin_cmd
 
 GIT_TEMP_DIR = "./AyiinXd/temp/"
 

@@ -11,7 +11,7 @@ from telethon.tl.types import DocumentAttributeFilename
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, bot
 from AyiinXd.events import ayiin_cmd, register
-from AyiinXd.utils import bash
+from AyiinXd.ayiin import bash
 
 
 @bot.on(ayiin_cmd(outgoing=True, pattern=r"(mirror|flip|ghost|bw|poster)$"))

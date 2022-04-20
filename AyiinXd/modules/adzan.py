@@ -7,9 +7,9 @@ import requests
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd.ayiinxd import eor, eod
+from AyiinXd.ayiin import eor, eod
 from AyiinXd.modules.sql_helper.globals import gvarstatus
-from AyiinXd.utils import edit_delete, edit_or_reply, ayiin_cmd
+from AyiinXd.ayiin import edit_delete, edit_or_reply, ayiin_cmd
 from Stringyins import get_string
 
 

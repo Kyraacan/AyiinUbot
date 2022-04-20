@@ -10,8 +10,8 @@ from telethon.tl.types import InputPhoto
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, DEVS, LOGS, STORAGE
-from AyiinXd.ayiinxd import eod, eor
-from AyiinXd.utils import ayiin_cmd
+from AyiinXd.ayiin import eod, eor
+from AyiinXd.ayiin import ayiin_cmd
 from Stringyins import get_string
 
 if not hasattr(STORAGE, "userObj"):

@@ -7,7 +7,7 @@ import time
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
-from AyiinXd.utils import edit_or_reply, ayiin_cmd
+from AyiinXd.ayiin import edit_or_reply, ayiin_cmd
 
 
 @ayiin_cmd(

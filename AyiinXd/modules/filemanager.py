@@ -17,7 +17,7 @@ from rarfile import BadRarFile, RarFile, is_rarfile
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
-from AyiinXd.utils import humanbytes, ayiin_cmd
+from AyiinXd.ayiin import humanbytes, ayiin_cmd
 
 MAX_MESSAGE_SIZE_LIMIT = 4095
 

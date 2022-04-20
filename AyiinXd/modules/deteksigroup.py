@@ -12,7 +12,7 @@
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, bot
-from AyiinXd.ayiinxd import ayiin_cmd, eod, eor
+from AyiinXd.ayiin import ayiin_cmd, eod, eor
 from Stringyins import get_string
 
 

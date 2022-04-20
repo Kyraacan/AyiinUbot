@@ -24,8 +24,8 @@ from telethon.tl.types import DocumentAttributeAudio, DocumentAttributeVideo
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
-from AyiinXd.utils import edit_or_reply, humanbytes, ayiin_cmd, progress, run_cmd
-from AyiinXd.utils.FastTelethon import download_file, upload_file
+from AyiinXd.ayiin import edit_or_reply, humanbytes, ayiin_cmd, progress, run_cmd
+from AyiinXd.ayiin.FastTelethon import download_file, upload_file
 
 
 @ayiin_cmd(pattern="download(?: |$)(.*)")

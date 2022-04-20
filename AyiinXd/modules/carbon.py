@@ -14,9 +14,9 @@ from secrets import choice
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd.ayiinxd import eod, eor
-from AyiinXd.utils import ayiin_cmd
-from AyiinXd.utils.misc import Carbon
+from AyiinXd.ayiin import eod, eor
+from AyiinXd.ayiin import ayiin_cmd
+from AyiinXd.ayiin.misc import Carbon
 from Stringyins import get_string
 
 

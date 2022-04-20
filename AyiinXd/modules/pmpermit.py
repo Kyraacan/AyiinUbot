@@ -17,7 +17,7 @@ from AyiinXd import BOTLOG_CHATID
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, COUNT_PM, LASTMSG, LOGS, PM_AUTO_BAN, PM_LIMIT, bot
 from AyiinXd.events import ayiin_cmd
-from AyiinXd.utils import edit_delete, edit_or_reply
+from AyiinXd.ayiin import edit_delete, edit_or_reply
 
 DEF_UNAPPROVED_MSG = (
     f"╔═════════════════════╗\n"

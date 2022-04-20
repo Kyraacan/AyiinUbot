@@ -7,10 +7,10 @@ from telethon.tl.types import ChatBannedRights
 import AyiinXd.modules.sql_helper.antiflood_sql as sql
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, bot
-from AyiinXd.ayiinxd import eod, eor
+from AyiinXd.ayiin import eod, eor
 from AyiinXd.events import ayiin_cmd
-from AyiinXd.utils import edit_or_reply
-from AyiinXd.utils.tools import is_admin
+from AyiinXd.ayiin import edit_or_reply
+from AyiinXd.ayiin.tools import is_admin
 from Stringyins import get_string
 
 CHAT_FLOOD = sql.__load_flood_settings()

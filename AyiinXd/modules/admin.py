@@ -36,9 +36,9 @@ from telethon.tl.types import (
 from AyiinXd import BOTLOG_CHATID
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, DEVS, WHITELIST
-from AyiinXd.ayiinxd import eor, eod
+from AyiinXd.ayiin import eor, eod
 from AyiinXd.events import register
-from AyiinXd.utils import (
+from AyiinXd.ayiin import (
     _format,
     edit_delete,
     edit_or_reply,
@@ -47,7 +47,7 @@ from AyiinXd.utils import (
     ayiin_handler,
     media_type,
 )
-from AyiinXd.utils.logger import logging
+from AyiinXd.ayiin.logger import logging
 
 from Stringyins import get_string
 

@@ -11,7 +11,7 @@ import PIL
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd.utils import bash, edit_or_reply, ayiin_cmd, progress
+from AyiinXd.ayiin import bash, edit_or_reply, ayiin_cmd, progress
 
 
 @ayiin_cmd(pattern="honka(?: |$)(.*)")

@@ -10,7 +10,7 @@ from telethon.tl.functions.channels import LeaveChannelRequest
 from AyiinXd import BLACKLIST_CHAT
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd.utils import ayiin_cmd, edit_or_reply
+from AyiinXd.ayiin import ayiin_cmd, edit_or_reply
 
 
 @ayiin_cmd(pattern="kickme$", allow_sudo=False)

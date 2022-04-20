@@ -17,7 +17,7 @@ from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
 from AyiinXd import OPEN_WEATHER_MAP_APPID as OWM_API
 from AyiinXd import WEATHER_DEFCITY
-from AyiinXd.utils import edit_or_reply, ayiin_cmd
+from AyiinXd.ayiin import edit_or_reply, ayiin_cmd
 
 DEFCITY = WEATHER_DEFCITY or None
 

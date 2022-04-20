@@ -10,8 +10,8 @@ from telethon.tl.types import InputMessagesFilterVideo, InputMessagesFilterVoice
 from AyiinXd import BLACKLIST_CHAT
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd.ayiinxd import eor
-from AyiinXd.utils import ayiin_cmd, edit_or_reply
+from AyiinXd.ayiin import eor
+from AyiinXd.ayiin import ayiin_cmd, edit_or_reply
 from Stringyins import get_string
 
 

@@ -4,7 +4,7 @@
 
 from AyiinXd import DEVS, WHITELIST, blacklistayiin
 from AyiinXd.events import register
-from AyiinXd.utils import ayiin_cmd, chataction, get_user_from_event
+from AyiinXd.ayiin import ayiin_cmd, chataction, get_user_from_event
 
 # Ported For Lord-Userbot by liualvinas/Alvin
 

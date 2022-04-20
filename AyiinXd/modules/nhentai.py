@@ -12,7 +12,7 @@ from natsort import natsorted
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, bot
 from AyiinXd.events import ayiin_cmd
-from AyiinXd.utils import post_to_telegraph
+from AyiinXd.ayiin import post_to_telegraph
 
 
 @bot.on(ayiin_cmd(outgoing=True, pattern=r"nhentai(?: |$)(.*)"))

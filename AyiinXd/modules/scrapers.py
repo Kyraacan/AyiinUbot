@@ -68,7 +68,7 @@ from AyiinXd import (
     bot,
 )
 from AyiinXd.modules.upload_download import get_video_thumb
-from AyiinXd.utils import (
+from AyiinXd.ayiin import (
     chrome,
     edit_delete,
     edit_or_reply,
@@ -77,7 +77,7 @@ from AyiinXd.utils import (
     options,
     progress,
 )
-from AyiinXd.utils.FastTelethon import upload_file
+from AyiinXd.ayiin.FastTelethon import upload_file
 
 TTS_LANG = "id"
 TRT_LANG = "id"

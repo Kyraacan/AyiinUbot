@@ -9,7 +9,7 @@ from telethon.tl import functions, types
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd.utils import ayiin_cmd, ayiin_handler, bash
+from AyiinXd.ayiin import ayiin_cmd, ayiin_handler, bash
 from Stringyins import get_string
 
 USER_AFK = {}

@@ -3,7 +3,7 @@ from os import listdir, path
 from typing import Any, Dict, List, Union
 
 from AyiinXd import LOGS
-from AyiinXd.utils.logger import logging
+from AyiinXd.ayiin.logger import logging
 
 from google_trans_new import google_translator
 from yaml import safe_load

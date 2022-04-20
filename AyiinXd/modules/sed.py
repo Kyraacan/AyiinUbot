@@ -12,7 +12,7 @@ from sre_constants import error as sre_err
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd.utils import ayiin_cmd
+from AyiinXd.ayiin import ayiin_cmd
 
 DELIMITERS = ("/", ":", "|", "_")
 

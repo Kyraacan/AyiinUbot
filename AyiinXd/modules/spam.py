@@ -13,8 +13,8 @@ from AyiinXd import BOTLOG_CHATID
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, BLACKLIST_CHAT, LOGS
 from AyiinXd.modules.sql_helper.globals import addgvar, gvarstatus
-from AyiinXd.utils import edit_delete, edit_or_reply, ayiin_cmd
-from AyiinXd.utils.tools import media_type
+from AyiinXd.ayiin import edit_delete, edit_or_reply, ayiin_cmd
+from AyiinXd.ayiin.tools import media_type
 
 
 async def unsavegif(event, spammer):

@@ -6,7 +6,7 @@
 """ Userbot help command """
 
 from AyiinXd import BOT_USERNAME, CMD_HELP, bot, ch
-from AyiinXd.utils import edit_delete, edit_or_reply, ayiin_cmd
+from AyiinXd.ayiin import edit_delete, edit_or_reply, ayiin_cmd
 
 
 @ayiin_cmd(pattern="help(?: |$)(.*)")

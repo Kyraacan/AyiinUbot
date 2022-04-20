@@ -23,8 +23,8 @@ from AyiinXd import (
     TEMP_DOWNLOAD_DIRECTORY,
     lastfm,
 )
-from AyiinXd.utils import bash, chrome, edit_or_reply, ayiin_cmd, progress
-from AyiinXd.utils.FastTelethon import upload_file
+from AyiinXd.ayiin import bash, chrome, edit_or_reply, ayiin_cmd, progress
+from AyiinXd.ayiin.FastTelethon import upload_file
 
 
 async def getmusic(cat):

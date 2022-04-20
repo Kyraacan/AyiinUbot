@@ -15,7 +15,7 @@ from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
-from AyiinXd.utils import ayiin_cmd
+from AyiinXd.ayiin import ayiin_cmd
 
 
 @ayiin_cmd(pattern="info(?: |$)(.*)")

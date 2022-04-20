@@ -9,8 +9,8 @@ from io import BytesIO
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd.ayiinxd import eor, eod
-from AyiinXd.utils import ayiin_cmd, bash, edit_delete, edit_or_reply
+from AyiinXd.ayiin import eor, eod
+from AyiinXd.ayiin import ayiin_cmd, bash, edit_delete, edit_or_reply
 
 from Stringyins import get_string
 

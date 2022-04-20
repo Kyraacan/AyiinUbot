@@ -14,7 +14,7 @@ import time
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd.utils import edit_delete, extract_time, ayiin_cmd
+from AyiinXd.ayiin import edit_delete, extract_time, ayiin_cmd
 
 
 @ayiin_cmd(

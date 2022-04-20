@@ -16,8 +16,8 @@ from telethon.tl.functions.users import GetFullUserRequest
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd.utils import edit_delete, edit_or_reply, ayiin_cmd
-from AyiinXd.utils.misc import create_quotly
+from AyiinXd.ayiin import edit_delete, edit_or_reply, ayiin_cmd
+from AyiinXd.ayiin.misc import create_quotly
 
 from .carbon import all_col
 

@@ -26,7 +26,7 @@ from PIL import Image
 from AyiinXd import BOTLOG_CHATID
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, HEROKU_API_KEY, HEROKU_APP_NAME
-from AyiinXd.utils import edit_or_reply, ayiin_cmd, time_formatter
+from AyiinXd.ayiin import edit_or_reply, ayiin_cmd, time_formatter
 
 # ================= CONSTANT =================
 if HEROKU_APP_NAME is not None and HEROKU_API_KEY is not None:

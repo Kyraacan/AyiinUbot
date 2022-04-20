@@ -23,7 +23,7 @@ from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, call_py
 from AyiinXd.events import register
-from AyiinXd.utils import edit_delete, edit_or_reply, ayiin_cmd
+from AyiinXd.ayiin import edit_delete, edit_or_reply, ayiin_cmd
 
 
 async def get_call(event):

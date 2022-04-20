@@ -17,7 +17,7 @@ from telethon.errors import rpcbaseerrors
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, DEVS
 from AyiinXd.events import register
-from AyiinXd.utils import ayiin_cmd, edit_delete
+from AyiinXd.ayiin import ayiin_cmd, edit_delete
 
 
 @ayiin_cmd(pattern="purge$")

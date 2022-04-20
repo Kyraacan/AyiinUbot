@@ -11,7 +11,7 @@ from pySmartDL import SmartDL
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd.utils import edit_delete, edit_or_reply, ayiin_cmd, reply_id
+from AyiinXd.ayiin import edit_delete, edit_or_reply, ayiin_cmd, reply_id
 
 ppath = os.path.join(os.getcwd(), "temp", "githubuser.jpg")
 

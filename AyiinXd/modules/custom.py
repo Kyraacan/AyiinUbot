@@ -13,9 +13,9 @@ import io
 from AyiinXd import BOTLOG_CHATID
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd.ayiinxd import eod, eor
+from AyiinXd.ayiin import eod, eor
 from AyiinXd.modules.sql_helper import snips_sql as sql
-from AyiinXd.utils import ayiin_cmd, reply_id
+from AyiinXd.ayiin import ayiin_cmd, reply_id
 
 
 @ayiin_cmd(pattern=r"\#(\S+)")

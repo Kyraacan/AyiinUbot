@@ -14,7 +14,7 @@ from PIL import Image
 from telethon import functions, types
 
 from AyiinXd import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
-from AyiinXd.utils import check_media, edit_delete, edit_or_reply, ayiin_cmd, progress
+from AyiinXd.ayiin import check_media, edit_delete, edit_or_reply, ayiin_cmd, progress
 
 Glitched = TEMP_DOWNLOAD_DIRECTORY + "glitch.gif"
 

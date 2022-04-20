@@ -8,9 +8,9 @@ from asyncio import sleep
 from AyiinXd import BOTLOG_CHATID
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, LOGS
-from AyiinXd.ayiinxd import eod, eor
+from AyiinXd.ayiin import eod, eor
 from AyiinXd.modules.sql_helper import broadcast_sql as sql
-from AyiinXd.utils import ayiin_cmd, parse_pre
+from AyiinXd.ayiin import ayiin_cmd, parse_pre
 from Stringyins import get_string
 
 

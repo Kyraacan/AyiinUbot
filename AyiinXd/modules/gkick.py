@@ -6,7 +6,7 @@ from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, DEVS
 from AyiinXd.events import register
-from AyiinXd.utils import get_user_from_event, ayiin_cmd
+from AyiinXd.ayiin import get_user_from_event, ayiin_cmd
 
 
 @ayiin_cmd(pattern="gkick(?: |$)(.*)")

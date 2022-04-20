@@ -19,7 +19,7 @@ from telethon.errors import FloodWaitError
 from AyiinXd import BLACKLIST_GCAST
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, DEVS, HEROKU_API_KEY, HEROKU_APP_NAME
-from AyiinXd.utils import ayiin_cmd, edit_delete, edit_or_reply
+from AyiinXd.ayiin import ayiin_cmd, edit_delete, edit_or_reply
 
 GCAST_BLACKLIST = [
     -1001675396283,  # AyiinXdSupport

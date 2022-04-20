@@ -9,8 +9,8 @@ import os
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
-from AyiinXd.utils import edit_delete, edit_or_reply, ayiin_cmd
-from AyiinXd.utils.pastebin import PasteBin
+from AyiinXd.ayiin import edit_delete, edit_or_reply, ayiin_cmd
+from AyiinXd.ayiin.pastebin import PasteBin
 
 
 @ayiin_cmd(pattern="paste(?: (-d|-n|-h|-k|-s)|$)?(?: ([\\s\\S]+)|$)")

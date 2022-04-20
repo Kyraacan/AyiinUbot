@@ -37,8 +37,8 @@ from AyiinXd import CMD_HELP
 from AyiinXd import S_PACK_NAME as custompack
 from AyiinXd import tgbot
 from AyiinXd.modules.sql_helper.globals import addgvar, gvarstatus
-from AyiinXd.utils import edit_delete, edit_or_reply, ayiin_cmd
-from AyiinXd.utils.misc import animator, create_quotly
+from AyiinXd.ayiin import edit_delete, edit_or_reply, ayiin_cmd
+from AyiinXd.ayiin.misc import animator, create_quotly
 
 KANGING_STR = [
     "Gua Ijin Maling Sticker Lu Tod...",

@@ -11,7 +11,7 @@ from AyiinXd import CMD_HELP, LOGS
 from AyiinXd.modules.sql_helper import no_log_pms_sql
 from AyiinXd.modules.sql_helper.globals import addgvar, gvarstatus
 from AyiinXd.modules.vcplugin import vcmention
-from AyiinXd.utils import (
+from AyiinXd.ayiin import (
     _format,
     chataction,
     edit_delete,
@@ -19,7 +19,7 @@ from AyiinXd.utils import (
     ayiin_cmd,
     ayiin_handler,
 )
-from AyiinXd.utils.tools import media_type
+from AyiinXd.ayiin.tools import media_type
 
 
 class LOG_CHATS:

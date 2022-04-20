@@ -7,7 +7,7 @@ from secrets import choice
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd.utils import ayiin_cmd, deEmojify, edit_delete
+from AyiinXd.ayiin import ayiin_cmd, deEmojify, edit_delete
 
 
 @ayiin_cmd(pattern="waifu(?: |$)(.*)")

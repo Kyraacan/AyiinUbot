@@ -14,7 +14,7 @@ from pytz import timezone as tz
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, COUNTRY, TZ_NUMBER
-from AyiinXd.utils import ayiin_cmd
+from AyiinXd.ayiin import ayiin_cmd
 
 
 async def get_tz(con):
