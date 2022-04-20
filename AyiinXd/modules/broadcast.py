@@ -9,7 +9,7 @@ from AyiinXd import BOTLOG_CHATID
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, LOGS
 from AyiinXd.modules.sql_helper import broadcast_sql as sql
-from AyiinXd.ayiin import ayiin_cmd, eod, eor parse_pre
+from AyiinXd.ayiin import ayiin_cmd, eod, eor, parse_pre
 from Stringyins import get_string
 
 
