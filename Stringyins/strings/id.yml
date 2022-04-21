@@ -281,16 +281,28 @@ devs_5: "**⪼ Memerintah : **\n`{}` \n\n**⪼  Hasil : **\n`{}` \n"
 devs_6: "`Berhasil`"
 devs_7: "`Berikan perintah atau gunakan {}help term sebagai contoh.`"
 
+# fake tools
+fake_1: "**Memulai fake {} selama** `{}` **detik**"
+fake_2: "**Peringatan!! Pengguna 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 Oleh** {}\n"
+fake_3: "`Tunggu sebentar, This is my master!`\n**Beraninya kau mengancam untuk melarang tuanku!**\n\n_ Akun Anda telah diretas! Bayar $6969 ke master saya __ [AyiinXd](tg://user?id=1700405732) _ untuk melepaskan akun Anda _😏"
+fake_4: "**𝙂𝘽𝘼𝙉𝙉𝙀𝘿 Oleh** {}\n\n**Nama depan: ** {}\n**ID pengguna  : ** `{}`\n"
+fake_5: "**Alasan: **{}"
+fake_6: "**Peringatan!! Pengguna 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 Oleh** {} \n**Alasan:** `Jamet Sagapung`"
+fake_7: "**Reason: **`Jamet Sagapung`"
+fake_8: "**Nama belakang** : @{}\n"
+fake_9: "**Nama Pengguna: ** `Tidak memiliki nama pengguna!`\n"
+
 # help tools
 help_1: "`{}` bukan plugin yang valid!"
 help_2: "•• Plugin ••"
 help_3: "•• Menu Btpm"
 help_4: "Menu Vc ••"
-help_5: "Plugin Sebaris••"
+help_5: "{}\n\n© {}"
 help_6: "⚙️ Alat Pemilik"
 help_7: "Pengaturan ⚙️"
 help_8: "•• Kembali ••"
 help_9: "•• Buka ••"
+help_10: "**Modul {} Tidak diketahui**, **Silahkan Ketik {}help untuk melihat modul.**"
 
 # audiotools
 audiotools_1: "Balas Audio atau video.."
