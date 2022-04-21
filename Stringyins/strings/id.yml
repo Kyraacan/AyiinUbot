@@ -21,7 +21,7 @@ failed4: "`Balas Ke Gambar/Sticker/Video`"
 failed5: "`Saluran/grup tidak valid`"
 failed6: "`Ini adalah saluran / grup pribadi atau saya dilarang dari sana`"
 failed7: "`Saluran atau supergrup tidak ada`"
-
+failed8: "`404: Not Found`"
 
 # commons
 com_1: "`Memproses...`"
@@ -301,13 +301,32 @@ fban_5: "**Fbanned **{}!\n**Alasan :** {}\n**Status :** {}"
 ufbn_1: "**Tunggu, itu illegal**"
 ufbn_2: "Kesuksesan! Un-fbanned di {} feds."
 ufbn_3: "**Un-fbanned** {}!\n**Alasan :** {}\n**Status :** {}"
+ufbn_4: "Gagal untuk un-fban di {}/{} feds.\n"
 afbn_1: "**Berikan nama untuk terhubung ke grup ini!**"
 afbn_2: "**Grup ini sudah terhubung ke daftar federasi.**"
 afbn_3: "**Menambahkan grup ini ke daftar federasi!**"
 dfbn_1: "**Menghapus grup ini dari daftar federasi!**"
 dfbn_2: "**Terputus dari semua federasi yang terhubung!**"
-lfbn_1: "**Anda belum terhubung ke federasi mana pun!**"
-lfbn_2: "**Federasi yang terhubung :**\n\n"
+lfbn_1: "**Federasi yang terhubung :**\n\n"
+
+# figlet tools
+fglet: "**Style yang dipilih tidak valid, ketik** `{}help figlet` **bila butuh bantuan**"
+
+# filemanager tools
+file_1: "Tidak ada direktori atau file dengan nama `{}` coba check lagi!"
+file_2: "**Folder dan File di `{}`** :\n\n"
+file_3: "**Folder dan File di Direktori Saat Ini** :\n\n"
+file_4: 
+rmfl_1: "`Lokasi file tidak ada!`"
+rmfl_2: "Dihapus `{}`"
+rnfl_1: "file path : {} tidak ada!"
+rnfl_2: "Diganti nama dari `{}` ke `{}`"
+zip_1: "Zipped `{}` ke `{}` dalam `{}` detik."
+zip_2: "Zipped `{}` ke `{}`"
+uzip_1: "`Jenis file tidak didukung!`\n`Hanya Bisa ZIP, RAR dan TAR`"
+uzip_2: "**Kesalahan:** `File RAR Rusak`"
+uzip_3: "**Kesalahan:** `File ZIP Rusak`"
+uzip_4: "Unzipped `{}` ke `{}` dalam `{}` detik."
 
 # help tools
 help_1: "`{}` bukan plugin yang valid!"
