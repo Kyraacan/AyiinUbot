@@ -128,8 +128,12 @@ async def update(xx, repo, ups_rem, ac_br):
           pattern=r"^Cupdate( now| deploy|$)")
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
-    xx = await edit_or_reply(event, "`Mengecek Pembaruan, Tunggu Sebentar Ya Kentod...`")
-    xx = await event.reply("`Mengecek Pembaruan, Tunggu Sebentar Ya Kentod...`")
+    sender = await event.get_sender()
+    me = await event.client.get_me()
+    if sender.id != me.id:
+        xx = await event.reply("`Mengecek Pembaruan, Tunggu Sebentar Ya Kentod...`")
+    else:
+         xx = await edit_or_reply(event, "`Mengecek Pembaruan, Tunggu Sebentar Ya Kentod...`")
     conf = event.pattern_match.group(1).strip()
     off_repo = b64decode(
         "aHR0cHM6Ly9naXRodWIuY29tL0F5aWluWGQvQXlpaW5VYm90"
