@@ -284,7 +284,7 @@ devs_7: "`Berikan perintah atau gunakan {}help term sebagai contoh.`"
 # fake tools
 fake_1: "**Memulai fake {} selama** `{}` **detik**"
 fake_2: "**Peringatan!! Pengguna 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 Oleh** {}\n"
-fake_3: "`Tunggu sebentar, Ini tuanku!`\n**Beraninya kau mengancam untuk melarang tuanku!**\n\n_ Akun Anda telah diretas! Bayar $6969 ke master saya __ [AyiinXd](tg://user?id=1700405732) _ untuk melepaskan akun Anda _😏"
+fake_3: "`Tunggu sebentar, Ini tuanku!`\n**Beraninya kau mengancam untuk melarang tuanku!**\n\n_ Akun Anda telah diretas! Bayar $6969 ke master saya __ [{}](tg://user?id={}) _ untuk melepaskan akun Anda _😏"
 fake_4: "**𝙂𝘽𝘼𝙉𝙉𝙀𝘿 Oleh** {}\n\n**Nama depan: ** {}\n**ID pengguna  : ** `{}`\n"
 fake_5: "**Alasan: **{}"
 fake_6: "**Peringatan!! Pengguna 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 Oleh** {} \n**Alasan:** `Jamet Sagapung`"
@@ -327,6 +327,59 @@ uzip_1: "`Jenis file tidak didukung!`\n`Hanya Bisa ZIP, RAR dan TAR`"
 uzip_2: "**Kesalahan:** `File RAR Rusak`"
 uzip_3: "**Kesalahan:** `File ZIP Rusak`"
 uzip_4: "Unzipped `{}` ke `{}` dalam `{}` detik."
+
+# filter
+flr_1: "`Masukan keyword perintah ini untuk ditetapkan sebagai filter dan balas...`"
+flr_2: "**✮ Daftar Filter Yang Aktif Disini:**\n"
+flr_3: "`Berikan filter untuk dihapus..`"
+flr_4: "**Berhasil Menambahkan Filter** `{}` **{}**"
+flr_5: "**Berhasil Menghapus Filter** `{}`"
+flr_6: "Tidak Ada Filter Apapun Disini"
+flr_7: "**#FILTER\nID OBROLAN:** {}\n**TRIGGER:** `{}`\n\n**Pesan Berikut Disimpan Sebagai Data Balasan Filter Untuk Obrolan, Mohon Jangan Menghapusnya**"
+flr_8: "**Untuk menyimpan media sebagai balasan ke filter** `BOTLOG_CHATID` **harus disetel.**"
+flr_9: "**Filter** `{}` **Tidak Ada Disini**."
+flr_10: "**Bot Itu Belum Didukung!**"
+flr_11: "```Saya Akan Menghapus Semua Filter!```"
+flr_12: "**Berhasil Menghapus Semua Filter Bot!**"
+flr_13: "Saya Membersihkan Semua Filter Bot Di `{}`"
+
+# fun tools
+fun_1: "**Silahkan Masukan Kata!**"
+fun_2: "`Anda tidak dapat mengirim hasil sebaris dalam obrolan ini (disebabkan oleh SendInlineBotResultRequest)`"
+
+# gban tools
+gban_1: "**𝘽𝙖𝙣𝙣𝙚𝙙 𝙎𝙥𝙤𝙩𝙚𝙙**\n**𝙁𝙞𝙧𝙨𝙩 𝙉𝙖𝙢𝙚 :** [{}](tg://user?id={})\n**𝘼𝙘𝙩𝙞𝙤𝙣 :** `𝘽𝙖𝙣𝙣𝙚𝙙 𝙄𝙣 𝙂𝙧𝙤𝙪𝙥`\n**𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 :** ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧"
+gban_2: "`Pemrosesan larangan global...`"
+gban_3: "`𖣘 __Larangan Global Akan Aktif...__`"
+gban_4: "**Maaf Telah Terjadi Kesalahan :(**"
+gban_5: "**Apakah Anda Gila ?.. Dia Adalah Developer Ayiin-Userbot 🤪**"
+gban_6: "**Apakah Anda Gila ?... Dia Adalah Admin @SharingUserbot 🤪**"
+gban_7: "\\**#𝙂𝘽𝙖𝙣𝙣𝙚𝙙_𝙐𝙨𝙚𝙧**//\n\n**𝙁𝙞𝙧𝙨𝙩 𝙉𝙖𝙢𝙚 :** [{}](tg://user?id={})\n**𝙐𝙨𝙚𝙧 𝙄𝘿 :** `{}`\n**𝘼𝙘𝙩𝙞𝙤𝙣 :** `𝙂𝙡𝙤𝙗𝙖𝙡 𝘽𝙖𝙣𝙣𝙚𝙙`"
+gban_8: "**Mohon Balas Ke Pesan Penggunanya**"
+gban_9: "**#𝘼𝙡𝙧𝙚𝙖𝙙𝙮_𝙂𝘽𝙖𝙣𝙣𝙚𝙙**\n\n Pengguna Sudah Ada Di Daftar Larangan Global Saya.**"
+gban_10: "\\**#𝙂𝘽𝙖𝙣𝙣𝙚𝙙_𝙐𝙨𝙚𝙧**//\n\n**𝙁𝙞𝙧𝙨𝙩 𝙉𝙖𝙢𝙚 :** [{}](tg://user?id={})\n**𝙐𝙨𝙚𝙧 𝙄𝘿 :** `{}`\n**𝘼𝙘𝙩𝙞𝙤𝙣 :** `𝙂𝙡𝙤𝙗𝙖𝙡 𝘽𝙖𝙣𝙣𝙚𝙙`\n**𝙂𝙗𝙖𝙣𝙣𝙚𝙙 𝘽𝙮 :** `{}`\n**𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 : ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧**"
+ungban_1: "`Membatalkan Perintah Larangan Global...`"
+ungban_2: "`Gagal Membatalkan Perintah Larangan Global...`"
+ungban_3: "`Gagal Membatalkan Perintah Larangan Global... Karena Dia Ada Di Daftar Hitam Ayiin-Userbot`"
+ungban_4: "\\**#𝙐𝙣𝙂𝙗𝙖𝙣𝙣𝙚𝙙_𝙐𝙨𝙚𝙧**//\n\n**𝙁𝙞𝙧𝙨𝙩 𝙉𝙖𝙢𝙚 :** [{}](tg://user?id={})\n**𝙐𝙨𝙚𝙧 𝙄𝘿 :** `{}`\n**𝘼𝙘𝙩𝙞𝙤𝙣 :** `𝙐𝙣𝙂𝙡𝙤𝙗𝙖𝙡 𝘽𝙖𝙣𝙣𝙚𝙙`\n**𝙐𝙣𝙂𝙗𝙖𝙣𝙣𝙚𝙙 𝘽𝙮 :** `{}`\n**𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 : ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧**"
+
+# gcast tools
+gcast_1: "**Berikan Sebuah Pesan atau Reply**"
+gcast_2: "**Berhasil Mengirim Pesan Ke** {} **Grup Tod.**\n**Sorry Tod Gagal Mengirim Pesan Ke** {} **Grup.**"
+gucast_3: "**Berhasil Mengirim Pesan Ke** {} **Chat Tod.**\n**Sorry Tod Gagal Mengirim Pesan Ke** {} **Chat.**"
+blkls_1: "🔮 **Blacklist GCAST:** `Enabled`\n\n📚 **Blacklist Group:**\n» {}\n\nKetik `{}addblacklist` di grup yang ingin anda tambahkan ke daftar blacklist gcast."
+blkls_2: "🔮 **Blacklist GCAST:** `Disabled`"
+addbl_1: "**Silahkan Tambahkan Var** `HEROKU_APP_NAME` **untuk {} blacklist**"
+addbl_2: "**Berhasil Menambahkan** `{}` **ke daftar blacklist gcast.**\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan."
+delbl_1: "**Berhasil Menghapus** `{}` **dari daftar blacklist gcast.**\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan."
+delbl_2: "**Grup ini tidak ada dalam daftar blacklist gcast.**"
+
+# getid tools
+getid_1: "**{} :** {}\n**ID** » `{}`"
+getid_2: "**Berikan Username atau Reply ke pesan pengguna**"
+getid_3: "**💬 ID Pesan :** `{}`\n**🙋‍♂️ Dari ID Pengguna :** `{}`\n**💎 Bot API File ID:** `{}`"
+getid_4: "**👥 ID Obrolan :** `{}`\n**💬 ID Pesan :** `{}`\n**🙋‍♂️ Dari ID Pengguna :** `{}`"
+getid_5: "**👥 ID Obrolan : **`{}`"
 
 # help tools
 help_1: "`{}` bukan plugin yang valid!"
@@ -437,21 +490,12 @@ echo_1: "**Echo Diaktifkan Untuk Pengguna:**\n\n"
 # fake action
 fka_1: "Memulai Fake Action Untuk {} detik."
 
-# filter
-flr_1: "`Masukan keyword perintah ini untuk ditetapkan sebagai filter dan balas...`"
-flr_2: "Daftar Filter Yang Aktif Disini adalah\n\n"
-flr_3: "`Berikan filter untuk dihapus..`"
-flr_4: "**Berhasil Menyimpan Filter** `{}`"
-flr_5: "**Berhasil Menghapus Filter** `{}`"
-flr_6: "Tidak Ada Filter Apapun Disini"
-
 # fontgen
 fgn_1: "**Font yang tersedia**\n\n"
 
 # gdrive
 gdrive_1: "`Anda telah memberi otorisasi dengan Google Drive`"
-gdrive_2: "Pergi [kesini](https://console.developers.google.com/flows/enableapi?apiid=drive) dan dapatkan `GDRIVE_CLIENT_ID` dan `GDRIVE_CLIENT_SECRET` kamu\n\n
-Kirim GDRIVE_CLIENT_ID dan GDRIVE_CLIENT_SECRET kamu seperti ini.\n`GDRIVE_CLIENT_ID GDRIVE_CLIENT_SECRET` dipisahkan dengan spasi."
+gdrive_2: "Pergi [kesini](https://console.developers.google.com/flows/enableapi?apiid=drive) dan dapatkan `GDRIVE_CLIENT_ID` dan `GDRIVE_CLIENT_SECRET` kamu\n\nKirim GDRIVE_CLIENT_ID dan GDRIVE_CLIENT_SECRET kamu seperti ini.\n`GDRIVE_CLIENT_ID GDRIVE_CLIENT_SECRET` dipisahkan dengan spasi."
 gdrive_3: "`Client Id salah anjim`"
 gdrive_4: "`Terjadi kesalahan! Kirim `/auth` lagi.\nJika masih sama, harap hubungi `@TheUltroid"
 gdrive_5: "`Berhasil!\nAnda siap untuk menggunakan Google Drive dengan Ultroid Userbot.`"
@@ -505,17 +549,16 @@ upd_5: "{}\n**Kredensial Heroku tidak valid untuk deploy Ayiin-Userbot dyno.**"
 upd_6: "**[HEROKU]: Harap Tambahkan Variabel** `HEROKU_APP_NAME` **untuk deploy perubahan terbaru dari Userbot.**"
 upd_7: "{}\n**Terjadi Kesalahan Di Log:**\n`{}`"
 upd_8: "**Pembaruan Gagal!** `Dibatalkan karena ada beberapa kesalahan.`"
-upd_9: "**✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧** `Berhasil Di Deploy! Userbot bisa di gunakan kembali.`"
+upd_9: "**✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧** `Berhasil Di {} Userbot bisa di gunakan kembali.`"
 upd_10: "{}\n**Kegagalan awal!** `{}`"
 upd_11: "**Sayangnya, Directory {} Tampaknya Bukan Dari Repo. Tapi Kita Bisa Memperbarui Paksa Userbot Menggunakan** `{}update deploy`"
-upd_12: "**✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧** `Berhasil Diupdate! Userbot bisa di Gunakan Lagi.`"
-upd_13: "**[HEROKU]: Harap Tambahkan Variabel** `HEROKU_API_KEY`"
-upd_14: "**✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧ Sudah Versi Terbaru**"
-upd_15: "`[HEROKU]: Update Deploy ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧ Sedang Dalam Proses...`"
-upd_16: "**Perfoming a quick update, please wait...**"
-upd_17: "**Sinkronisasi Paksa Ke Kode Userbot Terbaru, Harap Tunggu...**"
-upd_18: "**Ketik** `{}update deploy` **Untuk Mengupdate ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧**"
-upd_19: "**Quick update telah dinonaktifkan untuk pembaruan ini. Gunakan** `{}update deploy` **sebagai gantinya.**"
+upd_12: "**[HEROKU]: Harap Tambahkan Variabel** `HEROKU_API_KEY`"
+upd_13: "**✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧ Sudah Versi Terbaru**"
+upd_14: "`[HEROKU]: Update Deploy ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧ Sedang Dalam Proses...`"
+upd_15: "**Perfoming a quick update, please wait...**"
+upd_16: "**Sinkronisasi Paksa Ke Kode Userbot Terbaru, Harap Tunggu...**"
+upd_17: "**Ketik** `{}update deploy` **Untuk Mengupdate ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧**"
+upd_18: "**Quick update telah dinonaktifkan untuk pembaruan ini. Gunakan** `{}update deploy` **sebagai gantinya.**"
 
 # upload download
 udl_1: "`Balas ke file/media yang ingin Anda download...`"
