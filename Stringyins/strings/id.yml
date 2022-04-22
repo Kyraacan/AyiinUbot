@@ -21,7 +21,7 @@ failed4: "`Balas Ke Gambar/Sticker/Video`"
 failed5: "`Saluran/grup tidak valid`"
 failed6: "`Ini adalah saluran / grup pribadi atau saya dilarang dari sana`"
 failed7: "`Saluran atau supergrup tidak ada`"
-failed8: "`404: Not Found`"
+failed8: "`Not Found`"
 
 # commons
 com_1: "`Memproses...`"
@@ -199,8 +199,8 @@ inal_6: "**Terminal Status**\n\n`Sedang Mengumpulkan Pengguna...`"
 inal_7: "**Terminal Selesai** \n\n• **Berhasil Menambahkan** `{}` **orang** \n• **Gagal Menambahkan** `{}` **orang**"
 inal_8: "**Terminal Berjalan**\n\n• **Menambahkan** `{}` **orang** \n• **Gagal Menambahkan** `{}` **orang**\n\n**× Kesalahan Terakhir:** `{}`"
 gmem_1: "**Berhasil Mengumpulkan Member**"
-amem_1: "**Proses Menambahkan** `0` **Member**"
-amem_2: "**Sudah Mencapai 30 anggota, Tunggu Selama** `{}` **menit**"
+amem_1: "**Proses Menambahkan** `{}` **Member**"
+amem_2: "**Sudah Mencapai {} anggota, Tunggu Selama** `{}` **menit**"
 amem_3: "**Proses Menambahkan** `{}` **Member**"
 
 # clone tools
