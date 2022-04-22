@@ -381,6 +381,23 @@ getid_3: "**💬 ID Pesan :** `{}`\n**🙋‍♂️ Dari ID Pengguna :** `{}`\n*
 getid_4: "**👥 ID Obrolan :** `{}`\n**💬 ID Pesan :** `{}`\n**🙋‍♂️ Dari ID Pengguna :** `{}`"
 getid_5: "**👥 ID Obrolan : **`{}`"
 
+# getmusic tools
+getm_1: "`Tunggu..! Saya menemukan {} Anda..`"
+getm_2: "`Apa yang seharusnya saya temukan?`"
+getm_3: "`Yeah.. Mengupload lagu Anda..`"
+vsng_1: "**Ya..! aku menemukan sesuatu..**"
+vsng_2: "**Maaf..! saya tidak dapat menemukan apa pun dengan** `{}`"
+vsng_3: "**{} Berhasil Diupload..!**"
+smdn_1: "`Kesalahan: Tidak ada {} yang ditemukan.`"
+smdn_2: "`{} Musik Anda...`"
+smdn_3: "`Buka blokir `{}` dan coba lagi`"
+smdn_4: "`Kesalahan: `{}` tidak merespons atau Lagu tidak ditemukan!.`"
+mhbb_1: "`Masukkan link yang valid untuk mendownload`"
+deez_1: "Token ARL untuk Deezer"
+inar_1: "Harap setel variabel yang diperlukan untuk modul ini"
+wrong1: "Bruh, sekarang saya pikir seberapa jauh kita harus melangkah. tolong hentikan Sesi saya ð¥º"
+server1: "Mengalami kesalahan teknis."
+
 # help tools
 help_1: "`{}` bukan plugin yang valid!"
 help_2: "•• Plugin ••"
