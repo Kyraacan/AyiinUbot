@@ -6,6 +6,8 @@ import sys
 from base64 import b64decode
 from os import environ, execle, remove
 
+from time import sleep
+
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
@@ -175,7 +177,21 @@ async def upstream(event):
 
     changelog = await gen_chlog(repo, f"HEAD..upstream/{ac_br}")
     if conf == "deploy":
-        await xx.edit("`[HEROKU]: Update Deploy ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧ Sedang Dalam Proses...`")
+        await xx.edit("` Proses Update ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧ : Loading.... 1%`")
+        sleep(2)
+        await xx.edit("` Proses Update ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧ : Loading.... 20%`")
+        sleep(2)
+        await xx.edit("` Proses Update ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧ : Loading.... 35%`")
+        sleep(2)
+        await xx.edit("` Proses Update ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧ : Loading.... 77%`")
+        sleep(1)
+        await xx.edit("` Proses Update ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧ : Loading.... 90%`")
+        sleep(2)
+        await xx.edit("` Proses Update ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧ : Loading.... 99%`")
+        sleep(3)
+        await xx.edit("` Proses Update ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧ : Loading.... 100%`")
+        sleep(1)
+        await xx.edit("` Proses Update ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧ Sedang Menginstall Pembaruan...`")
         await deploy(xx, repo, ups_rem, ac_br, txt)
         return
 
