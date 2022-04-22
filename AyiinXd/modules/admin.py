@@ -219,36 +219,36 @@ async def spider(spdr):
     try:
         from AyiinXd.modules.sql_helper.spam_mute_sql import mute
     except AttributeError:
-        return await event.eor(get_string("not_sql"))
+        return await spdr.eor(get_string("not_sql"))
     chat = await spdr.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
     if not admin and not creator:
-        return await event.eor(get_string("no_admn"))
+        return await spdr.eor(get_string("no_admn"))
     user, reason = await get_user_from_event(spdr)
     if not user:
         return
     self_user = await spdr.client.get_me()
     if user.id == self_user.id:
-        return await event.eor(get_string("mute_1"))
+        return await spdr.eor(get_string("mute_1"))
     if user.id in DEVS:
-        return await ayiin.edit(get_string("mute_2"))
+        return await spdr.edit(get_string("mute_2"))
     if user.id in WHITELIST:
-        return await ayiin.edit(get_string("mute_3"))
-    await ayiin.edit(get_string("mute_4").format(user.first_name, user.id, user.id, self_user.first_name)
+        return await spdr.edit(get_string("mute_3"))
+    await spdr.edit(get_string("mute_4").format(user.first_name, user.id, user.id, self_user.first_name)
                      )
     if mute(spdr.chat_id, user.id) is False:
-        return await event.eor(get_string("mute_7"))
+        return await spdr.eor(get_string("mute_7"))
     try:
         await spdr.client(EditBannedRequest(spdr.chat_id, user.id, MUTE_RIGHTS))
         if reason:
-            await ayiin.edit(get_string("mute_5").format(user.first_name, user.id, user.id, reason, self_user.first_name)
+            await spdr.edit(get_string("mute_5").format(user.first_name, user.id, user.id, reason, self_user.first_name)
                              )
         else:
-            await ayiin.edit(get_string("mute_6").format(user.first_name, user.id, user.id, self_user.first_name)
+            await spdr.edit(get_string("mute_6").format(user.first_name, user.id, user.id, self_user.first_name)
                              )
     except UserIdInvalidError:
-        return await event.eor(get_string("error_2"), time=10)
+        return await spdr.eor(get_string("error_2"), time=10)
 
 
 @ayiin_cmd(pattern="unmute(?: |$)(.*)")
@@ -258,7 +258,7 @@ async def unmoot(unmot):
     admin = chat.admin_rights
     creator = chat.creator
     if not admin and not creator:
-        return await event.eor(get_string("no_admn"), time=10)
+        return await unmot.eor(get_string("no_admn"), time=10)
     try:
         from AyiinXd.modules.sql_helper.spam_mute_sql import unmute
     except AttributeError:
