@@ -7,7 +7,7 @@
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import BOT_USERNAME, CMD_HELP, ch
-from AyiinXd.ayiin ayiin_cmd, eod, eor
+from AyiinXd.ayiin import ayiin_cmd, eod, eor
 from Stringyins import get_string
 
 
