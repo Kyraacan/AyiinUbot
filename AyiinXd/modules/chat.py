@@ -101,10 +101,10 @@ async def _(event):
             chat, filter=ChannelParticipantsBots
         ):
             if isinstance(x.participant, ChannelParticipantAdmin):
-                mentions += get_string("bots_1").format(x.first_name,
+                mentions += "\n 👑 [{}](tg://user?id={}) `{}`".format(x.first_name,
                                                         x.id, x.id)
             else:
-                mentions += get_string("bots_3").format(x.first_name,
+                mentions += "\n ⚜️ [{}](tg://user?id={}) `{}`".format(x.first_name,
                                                         x.id, x.id)
     except Exception as e:
         mentions += " " + str(e) + "\n"
