@@ -36,7 +36,7 @@ async def gbun(event):
         # make meself invulnerable cuz why not xD
         if idd == DEVS:
             await reply_message.reply(get_string("fake_3")
-            )
+                                      )
         else:
             jnl = get_string("fake_4").format(me.first_name, firstname, idd)
             if usname is None:
