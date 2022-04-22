@@ -240,7 +240,7 @@ async def spider(spdr):
     if mute(spdr.chat_id, user.id) is False:
         return await event.eor(get_string("mute_7"))
     try:
-        await spdr.client(EditBannedRequest(spdr.chat_id, user.id, MUTE_RIGHTS))
+        await spdr.client(EditBannedRequest(spdr.chat_id, admin, creator, user.id, MUTE_RIGHTS))
         if reason:
             await ayiin.edit(get_string("mute_5").format(user.first_name, user.id, user.id, reason, self_user.first_name)
             )
@@ -272,7 +272,7 @@ async def unmoot(unmot):
     if unmute(unmot.chat_id, user.id) is False:
         return await unmot.eor(get_string("unmt_1"))
     try:
-        await unmot.client(EditBannedRequest(unmot.chat_id, user.id, UNBAN_RIGHTS))
+        await unmot.client(EditBannedRequest(unmot.chat_id, admin, creator, user.id, UNBAN_RIGHTS))
         await unmot.eor(get_string("unmt_2"))
     except UserIdInvalidError:
         return await unmot.eor(get_string("error_2"))
