@@ -111,7 +111,7 @@ async def _(event):
         await xx.edit(get_string("vsng_1"))
     else:
         await xx.edit(get_string("vsng_2").format(query)
-        )
+                      )
         return
     try:
         loa = l[0]
@@ -215,7 +215,7 @@ async def _(event):
         playing = User(LASTFM_USERNAME, lastfm).get_now_playing()
         if playing is None:
             return await event.edit(get_string("smdn_1").format("scrobble saat ini")
-            )
+                                    )
         artist = playing.get_artist()
         song = playing.get_title()
     else:
@@ -246,7 +246,7 @@ async def _(event):
         await event.delete()
     except TimeoutError:
         return await event.edit(get_string("smdn_4").format("@WooMaiBot")
-        )
+                                )
 
 
 @ayiin_cmd(pattern="mhb(?: |$)(.*)")
@@ -278,7 +278,7 @@ async def _(event):
             await event.delete()
     except TimeoutError:
         return await event.edit(get_string("smdn_4").format("@MusicsHunterBot")
-        )
+                                )
 
 
 @ayiin_cmd(pattern="deez (.+?|) (FLAC|MP3\\_320|MP3\\_256|MP3\\_128)")

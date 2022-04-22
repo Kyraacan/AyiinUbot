@@ -101,11 +101,11 @@ async def _(event):
             chat, filter=ChannelParticipantsBots
         ):
             if isinstance(x.participant, ChannelParticipantAdmin):
-                mentions += get_string("bots_1").format(x.first_name, x.id, x.id
-                )
+                mentions += get_string("bots_1").format(x.first_name,
+                                                        x.id, x.id)
             else:
-                mentions += get_string("bots_3").format(x.first_name, x.id, x.id
-                )
+                mentions += get_string("bots_3").format(x.first_name,
+                                                        x.id, x.id)
     except Exception as e:
         mentions += " " + str(e) + "\n"
     await eor(event, mentions)
@@ -154,7 +154,7 @@ async def get_chatinfo(event):
             return None
         except ChannelPrivateError:
             await eod(event, get_string("failed6")
-            )
+                      )
             return None
         except ChannelPublicGroupNaError:
             await eod(event, get_string("failed7"))
@@ -383,7 +383,7 @@ async def _(event):
     to_add_users = event.pattern_match.group(1)
     if event.is_private:
         await eor(event, get_string("invt_2")
-        )
+                  )
     else:
         if not event.is_channel and event.is_group:
             # https://lonamiwebs.github.io/Telethon/methods/messages/add_chat_user.html
@@ -440,7 +440,7 @@ async def get_users(event):
     chat = await event.get_chat()
     if event.is_private:
         return await ayiin.edit(get_string("inal_4")
-        )
+                                )
     s = 0
     f = 0
     error = "None"
@@ -450,12 +450,12 @@ async def get_users(event):
             await event.client(InviteToChannelRequest(channel=chat, users=[user.id]))
             s += 1
             await ayiin.edit(get_string("inal_8").format(s, f, error)
-            )
+                             )
         except Exception as e:
             error = str(e)
             f += 1
     return await ayiin.edit(get_string("inal_7").format(s, f)
-    )
+                            )
 
 
 # Scraper & Add Member Telegram
@@ -491,8 +491,8 @@ async def admem(event):
     for user in users:
         n += 1
         if n % 30 == 0:
-            await xx.edit(get_string("amem_2").format(900/60)
-            )
+            await xx.edit(get_string("amem_2").format(900 / 60)
+                          )
             await asyncio.sleep(900)
         try:
             userin = InputPeerUser(user["id"], user["hash"])

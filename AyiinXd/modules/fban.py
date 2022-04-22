@@ -49,7 +49,7 @@ async def fban(event):
 
     if event.sender_id == fban_id:
         return await event.edit(get_string("fban_1")
-        )
+                                )
 
     fed_list = get_flist()
     if len(fed_list) == 0:
@@ -87,7 +87,7 @@ async def fban(event):
         status = get_string("fban_4").format(total)
 
     await event.edit(get_string("fban_5").format(user_link, reason, status)
-    )
+                     )
 
 
 @ayiin_cmd(pattern="unfban(?: |$)(.*)")
@@ -152,7 +152,7 @@ async def unfban(event):
 
     reason = reason or "Not specified."
     await event.edit(get_string("ufbn_3").format(user_link, reason, status)
-    )
+                     )
 
 
 @ayiin_cmd(pattern="addf(?: |$)(.*)")

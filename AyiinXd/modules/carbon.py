@@ -14,7 +14,7 @@ from secrets import choice
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import eod, eor
+from AyiinXd.ayiin import eor
 from AyiinXd.ayiin import ayiin_cmd
 from AyiinXd.ayiin.misc import Carbon
 from Stringyins import get_string
@@ -194,12 +194,12 @@ async def crbn(event):
             code = event.text.split(" ", maxsplit=1)[1]
         except IndexError:
             return await eor(xxxx, get_string("carbon_2"), time=30
-            )
+                             )
     xx = await Carbon(code=code, file_name="carbon_ayiin", backgroundColor=col)
     await xxxx.delete()
     await event.reply(get_string("carbon_1").format(from_user),
-        file=xx,
-    )
+                      file=xx,
+                      )
 
 
 @ayiin_cmd(pattern="ccarbon ?(.*)")
@@ -208,7 +208,7 @@ async def ccrbn(event):
     match = event.pattern_match.group(1).strip()
     if not match:
         return await eor(event, get_string("carbon_3")
-        )
+                         )
     msg = await eor(event, get_string("com_1"))
     if event.reply_to_msg_id:
         temp = await event.get_reply_message()
@@ -226,12 +226,12 @@ async def ccrbn(event):
             match = match[0]
         except IndexError:
             return await eor(msg, get_string("carbon_2"), time=30
-            )
+                             )
     xx = await Carbon(code=code, backgroundColor=match)
     await msg.delete()
     await event.reply(get_string("carbon_1").format(from_user),
-        file=xx,
-    )
+                      file=xx,
+                      )
 
 
 CMD_HELP.update(

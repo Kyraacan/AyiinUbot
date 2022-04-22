@@ -9,7 +9,6 @@ from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, bot
 from AyiinXd.ayiin import eod, eor
 from AyiinXd.events import ayiin_cmd
-from AyiinXd.ayiin import edit_or_reply
 from AyiinXd.ayiin.tools import is_admin
 from Stringyins import get_string
 
@@ -64,7 +63,7 @@ async def _(event):
         sql.set_flood(event.chat_id, input_str)
         sql.__load_flood_settings()
         await eor(event, get_string("antiflood_4").format(input_str)
-        )
+                  )
     except Exception as e:
         await eod(event, get_string("error_1").format(e), time=30)
 

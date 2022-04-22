@@ -18,7 +18,7 @@ from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, BOTLOG_CHATID
 from AyiinXd.ayiin import eor
 from AyiinXd.events import register
-from AyiinXd.ayiin import ayiin_cmd, edit_delete, edit_or_reply
+from AyiinXd.ayiin import ayiin_cmd
 from Stringyins import get_string
 
 
@@ -122,7 +122,7 @@ async def on_btpm_save(event):
             msg_id = msg_o.id
         else:
             await event.edit(get_string("btpm_2")
-            )
+                             )
             return
     elif event.reply_to_msg_id and not string:
         rep_msg = await event.get_reply_message()

@@ -84,10 +84,12 @@ async def on_afk(event):
     if USER_AFK and not (await event.get_sender()).bot:
         msg = None
         if reason:
-            message_to_reply = get_string("afk_4").format(owner, total_afk_time, reason)
+            message_to_reply = get_string("afk_4").format(
+                owner, total_afk_time, reason)
         else:
-            message_to_reply = (get_string("afk_5").format(owner, total_afk_time)
-            )
+            message_to_reply = (
+                get_string("afk_5").format(
+                    owner, total_afk_time))
         try:
             if pic.endswith((".tgs", ".webp")):
                 msg = await event.reply(file=pic)

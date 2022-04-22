@@ -48,7 +48,7 @@ async def _(event):
             await conv.send_message(f"{ayiinid}")
         except YouBlockedUserError:
             await steal.reply(get_string("dgrp_2")
-            )
+                              )
         response = await conv.get_response()
         await event.client.send_read_acknowledge(conv.chat_id)
         await yins.edit(response.text)

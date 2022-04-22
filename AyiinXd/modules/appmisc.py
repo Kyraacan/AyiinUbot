@@ -160,7 +160,7 @@ async def apk(e):
         await xx.edit(app_details, link_preview=True, parse_mode="HTML")
     except IndexError:
         await eor(xx, get_string("appmis_1"), time=20
-        )
+                  )
     except Exception as err:
         await edit_delete(xx, "Exception Occured:- " + str(err))
 
@@ -287,7 +287,7 @@ async def _(event):
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
                     await eod(xx, get_string("hk_admn")
-                    )
+                              )
                     e.append(str(e))
                     break
                 c += 1
@@ -309,7 +309,7 @@ async def _(event):
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
                     await eod(xx, get_string("hk_admn")
-                    )
+                              )
                     e.append(str(e))
                     break
                 c += 1
@@ -319,7 +319,7 @@ async def _(event):
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
                     await edit_delete(xx, get_string("hk_admn")
-                    )
+                                      )
                     e.append(str(e))
                     break
                 c += 1
@@ -329,7 +329,7 @@ async def _(event):
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
                     await eor(event, get_string("hk_admn")
-                    )
+                              )
                     e.append(str(e))
                     break
                 c += 1
@@ -339,7 +339,7 @@ async def _(event):
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
                     await eod(xx, get_string("hk_admn")
-                    )
+                              )
                     e.append(str(e))
                     break
                 c += 1
@@ -349,7 +349,7 @@ async def _(event):
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
                     await eod(xx, get_string("hk_admn")
-                    )
+                              )
                     e.append(str(e))
                     break
                 c += 1
@@ -359,7 +359,7 @@ async def _(event):
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
                     await eod(xx, get_string("hk_admn")
-                    )
+                              )
                     e.append(str(e))
                 else:
                     c += 1
@@ -438,7 +438,7 @@ async def _(event):
             os.remove(downloaded_file_name)
             ms_two = (end_two - end).seconds
             await xx.edit(get_string("appmis_2").format(ms_one, ms_two)
-            )
+                          )
         else:
             await eod(xx, get_string("error_3").format(input_str))
     else:
@@ -466,7 +466,7 @@ async def potocmd(event):
             id = int(id)
             if id <= 0:
                 return await eod(xx, get_string("failed1")
-                )
+                                 )
         except BaseException:
             return await eod(xx, "**Lmao**")
         if int(id) <= (len(photos)):

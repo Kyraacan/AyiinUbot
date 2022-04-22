@@ -41,7 +41,7 @@ async def figlet(event):
         font = style_list[style]
     except KeyError:
         return await eod(event, get_string("fglet").format(cmd)
-        )
+                         )
     result = pyfiglet.figlet_format(deEmojify(text), font=font)
     await event.respond(f"‌‌‎`{result}`")
     await event.delete()

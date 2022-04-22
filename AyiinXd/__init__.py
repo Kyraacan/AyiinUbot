@@ -1061,7 +1061,7 @@ with bot:
                 languages = get_languages()
                 language[0] = id
             if not os.environ.get("id"):
-                os.environ.setdefault("language","1")
+                os.environ.setdefault("language", "1")
 
             if languages == "id":
                 os.environ.setdefault("language", id)
@@ -1084,7 +1084,7 @@ with bot:
                 languages = get_languages()
                 language[0] = en
             if not os.environ.get("en"):
-                os.environ.setdefault("language","1")
+                os.environ.setdefault("language", "1")
 
             if languages == "en":
                 os.environ.setdefault("language", en)

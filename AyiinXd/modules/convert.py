@@ -27,13 +27,13 @@ async def cevir(event):
     try:
         if len(botyins) < 1:
             await eod(event, get_string("cvt_9").format(cmd),
-                time=30,
-            )
+                      time=30,
+                      )
             return
     except BaseException:
         await eod(event, get_string("cvt_9").format(cmd),
-            time=30,
-        )
+                  time=30,
+                  )
         return
     if botyins in ["foto", "photo"]:
         rep_msg = await event.get_reply_message()
@@ -88,7 +88,7 @@ async def cevir(event):
             os.remove("output.mp3")
         else:
             await xxx.edit(get_string("cvt_6")
-            )
+                           )
     elif botyins == "mp3":
         rep_msg = await event.get_reply_message()
         if not event.is_reply or not rep_msg.video:
@@ -116,7 +116,7 @@ async def cevir(event):
         os.remove(video)
     else:
         await xx.edit(get_string("cvt_9")
-        )
+                      )
         return
 
 

@@ -9,8 +9,6 @@ from telethon import Button
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd import tgbot
-from AyiinXd.ayiin import eor, eod
 from AyiinXd.ayiin import ayiin_cmd
 from Stringyins import get_languages, language, get_string
 
@@ -40,7 +38,7 @@ async def settt(event):
     languages = get_languages()
     language[0] = lang
     if not os.environ.get("lang"):
-        os.environ.setdefault("language","1")
+        os.environ.setdefault("language", "1")
 
     if lang == "id":
         os.environ.setdefault("language", lang)
@@ -49,14 +47,12 @@ async def settt(event):
         )
         return
 
-
     if lang == "en":
         os.environ.setdefault("language", lang)
         await event.edit(
             f"Your language has been set to {languages[lang]['asli']} [{lang}].",
         )
         return
-
 
 
 CMD_HELP.update(

@@ -135,7 +135,7 @@ async def promote(event):
         rank = "admin"
     if not user:
         return
-    eventyins = await event.eor(get_string("prom_1"))
+    await event.eor(get_string("prom_1"))
     try:
         await event.client(EditAdminRequest(event.chat_id, user.id, new_rights, rank))
     except BadRequestError:
@@ -150,7 +150,7 @@ async def demote(event):
     user, _ = await get_user_from_event(event)
     if not user:
         return
-    eventyins = await event.eor(get_string("`deot_1"))
+    await event.eor(get_string("`deot_1"))
     newrights = ChatAdminRights(
         add_admins=None,
         invite_users=None,
@@ -190,7 +190,7 @@ async def ban(bon):
         await ayiin.edit(get_string("band_2").format(user.first_name, user.id, str(user.id), reason, me.first_name))
     else:
         await ayiin.edit(get_string("band_2").format(user.first_name, user.id, str(user.id), reason, me.first_name)
-        )
+                         )
 
 
 @ayiin_cmd(pattern="unban(?:\\s|$)([\\s\\S]*)")
@@ -201,7 +201,7 @@ async def nothanos(unbon):
     creator = chat.creator
     if not admin and not creator:
         return await event.eor(get_string("no_admn"))
-    ayiin = await unbon.eor(get_string("com_1"))
+    await unbon.eor(get_string("com_1"))
     user = await get_user_from_event(unbon)
     user = user[0]
     if not user:
@@ -236,17 +236,17 @@ async def spider(spdr):
     if user.id in WHITELIST:
         return await ayiin.edit(get_string("mute_3"))
     await ayiin.edit(get_string("mute_4").format(user.first_name, user.id, user.id, self_user.first_name)
-    )
+                     )
     if mute(spdr.chat_id, user.id) is False:
         return await event.eor(get_string("mute_7"))
     try:
         await spdr.client(EditBannedRequest(spdr.chat_id, admin, creator, user.id, MUTE_RIGHTS))
         if reason:
             await ayiin.edit(get_string("mute_5").format(user.first_name, user.id, user.id, reason, self_user.first_name)
-            )
+                             )
         else:
             await ayiin.edit(get_string("mute_6").format(user.first_name, user.id, user.id, self_user.first_name)
-            )
+                             )
     except UserIdInvalidError:
         return await event.eor(get_string("error_2"), time=10)
 
@@ -263,7 +263,7 @@ async def unmoot(unmot):
         from AyiinXd.modules.sql_helper.spam_mute_sql import unmute
     except AttributeError:
         return await unmot.eor(get_string("not_sql"))
-    ayiin = await unmot.eor(get_string("com_1"))
+    await unmot.eor(get_string("com_1"))
     user = await get_user_from_event(unmot)
     user = user[0]
     if not user:
@@ -361,10 +361,10 @@ async def gspider(gspdr):
         await gspdr.eor(get_string("gmut_4"))
     elif reason:
         await ayiin.edit(get_string("gmut_5").format(user.first_name, user.id, user.id, reason, self_user.first_name)
-        )
+                         )
     else:
         await ayiin.edit(get_string("gmut_6").format(user.first_name, user.id, user.id, self_user.first_name)
-        )
+                         )
 
 
 @ayiin_cmd(pattern="zombies(?: |$)(.*)")
@@ -458,7 +458,7 @@ async def pin(event):
     options = (event.pattern_match.group(1)).strip()
     if not to_unpin and options != "all":
         return await event.eor(get_string("upin_1").format(cmd), time=20,
-        )
+                               )
     try:
         if to_unpin and not options:
             await event.client.unpin_message(event.chat_id, to_unpin)
@@ -466,7 +466,7 @@ async def pin(event):
             await event.client.unpin_message(event.chat_id)
         else:
             return await eor(event, get_string("upin_2").format(cmd), time=20,
-            )
+                             )
     except BadRequestError:
         return await event.eor(get_string("no_perm"), time=10)
     except Exception as e:
@@ -493,10 +493,10 @@ async def kick(usr):
         return await eod(usr, f"{NO_PERM}\n{e}")
     if reason:
         await xxnx.edit(get_string("kick_2").format(user.first_name, user.id, reason)
-        )
+                        )
     else:
         await xxnx.edit(get_string("kick_3").format(user.first_name, user.id)
-        )
+                        )
 
 
 @ayiin_cmd(pattern=r"undlt( -u)?(?: |$)(\d*)?")
@@ -522,9 +522,12 @@ async def _iundlt(event):
             ).user
             _media_type = media_type(msg.old)
             if _media_type is None:
-                deleted_msg += get_string("undl_3").format(msg.old.message, _format.mentionuser(ruser.first_name ,ruser.id))
+                deleted_msg += get_string("undl_3").format(
+                    msg.old.message, _format.mentionuser(
+                        ruser.first_name, ruser.id))
             else:
-                deleted_msg += get_string("undl_4").format(_media_type, _format.mentionuser(ruser.first_name ,ruser.id))
+                deleted_msg += get_string("undl_4").format(_media_type,
+                                                           _format.mentionuser(ruser.first_name, ruser.id))
         await eor(catevent, deleted_msg)
     else:
         main_msg = await eor(catevent, deleted_msg)
@@ -534,12 +537,12 @@ async def _iundlt(event):
             ).user
             _media_type = media_type(msg.old)
             if _media_type is None:
-                await main_msg.reply(get_string("undl_5").format(msg.old.message, _format.mentionuser(ruser.first_name ,ruser.id))
-                )
+                await main_msg.reply(get_string("undl_5").format(msg.old.message, _format.mentionuser(ruser.first_name, ruser.id))
+                                     )
             else:
-                await main_msg.reply(get_string("undl_6").format(msg.old.message, _format.mentionuser(ruser.first_name ,ruser.id)),
-                    file=msg.old.media,
-                )
+                await main_msg.reply(get_string("undl_6").format(msg.old.message, _format.mentionuser(ruser.first_name, ruser.id)),
+                                     file=msg.old.media,
+                                     )
 
 
 CMD_HELP.update(

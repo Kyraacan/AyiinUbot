@@ -10,7 +10,7 @@ from telethon.tl.types import InputPhoto
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, DEVS, LOGS, STORAGE
-from AyiinXd.ayiin import eod, eor
+from AyiinXd.ayiin import eor
 from AyiinXd.ayiin import ayiin_cmd
 from Stringyins import get_string
 
@@ -44,7 +44,7 @@ async def impostor(event):
         replyMessage = await event.get_reply_message()
         if replyMessage.sender_id in DEVS:
             return await xx.edit(get_string("ayiin_2")
-            )
+                                 )
         if replyMessage.sender_id is None:
             return await xx.edit("**Tidak dapat menyamar sebagai admin anonim 🥺**")
         userObj = await event.client(GetFullUserRequest(replyMessage.sender_id))

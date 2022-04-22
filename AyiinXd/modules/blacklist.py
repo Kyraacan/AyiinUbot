@@ -12,7 +12,7 @@ import re
 import AyiinXd.modules.sql_helper.blacklist_sql as sql
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, ayiin_handler, eod, eor
+from AyiinXd.ayiin import ayiin_cmd, ayiin_handler, eor
 from Stringyins import get_string
 
 
@@ -28,7 +28,7 @@ async def on_new_message(event):
                 await event.delete()
             except Exception:
                 await event.reply(get_string("hk_admn")
-                )
+                                  )
                 await sleep(1)
                 await reply.delete()
                 sql.rm_from_blacklist(event.chat_id, snip.lower())
