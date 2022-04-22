@@ -247,7 +247,7 @@ create_1: "Grup/Saluran {} Berhasil Dibuat. Tekan [{}]({}) Untuk Melihatnya"
 create_2: "**Selamat Datang Di Saluran Ini!**"
 
 # custom tools
-cstm_1: "**Balas pesan dengan** `{}custom <trigger>` **untuk menambahkan ke custom cmd**"
+cstm_1: "**Balas pesan dengan** `{}custom trigger` **untuk menambahkan ke custom cmd**"
 cstm_2: "📝 **#CUSTOM_CMD**\n • **KEYWORD:** `#{}`\n • 🔖 Pesan ini disimpan sebagai catatan data untuk custom, Tolong JANGAN Dihapus!!"
 cstm_3: "**Perintah tidak diketahui! ketik** `{}help custom` **bila butuh bantuan.**"
 cstm_4: "**custom {}. Gunakan** `#{}` **di mana saja untuk menggunakannya**"
@@ -269,7 +269,7 @@ dgrp_2: "`Buka Blok @tgscanrobot Bego Dan Coba Lagi`"
 dgrp_3: "`Mohon Berikan ID/Username untuk menemukan Riwayat`"
 
 # direct link tools
-dili_1: "**Gunakan:** `{}direct <url>` **Bila butuh bantuan ketik** `{}help direct`"
+dili_1: "**Gunakan:** `{}direct url` **Bila butuh bantuan ketik** `{}help direct`"
 dili_2: "**Tidak ada Link URL yang ditemukan!**"
 
 # devtools
@@ -316,7 +316,6 @@ fglet: "**Style yang dipilih tidak valid, ketik** `{}help figlet` **bila butuh b
 file_1: "Tidak ada direktori atau file dengan nama `{}` coba check lagi!"
 file_2: "**Folder dan File di `{}`** :\n\n"
 file_3: "**Folder dan File di Direktori Saat Ini** :\n\n"
-file_4: 
 rmfl_1: "`Lokasi file tidak ada!`"
 rmfl_2: "Dihapus `{}`"
 rnfl_1: "file path : {} tidak ada!"
@@ -350,14 +349,14 @@ fun_2: "`Anda tidak dapat mengirim hasil sebaris dalam obrolan ini (disebabkan o
 # gban tools
 gban_1: "**𝘽𝙖𝙣𝙣𝙚𝙙 𝙎𝙥𝙤𝙩𝙚𝙙**\n**𝙁𝙞𝙧𝙨𝙩 𝙉𝙖𝙢𝙚 :** [{}](tg://user?id={})\n**𝘼𝙘𝙩𝙞𝙤𝙣 :** `𝘽𝙖𝙣𝙣𝙚𝙙 𝙄𝙣 𝙂𝙧𝙤𝙪𝙥`\n**𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 :** ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧"
 gban_2: "`Pemrosesan larangan global...`"
-gban_3: "`𖣘 __Larangan Global Akan Aktif...__`"
+gban_3: "`𖣘 Larangan Global Akan Aktif...`"
 gban_4: "**Maaf Telah Terjadi Kesalahan :(**"
 gban_5: "**Apakah Anda Gila ?.. Dia Adalah Developer Ayiin-Userbot 🤪**"
 gban_6: "**Apakah Anda Gila ?... Dia Adalah Admin @SharingUserbot 🤪**"
-gban_7: "\\**#𝙂𝘽𝙖𝙣𝙣𝙚𝙙_𝙐𝙨𝙚𝙧**//\n\n**𝙁𝙞𝙧𝙨𝙩 𝙉𝙖𝙢𝙚 :** [{}](tg://user?id={})\n**𝙐𝙨𝙚𝙧 𝙄𝘿 :** `{}`\n**𝘼𝙘𝙩𝙞𝙤𝙣 :** `𝙂𝙡𝙤𝙗𝙖𝙡 𝘽𝙖𝙣𝙣𝙚𝙙`"
+gban_7: "**\\#𝙂𝘽𝙖𝙣𝙣𝙚𝙙_𝙐𝙨𝙚𝙧**//**\n\n**𝙁𝙞𝙧𝙨𝙩 𝙉𝙖𝙢𝙚 :** [{}](tg://user?id={})\n**𝙐𝙨𝙚𝙧 𝙄𝘿 :** `{}`\n**𝘼𝙘𝙩𝙞𝙤𝙣 :** `𝙂𝙡𝙤𝙗𝙖𝙡 𝘽𝙖𝙣𝙣𝙚𝙙`"
 gban_8: "**Mohon Balas Ke Pesan Penggunanya**"
 gban_9: "**#𝘼𝙡𝙧𝙚𝙖𝙙𝙮_𝙂𝘽𝙖𝙣𝙣𝙚𝙙**\n\n Pengguna Sudah Ada Di Daftar Larangan Global Saya.**"
-gban_10: "\\**#𝙂𝘽𝙖𝙣𝙣𝙚𝙙_𝙐𝙨𝙚𝙧**//\n\n**𝙁𝙞𝙧𝙨𝙩 𝙉𝙖𝙢𝙚 :** [{}](tg://user?id={})\n**𝙐𝙨𝙚𝙧 𝙄𝘿 :** `{}`\n**𝘼𝙘𝙩𝙞𝙤𝙣 :** `𝙂𝙡𝙤𝙗𝙖𝙡 𝘽𝙖𝙣𝙣𝙚𝙙`\n**𝙂𝙗𝙖𝙣𝙣𝙚𝙙 𝘽𝙮 :** `{}`\n**𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 : ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧**"
+gban_10: "**\\#𝙂𝘽𝙖𝙣𝙣𝙚𝙙_𝙐𝙨𝙚𝙧//**\n\n**𝙁𝙞𝙧𝙨𝙩 𝙉𝙖𝙢𝙚 :** [{}](tg://user?id={})\n**𝙐𝙨𝙚𝙧 𝙄𝘿 :** `{}`\n**𝘼𝙘𝙩𝙞𝙤𝙣 :** `𝙂𝙡𝙤𝙗𝙖𝙡 𝘽𝙖𝙣𝙣𝙚𝙙`\n**𝙂𝙗𝙖𝙣𝙣𝙚𝙙 𝘽𝙮 :** `{}`\n**𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 : ✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧**"
 ungban_1: "`Membatalkan Perintah Larangan Global...`"
 ungban_2: "`Gagal Membatalkan Perintah Larangan Global...`"
 ungban_3: "`Gagal Membatalkan Perintah Larangan Global... Karena Dia Ada Di Daftar Hitam Ayiin-Userbot`"
