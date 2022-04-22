@@ -21,8 +21,7 @@ for file in listdir(strings_folder):
     if file.endswith(".yml"):
         code = file[:-4]
         try:
-            languages[code] = safe_load(
-                open(path.join(strings_folder, file), encoding="UTF-8"),
+            languages[code] = safe_load(open(path.join(strings_folder, file), encoding="UTF-8"),
             )
         except Exception as er:
             LOGS.info(f"Error in {file[:-4]} language file")
