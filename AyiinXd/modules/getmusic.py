@@ -178,7 +178,7 @@ async def _(event):
     track = str(artist) + " - " + str(song)
     chat = "@SpotifyMusicDownloaderBot"
     try:
-        await event.edit(get_string("smdn_2").format("Mendapatkan")
+        await event.edit(get_string("smdn_2").format("Mendapatkan"))
         async with event.client.conversation(chat) as conv:
             await asyncio.sleep(2)
             await event.edit(get_string("com_5"))
@@ -235,7 +235,7 @@ async def _(event):
                 respond = await conv.get_response()
                 await event.client.send_read_acknowledge(conv.chat_id)
             except YouBlockedUserError:
-                await event.reply(get_string("smdn_3").format("@WooMaiBot")
+                await event.reply(get_string("smdn_3").format("@WooMaiBot"))
                 return
             await event.edit(get_string("smdn_2").format("Mengirim"))
             await asyncio.sleep(3)
@@ -269,7 +269,7 @@ async def _(event):
                 song = await conv.get_response()
                 await event.client.send_read_acknowledge(conv.chat_id)
             except YouBlockedUserError:
-                await event.edit(get_string("smdn_3").format("@MusicsHunterBot")
+                await event.edit(get_string("smdn_3").format("@MusicsHunterBot"))
                 return
             await event.client.send_file(event.chat_id, song, caption=details.text)
             await event.client.delete_messages(
