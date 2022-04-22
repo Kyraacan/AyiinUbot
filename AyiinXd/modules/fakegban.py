@@ -53,7 +53,6 @@ async def gbun(event):
             await reply_message.reply(jnl)
     else:
         mention = get_string("fake_6").format(me.first_name)
-        )
         await event.reply(mention)
     await event.delete()
 
