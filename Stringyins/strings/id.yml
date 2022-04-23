@@ -399,6 +399,17 @@ smdn_3: "`Buka blokir `{}` dan coba lagi`"
 smdn_4: "`Kesalahan: `{}` tidak merespons atau Lagu tidak ditemukan!.`"
 mhbb_1: "`Masukkan link yang valid untuk mendownload`"
 
+# git commit tools
+comt_1: "`Please ADD Proper Access Token from github.com`"
+comt_2: "`Please ADD Proper Github Repo Name of your userbot`"
+comt_3: "Diunduh ke `{}` dalam {} detik."
+comt_4: "Berkomitmen ke Github ...."
+comt_5: "`Berkomitmen Pada Repo Github Anda`\n\n[Modul Anda](https://github.com/{}/tree/sql-extended/AyiinXd/modules/)"
+comt_6: "Tidak bisa {} Plugin"
+comt_7: "`Bunuh Diri Berkomitmen`"
+comt_8: "Mengunduh ke direktori TEMP"
+comt_9: "`File Sudah Ada`"
+
 # help tools
 help_1: "`{}` bukan plugin yang valid!"
 help_2: "•• Plugin ••"
