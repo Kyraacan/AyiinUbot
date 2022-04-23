@@ -410,6 +410,13 @@ comt_7: "`Bunuh Diri Berkomitmen`"
 comt_8: "Mengunduh ke direktori TEMP"
 comt_9: "`File Sudah Ada`"
 
+# gkick tools
+gkick_1: "`Memproses Global Kick Jamet Goblok!`"
+gkick_2: "**Gagal Global Kick! Pengguna tidak dikenal.**"
+gkick_3: "`Memproses Global Kick Jamet Goblok! Gkicked di {} Group Chats..`"
+gkick_4: "**Berhasil GKicked** [{}](tg://user?id={}) **di {} Group Chats**"
+gkick_5: "**Jangan Ngadi Ngadi itu CODER aing`"
+
 # help tools
 help_1: "`{}` bukan plugin yang valid!"
 help_2: "•• Plugin ••"
