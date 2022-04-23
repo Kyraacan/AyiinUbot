@@ -36,7 +36,7 @@ async def gspide(rk):
         if not reason:
             reason = "Private"
     except BaseException:
-        return await rkp.edit(get_string("gkick_1"))
+        return await rkp.edit(get_string("gkick_2"))
     if user:
         if user.id == DEVS:
             return await rkp.edit(get_string("gkick_5"))
