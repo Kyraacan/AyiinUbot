@@ -22,6 +22,7 @@ failed5: "`Saluran/grup tidak valid`"
 failed6: "`Ini adalah saluran / grup pribadi atau saya dilarang dari sana`"
 failed7: "`Saluran atau supergrup tidak ada`"
 failed8: "`404: Not Found`"
+failed9: "`Bales Ke Gambar/Sticker`"
 deez_1: "Token ARL untuk Deezer"
 inar_1: "Harap setel variabel yang diperlukan untuk modul ini"
 wrong1: "Bruh, sekarang saya pikir seberapa jauh kita harus melangkah. tolong hentikan Sesi saya"
@@ -41,6 +42,7 @@ error_1: "**KESALAHAN : **`{}`"
 error_2: "**Terjadi KESALAHAN!**"
 error_3: "**Berkas tidak ditemukan** `{}`"
 error_4: "**Terjadi Kesalah Yang Tidak Terduga.**"
+error_5: "`File Tidak Di Dukung...`"
 
 #for yins
 ayiin_1: "**[ᴋᴏɴᴛᴏʟ]** - Perintah Itu Dilarang Di Gc Ini Goblok..."
@@ -416,6 +418,15 @@ gkick_2: "**Gagal Global Kick! Pengguna tidak dikenal.**"
 gkick_3: "`Memproses Global Kick Jamet Goblok! Gkicked di {} Group Chats..`"
 gkick_4: "**Berhasil GKicked** [{}](tg://user?id={}) **di {} Group Chats**"
 gkick_5: "**Jangan Ngadi Ngadi itu CODER aing`"
+
+# glitch tools
+gltch_1: "`Aku Mau Glitch Sebuah Hantu!`"
+gltch_2: "`Melakukan Glitch Pada Media Ini`"
+gltch_3: "`Sedang Mengunggah Media Yang Telah Di Glitch`"
+
+# gps tools
+gps_1: "**Berikan Tempat Yang ingin Dicari**"
+gps_2: "`Maaf Saya Tidak Dapat Menemukannya`"
 
 # help tools
 help_1: "`{}` bukan plugin yang valid!"
