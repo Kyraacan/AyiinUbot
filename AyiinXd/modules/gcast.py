@@ -19,7 +19,8 @@ from telethon.errors import FloodWaitError
 from AyiinXd import BLACKLIST_GCAST
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP, DEVS, HEROKU_API_KEY, HEROKU_APP_NAME
-from AyiinXd.ayiin import ayiin_cmd, edit_delete, edit_or_reply
+from AyiinXd.ayiin import ayiin_cmd, eod, eor
+from Stringyins import get_string
 
 GCAST_BLACKLIST = [
     -1001675396283,  # AyiinXdSupport
@@ -53,8 +54,8 @@ async def gcast(event):
     elif event.is_reply:
         msg = await event.get_reply_message()
     else:
-        return await edit_delete(event, "**Berikan Sebuah Pesan atau Reply**")
-    kk = await edit_or_reply(event, "`𝙎𝙖𝙗𝙖𝙧 𝙏𝙤𝙙 𝙇𝙖𝙜𝙞 𝙂𝙪𝙖 𝙆𝙞𝙧𝙞𝙢, 𝙆𝙖𝙡𝙤 𝙇𝙞𝙢𝙞𝙩 𝙅𝙖𝙣𝙜𝙖𝙣 𝙎𝙖𝙡𝙖𝙝𝙞𝙣 𝙂𝙪𝙖 𝘼𝙣𝙟𝙞𝙣𝙜...`")
+        return await eod(event, get_string("gcast_1"))
+    kk = await eor(event, get_string("gcast_2"))
     er = 0
     done = 0
     async for x in event.client.iter_dialogs():
@@ -71,8 +72,7 @@ async def gcast(event):
                     done += 1
                 except BaseException:
                     er += 1
-    await kk.edit(
-        f"**Berhasil Mengirim Pesan Ke** {done} **Grup Tod.**\n**Sorry Tod Gagal Mengirim Pesan Ke** {er} **Grup.**"
+    await kk.edit(get_string("gcast_3").format(done, er)
     )
 
 
@@ -83,8 +83,8 @@ async def gucast(event):
     elif event.is_reply:
         msg = await event.get_reply_message()
     else:
-        return await edit_delete(event, "**Berikan Sebuah Pesan atau Reply**")
-    kk = await edit_or_reply(event, "`𝙎𝙖𝙗𝙖𝙧 𝙏𝙤𝙙 𝙇𝙖𝙜𝙞 𝙂𝙪𝙖 𝙆𝙞𝙧𝙞𝙢, 𝙆𝙖𝙡𝙤 𝙇𝙞𝙢𝙞𝙩 𝙅𝙖𝙣𝙜𝙖𝙣 𝙎𝙖𝙡𝙖𝙝𝙞𝙣 𝙂𝙪𝙖 𝘼𝙣𝙟𝙞𝙣𝙜...`")
+        return await eod(event, get_string("gcast_1"))
+    kk = await eor(event, get_string("gcast_2"))
     er = 0
     done = 0
     async for x in event.client.iter_dialogs():
@@ -101,8 +101,7 @@ async def gucast(event):
                     done += 1
                 except BaseException:
                     er += 1
-    await kk.edit(
-        f"**Berhasil Mengirim Pesan Ke** {done} **Chat Tod.**\n**Sorry Tod Gagal Mengirim Pesan Ke** {er} **Chat.**"
+    await kk.edit(get_string("gucast_1").format(done, er)
     )
 
 
@@ -112,25 +111,23 @@ async def sudo(event):
     blc = blchat
     list = blc.replace(" ", "\n» ")
     if blacklistgc == "True":
-        await edit_or_reply(
-            event,
-            f"🔮 **Blacklist GCAST:** `Enabled`\n\n📚 **Blacklist Group:**\n» {list}\n\nKetik `{cmd}addblacklist` di grup yang ingin anda tambahkan ke daftar blacklist gcast.",
+        await eor(
+            event, get_string("blkls_1").format(list, cmd)
         )
     else:
-        await edit_delete(event, "🔮 **Blacklist GCAST:** `Disabled`")
+        await edit_delete(event, get_string("blkls_2"))
 
 
 @ayiin_cmd(pattern="addblacklist(?:\\s|$)([\\s\\S]*)")
 async def add(event):
-    xxnx = await edit_or_reply(event, "`Processing...`")
+    xxnx = await eor(event, get_string("com_1"))
     var = "BLACKLIST_GCAST"
     gc = event.chat_id
     if HEROKU_APP_NAME is not None:
         app = Heroku.app(HEROKU_APP_NAME)
     else:
-        await edit_delete(
-            xxnx,
-            "**Silahkan Tambahkan Var** `HEROKU_APP_NAME` **untuk menambahkan blacklist**",
+        await eod(
+            xxnx, get_string("addbl_1").format("menambahkan")
         )
         return
     heroku_Config = app.config()
@@ -145,21 +142,20 @@ async def add(event):
         .replace("]", "")
         .replace("set() ", "")
     )
-    await xxnx.edit(
-        f"**Berhasil Menambahkan** `{gc}` **ke daftar blacklist gcast.**\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan."
+    await xxnx.edit(get_string("addbl_2").format(gc)
     )
     heroku_Config[var] = blacklistgrup
 
 
 @ayiin_cmd(pattern="delblacklist(?:\\s|$)([\\s\\S]*)")
 async def _(event):
-    xxx = await edit_or_reply(event, "`Processing...`")
+    xxx = await eor(event, get_string("com_1"))
     gc = event.chat_id
     if HEROKU_APP_NAME is not None:
         app = Heroku.app(HEROKU_APP_NAME)
     else:
-        await edit_delete(
-            xxx,
+        await eod(
+            xxx, get_string("addbl_1").format("menghapus")
             "**Silahkan Tambahkan Var** `HEROKU_APP_NAME` **untuk menghapus blacklist**",
         )
         return
@@ -169,14 +165,12 @@ async def _(event):
     gett = str(gc)
     if gett in blchat:
         blacklistgrup = blchat.replace(gett, "")
-        await xxx.edit(
-            f"**Berhasil Menghapus** `{gc}` **dari daftar blacklist gcast.**\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan."
+        await xxx.edit(get_string("delbl_1").format(gc)
         )
         var = "BLACKLIST_GCAST"
         heroku_Config[var] = blacklistgrup
     else:
-        await edit_delete(
-            xxx, "**Grup ini tidak ada dalam daftar blacklist gcast.**", 45
+        await eod(xxx, get_string("delbl_2"), time=45
         )
 
 
