@@ -36,6 +36,7 @@ com_4: "`Media Tidak Didukung..`"
 com_5: "`Mengunduh...`"
 com_6: "`Mengunggah...`"
 com_7: "`Menganalisa...`"
+com_8: "`Mendapatkan Informasi...`"
 
 # for error
 error_1: "**KESALAHAN : **`{}`"
@@ -43,6 +44,7 @@ error_2: "**Terjadi KESALAHAN!**"
 error_3: "**Berkas tidak ditemukan** `{}`"
 error_4: "**Terjadi Kesalah Yang Tidak Terduga.**"
 error_5: "`File Tidak Di Dukung...`"
+error_6: "`Informasi Tidak Ditemukan...`"
 
 #for yins
 ayiin_1: "**[ᴋᴏɴᴛᴏʟ]** - Perintah Itu Dilarang Di Gc Ini Goblok..."
@@ -427,6 +429,38 @@ gltch_3: "`Sedang Mengunggah Media Yang Telah Di Glitch`"
 # gps tools
 gps_1: "**Berikan Tempat Yang ingin Dicari**"
 gps_2: "`Maaf Saya Tidak Dapat Menemukannya`"
+
+# hazmat tools
+hzmt_1: "`Processing Hazmat...`"
+hzmt_2: "`Kata Bisa Menghancurkan Apapun`"
+hzmt_3: "`Perintah Hazmat Diaktifkan, Sedang Memproses...`"
+hzmt_4: "`Mohon Maaf, GIF Tidak Bisa...`"
+
+# helper tools
+hlpr_1: "**Hai {} Kalo Anda Tidak Tau Perintah Untuk Memerintah Ku Ketik** `{}help` Atau Bisa Minta Bantuan Ke:\n⍟ **Group Support :** [𝙰𝚈𝙸𝙸𝙽 𝚂𝚄𝙿𝙿𝙾𝚁𝚃](t.me/AyiinXdSupport)\n⍟ **Channel Ayiin :** [𝙰𝚈𝙸𝙸𝙽 𝚂𝚄𝙿𝙿𝙾𝚁𝚃](t.me/AyiinSupport)\n⍟ **Owner Repo :** [𝚈𝙸𝙽𝚂](t.me/AyiinXd)\n⍟ **Repo :** [𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃](https://github.com/AyiinXd/Ayiin-Userbot)\n"
+hlpr_2: "**Daftar Lengkap Vars Dari Ayiin-Userbot:** [KLIK DISINI](https://telegra.ph/List-Variable-Heroku-Untuk-Ayiin-Userbot-02-08)"
+
+# hentai tools
+hentai_1: "**Maaf saya tidak bisa mendapatkan manga dari**"
+hentai_2: "**Saya pikir ini bukan link yang benar**"
+
+# heroku tools
+heroku_1: "**Silahkan Tambahkan Var** `HEROKU_APP_NAME` **di Heroku**"
+heroku_2: "#CONFIGVARS\n\n**Config Vars**:\n {}"
+heroku_3: "**Berhasil Mengirim Ke BOTLOG_CHATID**"
+heroku_4: "**Mohon Ubah Var** `BOTLOG` **Ke** `True`"
+heroku_5: "**Logger : #SYSTEM**\n\n**#SET #VAR_HEROKU #ADDED**\n\n`{}` **=** `{}`\n"
+heroku_6: "**Berhasil Mengirim Ke BOTLOG_CHATID**"
+heroku_7: "`Menghapus Config Vars...`"
+heroku_8: "**Mohon Tentukan Config Vars Yang Mau Anda Hapus**"
+heroku_9: "**Logger : #SYSTEM**\n\n**#SET #VAR_HEROKU #DELETED**\n\n`{}`"
+heroku_10: "**Config Vars Telah Dihapus**"
+heroku_11: "**Tidak Dapat Menemukan Config Vars**"
+heroku_12: "**Silahkan Tambahkan Var** `HEROKU_APP_NAME` **dan** `HEROKU_API_KEY`"
+heroku_13: "`Sedang Proses, Mohon Tunggu Di Group Logs Anda...`"
+heroku_14: "**Berhasil Menambahkan Config Var**"
+usage_1: "**Gagal Mendapatkan Informasi Dyno**"
+usage_2: "⍟ **Informasi Dyno Herotod**\n╔════════════════════╗\n ➠ **Penggunaan Dyno** `{}` :\n     •  `{}`**Jam**  `{}`**Menit****|**  [`{}`**%**]\n◖════════════════════◗\n ➠ **Sisa Kuota Dyno Bulan Ini** :\n     •  `{}`**Jam**  `{}`**Menit**\n**|**  [`{}`**%**]\n╚════════════════════╝\n⍟ **Sisa Dyno Heroku** `{}` **Hari Lagi**"
 
 # help tools
 help_1: "`{}` bukan plugin yang valid!"
