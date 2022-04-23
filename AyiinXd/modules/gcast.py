@@ -156,7 +156,6 @@ async def _(event):
     else:
         await eod(
             xxx, get_string("addbl_1").format("menghapus")
-            "**Silahkan Tambahkan Var** `HEROKU_APP_NAME` **untuk menghapus blacklist**",
         )
         return
     heroku_Config = app.config()
