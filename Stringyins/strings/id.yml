@@ -485,119 +485,69 @@ help_8: "•• Kembali ••"
 help_9: "•• Buka ••"
 help_10: "**Modul {} Tidak diketahui**, **Silahkan Ketik {}help untuk melihat modul.**"
 
-# audiotools
-audiotools_1: "Balas Audio atau video.."
-audiotools_2: "Berhasil Diunduh, Sekarang Mengonversi ke suara"
-audiotools_3: "`Berikan waktu dalam format untuk memangkas`"
-audiotools_4: "`Data Salah`"
-audiotools_5: "`Mencoba Mengunduh...`"
-audiotools_6: "`Durasi pemangkasan salah`"
-audiotools_7: "Audio yang Dipangkas Dari `{}` Ke `{}`"
-audiotools_8: "Balas ke File Video..`"
-audiotools_9: "`Tidak Ada Audio Ditemukan...`"
-audiotools_10: "`Audio yang Diekstrak dari Video...`"
+# info tools
+info_1: "`Maaf Komandan Saya Tidak Mendapatkan Informasi Apapun...`"
+info_2: "Orang tersebut membutuhkan bantuan untuk mengupload gambar profil."
+info_3: "Tidak Dapat Mengambil DC ID!"
+info_4: "Tidak Ada Nama Depan"
+info_5: "Tidak Ada Nama Belakang"
+info_6: "Tidak menggunakan username"
+info_7: "Tidak Punya Bio"
 
-# inline
-inline_1: "[Aʏɪɪɴ Sᴜᴘᴘᴏʀᴛ](t.me/ultroidsupport)\n\n**Hᴇʟᴘ Mᴇɴᴜ Oғ {}.\n\nPʟᴜɢɪɴs ~ {}**"
-inline_2: "[Aʏɪɪɴ Sᴜᴘᴘᴏʀᴛ](t.me/ultroidsupport)\n\n**Hᴇʟᴘ Mᴇɴᴜ Oғ {}.\n\nAᴅᴅᴏɴs ~ {}**"
-inline_3: "[Aʏɪɪɴ Sᴜᴘᴘᴏʀᴛ](t.me/ultroidsupport)\n\n**Hᴇʟᴘ Mᴇɴᴜ Oғ {}.\n\nAᴅᴅᴏɴs ~ {}\n\nᴋᴇᴛɪᴋ `.setdb ADDONS True` ᴅᴀɴ ʀᴇsᴛᴀʀᴛ ᴜɴᴛᴜᴋ ᴍᴇɴᴅᴀᴘᴀᴛᴋᴀɴ ᴀᴅᴅᴏɴs.**"
-inline_4: "** Bᴏᴛ Oғ {}\n\nMᴀɪɴ Mᴇɴᴜ\n\nPʟᴜɢɪɴs ~ {}\nAᴅᴅᴏɴs ~ {}\nTᴏᴛᴀʟ Cᴏᴍᴍᴀɴᴅs ~ {}**"
-inline_5: "**Mᴇɴᴜ Tᴇʟᴀʜ Dɪᴛᴜᴛᴜᴘ**"
-inline_6: "**Menu Bantuan untuk Voice Chat {}**\n**Perintah yang tersedia:** `{}`\n\n@AyiinXdSupport"
-inline_7: "Ketik `.help {}` untuk mendapatkan daftar perintah."
-inline_8: "Klik tombol di bawah ini untuk memperbarui!"
-inline_9: "Anda Sudah Menggunakan Versi Terbaru"
+# kamuii tools
+kamui_1: "`Mengaktifkan Kekuatan Supersaya...`"
+kamui_2: "**Silahkan Matikan Setelan Privasi Forward**"
 
-# tagnotif
-tagnot_1: "{} menandai anda dalam {}\n\n```{}```\n\n[📨 Pesan 📨]({})"
-tagnot_2: "{} menandai anda dalam {}\n\n [📨 Pesan 📨]({})"
+# kickme tools
+kikme_1: "`{} telah meninggalkan grup ini, selamat tinggal!!`"
+kikme_2: "**GC NYA JELEK GOBLOK KELUAR DULU AH CROTT** 🥴"
+kikme_3: "`[Proses] - Keluar Dari Semua Obrolan Grup...`"
+kikme_4: "**Berhasil Keluar dari {} Group, Gagal Keluar dari {} Group**"
 
-# whisper
-wspr_1: "@{} pesan rahasia buatmu.\nHapus pesanmu setelah membaca.\nAtau pesan selanjutnya tidak bisa diterima."
-wspr_2: "Pesan dihapus!"
-wspr_3: "Tambahkan beberapa id atau username juga"
-wspr_4: "Pengguna {} Tidak Ditemukan\nMohon Cari Lagi"
-wspr_5: "Anda tidak dapat melakukan ini"
+# lock tools
+lock_1: "**Apa Yang Harus Saya Kunci?**"
+lock_2: "**Jenis Yang Mau Anda Kunci Tidak Valid** `{}`"
+lock_3: "**{} Telah Mengunci {} Untuk Obrolan Ini!!**"
+unlock_1: "**Apa Yang Harus Saya Buka?**"
+unlock_2: "**Jenis Kunci Yang Mau Anda Buka Tidak Valid** `{}`"
+unlock_3: "**{} Telah Membuka Kunci {} Untuk Obrolan Ini!!**"
 
-# bot
-bot_1: "Hey, I am alive."
-bot_2: "Stats"
-bot_3: "Repo"
-bot_4: "Support"
-bot_5: "`Restarting...`"
-alive_1: "**The Ultroid Userbot...**\n\n**{}**\n\n┏━━━━━━━━━━━━━━━━━━━━━\n┣ **Owner** - `{}`\n┣ **Version** - `{}`\n┣ **Py-Ultroid** - `{}`\n┣ **UpTime** - `{}`\n┣ **Python** - `{}`\n┣ **Telethon** - `{}`\n┣ **Branch** - `{}`\n┗━━━━━━━━━━━━━━━━━━━━━"
-log: "**Heroku** Ultroid Logs.\nPasted [here]({}) too!"
-ping: "**Pong !!** `{}ms`\n**Uptime** - `{}`"
-usage: "**⚙️ Informasi Dyno ⚙️**:\n\n➠ **Penggunaan Dyno** `{}`:\n  •  **{}h**  **{}m |** `[{}%]`\n➠ **Sisa kuota dyno bulan ini :**\n  •  **{}h**  **{}m |** `[{}%]`\n\n**Total Ruang Disk:**: `{}`\n**Terpakai**: `{}`\n**Kosong**: `{}`\n\n**📊 Penggunaan Data 📊**\n**Upload**: `{}`\n**Down**: `{}`\n\n**CPU**: `{}%`\n**RAM**: `{}%`\n**DISK**: `{}%`"
-usage_simple: "**Total Ruang Disk:** `{}`\n**Terpakai:** `{}`\n**Kosong:** `{}`\n\n**📊 Penggunaan Data 📊**\n**Upload**: `{}`\n**Down**: `{}`\n\n**CPU**: `{}%`\n**RAM**: `{}%`\n**DISK**: `{}%`"
-shutdown: "GoodBye {}.\n`Sedang Mematikan bot...`"
+# logo tools
+logo_1: "**Silahkan Masukan Text Untuk Logo**"
+logo_2: "Logo by [{}](tg://user?id={})"
 
-# broadcast tools
-bd_1: "`Menambahkan ke database...`"
-bd_2: "`Mencoba menambahkan semua channel admin ke database...`"
-bd_3: "**Berhasil.**\nChats sudah ada dalam Database: {}\nBaru ditambahkan: {}"
-bd_4: "Channels ditambahkan!"
-bd_5: "`Menambahkan ke database!`"
-bd_6: "`Channel sudah ada dalam database!`"
-bd_7: "Dihapus dari database"
-bd_8: "`Menghapus...`"
-bd_9: "Channel sudah dihapus dari database."
-bd_10:  "**Ke kategori mana saya harus mengirim pesan ini?**"
+# lyric tools
+lyric_1: "**Silahkan Masukan Judul Lagu**"
+lyric_2: "**Lirik lagu tidak ditemukan.**"
 
-# calculator
-calc_1: "• Ayiin Inline Calculator •"
-calc_2: "Buka Kalkulator Lagi"
+# memify tools
+memf_1: "**Mengekstrak Frame pertama...**"
+memf_2: "**Tidak dapat menguraikan stiker animasi ini.**"
+memf_3: "**Menambahkan Teks...**"
+memf_4: "**Tidak Dapat Mengurai Video ini.**"
 
-# chat_bot
-chab_1: "Balas ke pesan pengguna atau beri saya id/username untuk menambahkan ChatBot AI!"
-chab_2: "`Tidak ada pengguna yang menambahkan AI.`"
-chab_3: "**Total Daftar Pengguna yang Diaktifkan AI Dalam Grup Ini :**\n\n"
-
-# chats
-chats_1: "`Tidak dapat menghapus obrolan ini`"
-chats_2: "`Saya bukan admin`"
-chats_3: "**#Dihapus**\nMenghapus {}"
-chats_4: "Berhasil Membuat [{}]({}) Grup Anda!"
-chats_5: "Join @TeamUltroid"
-chats_6: "Grup/Channel {} Anda Telah Menjadi Bos!"
-
-# clean action
-clan_1: "Menambahkan Pengaturan Tindakan Bersih Untuk Obrolan ini"
-clan_2: "Pengaturan Tindakan Bersih yang Dihapus Untuk Obrolan ini"
-clan_3: "`ID Tidak Valid`"
-clan_4: "`Tidak Ada Obrolan Yang Ditambah`"
-
-
-# dm
-dm_1: "`Berikan username atau id Obrolan ke mana harus mengirim.`"
-dm_2: "`Berikan teks untuk mengirim atau membalas pesan`"
-dm_3: "**⚜️Berhasil Mengirim Pesan!⚜️**"
-dm_4: "ERROR: {}\nBaca Cara Menggunakan Ketik `{}help dm`"
-dm_5: "`Silahkan Check di Private.`"
-dm_6: "`Tidak ditemukan pesan untuk dikirim :(`"
-
-# echo
-echo_1: "**Echo Diaktifkan Untuk Pengguna:**\n\n"
-
-# fake action
-fka_1: "Memulai Fake Action Untuk {} detik."
-
-# fontgen
-fgn_1: "**Font yang tersedia**\n\n"
-
-# gdrive
-gdrive_1: "`Anda telah memberi otorisasi dengan Google Drive`"
-gdrive_2: "Pergi [kesini](https://console.developers.google.com/flows/enableapi?apiid=drive) dan dapatkan `GDRIVE_CLIENT_ID` dan `GDRIVE_CLIENT_SECRET` kamu\n\nKirim GDRIVE_CLIENT_ID dan GDRIVE_CLIENT_SECRET kamu seperti ini.\n`GDRIVE_CLIENT_ID GDRIVE_CLIENT_SECRET` dipisahkan dengan spasi."
-gdrive_3: "`Client Id salah anjim`"
-gdrive_4: "`Terjadi kesalahan! Kirim `/auth` lagi.\nJika masih sama, harap hubungi `@TheUltroid"
-gdrive_5: "`Berhasil!\nAnda siap untuk menggunakan Google Drive dengan Ultroid Userbot.`"
-gdrive_6: "`Pergi ke `{}` dan kirim ``/auth.`"
-gdrive_7: "**File Berhasil Diupload kedalam G-Drive :**\n\n[{}]({})"
-
-# sudo
-sudo_1: "`Balas pesan atau tambahkan id/username.`"
-sudo_2: "Anda tidak dapat menambahkan diri sendiri sebagai Pengguna Sudo..."
-sudo_3: "`Tidak ada Pengguna SUDO yang ditetapkan...`"
+# misc tools
+slbt_1: "`Saya mengantuk dan tertidur...`"
+slbt_2: "**Anda menyuruh bot untuk tidur selama** {}."
+slbt_3: "**Oke, Saya siap membantu mu**"
+shtdwn_1: "**#SHUTDOWN** \n**᯽ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ᯽** telah di matikan!\nJika ingin menghidupkan kembali silahkan buka heroku"
+shtdwn_2: "**᯽ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ᯽ Berhasil di matikan!**"
+rstrt_1: "**᯽ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ᯽ Berhasil di Restart**"
+rstrt_2: "#RESTART \n**᯽ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ᯽ Berhasil Di Restart**"
+rdme_1: "**Berikut sesuatu untuk kamu baca:**\n\n✣ [Userbot Repo](https://github.com/AyiinXd/Ayiin-Userbot/blob/Ayiin-Userbot/README.md)\n✣ [Video Tutorial](https://youtu.be/tTDaPKsGC1I)\n✣ [List Variabel Heroku untuk Ayiin-Userbot](https://telegra.ph/List-Variabel-Heroku-untuk-Man-Userbot-09-22)\n✣ [Setup Guide - Basic](https://mrismanaziz.medium.com/cara-memasang-userbot-telegram-repo-man-userbot-deploy-di-heroku-c56d1f8b5537)\n✣ [Setup Guide - LastFM Module](https://telegra.ph/How-to-set-up-LastFM-module-for-Paperplane-userbot-11-02)"
+repo_1: "**Hey**, Saya Pengguna **✧ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ✧** \n卍━━━━━━━━━━━━━━━━━卍\n➣ **𝚁𝙴𝙿𝙾 𝚄𝚂𝙴𝚁𝙱𝙾𝚃 :** [𝙶𝙸𝚃𝙷𝚄𝙱](https://github.com/AyiinXd/Ayiin-Userbot)\n➣ **𝙾𝚆𝙽𝙴𝚁 𝙱𝙾𝚃       :** [𝚈𝙸𝙽𝚂](t.me/AyiinXd)\n卍━━━━━━━━━━━━━━━━━卍\n➣ **𝚂𝚄𝙿𝙿𝙾𝚁𝚃           :** [𝙶𝚁𝙾𝚄𝙿](https://t.me/AyiinXdSupport)\n➣ **𝚂𝚄𝙿𝙿𝙾𝚁𝚃           :** [𝙲𝙷𝙰𝙽𝙽𝙴𝙻](https://t.me/AyiinSupport)\n卍━━━━━━━━━━━━━━━━━卍\n"
+strngs_1: "卍━━━━━━━━━━━━━━━━━卍\n✧ **GET STRING SESSION TELEGRAM :** [VIA REPLIT](https://replit.com/@AyiinXd/AyiinString?lite=1&outputonly=1)\n✧ **GET STRING SESSION TELEGRAM :** [VIA BOT](https://t.me/AyiinStringRobot)\n卍━━━━━━━━━━━━━━━━━卍\n"
+raw_1: "`Check the userbot log for the decoded message data !!`"
+raw_2: "**Inilah data pesan yang didecodekan !!**"
+rvrse_1: "`Image successfully uploaded to Google. Maybe.`\n`Parsing source now. Maybe.`"
+rvrse_2: "**Google menyuruhku pergi.**"
+rvrse_3: "[{}]({})\n\n`Mencari gambar...`"
+rvrse_4: "**Tidak dapat menemukan apa pun.**"
+rvrse_5: "[{}]({})\n\n[Gambar yang mirip secara visual]({})"
+send_1: "**Mohon Balas ke pesan yang ingin dikirim!**"
+send_2: "**Berhasil Mengirim pesan ini**"
+send_3: "**Link yang diberikan tidak valid!**"
+send_4: "**Berhasil Mengirim pesan ini ke** `{}`"
 
 # updater
 upd_1: "`Memeriksa pembaruan, harap tunggu....`"
