@@ -1031,21 +1031,20 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 await event.edit(f"""
 •Menu• - Bahasa untuk [{user.first_name}](tg://user?id={user.id})
-""",
-
-    languages = get_languages()
-    tutud = [
-        Button.inline(
-            f"{languages[yins]['asli']} [{yins.lower()}]",
-            data=f"set_{yins}",
-        )
-        for yins in languages
-    ]
-    buttons = list(zip(tutud[::2], tutud[1::2]))
-    if len(tutud) % 2 == 1:
-        buttons.append((tutud[-1],))
-    buttons.append([Button.inline("« Back", data="gcback")])
-    await event.edit("List Of Available Languages.", buttons=buttons)
+""",)
+            languages = get_languages()
+            tutud = [
+                Button.inline(
+                     f"{languages[yins]['asli']} [{yins.lower()}]",
+                     data=f"set_{yins}",
+                )
+                for yins in languages
+            ]
+            buttons = list(zip(tutud[::2], tutud[1::2]))
+            if len(tutud) % 2 == 1:
+                buttons.append((tutud[-1],))
+            buttons.append([Button.inline("« Back", data="gcback")])
+            await event.edit("List Of Available Languages.", buttons=buttons)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -1055,7 +1054,6 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 lang = event.data_match.group(1).decode("UTF-8")
-
                 languages = get_languages()
                 language[0] = lang
             if not os.environ.get("lang"):
