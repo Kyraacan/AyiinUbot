@@ -1029,8 +1029,13 @@ with bot:
         @tgbot.on(events.CallbackQuery(data=b"langs_yins"))
         async def about(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                await event.edit(f"""
+                ayiinxd = await event.edit(f"""
 •Menu• - Bahasa untuk [{user.first_name}](tg://user?id={user.id})
+
+  »  **Perintah :** `{cmd}set <keyword_bahasa>`
+  »  **Kegunaan : **Untuk mengubah bahasa bot anda.
+
+  »  **Catatan :** `Jika Ingin Menambah Bahasa Anda Silahkan Pc @AyiinXd`
 """,)
             languages = get_languages()
             tutud = [
@@ -1044,7 +1049,7 @@ with bot:
             if len(tutud) % 2 == 1:
                 buttons.append((tutud[-1],))
             buttons.append([Button.inline("« Back", data="gcback")])
-            await event.edit("List Of Available Languages.", buttons=buttons)
+            await event.edit(f"{ayiinxd}", buttons=buttons)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
