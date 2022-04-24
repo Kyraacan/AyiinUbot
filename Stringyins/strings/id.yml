@@ -549,6 +549,59 @@ send_2: "**Berhasil Mengirim pesan ini**"
 send_3: "**Link yang diberikan tidak valid!**"
 send_4: "**Berhasil Mengirim pesan ini ke** `{}`"
 
+# nekos tools
+nekos_1: "ketik `{}help nekos` untuk melihat argumen yang tersedia."
+nekos_2: "`Fetching from nekos...`"
+
+# nhentai tools
+nentai_1: "`Searching for doujin...`"
+nentai_2: "No doujin found for `{}`"
+
+# notes tools
+notes_1: "**Tidak ada catatan yang disimpan dalam obrolan ini**"
+notes_2: "**Tidak ada catatan yang disimpan dalam obrolan ini**"
+notes_3: "**Catatan yang disimpan dalam obrolan ini:**\n"
+notes_4: "**Tidak dapat menemukan catatan:** `{}`"
+notes_5: "**Berhasil Menghapus Catatan:** `{}`"
+notes_6: "#NOTE\nCHAT ID: {}\nKEYWORD: {}\n\nPesan berikut disimpan sebagai data balasan catatan untuk obrolan, mohon JANGAN dihapus !!"
+notes_7: "**Menyimpan media sebagai data untuk catatan memerlukan BOTLOG_CHATID untuk disetel.**"
+notes_8: "**Catatan {} disimpan. Gunakan** `#{}` **untuk mengambilnya**"
+notes_9: "`Bot itu belum didukung!`"
+notes_10: "```Akan menghapus semua Catatan!```"
+notes_11: "```Berhasil membersihkan catatan bot yaay!```\n Beri aku cookie!"
+notes_12: "I cleaned all Notes at {}"
+
+# nsfw tools
+nsfw_1: "**Tambahkan VAR** `DEEP_AI` **dan ambil Api Key di web https://deepai.org/**"
+nsfw_2: "**MenDownload file untuk diperiksa...**"
+nsfw_3: "**Mendeteksi batas NSFW...**"
+
+# other tools
+opn_1: "**Berhasil Membaca Berkas**"
+sendbot_1: "**Maaf BOT Tidak Merespond.**"
+sendbot_2: "**Tidak dapat menemukan bot itu 🥺**"
+sendbot_3: "**Pesan Terkirim:** `{}`\n**Kepada: {}**"
+alunban_1: "`Searching Participant Lists...`"
+alunban_2: "**Berhasil unbanned** `{}` **Orang di Grup {}**"
+dm_1: "**Berhasil Mengirim Pesan Anda.**"
+replymsg_1: "`Tidak ditemukan pesan untuk disampaikan`"
+replymsg_2: "**Silahkan Check di Private**"
+getlink_1: "**Link Invite: {}**"
+tmsg_1: "**Total ada** `{}` **Chat Yang dikirim Oleh** {} **di Grup Chat ini**"
+view_1: "**Mohon Reply ke Link**"
+view_2: "Aku Bodoh Atau Anda Bodoh?"
+
+# paste tools
+paste_1: "`Elon Musk bilang saya tidak bisa menempelkan kekosongan.`"
+paste_2: "`Menempelkan teks ...`"
+paste_3: "**Ditempel dengan sukses!**\n\n[URL]({})\n[View RAW]({})"
+paste_4: "**Gagal mencapai Layanan Pastebin**"
+
+# pdf tools
+pdf_1: "`Mengubah menjadi PDF...`"
+pdf_2: "**Silahkan Unblock @office2pdf_bot dan coba lagi**"
+pdf_3: "**ERROR: @office2pdf_bot tidak merespon, coba lagi nanti**"
+
 # updater
 upd_1: "`Memeriksa pembaruan, harap tunggu....`"
 upd_2: "`Oops.. Pembaruan tidak dapat dilanjutkan karena beberapa masalah.`\n\n**LOGTRACE:**\n"

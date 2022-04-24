@@ -1032,64 +1032,39 @@ with bot:
                 await event.edit(f"""
 •Menu• - Bahasa untuk [{user.first_name}](tg://user?id={user.id})
 """,
-                                 buttons=[
-                                     [
-                                         Button.inline("⍟ indonesia ⍟",
-                                                       data="indo"),
-                                         Button.inline("⍟ inggris ⍟",
-                                                       data="inggris"),
-                                     ],
-                                     [
-                                         custom.Button.inline("ʙᴀᴄᴋ",
-                                                              data="gcback"),
-                                     ],
-                                 ]
-                                 )
-            else:
-                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+    languages = get_languages()
+    tutud = [
+        Button.inline(
+            f"{languages[yins]['asli']} [{yins.lower()}]",
+            data=f"set_{yins}",
+        )
+        for yins in languages
+    ]
+    buttons = list(zip(tutud[::2], tutud[1::2]))
+    if len(tutud) % 2 == 1:
+        buttons.append((tutud[-1],))
+    buttons.append([Button.inline("« Back", data="gcback")])
+    await event.edit("List Of Available Languages.", buttons=buttons)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"indo")
+                data=re.compile(rb"set_")
             )
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                id = event.data_match.group(1).decode("UTF-8")
+                lang = event.data_match.group(1).decode("UTF-8")
 
                 languages = get_languages()
-                language[0] = id
-            if not os.environ.get("id"):
+                language[0] = lang
+            if not os.environ.get("lang"):
                 os.environ.setdefault("language", "1")
 
             if languages == "id":
-                os.environ.setdefault("language", id)
+                os.environ.setdefault("language", lang)
                 await event.edit(
-                    f"•Berhasil• Bahasa Telah Diubah Menjadi {languages[id]['asli']} [{id}].",
-                    file=logoyins,
-                    link_preview=True,
-                    buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")]
-                )
-
-        @tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"inggris")
-            )
-        )
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                en = event.data_match.group(1).decode("UTF-8")
-
-                languages = get_languages()
-                language[0] = en
-            if not os.environ.get("en"):
-                os.environ.setdefault("language", "1")
-
-            if languages == "en":
-                os.environ.setdefault("language", en)
-                await event.edit(
-                    f"•Berhasil• Bahasa Telah Diubah Menjadi {languages[en]['asli']} [{en}].",
+                    f"•Berhasil• Bahasa Telah Diubah Menjadi {languages[lang]['asli']} [{lang}].",
                     file=logoyins,
                     link_preview=True,
                     buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")]
