@@ -55,7 +55,7 @@ async def gcast(event):
         msg = await event.get_reply_message()
     else:
         return await eod(event, get_string("gcast_1"))
-    kk = await eor(event, get_string("gcast_2"))
+    kk = await eor(event, get_string("gcast_3"))
     er = 0
     done = 0
     async for x in event.client.iter_dialogs():
@@ -72,7 +72,7 @@ async def gcast(event):
                     done += 1
                 except BaseException:
                     er += 1
-    await kk.edit(get_string("gcast_3").format(done, er)
+    await kk.edit(get_string("gcast_2").format(done, er)
     )
 
 
@@ -84,7 +84,7 @@ async def gucast(event):
         msg = await event.get_reply_message()
     else:
         return await eod(event, get_string("gcast_1"))
-    kk = await eor(event, get_string("gcast_2"))
+    kk = await eor(event, get_string("gcast_3"))
     er = 0
     done = 0
     async for x in event.client.iter_dialogs():
