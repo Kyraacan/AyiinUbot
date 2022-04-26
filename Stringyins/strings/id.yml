@@ -627,6 +627,29 @@ prmt_20: "`Pesan PMPERMIT Anda Sudah Default Sejak Awal`"
 prmt_21: "**Pesan PMPERMIT Yang Sekarang:**\n\n{}"
 prmt_22: "**Anda Belum Menyetel Pesan Costum PMPERMIT,**\n**Masih Menggunakan Pesan PM Default:**\n\n{}"
 
+# profil tools
+pp_changed: "```Foto Profil Anda Telah Berhasil Diubah.```"
+pp_error: "```Kegagalan Terjadi Saat Proses Gambar, Foto Profil Gagal Diubah.```"
+bio_succes: "```Bio Anda Telah Berhasil Diubah.```"
+name_ok: "```Nama Anda Telah Berhasil Diubah.```"
+username_succes: "```Username Anda Sudah Diubah.```"
+username_taken: "```Mohon Maaf, Username Itu Sudah Ada Yang Menggunakannya.```"
+profil_1: "**Pengguna:**\t`{}`\n"
+profil_2: "**Grup:**\t`{}`\n"
+profil_3: "**Super Grup:**\t`{}`\n"
+profil_4: "**Channel:**\t`{}`\n"
+profil_5: "**Bot:**\t`{}`"
+profil_6: "`Berhasil Menghapus {} Foto Profil.`"
+
+# purge tools
+purge_1: "**Fast Purge Completed!**\n**Berhasil Menghapus** `{}` **Pesan**"
+purge_2: "**Berhasil Menghapus** {} **Kenangan**"
+purge_3: "**Tidak Bisa Menghapus Pesan**"
+purge_4: "**Mohon Balas Ke Pesan untuk mulai menghapus**"
+purge_5: "**Pesan ini telah dipilih sebagai awal menghapus, balas pesan lain dengan** `{}purgeto` **untuk menghapusnya**"
+purge_6: "**Balas pesan dengan** `{}purgefrom` **terlebih dahulu lalu gunakan** `{}purgeto`"
+purge_7: "**Fast purge complete!**\n**Berhasil Menghapus** `{}` **Pesan**"
+
 # updater
 upd_1: "`Memeriksa pembaruan, harap tunggu....`"
 upd_2: "`Oops.. Pembaruan tidak dapat dilanjutkan karena beberapa masalah.`\n\n**LOGTRACE:**\n"
