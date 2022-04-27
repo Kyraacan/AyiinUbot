@@ -16,13 +16,12 @@ from .button import BTN_URL_REGEX, build_keyboard
 @ayiin_cmd(pattern="string(?:\\s|$)([\\s\\S]*)")
 async def(stringyins):
     ayiin = await eor(stringyins, get_string("com_1"))
-    input = stringyins.patter_match.group(1)
-    text = "Silahkan pilih Dibawah Ini Untuk Membuat String Anda"
+    text = "Silahkan klik Dibawah Ini Untuk Membuat String Anda"
     buttons = [
         [
            Button.url("String Via Bot", data="https://t.me/AyiinStringRobot"),
-           Button.url("String Via Web", data="https://repl.it/@AyiinXd/AyiinString?lite=1&outputonly=1")
-           ]
+           Button.url("String Via Web", data="https://repl.it/@AyiinXd/AyiinString?lite=1&outputonly=1"),
+        ]
     ]
     await ayiin.edit(
            text,
