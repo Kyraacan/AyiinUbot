@@ -8,7 +8,7 @@ import os
 from telethon import Button, custom, events
 
 from AyiinXd import CMD_HANDLER as cmd
-from AyiinXd import CMD_HELP, logoyins
+from AyiinXd import CMD_HELP, logo
 from AyiinXd.ayiin import ayiin_cmd, eod, eor
 from Stringyins import get_string
 from .button import BTN_URL_REGEX, build_keyboard
@@ -25,7 +25,7 @@ async def test_string(stringyins):
     ]
     await ayiin.edit(
            text,
-           file=logoyins,
+           file=logo,
            link_preview=True,
            buttons=buttons,
     )
