@@ -14,7 +14,7 @@ from Stringyins import get_string
 from .button import BTN_URL_REGEX, build_keyboard
 
 @ayiin_cmd(pattern="string(?:\\s|$)([\\s\\S]*)")
-async def(stringyins):
+async def test_string(stringyins):
     ayiin = await eor(stringyins, get_string("com_1"))
     text = "Silahkan klik Dibawah Ini Untuk Membuat String Anda"
     buttons = [
