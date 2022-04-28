@@ -27,7 +27,7 @@ async def test_string(stringyins):
         logoyins = INLINE_PIC
     await ayiin.edit(
            text,
-           file=logo,
+           file=logoyins,
            link_preview=True,
            buttons=buttons,
     )
