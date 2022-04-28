@@ -19,8 +19,8 @@ async def test_string(stringyins):
     text = "Silahkan klik Dibawah Ini Untuk Membuat String Anda"
     buttons = [
         [
-           Button.url("String Via Bot", data="https://t.me/AyiinStringRobot"),
-           Button.url("String Via Web", data="https://repl.it/@AyiinXd/AyiinString?lite=1&outputonly=1"),
+           Button.url("String Via Bot", "https://t.me/AyiinStringRobot"),
+           Button.url("String Via Web", "https://repl.it/@AyiinXd/AyiinString?lite=1&outputonly=1"),
         ]
     ]
     if INLINE_PIC:
