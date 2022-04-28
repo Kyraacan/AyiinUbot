@@ -8,7 +8,7 @@ import os
 from telethon import Button, custom, events
 
 from AyiinXd import CMD_HANDLER as cmd
-from AyiinXd import CMD_HELP, logo
+from AyiinXd import CMD_HELP, INLINE_PIC
 from AyiinXd.ayiin import ayiin_cmd, eod, eor
 from Stringyins import get_string
 from .button import BTN_URL_REGEX, build_keyboard
@@ -23,6 +23,8 @@ async def test_string(stringyins):
            Button.url("String Via Web", data="https://repl.it/@AyiinXd/AyiinString?lite=1&outputonly=1"),
         ]
     ]
+    if INLINE_PIC:
+        logoyins = INLINE_PIC
     await ayiin.edit(
            text,
            file=logo,
