@@ -714,7 +714,7 @@ scrss_3: "`Uploading screenshot as file..`"
 # sed tools
 sed_1: "`Guru, saya tidak punya otak. Anda juga tidak, saya kira anda punya otak.`"
 sed_2: "`Boi!, itu balasan. Jangan gunakan sed`"
-sed_3: "Maksudmu? \dan\n{}"
+sed_3: "Maksudmu? \n\n{}"
 
 # shazam tools
 shazam_1: "**Mohon balas ke pesan audio**"
