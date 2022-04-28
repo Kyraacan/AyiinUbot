@@ -125,14 +125,6 @@ async def repo_is_here(event):
     )
 
 
-@ayiin_cmd(pattern="string$")
-async def string_is_here(event):
-    await edit_or_reply(
-        event,
-        "✧ **GET STRING SESSION TELEGRAM :** [KLIK DISINI](https://replit.com/@AyiinXd/AyiinString?lite=1&outputonly=1)\n",
-    )
-
-
 @ayiin_cmd(pattern="raw$")
 async def raw(event):
     the_real_message = None
