@@ -1,7 +1,6 @@
 # Credits: mrconfused
 # Recode by @mrismanaziz
-# FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
-# t.me/SharingUserbot & t.me/Lunatic0de
+# t.me/SharingUserbot
 
 import asyncio
 
@@ -13,7 +12,7 @@ from AyiinXd import CMD_HELP, LOGS, bot
 from AyiinXd.modules.sql_helper import no_log_pms_sql
 from AyiinXd.modules.sql_helper.globals import addgvar, gvarstatus
 from AyiinXd.modules.vcplugin import vcmention
-from AyiinXd.ayiin import _format, ayiin_cmd, edit_delete
+from AyiinXd.ayiin import _format, ayiin_cmd, edit_delete, edit_or_reply
 from AyiinXd.ayiin.tools import media_type
 
 
@@ -28,53 +27,55 @@ LOG_CHATS_ = LOG_CHATS()
 
 
 @bot.on(events.ChatAction)
-async def logaddjoin(event):
-    user = await event.get_user()
-    chat = await event.get_chat()
+async def logaddjoin(yins):
+    user = await yins.get_user()
+    chat = await yins.get_chat()
     if not (user and user.is_self):
         return
     if hasattr(chat, "username") and chat.username:
-        chat = f"[{chat.title}](https://t.me/{chat.username}/{event.action_message.id})"
+        chat = f"[{chat.title}](https://t.me/{chat.username}/{yins.action_message.id})"
     else:
-        chat = f"[{chat.title}](https://t.me/c/{chat.id}/{event.action_message.id})"
-    if event.user_added:
-        tmp = event.added_by
-        text = f"📩 **#ADD_LOG\n •** {vcmention(tmp)} **Menambahkan** {vcmention(user)}\n **• Ke Group** {chat}"
-    elif event.user_joined:
-        text = f"📨 **#JOIN_LOG\n •** [{user.first_name}](tg://user?id={user.id}) **Bergabung\n • Ke Group** {chat}"
+        chat = f"[{chat.title}](https://t.me/c/{chat.id}/{yins.action_message.id})"
+    if yins.user_added:
+        tmp = yins.added_by
+        text = f"📩 **#TAMBAH_LOG\n •** {vcmention(tmp)} **Menambahkan** {vcmention(user)}\n **• Ke Group** {chat}"
+    elif yins.user_joined:
+        text = f"📨 **#LOG_GABUNG\n •** [{user.first_name}](tg://user?id={user.id}) **Bergabung\n • Ke Group** {chat}"
     else:
         return
-    await event.client.send_message(BOTLOG_CHATID, text)
+    await yins.client.send_message(BOTLOG_CHATID, text)
 
 
 @bot.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
-async def monito_p_m_s(event):
+@bot.on(events.MessageEdited(incoming=True, func=lambda e: e.is_private))
+async def monito_p_m_s(yins):
     if BOTLOG_CHATID == -100:
         return
     if gvarstatus("PMLOG") and gvarstatus("PMLOG") == "false":
         return
-    sender = await event.get_sender()
+    sender = await yins.get_sender()
+    await asyncio.sleep(0.5)
     if not sender.bot:
-        chat = await event.get_chat()
+        chat = await yins.get_chat()
         if not no_log_pms_sql.is_approved(chat.id) and chat.id != 777000:
             if LOG_CHATS_.RECENT_USER != chat.id:
                 LOG_CHATS_.RECENT_USER = chat.id
                 if LOG_CHATS_.NEWPM:
                     await LOG_CHATS_.NEWPM.edit(
                         LOG_CHATS_.NEWPM.text.replace(
-                            "**💌 #NEW_MESSAGE**",
+                            "**💌 #PESAN_BARU**",
                             f" • `{LOG_CHATS_.COUNT}` **Pesan**",
                         )
                     )
                     LOG_CHATS_.COUNT = 0
-                LOG_CHATS_.NEWPM = await event.client.send_message(
+                LOG_CHATS_.NEWPM = await yins.client.send_message(
                     BOTLOG_CHATID,
                     f"**💌 #MENERUSKAN #PESAN_BARU**\n** • Dari : **{_format.mentionuser(sender.first_name , sender.id)}\n** • User ID:** `{chat.id}`",
                 )
             try:
-                if event.message:
-                    await event.client.forward_messages(
-                        BOTLOG_CHATID, event.message, silent=True
+                if yins.message:
+                    await yins.client.forward_messages(
+                        BOTLOG_CHATID, yins.message, silent=True
                     )
                 LOG_CHATS_.COUNT += 1
             except Exception as e:
@@ -82,35 +83,37 @@ async def monito_p_m_s(event):
 
 
 @bot.on(events.NewMessage(incoming=True, func=lambda e: e.mentioned))
-async def log_tagged_messages(event):
+@bot.on(events.MessageEdited(incoming=True, func=lambda e: e.mentioned))
+async def log_tagged_messages(yahaha):
     if BOTLOG_CHATID == -100:
         return
-    hmm = await event.get_chat()
+    pornhub = await yahaha.get_chat()
 
     if gvarstatus("GRUPLOG") and gvarstatus("GRUPLOG") == "false":
         return
     if (
-        (no_log_pms_sql.is_approved(hmm.id))
+        (no_log_pms_sql.is_approved(pornhub.id))
         or (BOTLOG_CHATID == -100)
-        or (await event.get_sender() and (await event.get_sender()).bot)
+        or (await yahaha.get_sender() and (await yahaha.get_sender()).bot)
     ):
         return
     full = None
     try:
-        full = await event.client.get_entity(event.message.from_id)
+        full = await yahaha.client.get_entity(yahaha.message.from_id)
     except Exception as e:
         LOGS.info(str(e))
-    messaget = media_type(event)
+    messaget = media_type(yahaha)
     resalt = f"<b>📨 #TAGS #MESSAGE</b>\n<b> • Dari : </b>{_format.htmlmentionuser(full.first_name , full.id)}"
     if full is not None:
-        resalt += f"\n<b> • Grup : </b><code>{hmm.title}</code>"
+        resalt += f"\n<b> • Grup : </b><code>{pornhub.title}</code>"
     if messaget is not None:
         resalt += f"\n<b> • Jenis Pesan : </b><code>{messaget}</code>"
     else:
-        resalt += f"\n<b> • 👀 </b><a href = 'https://t.me/c/{hmm.id}/{event.message.id}'>Lihat Pesan</a>"
-    resalt += f"\n<b> • Message : </b>{event.message.message}"
-    if not event.is_private:
-        await event.client.send_message(
+        resalt += f"\n<b> • 👀 </b><a href = 'https://t.me/c/{pornhub.id}/{yahaha.message.id}'>Lihat Pesan</a>"
+    resalt += f"\n<b> • Message : </b>{yahaha.message.message}"
+    await asyncio.sleep(0.5)
+    if not yahaha.is_private:
+        await yahaha.client.send_message(
             BOTLOG_CHATID,
             resalt,
             parse_mode="html",
@@ -129,17 +132,19 @@ async def log(log_text):
             textx = user + log_text.pattern_match.group(1)
             await log_text.client.send_message(BOTLOG_CHATID, textx)
         else:
-            await log_text.edit("**Apa yang harus saya simpan?**")
+            await edit_delete(log_text, "**Apa yang harus saya simpan?**")
             return
-        await log_text.edit("**Berhasil disimpan di Grup Log**")
+        await edit_delete(log_text, "**Berhasil disimpan di Grup Log**")
     else:
-        await log_text.edit("**Module ini membutuhkan LOGGER untuk diaktifkan!**")
-    await asyncio.sleep(2)
-    await log_text.delete()
+        await edit_delete(
+            log_text,
+            "**Untuk Menggunakan Module ini, Anda Harus Mengatur** `BOTLOG_CHATID` **di Config Vars**",
+            30,
+        )
 
 
 @ayiin_cmd(pattern="log$")
-async def set_log_p_m(event):
+async def set_no_log_p_m(event):
     if BOTLOG_CHATID != -100:
         chat = await event.get_chat()
         if no_log_pms_sql.is_approved(chat.id):
@@ -179,15 +184,15 @@ async def set_pmlog(event):
         PMLOG = True
     if PMLOG:
         if h_type:
-            await event.edit("**PM LOG Sudah Diaktifkan**")
+            await edit_or_reply(event, "**PM LOG Sudah Diaktifkan**")
         else:
             addgvar("PMLOG", h_type)
-            await event.edit("**PM LOG Berhasil Dimatikan**")
+            await edit_or_reply(event, "**PM LOG Berhasil Dimatikan**")
     elif h_type:
         addgvar("PMLOG", h_type)
-        await event.edit("**PM LOG Berhasil Diaktifkan**")
+        await edit_or_reply(event, "**PM LOG Berhasil Diaktifkan**")
     else:
-        await event.edit("**PM LOG Sudah Dimatikan**")
+        await edit_or_reply(event, "**PM LOG Sudah Dimatikan**")
 
 
 @ayiin_cmd(pattern="gruplog (on|off)$")
@@ -209,15 +214,15 @@ async def set_gruplog(event):
         GRUPLOG = True
     if GRUPLOG:
         if h_type:
-            await event.edit("**Group Log Sudah Diaktifkan**")
+            await edit_or_reply(event, "**Group Log Sudah Diaktifkan**")
         else:
             addgvar("GRUPLOG", h_type)
-            await event.edit("**Group Log Berhasil Dimatikan**")
+            await edit_or_reply(event, "**Group Log Berhasil Dimatikan**")
     elif h_type:
         addgvar("GRUPLOG", h_type)
-        await event.edit("**Group Log Berhasil Diaktifkan**")
+        await edit_or_reply(event, "**Group Log Berhasil Diaktifkan**")
     else:
-        await event.edit("**Group Log Sudah Dimatikan**")
+        await edit_or_reply(event, "**Group Log Sudah Dimatikan**")
 
 
 CMD_HELP.update(
