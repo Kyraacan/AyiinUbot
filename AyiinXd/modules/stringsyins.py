@@ -11,7 +11,16 @@ from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import BOT_USERNAME, CMD_HELP
 from AyiinXd.ayiin import ayiin_cmd, eod, eor, reply_id
 from Stringyins import get_string
-from .button import BTN_URL_REGEX, build_keyboard
+
+
+def build_keyboards(buttons):
+    keyb = []
+    for btn in buttons:
+        if btn[0] and keyb:
+            keyb[-1].append(Button.url(btn[0], btn[1]))
+        else:
+            keyb.append([Button.url(btn[0], btn[1])])
+    return keyb
 
 
 Y_BUTTONS = [
@@ -28,7 +37,7 @@ Y_BUTTONS = [
 @ayiin_cmd(pattern="string(?:\\s|$)([\\s\\S]*)")
 async def test_string(event):
     ayiin = await eor(event, get_string("com_1"))
-    yins = build_keyboard(Y_BUTTONS)
+    yins = build_keyboards(Y_BUTTONS)
     if yins:
             Texts = "Silahkan klik Dibawah Ini Untuk Membuat String Anda"
             await eor(event, f"{Texts[yins]}")
