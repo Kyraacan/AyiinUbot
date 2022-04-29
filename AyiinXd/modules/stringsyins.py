@@ -8,7 +8,7 @@ import os
 from telethon import Button, custom, events
 
 from AyiinXd import CMD_HANDLER as cmd
-from AyiinXd import BOT_USERNAME, CMD_HELP
+from AyiinXd import BOT_USERNAME, CMD_HELP, INLINE_PIC
 from AyiinXd.ayiin import ayiin_cmd, eod, eor
 from Stringyins import get_string
 
@@ -37,27 +37,28 @@ Y_BUTTONS = [
 @ayiin_cmd(pattern="string(?:\\s|$)([\\s\\S]*)")
 async def test_string(event):
     ayiin = await eor(event, get_string("com_1"))
-    builder = event.builder
+    user = await event.client.get_entity(event)
     yins = build_keyboards(Y_BUTTONS)
-    if yins:
-            result = builder.article(
-                    title="Inline creator",
-                    text="Silahkan klik Dibawah Ini Untuk Membuat String Anda",
-                    buttons=yins,
-                    link_preview=False,
-            )
+    if INLINE_PIC:
+            logoyins = INLINE_PIC
+            text = (f"**✨ Sᴛʀɪɴɢ Aʏɪɪɴ-Usᴇʀʙᴏᴛ ✨**\n\n✣ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})")
+            await event.edit(
+                text,
+                file=logoyins,
+                link_preview=True,
+                buttons=yins)
             await results[0].click(
                 event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
             )
             await event.delete()
     else:
         try:
-            result = builder.article(
-                    title="Inline creator",
-                    text="Silahkan klik Dibawah Ini Untuk Membuat String Anda",
-                    buttons=yins,
-                    link_preview=False,
-            )
+            text = (f"**✨ Sᴛʀɪɴɢ Aʏɪɪɴ-Usᴇʀʙᴏᴛ ✨**\n\n✣ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})")
+            await event.edit(
+                text,
+                file=logoyins,
+                link_preview=True,
+                buttons=yins)
             await results[0].click(
                 event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
             )
