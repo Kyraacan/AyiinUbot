@@ -17,7 +17,7 @@ def build_keyboards(buttons):
     keyb = []
     for btn in buttons:
         if btn[0] and keyb:
-            keyb[-1].append(Button.url(btn[0], btn[1]))
+            keyb[0].append(Button.url(btn[0], btn[1]))
         else:
             keyb.append([Button.url(btn[0], btn[1])])
     return keyb
