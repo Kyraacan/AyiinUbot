@@ -16,8 +16,11 @@ from .button import BTN_URL_REGEX, build_keyboard
 
 Y_BUTTONS = [
         [
-           custom.Button.url("String Via Bot", "https://t.me/AyiinStringRobot"),
-           custom.Button.url("String Via Web", "https://repl.it/@AyiinXd/AyiinString?lite=1&outputonly=1"),
+           custom.Button.url("Bᴏᴛ Sᴛʀɪɴɢ", "https://t.me/AyiinStringRobot"),
+           custom.Button.url("Rᴇᴘʟɪᴛ Sᴛʀɪɴɢ", "https://repl.it/@AyiinXd/AyiinString?lite=1&outputonly=1"),
+        ]
+        [
+           custom.Button.url("Sᴜᴘᴘᴏʀᴛ", "https://t.me/AyiinXdSupport"),
         ]
     ]
 
@@ -25,10 +28,10 @@ Y_BUTTONS = [
 @ayiin_cmd(pattern="string(?:\\s|$)([\\s\\S]*)")
 async def test_string(event):
     ayiin = await eor(event, get_string("com_1"))
-    args = build_keyboard(Y_BUTTONS)
-    if args:
+    yins = build_keyboard(Y_BUTTONS)
+    if yins:
             Texts = "Silahkan klik Dibawah Ini Untuk Membuat String Anda"
-            await eor(event, f"{Texts[args]}")
+            await eor(event, f"{Texts[yins]}")
     else:
         try:
             results = await event.client.inline_query(  # pylint:disable=E0602
