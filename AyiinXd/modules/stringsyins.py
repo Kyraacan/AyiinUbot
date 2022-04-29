@@ -39,11 +39,23 @@ async def test_string(event):
     ayiin = await eor(event, get_string("com_1"))
     yins = build_keyboards(Y_BUTTONS)
     if yins:
-            await eor(event, f"Silahkan klik Dibawah Ini Untuk Membuat String Anda\n\n {yins}")
+            result = builder.article(
+                    title="Inline creator",
+                    text="Silahkan klik Dibawah Ini Untuk Membuat String Anda",
+                    buttons=yins,
+                    link_preview=False,
+            )
+            await results[0].click(
+                event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
+            )
+            await event.delete()
     else:
         try:
-            results = await event.client.inline_query(  # pylint:disable=E0602
-                BOT_USERNAME, "@AyiinXdSupport",
+            result = builder.article(
+                    title="Inline creator",
+                    text="Silahkan klik Dibawah Ini Untuk Membuat String Anda",
+                    buttons=yins,
+                    link_preview=False,
             )
             await results[0].click(
                 event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
