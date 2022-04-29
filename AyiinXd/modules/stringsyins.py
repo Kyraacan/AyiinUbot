@@ -39,7 +39,7 @@ async def test_string(event):
     ayiin = await eor(event, get_string("com_1"))
     yins = build_keyboards(Y_BUTTONS)
     if yins:
-            await eor(event, f"Silahkan klik Dibawah Ini Untuk Membuat String Anda\n\n {}".format(yins))
+            await eor(event, f"Silahkan klik Dibawah Ini Untuk Membuat String Anda\n\n {yins}")
     else:
         try:
             results = await event.client.inline_query(  # pylint:disable=E0602
