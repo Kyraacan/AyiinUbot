@@ -740,6 +740,29 @@ with bot:
                     ],
                     link_preview=False,
                 )
+            elif query.startswith("string"):
+                result = builder.article(
+                    title="String",
+                    description="String Ayiin - Userbot",
+                    url="https://t.me/AyiinXdSupport",
+                    thumb=InputWebDocument(
+                        INLINE_PIC,
+                        0,
+                        "image/jpeg",
+                        []),
+                    text="**String Ayiin-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **ᴏᴡɴᴇʀ ʀᴇᴘᴏ :** [AyiinXd](https://t.me/AyiinXd)\n✣ **sᴜᴘᴘᴏʀᴛ :** @AyiinXdSupport\n✣ **ʀᴇᴘᴏsɪᴛᴏʀʏ :** [Ayiin-Userbot](https://github.com/AyiinXd/Ayiin-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    buttons=[
+                        [
+                            custom.Button.url(
+                                "Bᴏᴛ Sᴛʀɪɴɢ",
+                                "https://t.me/AyiinXdSupport"),
+                            custom.Button.url(
+                                "Sᴛʀɪɴɢ Rᴇᴘʟɪᴛ",
+                                "https://repl.it/@AyiinXd/AyiinString?lite=1&outputonly=1"),
+                        ],
+                    ],
+                    link_preview=False,
+                )
             elif query.startswith("Inline buttons"):
                 markdown_note = query[14:]
                 prev = 0
