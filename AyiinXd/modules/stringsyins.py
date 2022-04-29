@@ -23,7 +23,7 @@ async def test_string(event):
     else:
         markdown_note = "".join(event.text.split(maxsplit=1)[1:])
     if not markdown_note:
-        return await edit_delete(
+        return await eod(
             event, "**Teks apa yang harus saya gunakan di pesan button?**"
         )
     text = "Silahkan klik Dibawah Ini Untuk Membuat String Anda"
