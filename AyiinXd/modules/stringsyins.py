@@ -25,24 +25,21 @@ Y_BUTTONS = [
 @ayiin_cmd(pattern="string(?:\\s|$)([\\s\\S]*)")
 async def test_string(event):
     ayiin = await eor(event, get_string("com_1"))
-    args = event.pattern_match.group(1).lower()
+    args = build_keyboard(Y_BUTTONS)
     if args:
-        if args in Y_BUTTONS:
             await eor(event, f"Silahkan klik Dibawah Ini Untuk Membuat String Anda\n\n {Y_BUTTONS[args]}")
         else:
-            await eod(event, "Harap Msukkan Yg Benar")
-    else:
-        try:
-            results = await event.client.inline_query(  # pylint:disable=E0602
-                BOT_USERNAME, "@AyiinXdSupport",
-            )
-            await results[0].click(
-                event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
-            )
-            await event.delete()
-        except Exception as e:
-            await eor(event, get_string("error_1").format(e)
-                      )
+            try:
+                results = await event.client.inline_query(  # pylint:disable=E0602
+                    BOT_USERNAME, "@AyiinXdSupport",
+                )
+                await results[0].click(
+                    event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
+                )
+                await event.delete()
+            except Exception as e:
+                await eor(event, get_string("error_1").format(e)
+                          )
 
 CMD_HELP.update(
   {
