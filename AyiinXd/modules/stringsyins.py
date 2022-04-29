@@ -28,18 +28,19 @@ async def test_string(event):
     args = build_keyboard(Y_BUTTONS)
     if args:
             await eor(event, f"Silahkan klik Dibawah Ini Untuk Membuat String Anda\n\n {Y_BUTTONS[args]}")
-        else:
-            try:
-                results = await event.client.inline_query(  # pylint:disable=E0602
-                    BOT_USERNAME, "@AyiinXdSupport",
-                )
-                await results[0].click(
-                    event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
-                )
-                await event.delete()
-            except Exception as e:
-                await eor(event, get_string("error_1").format(e)
-                          )
+    else:
+        try:
+            results = await event.client.inline_query(  # pylint:disable=E0602
+                BOT_USERNAME, "@AyiinXdSupport",
+            )
+            await results[0].click(
+                event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
+            )
+            await event.delete()
+        except Exception as e:
+            await eor(event, get_string("error_1").format(e)
+                      )
+
 
 CMD_HELP.update(
   {
