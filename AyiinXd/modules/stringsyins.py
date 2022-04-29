@@ -34,7 +34,7 @@ async def test_string(event):
         ]
     ]
     yinsbut = "Silahkan klik Dibawah Ini Untuk Membuat String Anda" + markdown_note
-    results = await event.client.inline_query(BOT_USERNAME, yinsbut)
+    results = await event.client.inline_query(BOT_USERNAME, "@AyiinXdSupport")
     await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
     await event.delete()
 
