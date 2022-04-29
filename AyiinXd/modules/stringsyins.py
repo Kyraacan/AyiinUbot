@@ -9,7 +9,7 @@ from telethon import Button, custom, events
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import BOT_USERNAME, CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, eod, eor
+from AyiinXd.ayiin import ayiin_cmd, eod, eor, reply_id
 from Stringyins import get_string
 from .button import BTN_URL_REGEX, build_keyboard
 
