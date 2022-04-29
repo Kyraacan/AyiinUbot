@@ -17,15 +17,6 @@ from .button import BTN_URL_REGEX, build_keyboard
 async def test_string(event):
     ayiin = await eor(event, get_string("com_1"))
     reply_to_id = await reply_id(event)
-    reply_message = await event.get_reply_message()
-    if reply_message:
-        markdown_note = reply_message.text
-    else:
-        markdown_note = "".join(event.text.split(maxsplit=1)[1:])
-    if not markdown_note:
-        return await eod(
-            event, "**Teks apa yang harus saya gunakan di pesan button?**"
-        )
     text = "Silahkan klik Dibawah Ini Untuk Membuat String Anda"
     buttons = [
         [
@@ -33,7 +24,7 @@ async def test_string(event):
            Button.url("String Via Web", "https://repl.it/@AyiinXd/AyiinString?lite=1&outputonly=1"),
         ]
     ]
-    catinput = f"{text} " + buttons
+    catinput = "Silahkan klik Dibawah Ini Untuk Membuat String Anda " + buttons
     results = await event.client.inline_query(BOT_USERNAME, catinput)
     await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
     await event.delete()
