@@ -37,7 +37,8 @@ Y_BUTTONS = [
 @ayiin_cmd(pattern="string(?:\\s|$)([\\s\\S]*)")
 async def test_string(event):
     ayiin = await eor(event, get_string("com_1"))
-    user = await event.client.get_entity(event)
+    me = await event.client.get_me()
+    user = await event.client.get_entity(me)
     yins = build_keyboards(Y_BUTTONS)
     if INLINE_PIC:
             logoyins = INLINE_PIC
