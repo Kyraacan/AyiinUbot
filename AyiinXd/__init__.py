@@ -1049,11 +1049,7 @@ with bot:
             if len(tutud) % 2 == 1:
                 buttons.append((tutud[-1],))
             buttons.append([Button.inline("« Back", data="gcback")])
-            await event.edit(
-                ayiinxd, 
-                file=logoyins,
-                link_preview=False,
-                buttons=buttons)
+            await event.edit(ayiinxd, buttons=buttons)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
