@@ -9,7 +9,7 @@ from telethon import Button, custom, events
 
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import BOT_USERNAME, CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, eod, eor, reply_id
+from AyiinXd.ayiin import ayiin_cmd, eod, eor
 from Stringyins import get_string
 
 
@@ -39,8 +39,8 @@ async def test_string(event):
     ayiin = await eor(event, get_string("com_1"))
     yins = build_keyboards(Y_BUTTONS)
     if yins:
-            Texts = "Silahkan klik Dibawah Ini Untuk Membuat String Anda"
-            await eor(event, f"{Texts[yins]}")
+            texts = "Silahkan klik Dibawah Ini Untuk Membuat String Anda"
+            await eor(event, f"{texts(yins)}")
     else:
         try:
             results = await event.client.inline_query(  # pylint:disable=E0602
