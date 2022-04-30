@@ -8,7 +8,7 @@ import os
 from telethon import Button, custom, events
 
 from AyiinXd import CMD_HANDLER as cmd
-from AyiinXd import BOT_USERNAME, CMD_HELP, INLINE_PIC
+from AyiinXd import BOT_USERNAME, CMD_HELP, INLINE_PIC, bot
 from AyiinXd.ayiin import ayiin_cmd, eod, eor
 from Stringyins import get_string
 
@@ -40,9 +40,9 @@ async def test_string(event):
     yins = build_keyboards(Y_BUTTONS)
     if INLINE_PIC:
             logoyins = INLINE_PIC
-            result = await event.eor(
-                    title="Inline creator",
+            result = await bot.inline_query(
                     text="Silahkan klik Dibawah Ini Untuk Membuat String Anda",
+                    file=logoyins,
                     buttons=yins,
                     link_preview=False)
             await result.delete()
