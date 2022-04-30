@@ -34,22 +34,11 @@ Y_BUTTONS = [
     ]
 
 
-@ayiin_cmd(pattern="string(?:\\s|$)([\\s\\S]*)")
+@ayiin_cmd(pattern="stringyins(?:\\s|$)([\\s\\S]*)")
 async def test_string(event):
     ayiin = await eor(event, get_string("com_1"))
     buttons = build_keyboards(Y_BUTTONS)
-    thumb = INLINE_PIC
-    if thumb:
-            thumb = None
-            text = "Silahkan klik Dibawah Ini Untuk Membuat String Anda"
-            reply_markup = event.build_reply_markup(buttons)
-            result = await event.client.send_message(
-                    event.chat_id,
-                    text,
-                    buttons=reply_markup)
-            await result.delete()
-    else:
-        try:
+    if buttons:
             results = await event.client.inline_query(  # pylint:disable=E0602
                 BOT_USERNAME, "@AyiinXdSupport",
             )
