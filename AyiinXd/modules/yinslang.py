@@ -8,7 +8,7 @@ import os
 from telethon import Button, custom, events
 
 from AyiinXd import CMD_HANDLER as cmd
-from AyiinXd import CMD_HELP
+from AyiinXd import CMD_HELP, bot
 from AyiinXd.ayiin import ayiin_cmd
 from Stringyins import get_languages, language, get_string
 from .button import BTN_URL_REGEX, build_keyboard
@@ -18,18 +18,18 @@ from .button import BTN_URL_REGEX, build_keyboard
 async def setlang(event):
     await event.eor(get_string("com_1"))
     languages = get_languages()
-    tutud = [
-        Button.inline(
-            f"{languages[yins]['asli']} [{yins.lower()}]",
-            data=f"set_{yins}",
-        )
-        for yins in languages
-    ]
-    buttons = list(zip(tutud[::2], tutud[1::2]))
-    if len(tutud) % 2 == 1:
-        buttons.append((tutud[-1],))
-    buttons.append([Button.inline("« Back", data="langs_yins")])
-    await event.edit("List Of Available Languages.", buttons=buttons)
+    if languages:
+        try:
+            yinslang = await bot.inline_query(  # pylint:disable=E0602
+                BOT_USERNAME, "lang",
+            )
+            await yinslang[0].click(
+                event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
+            )
+            await event.delete()
+        except Exception as e:
+            await eor(event, get_string("error_1").format(e)
+                      )
 
 
 @ayiin_cmd(pattern=r"set( id| en|$)(.*)")
