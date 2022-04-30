@@ -38,12 +38,10 @@ Y_BUTTONS = [
 async def test_string(event):
     ayiin = await eor(event, get_string("com_1"))
     yins = build_keyboards(Y_BUTTONS)
-    if INLINE_PIC:
-            logoyins = INLINE_PIC
+    if yins:
             text = "Silahkan klik Dibawah Ini Untuk Membuat String Anda"
             result = await bot.inline_query(
                     text,
-                    file=logoyins,
                     buttons=yins,
                     link_preview=False)
             await result.delete()
