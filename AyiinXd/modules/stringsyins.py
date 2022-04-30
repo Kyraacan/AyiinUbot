@@ -40,7 +40,7 @@ async def test_string(event):
     yins = build_keyboards(Y_BUTTONS)
     if INLINE_PIC:
             logo = INLINE_PIC
-            text = "Silahkan klik Dibawah Ini Untuk Membuat String Anda"
+            text = ("Silahkan klik Dibawah Ini Untuk Membuat String Anda")
             result = await event.client.send_message(
                     caption=text,
                     file=logo,
