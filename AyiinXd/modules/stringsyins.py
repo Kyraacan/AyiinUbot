@@ -45,7 +45,7 @@ async def test_string(event):
             buttons.append(buttons)
             result = await event.client.send_message(
                     event.chat_id,
-                    ayiinxd,
+                    text,
                     buttons=buttons)
             await result.delete()
     else:
