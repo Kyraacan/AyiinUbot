@@ -39,13 +39,12 @@ async def test_string(event):
     ayiin = await eor(event, get_string("com_1"))
     buttons = build_keyboards(Y_BUTTONS)
     if INLINE_PIC:
-            logo = INLINE_PIC
+            INLINE_PIC = None
             text = "Silahkan klik Dibawah Ini Untuk Membuat String Anda"
-            ayiinxd = await event.client._get_entity_from_string(text)
             buttons.append(buttons)
             result = await event.client.send_message(
+                    event.chat_id,
                     ayiinxd,
-                    logo,
                     buttons=buttons)
             await result.delete()
     else:
