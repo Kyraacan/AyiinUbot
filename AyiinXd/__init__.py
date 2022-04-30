@@ -763,6 +763,21 @@ with bot:
                     ],
                     link_preview=False,
                 )
+            elif query.statswitch("lang"):
+                languages = get_languages()
+                tutud = [
+                    Button.inline(
+                        f"{languages[yins]['asli']} [{yins.lower()}]",
+                        data=f"set_{yins}",
+                    )
+                    for yins in languages
+                ]
+                buttons = list(zip(tutud[::2], tutud[1::2]))
+                if len(tutud) % 2 == 1:
+                    buttons.append((tutud[-1],))
+                buttons.append([Button.inline("« Back", data="langs_yins")])
+                await event.edit("List Of Available Languages.", buttons=buttons
+                )
             elif query.startswith("Inline buttons"):
                 markdown_note = query[14:]
                 prev = 0
@@ -1049,34 +1064,27 @@ with bot:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(events.CallbackQuery(data=b"langs_yins"))
+        @tgbot.on(events.CallbackQuery(data=b"set_"))
         async def about(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                ayiinxd = await event.edit(f"""
-•Menu• - Bahasa untuk [{user.first_name}](tg://user?id={user.id})
+                lang = event.data_match.group(1).decode("UTF-8")
+                languages = get_languages()
+                language[0] = lang
+            if not os.environ.get("lang"):
+                os.environ.setdefault("language", "1")
 
-  »  **Perintah :** `{cmd}set <keyword_bahasa>`
-  »  **Kegunaan : **Untuk mengubah bahasa bot anda.
-
-  »  **Catatan :** `Jika Ingin Menambah Bahasa Anda Silahkan Pc @AyiinXd`
-""",)
-            languages = get_languages()
-            tutud = [
-                Button.inline(
-                     f"{languages[yins]['asli']} [{yins.lower()}]",
-                     data=f"set_{yins}",
+            if languages == "id":
+                os.environ.setdefault("language", lang)
+                await event.edit(
+                    f"•Berhasil• Bahasa Telah Diubah Menjadi {languages[lang]['asli']} [{lang}].",
+                    file=logoyins,
+                    link_preview=True,
+                    buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")]
                 )
-                for yins in languages
-            ]
-            buttons = list(zip(tutud[::2], tutud[1::2]))
-            if len(tutud) % 2 == 1:
-                buttons.append((tutud[-1],))
-            buttons.append([Button.inline("« Back", data="gcback")])
-            await event.edit(ayiinxd, buttons=buttons)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"set_")
+                data=re.compile(rb"set_(.*)")
             )
         )
         async def on_plug_in_callback_query_handler(event):
