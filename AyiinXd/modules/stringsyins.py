@@ -45,8 +45,7 @@ async def test_string(event):
                     event.chat_id,
                     text,
                     logo,
-                    buttons=yins,
-                    link_preview=False)
+                    buttons=yins)
             await result.delete()
     else:
         try:
