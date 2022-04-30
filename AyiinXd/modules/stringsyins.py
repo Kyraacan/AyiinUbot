@@ -8,7 +8,7 @@ import os
 from telethon import Button, custom, events
 
 from AyiinXd import CMD_HANDLER as cmd
-from AyiinXd import BOT_USERNAME, CMD_HELP, INLINE_PIC, bot
+from AyiinXd import BOT_USERNAME, CMD_HELP, INLINE_PIC
 from AyiinXd.ayiin import ayiin_cmd, eod, eor
 from Stringyins import get_string
 
@@ -38,10 +38,13 @@ Y_BUTTONS = [
 async def test_string(event):
     ayiin = await eor(event, get_string("com_1"))
     yins = build_keyboards(Y_BUTTONS)
-    if yins:
+    if INLINE_PIC:
+            logo = INLINE_PIC
             text = "Silahkan klik Dibawah Ini Untuk Membuat String Anda"
-            result = await bot.inline_query(
+            result = await event.client.send_message(
+                    event.chat_id,
                     text,
+                    logo,
                     buttons=yins,
                     link_preview=False)
             await result.delete()
