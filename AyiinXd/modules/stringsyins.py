@@ -42,9 +42,8 @@ async def test_string(event):
             logo = INLINE_PIC
             text = "Silahkan klik Dibawah Ini Untuk Membuat String Anda"
             result = await event.client.send_message(
-                    event.chat_id,
-                    text,
-                    logo,
+                    caption=text,
+                    file=logo,
                     buttons=yins)
             await result.delete()
     else:
