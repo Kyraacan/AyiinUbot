@@ -42,7 +42,7 @@ async def test_string(event):
     if thumb:
             thumb = None
             text = "Silahkan klik Dibawah Ini Untuk Membuat String Anda"
-            buttons.append(buttons)
+            reply_markup = event.build_reply_markup(buttons)
             result = await event.client.send_message(
                     event.chat_id,
                     text,
