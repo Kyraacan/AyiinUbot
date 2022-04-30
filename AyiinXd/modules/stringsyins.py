@@ -8,7 +8,7 @@ import os
 from telethon import Button, custom, events
 
 from AyiinXd import CMD_HANDLER as cmd
-from AyiinXd import BOT_USERNAME, CMD_HELP, INLINE_PIC
+from AyiinXd import BOT_USERNAME, CMD_HELP
 from AyiinXd.ayiin import ayiin_cmd, eod, eor
 from Stringyins import get_string
 
@@ -39,6 +39,7 @@ async def test_string(event):
     ayiin = await eor(event, get_string("com_1"))
     buttons = build_keyboards(Y_BUTTONS)
     if buttons:
+        try:
             results = await event.client.inline_query(  # pylint:disable=E0602
                 BOT_USERNAME, "@AyiinXdSupport",
             )
