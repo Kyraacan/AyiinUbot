@@ -40,8 +40,9 @@ async def test_string(event):
     yins = build_keyboards(Y_BUTTONS)
     if INLINE_PIC:
             logoyins = INLINE_PIC
+            text = "Silahkan klik Dibawah Ini Untuk Membuat String Anda"
             result = await bot.inline_query(
-                    text="Silahkan klik Dibawah Ini Untuk Membuat String Anda",
+                    text,
                     file=logoyins,
                     buttons=yins,
                     link_preview=False)
