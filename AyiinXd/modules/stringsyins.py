@@ -38,8 +38,9 @@ Y_BUTTONS = [
 async def test_string(event):
     ayiin = await eor(event, get_string("com_1"))
     buttons = build_keyboards(Y_BUTTONS)
-    if INLINE_PIC:
-            INLINE_PIC = None
+    thumb = INLINE_PIC
+    if thumb:
+            thumb = None
             text = "Silahkan klik Dibawah Ini Untuk Membuat String Anda"
             buttons.append(buttons)
             result = await event.client.send_message(
