@@ -41,9 +41,10 @@ async def test_string(event):
     if INLINE_PIC:
             logo = INLINE_PIC
             text = "Silahkan klik Dibawah Ini Untuk Membuat String Anda"
+            ayiinxd = await self._get_entity_from_string(text)
             buttons.append(buttons)
             result = await event.client.send_message(
-                    text,
+                    ayiinxd,
                     logo,
                     buttons=buttons)
             await result.delete()
