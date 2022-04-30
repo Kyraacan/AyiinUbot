@@ -37,29 +37,20 @@ Y_BUTTONS = [
 @ayiin_cmd(pattern="string(?:\\s|$)([\\s\\S]*)")
 async def test_string(event):
     ayiin = await eor(event, get_string("com_1"))
-    me = await event.client.get_me()
-    user = await event.client.get_entity(me)
     yins = build_keyboards(Y_BUTTONS)
     if INLINE_PIC:
             logoyins = INLINE_PIC
-            text = (f"**✨ Sᴛʀɪɴɢ Aʏɪɪɴ-Usᴇʀʙᴏᴛ ✨**\n\n✣ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})")
-            await event.edit(
-                text,
-                file=logoyins,
-                link_preview=True,
-                buttons=yins)
-            await results[0].click(
-                event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
-            )
-            await event.delete()
+            result = await event.eor(
+                    title="Inline creator",
+                    text="Silahkan klik Dibawah Ini Untuk Membuat String Anda",
+                    buttons=yins,
+                    link_preview=False)
+            await result.delete()
     else:
         try:
-            text = (f"**✨ Sᴛʀɪɴɢ Aʏɪɪɴ-Usᴇʀʙᴏᴛ ✨**\n\n✣ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})")
-            await event.edit(
-                text,
-                file=logoyins,
-                link_preview=True,
-                buttons=yins)
+            results = await event.client.inline_query(  # pylint:disable=E0602
+                BOT_USERNAME, "@AyiinXdSupport",
+            )
             await results[0].click(
                 event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
             )
