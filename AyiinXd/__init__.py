@@ -750,12 +750,12 @@ with bot:
                         0,
                         "image/jpeg",
                         []),
-                    text="**String Ayiin-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **ᴏᴡɴᴇʀ ʀᴇᴘᴏ :** [AyiinXd](https://t.me/AyiinXd)\n✣ **sᴜᴘᴘᴏʀᴛ :** @AyiinXdSupport\n✣ **ʀᴇᴘᴏsɪᴛᴏʀʏ :** [Ayiin-Userbot](https://github.com/AyiinXd/Ayiin-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    text="❏ Silahkan Pilih Untuk Membuat String Session Anda\n╭╼┅━━━━━╍━━━━━┅╾\n├▹ Bot Untuk Membuat di bot [AyiinString]\n├▹ Replit Untuk Membuat Di Web [AyiinString]\n╰╼┅━━━━━╍━━━━━┅╾",
                     buttons=[
                         [
                             custom.Button.url(
                                 "Bᴏᴛ Sᴛʀɪɴɢ",
-                                "https://t.me/AyiinXdSupport"),
+                                "https://t.me/AyiinStringRobot"),
                             custom.Button.url(
                                 "Sᴛʀɪɴɢ Rᴇᴘʟɪᴛ",
                                 "https://repl.it/@AyiinXd/AyiinString?lite=1&outputonly=1"),
