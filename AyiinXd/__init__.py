@@ -765,6 +765,7 @@ with bot:
                 )
             elif query.startswith("lang"):
                 languages = get_languages()
+                text = "List Of Available Languages.",
                 tutud = [
                     Button.inline(
                         f"{languages[yins]['asli']} [{yins.lower()}]",
@@ -776,7 +777,18 @@ with bot:
                 if len(tutud) % 2 == 1:
                     buttons.append((tutud[-1],))
                 buttons.append([Button.inline("« Back", data="langs_yins")])
-                await event.edit("List Of Available Languages.", buttons=buttons
+                result = builder.article(
+                    title="Lang",
+                    description="Lang Ayiin - Userbot",
+                    url="https://t.me/AyiinXdSupport",
+                    thumb=InputWebDocument(
+                        INLINE_PIC,
+                        0,
+                        "image/jpeg",
+                        []),
+                    text="❏ Silahkan Pilih Bahasa Yang Ingin Anda Gunakan.\n╭╼┅━━━━━╍━━━━━┅╾\n├▹ Bahasa Asli Indonesia [id]\n╰╼┅━━━━━╍━━━━━┅╾",
+                    buttons=buttons,
+                    link_preview=False,
                 )
             elif query.startswith("Inline buttons"):
                 markdown_note = query[14:]
