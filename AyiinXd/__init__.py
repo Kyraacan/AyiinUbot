@@ -763,7 +763,7 @@ with bot:
                     ],
                     link_preview=False,
                 )
-            elif query.statswitch("lang"):
+            elif query.startswith("lang"):
                 languages = get_languages()
                 tutud = [
                     Button.inline(
