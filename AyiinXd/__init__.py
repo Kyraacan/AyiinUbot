@@ -896,8 +896,12 @@ with bot:
                     link_preview=True,
                     buttons=main_help_button)
 
-        @tgbot.on(events.CallbackQuery(data=b"set_(.*)"))
-        async def about(event):
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"set_\((.+?)\)")
+            )
+        )
+        async def langs(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 lang = event.data_match.group(1).decode("UTF-8")
                 languages = get_languages()
