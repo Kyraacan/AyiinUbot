@@ -898,12 +898,12 @@ with bot:
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"set_")
+                data=re.compile(rb"set_\((.+?)\)")
             )
         )
         async def langs(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                lang = event.data_match.group(1).decode("UTF-8")
+                lang = int(event.data_match.group(1).decode("UTF-8"))
                 languages = get_languages()
                 language[0] = lang
             if not os.environ.get("lang"):
