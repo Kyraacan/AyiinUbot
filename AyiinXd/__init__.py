@@ -910,13 +910,16 @@ with bot:
                 os.environ.setdefault("language", "1")
 
             if languages == "id":
-                os.environ.setdefault("language", lang)
-                await event.edit(
-                    f"•Berhasil• Bahasa Telah Diubah Menjadi {languages[lang]['asli']} [{lang}].",
-                    file=logoyins,
-                    link_preview=True,
-                    buttons=[Button.inline("ʙᴀᴄᴋ", data="lang")]
-                )
+                try:
+                    os.environ.setdefault("language", lang)
+                    await event.edit(
+                        f"•Berhasil• Bahasa Telah Diubah Menjadi {languages[lang]['asli']} [{lang}].",
+                        file=logoyins,
+                        link_preview=True,
+                        buttons=[Button.inline("ʙᴀᴄᴋ", data="lang")]
+                    )
+                except BaseException as e:
+                    await event.edit(get_string("error_1").format(e))
 
         @tgbot.on(events.CallbackQuery(data=b"inline_yins"))
         async def about(event):
