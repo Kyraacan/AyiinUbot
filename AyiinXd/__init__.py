@@ -896,6 +896,24 @@ with bot:
                     link_preview=True,
                     buttons=main_help_button)
 
+        @tgbot.on(events.CallbackQuery(data=b"set_(.*)"))
+        async def about(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                lang = event.data_match.group(1).decode("UTF-8")
+                languages = get_languages()
+                language[0] = lang
+            if not os.environ.get("lang"):
+                os.environ.setdefault("language", "1")
+
+            if languages == "id":
+                os.environ.setdefault("language", lang)
+                await event.edit(
+                    f"•Berhasil• Bahasa Telah Diubah Menjadi {languages[lang]['asli']} [{lang}].",
+                    file=logoyins,
+                    link_preview=True,
+                    buttons=[Button.inline("ʙᴀᴄᴋ", data="lang")]
+                )
+
         @tgbot.on(events.CallbackQuery(data=b"inline_yins"))
         async def about(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
@@ -1075,28 +1093,6 @@ with bot:
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-        @tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"set_")
-            )
-        )
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                lang = event.data_match.group(1).decode("UTF-8")
-                languages = get_languages()
-                language[0] = lang
-            if not os.environ.get("lang"):
-                os.environ.setdefault("language", "1")
-
-            if languages == "id":
-                os.environ.setdefault("language", lang)
-                await event.edit(
-                    f"•Berhasil• Bahasa Telah Diubah Menjadi {languages[lang]['asli']} [{lang}].",
-                    file=logoyins,
-                    link_preview=True,
-                    buttons=[Button.inline("ʙᴀᴄᴋ", data="langs_yins")]
-                )
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
