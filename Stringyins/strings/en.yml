@@ -1,5 +1,5 @@
-nama: Indonesia
-asli: Indonesia
+nama: English
+asli: English
 
 penulis:
   - AyiinXd
@@ -29,14 +29,14 @@ wrong1: "Bruh, sekarang saya pikir seberapa jauh kita harus melangkah. tolong he
 server1: "Mengalami kesalahan teknis."
 
 # commons
-com_1: "`Memproses...`"
-com_2: "`Sedang Mencari...`"
-com_3: "`Yang anda Masukan Tidak Valid`"
-com_4: "`Media Tidak Didukung..`"
-com_5: "`Mengunduh...`"
-com_6: "`Mengunggah...`"
-com_7: "`Menganalisa...`"
-com_8: "`Mendapatkan Informasi...`"
+com_1: "`Processing...`"
+com_2: "`Looking for...`"
+com_3: "`What you input is invalid`"
+com_4: "`Media Not Supported...`"
+com_5: "`Download...`"
+com_6: "`Uploading...`"
+com_7: "`Analyze...`"
+com_8: "`Get information...`"
 
 # for error
 error_1: "**KESALAHAN : **`{}`"
@@ -88,10 +88,10 @@ zomb_6: "`Tidak Memiliki Izin Banned Dalam Grup Ini`"
 zomb_7: "**Membersihkan** `{}` **Akun Terhapus**"
 zomb_8: "**Membersihkan** `{}` **Akun Terhapus**\n`{}` **Akun Admin Yang Terhapus Tidak Dihapus.**"
 zomb_9: "**#ZOMBIES**\n**Membersihkan** `{}` **Akun Terhapus!**\n**GRUP:** {}(`{}`)"
-pinn_1: "`Balas Pesan Untuk Melakukan Penyematan.`"
-pinn_2: "`Berhasil disematkan!`"
-upin_1: "**Balas ke Pesan untuk melepas Pin atau Gunakan** `{}unpin all` **Untuk Melepas Semua Pin**"
-upin_2: "**Balas ke Pesan untuk melepas pin atau gunakan** `{}unpin all`"
+pinn_1: "`Reply Message To Do Pinned`"
+pinn_2: "`Pinned successfully!`"
+upin_1: "**Reply to Message to unpin or Use** `{}unpin all` **To Unpin All**"
+upin_2: "**Reply to Message to unpin or use** `{}unpin all`"
 upin_3: "`Berhasil Menghapus Semua Pesan Sematan!`"
 kick_1: "**Tidak Dapat Menemukan Pengguna.**"
 kick_2: "[{}](tg://user?id={}) **Telah Dikick Dari Grup**\n**Alasan:** `{}`"
@@ -283,7 +283,7 @@ devs_1: "**Silahkan Ketik** `{}help exec` **sebagai contoh.**"
 devs_2: "**Itu operasi yang berbahaya! Tidak diperbolehkan!**"
 devs_3: "**Berikan Code untuk di eksekusi.**"
 devs_4: "**Apa yang harus saya jalankan ?**"
-devs_5: "**⪼ Memerintah : **\n`{}` \n\n**⪼  Hasil : **\n`{}` \n"
+devs_5: "**⪼ Plugins  : **\n`{}` \n\n**⪼  Results : **\n`{}` \n"
 devs_6: "`Berhasil`"
 devs_7: "`Berikan perintah atau gunakan {}help term sebagai contoh.`"
 
