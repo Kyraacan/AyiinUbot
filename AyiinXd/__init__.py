@@ -898,7 +898,7 @@ with bot:
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"set_\((.+?)\)")
+                data=re.compile(rb"set_")
             )
         )
         async def langs(event):
