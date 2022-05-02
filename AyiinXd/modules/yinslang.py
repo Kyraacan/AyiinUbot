@@ -42,19 +42,32 @@ async def settt(event):
         os.environ.setdefault("language", "1")
 
     if lang == "id":
-        os.environ.setdefault("language", lang)
-        await event.edit(
-            f"Your language has been set to {languages[lang]['asli']} [{lang}].",
-        )
-        return
+        try:
+            yins = os.environ.setdefault("language", lang)
+            yinslang = await bot.inline_query(  # pylint:disable=E0602
+                BOT_USERNAME, "set_",
+            )
+            await yinslang[0].click(
+                event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
+            )
+            await event.delete()
+        except Exception as e:
+            await eor(event, get_string("error_1").format(e)
+                      )
 
     if lang == "en":
-        os.environ.setdefault("language", lang)
-        await event.edit(
-            f"Your language has been set to {languages[lang]['asli']} [{lang}].",
-        )
-        return
-
+        try:
+            os.environ.setdefault("language", lang)
+            yinslang = await bot.inline_query(  # pylint:disable=E0602
+                BOT_USERNAME, "set_",
+            )
+            await yinslang[0].click(
+                event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
+            )
+            await event.delete()
+        except Exception as e:
+            await eor(event, get_string("error_1").format(e)
+                      )
 
 CMD_HELP.update(
     {
