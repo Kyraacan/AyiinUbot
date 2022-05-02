@@ -795,7 +795,7 @@ with bot:
                 languages = get_languages()
                 language[0] = lang
             if not os.environ.get("lang"):
-                os.environ.setdefault("language", "1")
+                del os.environ("language", "1")
 
             if languages == "id":
                 try:
@@ -804,12 +804,23 @@ with bot:
                         f"•Berhasil• Bahasa Telah Diubah Menjadi {languages[lang]['asli']} [{lang}].",
                         file=logoyins,
                         link_preview=True,
-                        buttons=[Button.inline("ʙᴀᴄᴋ", data="lang")]
-                    )
+                        buttons=[Button.inline("ʙᴀᴄᴋ", data="lang")])
+                        result = builder.article(
+                             title="Lang",
+                             description="Lang Ayiin - Userbot",
+                             url="https://t.me/AyiinXdSupport",
+                             thumb=InputWebDocument(
+                                 INLINE_PIC,
+                                 0,
+                                 "image/jpeg",
+                                 []),
+                             text="•Berhasil• Bahasa Telah Diubah Menjadi",
+                             buttons=buttons,
+                             link_preview=False,
+                        )
                 except BaseException as e:
                     await event.edit(get_string("error_1").format(e)
                 )
-
             elif query.startswith("Inline buttons"):
                 markdown_note = query[14:]
                 prev = 0
