@@ -805,19 +805,19 @@ with bot:
                         file=logoyins,
                         link_preview=True,
                         buttons=[Button.inline("ʙᴀᴄᴋ", data="lang")])
-                        result = builder.article(
-                             title="Lang",
-                             description="Lang Ayiin - Userbot",
-                             url="https://t.me/AyiinXdSupport",
-                             thumb=InputWebDocument(
-                                 INLINE_PIC,
-                                 0,
-                                 "image/jpeg",
-                                 []),
-                             text="•Berhasil• Bahasa Telah Diubah Menjadi",
-                             buttons=buttons,
-                             link_preview=False,
-                        )
+                    result = builder.article(
+                         title="Lang",
+                         description="Lang Ayiin - Userbot",
+                         url="https://t.me/AyiinXdSupport",
+                         thumb=InputWebDocument(
+                             INLINE_PIC,
+                             0,
+                             "image/jpeg",
+                             []),
+                         text="•Berhasil• Bahasa Telah Diubah Menjadi",
+                         buttons=buttons,
+                         link_preview=False,
+                    )
                 except BaseException as e:
                     await event.edit(get_string("error_1").format(e)
                 )
