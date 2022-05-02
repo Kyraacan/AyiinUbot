@@ -795,7 +795,7 @@ with bot:
                 languages = get_languages()
                 language[0] = lang
             if not os.environ.get("lang"):
-                del os.environ("language", "1")
+                os.environ.pop("language", "1")
 
             if languages == "id":
                 try:
