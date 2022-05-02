@@ -607,7 +607,7 @@ with bot:
                 Button.inline(get_string("help_2"), data="reopen"),
             ],
             [
-                Button.inline(get_string("help_6"), data="langs_yins"),
+                Button.inline(get_string("help_6"), data="lang"),
                 Button.url(get_string("help_7"), f"t.me/{botusername}"),
             ],
             [Button.inline(get_string("help_8"), data="close")],
@@ -776,7 +776,7 @@ with bot:
                 buttons = list(zip(tutud[::2], tutud[1::2]))
                 if len(tutud) % 2 == 1:
                     buttons.append((tutud[-1],))
-                buttons.append([Button.inline("« Back", data="langs_yins")])
+                buttons.append([custom.Button.inline("ʙᴀᴄᴋ", data="gcback")])
                 result = builder.article(
                     title="Lang",
                     description="Lang Ayiin - Userbot",
