@@ -903,7 +903,7 @@ with bot:
         )
         async def langs(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                lang = int(event.data_match.group(1).decode("UTF-8"))
+                lang = event.data_match.group(1).decode("UTF-8")
                 languages = get_languages()
                 language[0] = lang
             if not os.environ.get("lang"):
