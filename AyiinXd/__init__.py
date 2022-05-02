@@ -790,37 +790,6 @@ with bot:
                     buttons=buttons,
                     link_preview=False,
                 )
-            elif query.startswith("set_(.*)"):
-                lang = int(event.data_match.group(1).decode("UTF-8"))
-                languages = get_languages()
-                language[0] = lang
-            if not os.environ.get("lang"):
-                os.environ.pop("language", "1")
-                languages = get_languages()
-            if languages == "id":
-                try:
-                    os.environ.setdefault("language", lang)
-                    await event.edit(
-                        f"•Berhasil• Bahasa Telah Diubah Menjadi {languages[lang]['asli']} [{lang}].",
-                        file=logoyins,
-                        link_preview=True,
-                        buttons=[Button.inline("ʙᴀᴄᴋ", data="lang")])
-                    result = builder.article(
-                         title="Lang",
-                         description="Lang Ayiin - Userbot",
-                         url="https://t.me/AyiinXdSupport",
-                         thumb=InputWebDocument(
-                             INLINE_PIC,
-                             0,
-                             "image/jpeg",
-                             []),
-                         text="•Berhasil• Bahasa Telah Diubah Menjadi",
-                         buttons=buttons,
-                         link_preview=False,
-                    )
-                except BaseException as e:
-                    await event.edit(get_string("error_1").format(e)
-                )
             elif query.startswith("Inline buttons"):
                 markdown_note = query[14:]
                 prev = 0
@@ -939,7 +908,7 @@ with bot:
                 language[0] = lang
             if not os.environ.get("lang"):
                 os.environ.setdefault("language", "1")
-
+                languages = get_languages()
             if languages == "id":
                 try:
                     os.environ.setdefault("language", lang)
