@@ -909,7 +909,7 @@ with bot:
             if not os.environ.get("lang"):
                 os.environ.setdefault("language", "1")
                 languages = get_languages()
-            if languages == "id":
+            if languages:
                 try:
                     os.environ.setdefault("language", lang)
                     await event.edit(
