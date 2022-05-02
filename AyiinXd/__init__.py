@@ -796,7 +796,7 @@ with bot:
                 language[0] = lang
             if not os.environ.get("lang"):
                 os.environ.pop("language", "1")
-
+                languages = get_languages()
             if languages == "id":
                 try:
                     os.environ.setdefault("language", lang)
