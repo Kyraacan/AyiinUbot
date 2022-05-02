@@ -776,7 +776,7 @@ with bot:
                 buttons = list(zip(tutud[::2], tutud[1::2]))
                 if len(tutud) % 2 == 1:
                     buttons.append((tutud[-1],))
-                buttons.append([custom.Button.inline("ʙᴀᴄᴋ", data="gcback")])
+                buttons.append([custom.Button.inline("ʙᴀᴄᴋ", data="close")])
                 result = builder.article(
                     title="Lang",
                     description="Lang Ayiin - Userbot",
@@ -916,7 +916,7 @@ with bot:
                         f"•Berhasil• Bahasa Telah Diubah Menjadi {languages[lang]['asli']} [{lang}].",
                         file=logoyins,
                         link_preview=True,
-                        buttons=[Button.inline("ʙᴀᴄᴋ", data="lang")]
+                        buttons=[Button.inline("ʙᴀᴄᴋ", data="gcback")]
                     )
                 except BaseException as e:
                     await event.edit(get_string("error_1").format(e))
