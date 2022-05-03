@@ -919,7 +919,11 @@ with bot:
                         buttons=[Button.inline("ʙᴀᴄᴋ", data="gcback")]
                     )
                 except BaseException as e:
-                    await event.edit(get_string("error_1").format(e))
+                    await event.edit(get_string("error_1").format(e)
+                )
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(events.CallbackQuery(data=b"inline_yins"))
         async def about(event):
