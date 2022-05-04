@@ -824,11 +824,11 @@ getst_1: "`Mengconvert ke foto...`"
 stxt_1: "`Mohon Maaf, Saya Membutuhkan Text Anda.`"
 
 # sudo tools
-sudo_1: "🔮 **Sudo:** `Enabled`\n\n📚 ** List Sudo Users:**\n» `{}`\n\n**SUDO_HANDLER:** `{}`",
+sudo_1: "🔮 **Sudo:** `Enabled`\n\n📚 ** List Sudo Users:**\n» `{}`\n\n**SUDO_HANDLER:** `{}`"
 sudo_2: "🔮 **Sudo:** `Disabled`"
-adsu_1: "Balas ke pengguna atau berikan user id untuk menambahkannya ke daftar pengguna sudo anda.",
+adsu_1: "Balas ke pengguna atau berikan user id untuk menambahkannya ke daftar pengguna sudo anda."
 adsu_2: "Berikan User ID atau reply ke pesan penggunanya."
-adsu_3: "**Silahkan Tambahkan Var** `HEROKU_APP_NAME` **untuk menambahkan pengguna sudo**",
+adsu_3: "**Silahkan Tambahkan Var** `HEROKU_APP_NAME` **untuk menambahkan pengguna sudo**"
 adsu_4: "**Berhasil Menambahkan** `{}` **ke Pengguna Sudo.**\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan."
 dlsu_1: "Balas ke pengguna atau berikan user id untuk menghapusnya dari daftar pengguna sudo Anda."
 dlsu_2: "**Silahkan Tambahkan Var** `HEROKU_APP_NAME` **untuk menghapus pengguna sudo**"
