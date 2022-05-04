@@ -89,7 +89,7 @@ async def _(event):
         await event.delete()
         tags = list(
             map(
-                lambda m: f"[{m.first_name}](tg://user?id={m.id})",
+                lambda m: f"👤 [{m.first_name}](tg://user?id={m.id})\n",
                 await event.client.get_participants(chat),
             ),
         )
@@ -101,7 +101,7 @@ async def _(event):
             if len(jumlah) == 5:
                 tags = list(
                     map(
-                        lambda m: f"[{m.first_name}](tg://user?id={m.id})",
+                        lambda m: f"👤 [{m.first_name}](tg://user?id={m.id})\n",
                         jumlah,
                     ),
                 )
